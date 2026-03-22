@@ -81,7 +81,7 @@ function snapshotUndo() {
   state._redoStack = [];
 }
 
-function persist() {
+export function persist() {
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
     saveLocalState(STORAGE_KEYS.ACTIVE_STATE, {

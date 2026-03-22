@@ -1,7 +1,7 @@
 import { renderAccordion, bindAccordions } from './accordion.js';
 import { renderSwatch } from './colorSwatch.js';
 import { renderImageCard } from './imageCard.js';
-import { getState, updateField, updateMultiDummyField, toggleLockField, setEmphasis } from '../store.js';
+import { getState, updateField, updateMultiDummyField, toggleLockField, persist } from '../store.js';
 import { showModal } from './modal.js';
 import { getCreationKitCategories, normalizeCategoryId } from '../constants/categories.js';
 
@@ -32,7 +32,12 @@ function detailModal(field, option) {
   `);
   modal.querySelectorAll('[data-emphasis]').forEach((button) => {
     button.onclick = () => {
-      if (promptValue) setEmphasis(promptValue, button.dataset.emphasis);
+      if (!promptValue) return;
+      state.emphasis[promptValue] = button.dataset.emphasis;
+      persist();
+      modal.querySelectorAll('[data-emphasis]').forEach((btn) => {
+        btn.classList.toggle('btn--primary', btn === button);
+      });
     };
   });
 }
