@@ -1,0 +1,90 @@
+Uncaught ReferenceError: getCategoryWindow is not defined
+    renderCreationKit https://b-althazard.github.io/xGEN_3.0/js/pages/creationKit.js:76
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:51
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    setPage https://b-althazard.github.io/xGEN_3.0/js/store.js:163
+    handleRoute https://b-althazard.github.io/xGEN_3.0/js/app.js:56
+creationKit.js:76:42
+Uncaught ReferenceError: getCategoryWindow is not defined
+    renderCreationKit https://b-althazard.github.io/xGEN_3.0/js/pages/creationKit.js:76
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:51
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    loadDummyFields https://b-althazard.github.io/xGEN_3.0/js/store.js:337
+    onclick https://b-althazard.github.io/xGEN_3.0/js/modules/presets.js:84
+2 creationKit.js:76:42
+Uncaught ReferenceError: getCategoryWindow is not defined
+    renderCreationKit https://b-althazard.github.io/xGEN_3.0/js/pages/creationKit.js:76
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:51
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    replaceWithFreshDummy https://b-althazard.github.io/xGEN_3.0/js/store.js:276
+    onclick https://b-althazard.github.io/xGEN_3.0/js/modules/presets.js:117
+creationKit.js:76:42
+Uncaught ReferenceError: getCategoryWindow is not defined
+    renderCreationKit https://b-althazard.github.io/xGEN_3.0/js/pages/creationKit.js:76
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:51
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    loadDummyFields https://b-althazard.github.io/xGEN_3.0/js/store.js:337
+    onclick https://b-althazard.github.io/xGEN_3.0/js/modules/terminal.js:47
+creationKit.js:76:42
+Uncaught ReferenceError: getCategoryWindow is not defined
+    renderCreationKit https://b-althazard.github.io/xGEN_3.0/js/pages/creationKit.js:76
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:51
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    loadDummyFields https://b-althazard.github.io/xGEN_3.0/js/store.js:337
+    onclick https://b-althazard.github.io/xGEN_3.0/js/modules/terminal.js:47
+    openPresetBrowser https://b-althazard.github.io/xGEN_3.0/js/modules/terminal.js:44
+    openPresetBrowser https://b-althazard.github.io/xGEN_3.0/js/modules/terminal.js:43
+    action https://b-althazard.github.io/xGEN_3.0/js/modules/terminal.js:56
+    onclick https://b-althazard.github.io/xGEN_3.0/js/components/fab.js:30
+    renderFab https://b-althazard.github.io/xGEN_3.0/js/components/fab.js:27
+    renderFab https://b-althazard.github.io/xGEN_3.0/js/components/fab.js:26
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/components/fab.js:23
+    renderFab https://b-althazard.github.io/xGEN_3.0/js/components/fab.js:21
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:49
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    replaceWithFreshDummy https://b-althazard.github.io/xGEN_3.0/js/store.js:276
+    onclick https://b-althazard.github.io/xGEN_3.0/js/modules/presets.js:117
+7 creationKit.js:76:42
+Uncaught ReferenceError: getCategoryWindow is not defined
+    renderCreationKit https://b-althazard.github.io/xGEN_3.0/js/pages/creationKit.js:76
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:51
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    setPage https://b-althazard.github.io/xGEN_3.0/js/store.js:163
+    handleRoute https://b-althazard.github.io/xGEN_3.0/js/app.js:56
+creationKit.js:76:42
+GET
+https://fonts.gstatic.com/s/firacode/v27/uU9NCBsR6Z2vfE9aq3bh3dSDqFeedTMX.woff2
+[HTTP/1.1 200  0ms]
+
+Uncaught ReferenceError: getCategoryWindow is not defined
+    renderCreationKit https://b-althazard.github.io/xGEN_3.0/js/pages/creationKit.js:76
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:51
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    setPage https://b-althazard.github.io/xGEN_3.0/js/store.js:163
+    handleRoute https://b-althazard.github.io/xGEN_3.0/js/app.js:56
+creationKit.js:76:42
+Uncaught ReferenceError: getCategoryWindow is not defined
+    renderCreationKit https://b-althazard.github.io/xGEN_3.0/js/pages/creationKit.js:76
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:51
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    updateField https://b-althazard.github.io/xGEN_3.0/js/store.js:187
+    randomizeCurrentDummy https://b-althazard.github.io/xGEN_3.0/js/modules/terminal.js:22
+    randomizeCurrentDummy https://b-althazard.github.io/xGEN_3.0/js/modules/terminal.js:12
+    randomizeCurrentDummy https://b-althazard.github.io/xGEN_3.0/js/modules/terminal.js:11
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/pages/xgen.js:140
+    renderXgen https://b-althazard.github.io/xGEN_3.0/js/pages/xgen.js:140
+    render https://b-althazard.github.io/xGEN_3.0/js/app.js:52
+    <anonymous> https://b-althazard.github.io/xGEN_3.0/js/app.js:87
+    notify https://b-althazard.github.io/xGEN_3.0/js/store.js:115
+    setPage https://b-althazard.github.io/xGEN_3.0/js/store.js:163
+    handleRoute https://b-althazard.github.io/xGEN_3.0/js/app.js:56
+creationKit.js:76:42

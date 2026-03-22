@@ -5,7 +5,7 @@ import { renderDummyTabs } from '../components/dummyTabs.js';
 import { renderForm } from '../components/formRenderer.js';
 import { renderPrompter } from '../modules/prompter.js';
 import { showModal } from '../components/modal.js';
-import { getCreationKitCategories, normalizeCategoryId } from '../constants/categories.js';
+import { getCreationKitCategories, normalizeCategoryId, getCategoryWindow } from '../constants/categories.js';
 import { icon } from '../icons.js';
 
 let isPromptExpanded = false;
