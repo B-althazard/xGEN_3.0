@@ -12,15 +12,19 @@ function ensureArray(value) {
 }
 
 function detailModal(field, option) {
+  const state = getState();
   const promptValue = option.promptValue || '';
+  const currentLevel = state.emphasis[promptValue] || 'medium';
+  const levels = ['low', 'medium', 'high'];
+  const emphasisButtons = levels.map((level) =>
+    `<button class="btn ${level === currentLevel ? 'btn--primary' : ''}" data-emphasis="${level}">${level.charAt(0).toUpperCase() + level.slice(1)}</button>`
+  ).join('');
   const { modal } = showModal(`
     <div class="section__label">Option Detail</div>
     <h2>${option.label}</h2>
     <p>Prompt token: <code>${promptValue || '(empty)'}</code></p>
     <div class="toolbar" style="margin-top:var(--sp-4);">
-      <button class="btn" data-emphasis="low">Low</button>
-      <button class="btn" data-emphasis="medium">Medium</button>
-      <button class="btn btn--primary" data-emphasis="high">High</button>
+      ${emphasisButtons}
     </div>
     <div class="btn-row" style="margin-top:var(--sp-4);">
       <button class="btn btn--ghost" data-close-modal>Close</button>

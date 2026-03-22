@@ -70,6 +70,7 @@ function openSaveAsModal(preset) {
         fields: structuredClone(preset.fields || {}),
         lockedFields: type === 'mannequin' ? Object.keys(preset.fields || {}) : [],
         referencePhotoId: preset.referencePhotoId || null,
+        emphasis: structuredClone(getState().emphasis),
       });
     };
   });

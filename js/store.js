@@ -334,6 +334,7 @@ export function loadDummyFields(payload) {
     lockedFields: structuredClone(payload.lockedFields || []),
     referencePhotoId: payload.referencePhotoId || null,
   };
+  state.emphasis = structuredClone(payload.emphasis || {});
   notify();
 }
 
@@ -352,6 +353,7 @@ export async function saveCurrentPreset({ type, name }) {
     fields: structuredClone(active.fields),
     lockedFields: structuredClone(active.lockedFields),
     referencePhotoId: active.referencePhotoId,
+    emphasis: structuredClone(state.emphasis),
     createdAt: Date.now(),
     updatedAt: Date.now(),
   });
