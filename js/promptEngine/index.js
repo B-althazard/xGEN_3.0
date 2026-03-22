@@ -21,7 +21,7 @@ function buildSinglePrompt(fields, schema, rules, state) {
   const resolved = resolveTokens(normalized, rules, fields);
   const settings = { ...state.settings, realismMode: resolveRealismMode(state) };
   const blocks = buildBlocks(resolved, rules, settings);
-  const positivePrompt = formatPositivePrompt(blocks, rules);
+  const positivePrompt = formatPositivePrompt(blocks, rules, settings);
   const negativePrompt = buildNegativePrompt(state.settings.negativeMode);
   const keptTokens = resolved.filter((token) => token.status !== 'dropped');
   const droppedTokens = resolved.filter((token) => token.status === 'dropped');
@@ -36,19 +36,18 @@ function buildSinglePrompt(fields, schema, rules, state) {
 }
 
 function buildMultiPrompt(state, schema, rules) {
+  const ordinals = ['first', 'second', 'third'];
   const summarizeDummy = (result) => {
-    const identity = result.blocks.find((block) => block.id === 'identity')?.items || [];
-    const body = (result.blocks.find((block) => block.id === 'body')?.items || []).slice(0, 2);
-    const face = (result.blocks.find((block) => block.id === 'face')?.items || []).slice(0, 2);
-    const hair = (result.blocks.find((block) => block.id === 'hair')?.items || []).slice(0, 1);
-    const clothing = (result.blocks.find((block) => block.id === 'clothing')?.items || []).slice(0, 1);
-    return [...identity, ...body, ...face, ...hair, ...clothing].map((item) => item.text).join(', ').split(/\s+/).slice(0, 40).join(' ');
+    const descriptive = result.blocks.filter((block) =>
+      ['identity', 'body', 'face', 'hair', 'makeup', 'clothing', 'pose'].includes(block.id)
+    );
+    return descriptive.map((block) => block.text).filter(Boolean).join(', ');
   };
 
   const parts = state.dummies.map((dummy, index) => {
     const result = buildSinglePrompt(dummy.fields, schema, rules, state);
     const compact = summarizeDummy(result);
-    return `Dummy ${index + 1} is ${compact}`;
+    return `The ${ordinals[index] || `${index + 1}th`} woman is ${compact}`;
   });
   const shared = buildSinglePrompt(state.dummies[0].fields, schema, rules, state);
   const interaction = [state.multiDummyInteraction.interaction_type, state.multiDummyInteraction.focus, state.multiDummyInteraction.relationship_dynamic, state.multiDummyInteraction.proximity].filter(Boolean).join(', ');

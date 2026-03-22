@@ -1,4 +1,4 @@
-import { getState, saveCurrentPreset, setJobState, setActiveImageIndex, resetActiveDummy } from '../store.js';
+import { getState, saveCurrentPreset, setJobState, setActiveImageIndex, resetActiveDummy, updateSetting } from '../store.js';
 import { triggerGeneration } from '../bridgeManager.js';
 import { randomizeCurrentDummy } from '../modules/terminal.js';
 import { icon } from '../icons.js';
@@ -12,6 +12,25 @@ export function renderXgen(container) {
   const metrics = state.promptResult?.diagnostics || {};
   const canPrev = state.xgen.activeImageIndex < state.xgen.generatedImages.length - 1;
   const canNext = state.xgen.activeImageIndex > 0;
+
+  const promptSettingsHtml = `
+    <div style="margin-top:var(--sp-4);display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-tertiary);margin-bottom:var(--sp-1);">Prompt Order</div>
+        <div class="dummy-tabs">
+          <button class="dummy-tab ${state.settings.promptOrder === 'subject-first' ? 'is-active' : ''}" data-prompt-order="subject-first">Subject First</button>
+          <button class="dummy-tab ${state.settings.promptOrder === 'style-first' ? 'is-active' : ''}" data-prompt-order="style-first">Style First</button>
+        </div>
+      </div>
+      <div style="min-width:80px;">
+        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-tertiary);margin-bottom:var(--sp-1);">Aesthetic</div>
+        <div style="display:flex;align-items:center;gap:var(--sp-2);">
+          <input type="range" min="6" max="10" step="1" value="${state.settings.aesthetic}" data-aesthetic-slider style="width:60px;accent-color:var(--accent);">
+          <span style="font-size:12px;font-weight:600;color:var(--text-accent);" data-aesthetic-value>${state.settings.aesthetic}</span>
+        </div>
+      </div>
+    </div>
+  `;
 
   container.innerHTML = `
     <div class="page">
@@ -76,6 +95,9 @@ export function renderXgen(container) {
               : ''
             }
           </div>
+
+          <!-- Prompt Settings -->
+          ${promptSettingsHtml}
 
           <!-- Metrics -->
           <div class="metrics" style="margin-top:var(--sp-4);">
@@ -146,6 +168,8 @@ export function renderXgen(container) {
             }
           </div>
 
+          ${promptSettingsHtml}
+
           <div class="metrics" style="margin-top:var(--sp-4);">
             <div class="metric">
               <div class="metric__value">${metrics.wordCount || 0}</div>
@@ -213,6 +237,20 @@ export function renderXgen(container) {
     negativeOpen = !negativeOpen;
     renderXgen(container);
   };
+
+  container.querySelectorAll('[data-prompt-order]').forEach((button) => {
+    button.onclick = () => {
+      updateSetting('promptOrder', button.dataset.promptOrder);
+    };
+  });
+
+  container.querySelectorAll('[data-aesthetic-slider]').forEach((slider) => {
+    slider.oninput = () => {
+      const val = Number(slider.value);
+      updateSetting('aesthetic', val);
+      container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
+    };
+  });
 
   const prev = container.querySelector('[data-prev-image]');
   if (prev) prev.onclick = () => setActiveImageIndex(Math.min(state.xgen.generatedImages.length - 1, state.xgen.activeImageIndex + 1));

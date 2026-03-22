@@ -84,7 +84,11 @@
     "number_of_people": "multi.count"
   },
   "ordering": {
-    "blockOrder": ["style", "identity", "body", "face", "hair", "makeup", "clothing", "scene", "lighting", "camera", "pose", "multi"],
+    "blockOrders": {
+      "subject-first": ["identity", "body", "face", "hair", "makeup", "clothing", "pose", "style", "scene", "lighting", "camera", "multi"],
+      "style-first": ["style", "identity", "body", "face", "hair", "makeup", "pose", "clothing", "scene", "lighting", "camera", "multi"]
+    },
+    "blockOrder": ["identity", "body", "face", "hair", "makeup", "clothing", "pose", "style", "scene", "lighting", "camera", "multi"],
     "domainOrder": {
       "identity": ["identity.ethnicity", "identity.age"],
       "body": ["body.silhouette", "body.height", "body.skin.tone", "body.skin.detail", "body.bust.size", "body.bust.shape", "body.bust.nipples", "body.bust.state", "body.lower.waist", "body.lower.hips", "body.lower.ass", "body.lower.legs", "body.genital.pussy.style", "body.genital.pussy.state", "body.genital.futa.enabled", "body.genital.futa.size", "body.genital.futa.shape", "body.genital.futa.cut", "body.genital.futa.state", "body.genital.futa.cum", "body.genital.futa.balls", "body.genital.futa.pussy"],
@@ -153,10 +157,10 @@
     "usePeriods": false
   },
   "lengthBudget": {
-    "targetWordsMin": 30,
-    "targetWordsMax": 80,
-    "softMaxWords": 110,
-    "hardMaxWords": 140,
+    "targetWordsMin": 40,
+    "targetWordsMax": 160,
+    "softMaxWords": 256,
+    "hardMaxWords": 512,
     "pruneOrder": ["clothing.footwear", "clothing.legwear", "makeup.effects", "clothing.upper.style", "clothing.lower.style", "hair.style", "camera.depth", "lighting.effects"],
     "neverPrune": ["identity.ethnicity", "identity.age", "body.silhouette", "face.shape", "clothing.complete", "lighting.primary", "camera.framing", "pose.body"]
   }

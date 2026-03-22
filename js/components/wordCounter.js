@@ -1,7 +1,7 @@
 export function renderWordCounter(promptResult, activeFields, totalFields) {
   const words = promptResult?.diagnostics?.wordCount || 0;
-  const pct = Math.min(100, Math.round((words / 140) * 100));
-  const color = words <= 80 ? 'var(--state-success)' : words <= 110 ? 'var(--state-warning)' : 'var(--state-error)';
+  const pct = Math.min(100, Math.round((words / 256) * 100));
+  const color = words <= 160 ? 'var(--state-success)' : words <= 256 ? 'var(--state-warning)' : 'var(--state-error)';
   const strength = Math.round((activeFields / Math.max(totalFields, 1)) * 100);
 
   return `

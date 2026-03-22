@@ -57,7 +57,7 @@ function bindSwipe(container, categories, currentIndex) {
 }
 
 function maybeWarnPromptLength(wordCount) {
-  const bucket = wordCount > 110 ? 'danger' : wordCount > 80 ? 'warn' : 'safe';
+  const bucket = wordCount > 256 ? 'danger' : wordCount > 200 ? 'warn' : 'safe';
   if (bucket === 'danger' && lastWarnBucket !== 'danger') {
     showModal(`
       <div class="section__label">Prompt Warning</div>

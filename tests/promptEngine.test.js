@@ -20,6 +20,8 @@ function makeState(fields, settings = {}) {
       negativeMode: 'none',
       selectedModel: 'chroma1-hd',
       defaultAspectRatio: '2:3',
+      promptOrder: 'subject-first',
+      aesthetic: 7,
       ...settings,
     },
     activeDummyIndex: 0,
@@ -82,7 +84,7 @@ test('multi-dummy assembly creates named subject blocks', () => {
     rules,
     emphasis: {},
     characterType: 'female',
-    settings: { realismMode: 'auto', negativeMode: 'none', selectedModel: 'chroma1-hd', defaultAspectRatio: '2:3' },
+    settings: { realismMode: 'auto', negativeMode: 'none', selectedModel: 'chroma1-hd', defaultAspectRatio: '2:3', promptOrder: 'subject-first', aesthetic: 7 },
     activeDummyIndex: 0,
     multiDummyInteraction: { interaction_type: 'embracing' },
     dummies: [
@@ -90,6 +92,8 @@ test('multi-dummy assembly creates named subject blocks', () => {
       { fields: { ethnicity: 'asian', age: '30s' }, lockedFields: [], name: 'Dummy 2' }
     ]
   });
-  assert.match(result.positivePrompt, /Dummy 1 is/);
-  assert.match(result.positivePrompt, /Dummy 2 is/);
+  assert.match(result.positivePrompt, /The first woman is/);
+  assert.match(result.positivePrompt, /The second woman is/);
+  assert.doesNotMatch(result.positivePrompt, /Dummy 1/);
+  assert.doesNotMatch(result.positivePrompt, /Dummy 2/);
 });

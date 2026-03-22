@@ -7,7 +7,7 @@ export function collectMetadata(positivePrompt, blocks, keptTokens, droppedToken
     realismMode: settings.realismMode,
     negativeMode: settings.negativeMode,
     appliedRuleIds: droppedTokens.map((token) => token.resolution).filter(Boolean),
-    warnings: words.length > 110 ? ['Prompt too long - model performance may degrade'] : [],
+    warnings: words.length > 256 ? ['Prompt too long - model performance may degrade'] : [],
   };
 }
 
