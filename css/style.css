@@ -375,7 +375,7 @@ img { display: block; max-width: 100%; }
    ════════════════════════════════════════════════ */
 
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: var(--sp-3); }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); }
 
 /* ════════════════════════════════════════════════
@@ -396,7 +396,7 @@ img { display: block; max-width: 100%; }
   display: grid;
   place-items: center;
   background: var(--bg-raised);
-  font-size: 28px;
+  font-size: clamp(16px, 5vw, 28px);
   font-weight: 700;
   color: var(--text-tertiary);
   letter-spacing: 0.02em;
@@ -795,7 +795,9 @@ img { display: block; max-width: 100%; }
 .fab-action {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--sp-2);
+  min-width: 120px;
   padding: 8px 14px;
   border-radius: var(--r-pill);
   font-size: 12px;
@@ -1025,7 +1027,7 @@ img { display: block; max-width: 100%; }
 }
 
 @media (min-width: 768px) {
-  .grid-3 { grid-template-columns: repeat(4, 1fr); }
+  .grid-3 { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
   .option-grid { grid-template-columns: repeat(3, 1fr); }
   .metrics { grid-template-columns: repeat(3, 1fr); }
   .action-grid { grid-template-columns: repeat(3, 1fr); }
