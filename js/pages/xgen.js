@@ -54,7 +54,7 @@ export function renderXgen(container) {
           ` : ''}
         </div>
 
-        <!-- Sidebar -->
+        <!-- Sidebar (desktop only, uses same content as mobile block below) -->
         <aside class="desktop-sidebar">
           <!-- Prompt display -->
           <div class="prompt-panel">
@@ -123,6 +123,72 @@ export function renderXgen(container) {
             : ''
           }
         </aside>
+
+        <!-- Mobile: sidebar content visible below viewer on small screens -->
+        <div class="xgen-mobile-block">
+          <div class="prompt-panel">
+            <button class="accordion__trigger" data-toggle-positive style="padding:0 0 var(--sp-3) 0;">
+              <span class="prompt-panel__label">Positive Prompt</span>
+              <span class="accordion__trigger-icon">${icon('chevDown')}</span>
+            </button>
+            ${positiveOpen
+              ? `<div class="prompt-text" style="margin-bottom:var(--sp-4);">${state.promptResult?.positivePrompt || ''}</div>`
+              : `<div class="prompt-text prompt-text--peek" style="margin-bottom:var(--sp-3);">${state.promptResult?.positivePrompt || ''}</div>`
+            }
+
+            <button class="accordion__trigger" data-toggle-negative style="padding:var(--sp-3) 0 0 0;border-top:1px solid var(--border-subtle);">
+              <span class="prompt-panel__label">Negative Prompt</span>
+              <span class="accordion__trigger-icon">${icon('chevDown')}</span>
+            </button>
+            ${negativeOpen
+              ? `<div class="prompt-text prompt-text--negative" style="margin-top:var(--sp-3);">${state.promptResult?.negativePrompt || '(empty)'}</div>`
+              : ''
+            }
+          </div>
+
+          <div class="metrics" style="margin-top:var(--sp-4);">
+            <div class="metric">
+              <div class="metric__value">${metrics.wordCount || 0}</div>
+              <div class="metric__label">Words</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">${metrics.tokenCountEstimate || 0}</div>
+              <div class="metric__label">Tokens</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">${state.promptResult?.keptTokens?.length || 0}</div>
+              <div class="metric__label">Items</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value" style="font-size:14px;">${state.settings.selectedModel}</div>
+              <div class="metric__label">Model</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">${state.settings.defaultAspectRatio}</div>
+              <div class="metric__label">Ratio</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value" style="font-size:14px;">${state.settings.selectedModel === 'chroma1-hd' ? 'Med' : '—'}</div>
+              <div class="metric__label">Cost</div>
+            </div>
+          </div>
+
+          <div class="action-grid" style="margin-top:var(--sp-4);">
+            <button class="btn btn--generate" data-generate style="grid-column:1/-1;">${icon('bolt')} Generate</button>
+            <button class="btn" data-back-edit>${icon('edit')} Edit</button>
+            <button class="btn" data-save-doll>${icon('save')} Save Doll</button>
+            <button class="btn" data-randomize>${icon('dice')} Random</button>
+            <button class="btn" data-empty-form>${icon('trash')} Reset</button>
+          </div>
+
+          <div class="status ${state.app.bridgeDetected ? 'status--success' : 'status--warning'}" style="margin-top:var(--sp-4);">
+            ${state.app.bridgeDetected ? 'Bridge connected' : 'Bridge not detected'}
+          </div>
+          ${state.xgen.errorMessage
+            ? `<div class="status status--error" style="margin-top:var(--sp-2);">${state.xgen.errorMessage}</div>`
+            : ''
+          }
+        </div>
       </div>
     </div>
   `;

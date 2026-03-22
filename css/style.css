@@ -1030,10 +1030,18 @@ img { display: block; max-width: 100%; }
   display: none;
 }
 
+.xgen-mobile-block {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .option-grid { grid-template-columns: repeat(3, 1fr); }
   .metrics { grid-template-columns: repeat(3, 1fr); }
   .action-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .viewer__empty { aspect-ratio: 3/2; max-height: 25vh; }
 }
 
 @media (min-width: 1024px) {
@@ -1068,6 +1076,10 @@ img { display: block; max-width: 100%; }
     display: block;
     position: sticky;
     top: calc(var(--topbar-h) + var(--sp-4));
+  }
+
+  .xgen-mobile-block {
+    display: none;
   }
 
   .option-grid { grid-template-columns: repeat(3, 1fr); }
