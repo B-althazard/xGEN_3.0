@@ -1,0 +1,1643 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "identity",
+      "label": "Identity",
+      "icon": "face",
+      "fields": [
+        {
+          "id": "age",
+          "label": "Age",
+          "type": "single-select",
+          "required": true,
+          "options": [
+            { "id": "18plus", "label": "+18", "promptValue": "18+" },
+            { "id": "20s", "label": "20s", "promptValue": "woman in her 20s" },
+            { "id": "30s", "label": "30s", "promptValue": "woman in her 30s" },
+            { "id": "40s", "label": "40s", "promptValue": "woman in her 40s" },
+            { "id": "50s", "label": "50s", "promptValue": "woman in her 50s" },
+            { "id": "60plus", "label": "60+", "promptValue": "mature woman" }
+          ]
+        },
+        {
+          "id": "ethnicity",
+          "label": "Ethnicity",
+          "type": "shape-modal",
+          "required": true,
+          "modalImage": "assets/modals/ethnicity.png",
+          "options": [
+            { "id": "caucasian", "label": "Caucasian", "promptValue": "caucasian woman" },
+            { "id": "latina", "label": "Latina", "promptValue": "latina woman" },
+            { "id": "asian", "label": "Asian", "promptValue": "asian woman" },
+            { "id": "arab", "label": "Arab", "promptValue": "arab woman" },
+            { "id": "balkan", "label": "Balkan", "promptValue": "balkan woman" },
+            { "id": "nordic", "label": "Nordic", "promptValue": "nordic woman" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "physique",
+      "label": "Physique",
+      "icon": "body",
+      "fields": [
+        {
+          "id": "body_type",
+          "label": "Body Type",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/body_types.png",
+          "options": [
+            { "id": "skinny", "label": "Skinny", "promptValue": "skinny" },
+            { "id": "slim", "label": "Slim", "promptValue": "slim" },
+            { "id": "athletic", "label": "Athletic", "promptValue": "athletic build" },
+            { "id": "toned", "label": "Toned", "promptValue": "toned body" },
+            { "id": "average", "label": "Average", "promptValue": "average build" },
+            { "id": "curvy", "label": "Curvy", "promptValue": "curvy" },
+            { "id": "voluptuous", "label": "Voluptuous", "promptValue": "voluptuous" },
+            { "id": "bbw", "label": "BBW", "promptValue": "bbw" },
+            { "id": "petite", "label": "Petite", "promptValue": "petite" }
+          ]
+        },
+        {
+          "id": "height",
+          "label": "Height",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "very_short", "label": "Very Short (4'10\"-5'2\")", "promptValue": "very short" },
+            { "id": "short", "label": "Short (5'2\"-5'4\")", "promptValue": "short" },
+            { "id": "average", "label": "Average (5'4\"-5'7\")", "promptValue": "average height" },
+            { "id": "tall", "label": "Tall (5'7\"-5'10\")", "promptValue": "tall" },
+            { "id": "very_tall", "label": "Very Tall (5'10\"+)", "promptValue": "very tall" }
+          ]
+        },
+        {
+          "id": "skin_tone",
+          "label": "Skin Tone",
+          "type": "color-swatch",
+          "required": false,
+          "colors": [
+            { "id": "porcelain", "label": "Porcelain", "value": "#FFE5D4", "promptValue": "porcelain skin" },
+            { "id": "fair", "label": "Fair", "value": "#FFDBC7", "promptValue": "fair skin" },
+            { "id": "light", "label": "Light", "value": "#F5CBA7", "promptValue": "light skin" },
+            { "id": "medium", "label": "Medium", "value": "#D4A574", "promptValue": "medium skin" },
+            { "id": "tan", "label": "Tan", "value": "#B8956A", "promptValue": "tan skin" },
+            { "id": "olive", "label": "Olive", "value": "#A68B5E", "promptValue": "olive skin" },
+            { "id": "brown", "label": "Brown", "value": "#8B6F47", "promptValue": "brown skin" },
+            { "id": "dark", "label": "Dark", "value": "#5C4033", "promptValue": "dark skin" },
+            { "id": "deep", "label": "Deep", "value": "#3D2817", "promptValue": "deep dark skin" }
+          ]
+        },
+        {
+          "id": "skin_detail",
+          "label": "Skin Details",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "smooth", "label": "Smooth", "promptValue": "smooth flawless skin" },
+            { "id": "natural", "label": "Natural", "promptValue": "natural skin" },
+            { "id": "freckles", "label": "Freckles", "promptValue": "freckles" },
+            { "id": "moles", "label": "Beauty Moles", "promptValue": "beauty moles" },
+            { "id": "tan_lines", "label": "Tan Lines", "promptValue": "tan lines" },
+            { "id": "tattoos", "label": "Tattoos", "promptValue": "tattoos" },
+            { "id": "stretch_marks", "label": "Stretch Marks", "promptValue": "stretch marks" },
+            { "id": "veins", "label": "Visible Veins", "promptValue": "visible veins" },
+            { "id": "dimples", "label": "Dimples", "promptValue": "dimples" },
+            { "id": "scars", "label": "Scars", "promptValue": "scars" },
+            { "id": "birthmark", "label": "Birthmark", "promptValue": "birthmark" },
+            { "id": "piercings", "label": "Body Piercings", "promptValue": "body piercings" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bust",
+      "label": "Bust",
+      "icon": "bust",
+      "fields": [
+        {
+          "id": "cup_size",
+          "label": "Cup Size",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/cup_sizes.png",
+          "options": [
+            { "id": "flat", "label": "Flat", "promptValue": "flat chest" },
+            { "id": "small", "label": "Small (A-B)", "promptValue": "small breasts" },
+            { "id": "medium", "label": "Medium (C-D)", "promptValue": "medium breasts" },
+            { "id": "large", "label": "Large (DD-E)", "promptValue": "large breasts" },
+            { "id": "very_large", "label": "Very Large (F-G)", "promptValue": "very large breasts" },
+            { "id": "huge", "label": "Huge (H+)", "promptValue": "huge breasts" }
+          ]
+        },
+        {
+          "id": "bust_shape",
+          "label": "Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/bust_shapes.png",
+          "options": [
+            { "id": "perky", "label": "Perky", "promptValue": "perky breasts" },
+            { "id": "round", "label": "Round", "promptValue": "round breasts" },
+            { "id": "natural", "label": "Natural", "promptValue": "natural breasts" },
+            { "id": "wide_set", "label": "Wide Set", "promptValue": "wide set breasts" },
+            { "id": "close_set", "label": "Close Set", "promptValue": "close set breasts" },
+            { "id": "saggy", "label": "Saggy", "promptValue": "saggy breasts" },
+            { "id": "firm", "label": "Firm", "promptValue": "firm breasts" }
+          ]
+        },
+        {
+          "id": "nipples",
+          "label": "Nipples",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "small", "label": "Small", "promptValue": "small nipples" },
+            { "id": "medium", "label": "Medium", "promptValue": "medium nipples" },
+            { "id": "large", "label": "Large", "promptValue": "large nipples" },
+            { "id": "puffy", "label": "Puffy", "promptValue": "puffy nipples" },
+            { "id": "inverted", "label": "Inverted", "promptValue": "inverted nipples" },
+            { "id": "hardened", "label": "Hardened", "promptValue": "hardened nipples" }
+          ]
+        },
+        {
+          "id": "bust_state",
+          "label": "Bust State",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "covered", "label": "Covered", "promptValue": "covered" },
+            { "id": "exposed", "label": "Exposed", "promptValue": "exposed" },
+            { "id": "wet", "label": "Wet", "promptValue": "wet skin" },
+            { "id": "oiled", "label": "Oiled", "promptValue": "oiled skin" },
+            { "id": "sweaty", "label": "Sweaty", "promptValue": "sweaty skin" },
+            { "id": "shiny", "label": "Shiny", "promptValue": "shiny skin" },
+            { "id": "nipple_clamps", "label": "Nipple Clamps", "promptValue": "nipple clamps on nipples" },
+            { "id": "breast_bondage", "label": "Breast Bondage", "promptValue": "breast bondage with rope" },
+            { "id": "cum_on_breasts", "label": "Cum On Breasts", "promptValue": "cum on breasts" },
+            { "id": "lactating", "label": "Lactating", "promptValue": "lactating breasts" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lower_body",
+      "label": "Lower Body",
+      "icon": "hips",
+      "fields": [
+        {
+          "id": "waist",
+          "label": "Waist",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "slim", "label": "Slim", "promptValue": "slim waist" },
+            { "id": "narrow", "label": "Narrow", "promptValue": "narrow waist" },
+            { "id": "average", "label": "Average", "promptValue": "average waist" },
+            { "id": "thick", "label": "Thick", "promptValue": "thick waist" },
+            { "id": "wide", "label": "Wide", "promptValue": "wide waist" }
+          ]
+        },
+        {
+          "id": "hips",
+          "label": "Hips",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "narrow", "label": "Narrow", "promptValue": "narrow hips" },
+            { "id": "average", "label": "Average", "promptValue": "average hips" },
+            { "id": "wide", "label": "Wide", "promptValue": "wide hips" },
+            { "id": "very_wide", "label": "Very Wide", "promptValue": "very wide hips" },
+            { "id": "childbearing", "label": "Childbearing", "promptValue": "childbearing hips" }
+          ]
+        },
+        {
+          "id": "ass",
+          "label": "Ass",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/ass_shapes.png",
+          "options": [
+            { "id": "flat", "label": "Flat", "promptValue": "flat ass" },
+            { "id": "small", "label": "Small", "promptValue": "small ass" },
+            { "id": "medium", "label": "Medium", "promptValue": "medium ass" },
+            { "id": "large", "label": "Large", "promptValue": "large ass" },
+            { "id": "huge", "label": "Huge", "promptValue": "huge ass" },
+            { "id": "bubble", "label": "Bubble", "promptValue": "bubble butt" },
+            { "id": "heart", "label": "Heart Shaped", "promptValue": "heart shaped ass" },
+            { "id": "round", "label": "Round", "promptValue": "round ass" },
+            { "id": "square", "label": "Square", "promptValue": "square ass" }
+          ]
+        },
+        {
+          "id": "legs",
+          "label": "Legs",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "slim", "label": "Slim", "promptValue": "slim legs" },
+            { "id": "toned", "label": "Toned", "promptValue": "toned legs" },
+            { "id": "athletic", "label": "Athletic", "promptValue": "athletic legs" },
+            { "id": "thick", "label": "Thick", "promptValue": "thick thighs" },
+            { "id": "chubby", "label": "Chubby", "promptValue": "chubby legs" },
+            { "id": "short", "label": "Short", "promptValue": "short legs" },
+            { "id": "long", "label": "Long", "promptValue": "long legs" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nsfw_body",
+      "label": "NSFW — Body",
+      "icon": "body",
+      "fields": [
+        {
+          "id": "pussy_style",
+          "label": "Pussy Style",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "bare", "label": "Bare", "promptValue": "fully shaved bare pussy" },
+            { "id": "landing_strip", "label": "Landing Strip", "promptValue": "landing strip trimmed pussy" },
+            { "id": "trimmed", "label": "Trimmed", "promptValue": "neatly trimmed pussy" },
+            { "id": "natural_bush", "label": "Natural Bush", "promptValue": "natural hairy pussy" },
+            { "id": "pierced", "label": "Pierced", "promptValue": "pussy piercing jewelry" },
+            { "id": "small_tight", "label": "Small Tight", "promptValue": "small tight pussy" },
+            { "id": "large_lips", "label": "Large Lips", "promptValue": "large labia pussy" }
+          ]
+        },
+        {
+          "id": "pussy_state",
+          "label": "Pussy State",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "closed", "label": "Closed", "promptValue": "closed tight pussy" },
+            { "id": "wet", "label": "Wet", "promptValue": "wet dripping aroused pussy" },
+            { "id": "spread_open", "label": "Spread Open", "promptValue": "spread open pussy" },
+            { "id": "gaping", "label": "Gaping", "promptValue": "gaping wide open pussy" },
+            { "id": "creampie", "label": "Creampie", "promptValue": "creampie cum dripping from pussy" },
+            { "id": "fingered", "label": "Fingered", "promptValue": "fingers inside pussy" },
+            { "id": "toy_inside", "label": "Toy Inside", "promptValue": "toy dildo inserted in pussy" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "futa",
+      "label": "Futa — Cock & Balls",
+      "icon": "body",
+      "fields": [
+        {
+          "id": "futa_enabled",
+          "label": "Enable Futa",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "off", "label": "Off", "promptValue": "" },
+            { "id": "on", "label": "On", "promptValue": "futa" }
+          ]
+        },
+        {
+          "id": "futa_size",
+          "label": "Cock Size",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "small", "label": "Small", "promptValue": "small cock" },
+            { "id": "average", "label": "Average", "promptValue": "average cock" },
+            { "id": "large", "label": "Large", "promptValue": "large cock" },
+            { "id": "big_thick", "label": "Big Thick", "promptValue": "big thick cock" },
+            { "id": "huge", "label": "Huge", "promptValue": "huge thick cock" },
+            { "id": "enormous", "label": "Enormous", "promptValue": "enormous cock" },
+            { "id": "massive", "label": "Massive", "promptValue": "massive horse cock" },
+            { "id": "hyper", "label": "Hyper", "promptValue": "hyper enormous cock" }
+          ]
+        },
+        {
+          "id": "futa_shape",
+          "label": "Cock Shape",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "slim", "label": "Slim", "promptValue": "slim cock" },
+            { "id": "thick_veiny", "label": "Thick Veiny", "promptValue": "thick veiny cock" },
+            { "id": "curved", "label": "Curved", "promptValue": "curved cock" },
+            { "id": "girthy", "label": "Girthy", "promptValue": "girthy cock" }
+          ]
+        },
+        {
+          "id": "futa_cut",
+          "label": "Cock Cut",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "circumcised", "label": "Circumcised", "promptValue": "circumcised" },
+            { "id": "uncut", "label": "Uncut", "promptValue": "uncircumcised with foreskin" }
+          ]
+        },
+        {
+          "id": "futa_state",
+          "label": "Cock State",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "flaccid", "label": "Flaccid", "promptValue": "flaccid soft cock" },
+            { "id": "semi_erect", "label": "Semi-Erect", "promptValue": "semi-erect cock" },
+            { "id": "fully_erect", "label": "Fully Erect", "promptValue": "fully erect throbbing cock" },
+            { "id": "throbbing", "label": "Throbbing", "promptValue": "throbbing hard cock" }
+          ]
+        },
+        {
+          "id": "futa_cum",
+          "label": "Cock Cum",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "dry", "label": "Dry", "promptValue": "" },
+            { "id": "pre_cum", "label": "Pre-Cum", "promptValue": "pre-cum dripping from cock" },
+            { "id": "cumming", "label": "Cumming", "promptValue": "actively cumming ejaculating cock" },
+            { "id": "dripping", "label": "Dripping", "promptValue": "cum dripping off cock" },
+            { "id": "cum_covered", "label": "Cum-Covered", "promptValue": "cock covered in cum" }
+          ]
+        },
+        {
+          "id": "futa_balls",
+          "label": "Balls",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "small", "label": "Small", "promptValue": "small balls" },
+            { "id": "medium", "label": "Medium", "promptValue": "medium balls" },
+            { "id": "large", "label": "Large", "promptValue": "large heavy balls" },
+            { "id": "huge", "label": "Huge", "promptValue": "huge heavy balls" }
+          ]
+        },
+        {
+          "id": "futa_pussy",
+          "label": "Also Has Pussy?",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "has_pussy", "label": "Yes — Has Pussy", "promptValue": "and also has a pussy below her cock" },
+            { "id": "no_pussy", "label": "No Pussy", "promptValue": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "label": "Face",
+      "icon": "face_detail",
+      "fields": [
+        {
+          "id": "face_shape",
+          "label": "Face Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/face_shapes.png",
+          "options": [
+            { "id": "oval", "label": "Oval", "promptValue": "oval face" },
+            { "id": "round", "label": "Round", "promptValue": "round face" },
+            { "id": "heart", "label": "Heart", "promptValue": "heart shaped face" },
+            { "id": "square", "label": "Square", "promptValue": "square jaw" },
+            { "id": "diamond", "label": "Diamond", "promptValue": "diamond face" },
+            { "id": "oblong", "label": "Oblong", "promptValue": "oblong face" },
+            { "id": "triangle", "label": "Triangle", "promptValue": "triangle face" }
+          ]
+        },
+        {
+          "id": "eyes_shape",
+          "label": "Eyes Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/eye_shapes.png",
+          "options": [
+            { "id": "almond", "label": "Almond", "promptValue": "almond shaped eyes" },
+            { "id": "round", "label": "Round", "promptValue": "round eyes" },
+            { "id": "hooded", "label": "Hooded", "promptValue": "hooded eyes" },
+            { "id": "monolid", "label": "Monolid", "promptValue": "monolid eyes" },
+            { "id": "upturned", "label": "Upturned", "promptValue": "upturned eyes" },
+            { "id": "downturned", "label": "Downturned", "promptValue": "downturned eyes" },
+            { "id": "wide", "label": "Wide Set", "promptValue": "wide set eyes" },
+            { "id": "close", "label": "Close Set", "promptValue": "close set eyes" }
+          ]
+        },
+        {
+          "id": "eye_color",
+          "label": "Eye Color",
+          "type": "color-swatch",
+          "required": false,
+          "colors": [
+            { "id": "brown", "label": "Brown", "value": "#654321", "promptValue": "brown eyes" },
+            { "id": "dark_brown", "label": "Dark Brown", "value": "#3B2414", "promptValue": "dark brown eyes" },
+            { "id": "hazel", "label": "Hazel", "value": "#8E7618", "promptValue": "hazel eyes" },
+            { "id": "blue", "label": "Blue", "value": "#4A90C2", "promptValue": "blue eyes" },
+            { "id": "light_blue", "label": "Light Blue", "value": "#87CEEB", "promptValue": "light blue eyes" },
+            { "id": "green", "label": "Green", "value": "#50C878", "promptValue": "green eyes" },
+            { "id": "grey", "label": "Grey", "value": "#808080", "promptValue": "grey eyes" },
+            { "id": "amber", "label": "Amber", "value": "#FFBF00", "promptValue": "amber eyes" },
+            { "id": "violet", "label": "Violet", "value": "#8B5FBF", "promptValue": "violet eyes" },
+            { "id": "red", "label": "Red", "value": "#CC0000", "promptValue": "red eyes" },
+            { "id": "heterochromia", "label": "Heterochromia", "value": "#FF6B6B", "promptValue": "heterochromia" }
+          ]
+        },
+        {
+          "id": "eyebrows",
+          "label": "Eyebrows",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/eyebrow_shapes.png",
+          "options": [
+            { "id": "thin", "label": "Thin", "promptValue": "thin eyebrows" },
+            { "id": "arched", "label": "Arched", "promptValue": "arched eyebrows" },
+            { "id": "straight", "label": "Straight", "promptValue": "straight eyebrows" },
+            { "id": "bushy", "label": "Bushy", "promptValue": "bushy eyebrows" },
+            { "id": "feathered", "label": "Feathered", "promptValue": "feathered eyebrows" },
+            { "id": "sharp", "label": "Sharp", "promptValue": "sharp eyebrows" }
+          ]
+        },
+        {
+          "id": "nose_shape",
+          "label": "Nose Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/nose_shapes.png",
+          "options": [
+            { "id": "straight", "label": "Straight", "promptValue": "straight Greek nose" },
+            { "id": "aquiline", "label": "Aquiline", "promptValue": "aquiline Roman nose, slight convex bridge" },
+            { "id": "button", "label": "Button", "promptValue": "button nose, small rounded" },
+            { "id": "upturned_snub", "label": "Upturned / Snub", "promptValue": "upturned snub nose" },
+            { "id": "celestial", "label": "Celestial", "promptValue": "celestial nose, soft upturned concave bridge" },
+            { "id": "bulbous", "label": "Bulbous", "promptValue": "bulbous rounded tip nose" },
+            { "id": "flat_wide", "label": "Flat / Wide", "promptValue": "flat wide nose, low bridge" },
+            { "id": "hooked_hawk", "label": "Hooked / Hawk", "promptValue": "hooked hawk nose, downward curved tip" },
+            { "id": "nubian", "label": "Nubian", "promptValue": "Nubian nose, elongated bridge, wide base" },
+            { "id": "pointed", "label": "Pointed", "promptValue": "pointed refined narrow nose" }
+          ]
+        },
+        {
+          "id": "nose_bridge",
+          "label": "Nose Bridge",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "high_bridge", "label": "High Bridge", "promptValue": "high nose bridge" },
+            { "id": "low_bridge", "label": "Low Bridge", "promptValue": "low flat nose bridge" },
+            { "id": "medium_bridge", "label": "Medium Bridge", "promptValue": "medium nose bridge" },
+            { "id": "slim_bridge", "label": "Slim Bridge", "promptValue": "slim narrow nose bridge" },
+            { "id": "wide_bridge", "label": "Wide Bridge", "promptValue": "wide nose bridge" },
+            { "id": "bumped", "label": "Bumped", "promptValue": "nose bridge with slight bump" }
+          ]
+        },
+        {
+          "id": "nose_nostrils",
+          "label": "Nose Nostrils",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "narrow", "label": "Narrow", "promptValue": "narrow nostrils" },
+            { "id": "average", "label": "Average", "promptValue": "average nostrils" },
+            { "id": "wide", "label": "Wide", "promptValue": "wide nostrils" },
+            { "id": "flared", "label": "Flared", "promptValue": "flared nostrils" },
+            { "id": "pierced", "label": "Pierced", "promptValue": "nostril piercing" }
+          ]
+        },
+        {
+          "id": "nose_tip",
+          "label": "Nose Tip",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "pointed", "label": "Pointed", "promptValue": "pointed nose tip" },
+            { "id": "round", "label": "Round", "promptValue": "round soft nose tip" },
+            { "id": "upturned", "label": "Upturned", "promptValue": "upturned nose tip" },
+            { "id": "downturned", "label": "Downturned", "promptValue": "downturned nose tip" },
+            { "id": "refined", "label": "Refined", "promptValue": "refined delicate nose tip" }
+          ]
+        },
+        {
+          "id": "lips_shape",
+          "label": "Lips Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/lip_shapes.png",
+          "options": [
+            { "id": "thin", "label": "Thin", "promptValue": "thin lips" },
+            { "id": "full", "label": "Full", "promptValue": "full lips" },
+            { "id": "bow", "label": "Bow-shaped", "promptValue": "bow shaped lips" },
+            { "id": "wide", "label": "Wide", "promptValue": "wide lips" },
+            { "id": "heart", "label": "Heart", "promptValue": "heart shaped lips" },
+            { "id": "plump", "label": "Plump", "promptValue": "plump lips" },
+            { "id": "downturned", "label": "Downturned", "promptValue": "downturned lips" },
+            { "id": "cupids_bow", "label": "Cupid's Bow", "promptValue": "cupid's bow lips" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hair",
+      "label": "Hair",
+      "icon": "hair",
+      "fields": [
+        {
+          "id": "hair_color",
+          "label": "Hair Color",
+          "type": "color-swatch",
+          "multiSelect": true,
+          "required": false,
+          "colors": [
+            { "id": "black", "label": "Black", "value": "#000000", "promptValue": "black hair" },
+            { "id": "dark_brown", "label": "Dark Brown", "value": "#3B2414", "promptValue": "dark brown hair" },
+            { "id": "brown", "label": "Brown", "value": "#654321", "promptValue": "brown hair" },
+            { "id": "light_brown", "label": "Light Brown", "value": "#8B6F47", "promptValue": "light brown hair" },
+            { "id": "dirty_blonde", "label": "Dirty Blonde", "value": "#A68B5E", "promptValue": "dirty blonde hair" },
+            { "id": "blonde", "label": "Blonde", "value": "#D4AF37", "promptValue": "blonde hair" },
+            { "id": "platinum", "label": "Platinum", "value": "#E5E4E2", "promptValue": "platinum blonde hair" },
+            { "id": "red", "label": "Red", "value": "#8B0000", "promptValue": "red hair" },
+            { "id": "auburn", "label": "Auburn", "value": "#A52A2A", "promptValue": "auburn hair" },
+            { "id": "ginger", "label": "Ginger", "value": "#B7410E", "promptValue": "ginger hair" },
+            { "id": "grey", "label": "Grey", "value": "#808080", "promptValue": "grey hair" },
+            { "id": "white", "label": "White", "value": "#FFFFFF", "promptValue": "white hair" },
+            { "id": "silver", "label": "Silver", "value": "#C0C0C0", "promptValue": "silver hair" },
+            { "id": "pink", "label": "Pink", "value": "#FFC0CB", "promptValue": "pink hair" },
+            { "id": "blue", "label": "Blue", "value": "#0000FF", "promptValue": "blue hair" },
+            { "id": "green", "label": "Green", "value": "#008000", "promptValue": "green hair" },
+            { "id": "purple", "label": "Purple", "value": "#800080", "promptValue": "purple hair" },
+            { "id": "rainbow", "label": "Rainbow", "value": "#FF0000", "promptValue": "rainbow hair" },
+            { "id": "ombre", "label": "Ombre", "value": "#D4AF37", "promptValue": "ombre hair" },
+            { "id": "balayage", "label": "Balayage", "value": "#B8956A", "promptValue": "balayage hair" }
+          ]
+        },
+        {
+          "id": "hair_length",
+          "label": "Length",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "bald", "label": "Bald", "promptValue": "bald" },
+            { "id": "buzz", "label": "Buzz Cut", "promptValue": "buzz cut" },
+            { "id": "pixie", "label": "Pixie", "promptValue": "pixie cut" },
+            { "id": "short", "label": "Short", "promptValue": "short hair" },
+            { "id": "bob", "label": "Bob", "promptValue": "bob cut" },
+            { "id": "lob", "label": "Lob", "promptValue": "lob cut" },
+            { "id": "shoulder", "label": "Shoulder Length", "promptValue": "shoulder length hair" },
+            { "id": "mid_back", "label": "Mid Back", "promptValue": "mid back length hair" },
+            { "id": "long", "label": "Long", "promptValue": "long hair" },
+            { "id": "very_long", "label": "Very Long", "promptValue": "very long hair" },
+            { "id": "waist", "label": "Waist Length", "promptValue": "waist length hair" },
+            { "id": "hip", "label": "Hip Length", "promptValue": "hip length hair" }
+          ]
+        },
+        {
+          "id": "hair_style",
+          "label": "Style",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "straight", "label": "Straight", "promptValue": "straight hair" },
+            { "id": "wavy", "label": "Wavy", "promptValue": "wavy hair" },
+            { "id": "curly", "label": "Curly", "promptValue": "curly hair" },
+            { "id": "coily", "label": "Coily", "promptValue": "coily hair" },
+            { "id": "braids", "label": "Braids", "promptValue": "braids" },
+            { "id": "box_braids", "label": "Box Braids", "promptValue": "box braids" },
+            { "id": "cornrows", "label": "Cornrows", "promptValue": "cornrows" },
+            { "id": "dreadlocks", "label": "Dreadlocks", "promptValue": "dreadlocks" },
+            { "id": "bun", "label": "Bun", "promptValue": "hair in a bun" },
+            { "id": "ponytail", "label": "Ponytail", "promptValue": "ponytail" },
+            { "id": "pigtails", "label": "Pigtails", "promptValue": "pigtails" },
+            { "id": "twin_buns", "label": "Twin Buns", "promptValue": "twin buns" },
+            { "id": "bangs", "label": "Bangs", "promptValue": "bangs" },
+            { "id": "fringe", "label": "Fringe", "promptValue": "fringe" },
+            { "id": "side_swept", "label": "Side Swept", "promptValue": "side swept hair" },
+            { "id": "messy", "label": "Messy", "promptValue": "messy hair" },
+            { "id": "slicked_back", "label": "Slicked Back", "promptValue": "slicked back hair" },
+            { "id": "half_up", "label": "Half Up", "promptValue": "half up hairstyle" },
+            { "id": "loose", "label": "Loose", "promptValue": "loose hair" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "makeup",
+      "label": "Makeup",
+      "icon": "makeup",
+      "fields": [
+        {
+          "id": "foundation",
+          "label": "Foundation",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "no makeup" },
+            { "id": "natural", "label": "Natural", "promptValue": "natural makeup" },
+            { "id": "matte", "label": "Matte", "promptValue": "matte foundation" },
+            { "id": "dewy", "label": "Dewy", "promptValue": "dewy skin" },
+            { "id": "full_coverage", "label": "Full Coverage", "promptValue": "full coverage foundation" },
+            { "id": "heavy", "label": "Heavy", "promptValue": "heavy makeup" }
+          ]
+        },
+        {
+          "id": "eye_makeup",
+          "label": "Eye Makeup",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "eyeshadow", "label": "Eyeshadow", "promptValue": "eyeshadow" },
+            { "id": "eyeliner", "label": "Eyeliner", "promptValue": "eyeliner" },
+            { "id": "cat_eye", "label": "Cat Eye", "promptValue": "cat eye makeup" },
+            { "id": "winged_liner", "label": "Winged Liner", "promptValue": "winged eyeliner" },
+            { "id": "smokey", "label": "Smokey", "promptValue": "smokey eyes" },
+            { "id": "cut_crease", "label": "Cut Crease", "promptValue": "cut crease" },
+            { "id": "glitter", "label": "Glitter", "promptValue": "glitter eyeshadow" },
+            { "id": "shimmer", "label": "Shimmer", "promptValue": "shimmer eyeshadow" },
+            { "id": "graphic_liner", "label": "Graphic Liner", "promptValue": "graphic eyeliner" },
+            { "id": "lower_lash", "label": "Lower Lash Focus", "promptValue": "lower lash makeup" }
+          ]
+        },
+        {
+          "id": "eyeshadow_color",
+          "label": "Eyeshadow Color",
+          "type": "color-swatch",
+          "multiSelect": true,
+          "required": false,
+          "colors": [
+            { "id": "neutral", "label": "Neutral", "value": "#D4C4B0", "promptValue": "neutral eyeshadow" },
+            { "id": "brown", "label": "Brown", "value": "#8B6F47", "promptValue": "brown eyeshadow" },
+            { "id": "gold", "label": "Gold", "value": "#FFD700", "promptValue": "gold eyeshadow" },
+            { "id": "bronze", "label": "Bronze", "value": "#CD7F32", "promptValue": "bronze eyeshadow" },
+            { "id": "pink", "label": "Pink", "value": "#FFB6C1", "promptValue": "pink eyeshadow" },
+            { "id": "purple", "label": "Purple", "value": "#9370DB", "promptValue": "purple eyeshadow" },
+            { "id": "blue", "label": "Blue", "value": "#4A90C2", "promptValue": "blue eyeshadow" },
+            { "id": "green", "label": "Green", "value": "#90EE90", "promptValue": "green eyeshadow" },
+            { "id": "smokey", "label": "Smokey", "value": "#2C2C2C", "promptValue": "smokey eyeshadow" },
+            { "id": "red", "label": "Red", "value": "#DC143C", "promptValue": "red eyeshadow" },
+            { "id": "orange", "label": "Orange", "value": "#FF8C00", "promptValue": "orange eyeshadow" },
+            { "id": "rainbow", "label": "Rainbow", "value": "#FF0000", "promptValue": "rainbow eyeshadow" }
+          ]
+        },
+        {
+          "id": "lashes",
+          "label": "Lashes",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "natural", "label": "Natural", "promptValue": "natural lashes" },
+            { "id": "mascara", "label": "Mascara", "promptValue": "mascara" },
+            { "id": "voluminous", "label": "Voluminous", "promptValue": "voluminous lashes" },
+            { "id": "full", "label": "Full", "promptValue": "full lashes" },
+            { "id": "dramatic", "label": "Dramatic", "promptValue": "dramatic lashes" },
+            { "id": "fake", "label": "False Lashes", "promptValue": "false eyelashes" },
+            { "id": "wispy", "label": "Wispy", "promptValue": "wispy lashes" }
+          ]
+        },
+        {
+          "id": "lip_makeup",
+          "label": "Lip Makeup",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "bare lips" },
+            { "id": "nude", "label": "Nude", "promptValue": "nude lipstick" },
+            { "id": "glossy", "label": "Glossy", "promptValue": "glossy lips" },
+            { "id": "matte", "label": "Matte", "promptValue": "matte lipstick" },
+            { "id": "satin", "label": "Satin", "promptValue": "satin finish lips" },
+            { "id": "metallic", "label": "Metallic", "promptValue": "metallic lipstick" },
+            { "id": "dark", "label": "Dark", "promptValue": "dark lipstick" },
+            { "id": "ombre", "label": "Ombre", "promptValue": "ombre lips" },
+            { "id": "stained", "label": "Stained", "promptValue": "lip stain" }
+          ]
+        },
+        {
+          "id": "lip_color",
+          "label": "Lip Color",
+          "type": "color-swatch",
+          "required": false,
+          "colors": [
+            { "id": "nude", "label": "Nude", "value": "#D4A574", "promptValue": "nude lips" },
+            { "id": "pink", "label": "Pink", "value": "#FF69B4", "promptValue": "pink lips" },
+            { "id": "coral", "label": "Coral", "value": "#FF7F50", "promptValue": "coral lips" },
+            { "id": "peach", "label": "Peach", "value": "#FFDAB9", "promptValue": "peach lips" },
+            { "id": "red", "label": "Red", "value": "#DC143C", "promptValue": "red lips" },
+            { "id": "cherry", "label": "Cherry", "value": "#990000", "promptValue": "cherry red lips" },
+            { "id": "berry", "label": "Berry", "value": "#8B008B", "promptValue": "berry lips" },
+            { "id": "plum", "label": "Plum", "value": "#8E4585", "promptValue": "plum lips" },
+            { "id": "burgundy", "label": "Burgundy", "value": "#800020", "promptValue": "burgundy lips" },
+            { "id": "brown", "label": "Brown", "value": "#8B4513", "promptValue": "brown lips" },
+            { "id": "orange", "label": "Orange", "value": "#FF8C00", "promptValue": "orange lips" },
+            { "id": "black", "label": "Black", "value": "#000000", "promptValue": "black lipstick" }
+          ]
+        },
+        {
+          "id": "blush_effects",
+          "label": "Blush & Effects",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "blush", "label": "Blush", "promptValue": "blush" },
+            { "id": "contour", "label": "Contour", "promptValue": "contoured" },
+            { "id": "highlighter", "label": "Highlighter", "promptValue": "highlighter" },
+            { "id": "glow", "label": "Glow", "promptValue": "glowing skin" },
+            { "id": "freckles_makeup", "label": "Fake Freckles", "promptValue": "fake freckles" },
+            { "id": "tears", "label": "Tears", "promptValue": "tears" },
+            { "id": "sweat", "label": "Sweat", "promptValue": "sweaty skin" },
+            { "id": "flushed", "label": "Flushed", "promptValue": "flushed cheeks" },
+            { "id": "sunburnt", "label": "Sunburnt", "promptValue": "sunburnt skin" },
+            { "id": "face_gems", "label": "Face Gems", "promptValue": "face gems" },
+            { "id": "face_paint", "label": "Face Paint", "promptValue": "face paint" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clothing",
+      "label": "Clothing",
+      "icon": "clothing",
+      "fields": [
+        {
+          "id": "complete_outfit",
+          "label": "Complete Outfit",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "nude", "label": "Nude", "promptValue": "nude" },
+            { "id": "lingerie", "label": "Lingerie", "promptValue": "lingerie" },
+            { "id": "bikini", "label": "Bikini", "promptValue": "bikini" },
+            { "id": "swimsuit", "label": "Swimsuit", "promptValue": "swimsuit" },
+            { "id": "casual", "label": "Casual", "promptValue": "casual clothes" },
+            { "id": "streetwear", "label": "Streetwear", "promptValue": "streetwear" },
+            { "id": "formal", "label": "Formal", "promptValue": "formal attire" },
+            { "id": "business", "label": "Business", "promptValue": "business attire" },
+            { "id": "athletic", "label": "Athletic", "promptValue": "athletic wear" },
+            { "id": "gym", "label": "Gym", "promptValue": "gym clothes" },
+            { "id": "yoga", "label": "Yoga", "promptValue": "yoga pants and sports bra" },
+            { "id": "school", "label": "School", "promptValue": "school uniform" },
+            { "id": "maid", "label": "Maid", "promptValue": "maid outfit" },
+            { "id": "nurse", "label": "Nurse", "promptValue": "nurse uniform" },
+            { "id": "police", "label": "Police", "promptValue": "police uniform" },
+            { "id": "teacher", "label": "Teacher", "promptValue": "teacher outfit" },
+            { "id": "goth", "label": "Goth", "promptValue": "goth outfit" },
+            { "id": "punk", "label": "Punk", "promptValue": "punk outfit" },
+            { "id": "e_girl", "label": "E-Girl", "promptValue": "e-girl outfit" },
+            { "id": "soft_girl", "label": "Soft Girl", "promptValue": "soft girl aesthetic" },
+            { "id": "cottagecore", "label": "Cottagecore", "promptValue": "cottagecore dress" },
+            { "id": "vintage", "label": "Vintage", "promptValue": "vintage outfit" },
+            { "id": "retro", "label": "Retro", "promptValue": "retro outfit" },
+            { "id": "futuristic", "label": "Futuristic", "promptValue": "futuristic outfit" },
+            { "id": "cyberpunk", "label": "Cyberpunk", "promptValue": "cyberpunk outfit" },
+            { "id": "fantasy", "label": "Fantasy", "promptValue": "fantasy outfit" },
+            { "id": "elf", "label": "Elf", "promptValue": "elf costume" },
+            { "id": "goddess", "label": "Goddess", "promptValue": "goddess attire" },
+            { "id": "wedding_dress", "label": "Wedding Dress", "promptValue": "wedding dress" },
+            { "id": "evening_gown", "label": "Evening Gown", "promptValue": "evening gown" },
+            { "id": "cocktail_dress", "label": "Cocktail Dress", "promptValue": "cocktail dress" },
+            { "id": "mini_dress", "label": "Mini Dress", "promptValue": "mini dress" },
+            { "id": "maxi_dress", "label": "Maxi Dress", "promptValue": "maxi dress" },
+            { "id": "bodycon", "label": "Bodycon", "promptValue": "bodycon dress" },
+            { "id": "slip_dress", "label": "Slip Dress", "promptValue": "slip dress" }
+          ]
+        },
+        {
+          "id": "upper_type",
+          "label": "Upper Layer Type",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None/Naked", "promptValue": "topless" },
+            { "id": "bra", "label": "Bra", "promptValue": "bra" },
+            { "id": "bralette", "label": "Bralette", "promptValue": "bralette" },
+            { "id": "crop_top", "label": "Crop Top", "promptValue": "crop top" },
+            { "id": "tank_top", "label": "Tank Top", "promptValue": "tank top" },
+            { "id": "tshirt", "label": "T-Shirt", "promptValue": "t-shirt" },
+            { "id": "blouse", "label": "Blouse", "promptValue": "blouse" },
+            { "id": "shirt", "label": "Shirt", "promptValue": "shirt" },
+            { "id": "sweater", "label": "Sweater", "promptValue": "sweater" },
+            { "id": "hoodie", "label": "Hoodie", "promptValue": "hoodie" },
+            { "id": "jacket", "label": "Jacket", "promptValue": "jacket" },
+            { "id": "blazer", "label": "Blazer", "promptValue": "blazer" },
+            { "id": "coat", "label": "Coat", "promptValue": "coat" },
+            { "id": "vest", "label": "Vest", "promptValue": "vest" },
+            { "id": "cardigan", "label": "Cardigan", "promptValue": "cardigan" },
+            { "id": "tube_top", "label": "Tube Top", "promptValue": "tube top" },
+            { "id": "halter", "label": "Halter Top", "promptValue": "halter top" },
+            { "id": "off_shoulder", "label": "Off Shoulder", "promptValue": "off shoulder top" },
+            { "id": "one_shoulder", "label": "One Shoulder", "promptValue": "one shoulder top" }
+          ]
+        },
+        {
+          "id": "upper_style",
+          "label": "Upper Style",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "fitted", "label": "Fitted", "promptValue": "fitted" },
+            { "id": "tight", "label": "Tight", "promptValue": "tight" },
+            { "id": "loose", "label": "Loose", "promptValue": "loose" },
+            { "id": "oversized", "label": "Oversized", "promptValue": "oversized" },
+            { "id": "cropped", "label": "Cropped", "promptValue": "cropped" },
+            { "id": "sheer", "label": "Sheer", "promptValue": "sheer" },
+            { "id": "lace", "label": "Lace", "promptValue": "lace" },
+            { "id": "mesh", "label": "Mesh", "promptValue": "mesh" },
+            { "id": "leather", "label": "Leather", "promptValue": "leather" },
+            { "id": "latex", "label": "Latex", "promptValue": "latex" },
+            { "id": "silk", "label": "Silk", "promptValue": "silk" },
+            { "id": "satin", "label": "Satin", "promptValue": "satin" },
+            { "id": "velvet", "label": "Velvet", "promptValue": "velvet" },
+            { "id": "denim", "label": "Denim", "promptValue": "denim" },
+            { "id": "cotton", "label": "Cotton", "promptValue": "cotton" },
+            { "id": "knit", "label": "Knit", "promptValue": "knit" },
+            { "id": "ribbed", "label": "Ribbed", "promptValue": "ribbed" },
+            { "id": "sequined", "label": "Sequined", "promptValue": "sequined" }
+          ]
+        },
+        {
+          "id": "upper_color",
+          "label": "Upper Color",
+          "type": "color-swatch",
+          "required": false,
+          "colors": [
+            { "id": "white", "label": "White", "value": "#FFFFFF", "promptValue": "white" },
+            { "id": "black", "label": "Black", "value": "#000000", "promptValue": "black" },
+            { "id": "grey", "label": "Grey", "value": "#808080", "promptValue": "grey" },
+            { "id": "red", "label": "Red", "value": "#FF0000", "promptValue": "red" },
+            { "id": "pink", "label": "Pink", "value": "#FFC0CB", "promptValue": "pink" },
+            { "id": "purple", "label": "Purple", "value": "#800080", "promptValue": "purple" },
+            { "id": "blue", "label": "Blue", "value": "#0000FF", "promptValue": "blue" },
+            { "id": "green", "label": "Green", "value": "#008000", "promptValue": "green" },
+            { "id": "yellow", "label": "Yellow", "value": "#FFFF00", "promptValue": "yellow" },
+            { "id": "orange", "label": "Orange", "value": "#FFA500", "promptValue": "orange" },
+            { "id": "brown", "label": "Brown", "value": "#A52A2A", "promptValue": "brown" },
+            { "id": "beige", "label": "Beige", "value": "#F5F5DC", "promptValue": "beige" },
+            { "id": "navy", "label": "Navy", "value": "#000080", "promptValue": "navy" },
+            { "id": "burgundy", "label": "Burgundy", "value": "#800020", "promptValue": "burgundy" },
+            { "id": "olive", "label": "Olive", "value": "#808000", "promptValue": "olive" },
+            { "id": "gold", "label": "Gold", "value": "#FFD700", "promptValue": "gold" },
+            { "id": "silver", "label": "Silver", "value": "#C0C0C0", "promptValue": "silver" }
+          ]
+        },
+        {
+          "id": "lower_type",
+          "label": "Lower Layer Type",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None/Naked", "promptValue": "bottomless" },
+            { "id": "panties", "label": "Panties", "promptValue": "panties" },
+            { "id": "thong", "label": "Thong", "promptValue": "thong" },
+            { "id": "bikini_bottom", "label": "Bikini Bottom", "promptValue": "bikiini bottom" },
+            { "id": "shorts", "label": "Shorts", "promptValue": "shorts" },
+            { "id": "denim_shorts", "label": "Denim Shorts", "promptValue": "denim shorts" },
+            { "id": "skirt", "label": "Skirt", "promptValue": "skirt" },
+            { "id": "mini_skirt", "label": "Mini Skirt", "promptValue": "mini skirt" },
+            { "id": "pencil_skirt", "label": "Pencil Skirt", "promptValue": "pencil skirt" },
+            { "id": "pleated_skirt", "label": "Pleated Skirt", "promptValue": "pleated skirt" },
+            { "id": "jeans", "label": "Jeans", "promptValue": "jeans" },
+            { "id": "skinny_jeans", "label": "Skinny Jeans", "promptValue": "skinny jeans" },
+            { "id": "baggy_jeans", "label": "Baggy Jeans", "promptValue": "baggy jeans" },
+            { "id": "pants", "label": "Pants", "promptValue": "pants" },
+            { "id": "leggings", "label": "Leggings", "promptValue": "leggings" },
+            { "id": "yoga_pants", "label": "Yoga Pants", "promptValue": "yoga pants" },
+            { "id": "sweatpants", "label": "Sweatpants", "promptValue": "sweatpants" },
+            { "id": "cargo_pants", "label": "Cargo Pants", "promptValue": "cargo pants" },
+            { "id": "dress", "label": "Dress", "promptValue": "dress" }
+          ]
+        },
+        {
+          "id": "lower_style",
+          "label": "Lower Style",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "fitted", "label": "Fitted", "promptValue": "fitted" },
+            { "id": "tight", "label": "Tight", "promptValue": "tight" },
+            { "id": "loose", "label": "Loose", "promptValue": "loose" },
+            { "id": "baggy", "label": "Baggy", "promptValue": "baggy" },
+            { "id": "high_waisted", "label": "High Waisted", "promptValue": "high waisted" },
+            { "id": "low_rise", "label": "Low Rise", "promptValue": "low rise" },
+            { "id": "ripped", "label": "Ripped", "promptValue": "ripped" },
+            { "id": "distressed", "label": "Distressed", "promptValue": "distressed" },
+            { "id": "leather", "label": "Leather", "promptValue": "leather" },
+            { "id": "latex", "label": "Latex", "promptValue": "latex" },
+            { "id": "denim", "label": "Denim", "promptValue": "denim" },
+            { "id": "silk", "label": "Silk", "promptValue": "silk" },
+            { "id": "satin", "label": "Satin", "promptValue": "satin" },
+            { "id": "lace", "label": "Lace", "promptValue": "lace" },
+            { "id": "sheer", "label": "Sheer", "promptValue": "sheer" },
+            { "id": "mesh", "label": "Mesh", "promptValue": "mesh" },
+            { "id": "velvet", "label": "Velvet", "promptValue": "velvet" }
+          ]
+        },
+        {
+          "id": "lower_color",
+          "label": "Lower Color",
+          "type": "color-swatch",
+          "required": false,
+          "colors": [
+            { "id": "white", "label": "White", "value": "#FFFFFF", "promptValue": "white" },
+            { "id": "black", "label": "Black", "value": "#000000", "promptValue": "black" },
+            { "id": "grey", "label": "Grey", "value": "#808080", "promptValue": "grey" },
+            { "id": "red", "label": "Red", "value": "#FF0000", "promptValue": "red" },
+            { "id": "pink", "label": "Pink", "value": "#FFC0CB", "promptValue": "pink" },
+            { "id": "purple", "label": "Purple", "value": "#800080", "promptValue": "purple" },
+            { "id": "blue", "label": "Blue", "value": "#0000FF", "promptValue": "blue" },
+            { "id": "green", "label": "Green", "value": "#008000", "promptValue": "green" },
+            { "id": "yellow", "label": "Yellow", "value": "#FFFF00", "promptValue": "yellow" },
+            { "id": "orange", "label": "Orange", "value": "#FFA500", "promptValue": "orange" },
+            { "id": "brown", "label": "Brown", "value": "#A52A2A", "promptValue": "brown" },
+            { "id": "beige", "label": "Beige", "value": "#F5F5DC", "promptValue": "beige" },
+            { "id": "navy", "label": "Navy", "value": "#000080", "promptValue": "navy" },
+            { "id": "burgundy", "label": "Burgundy", "value": "#800020", "promptValue": "burgundy" },
+            { "id": "olive", "label": "Olive", "value": "#808000", "promptValue": "olive" },
+            { "id": "denim", "label": "Denim", "value": "#1560BD", "promptValue": "denim blue" }
+          ]
+        },
+        {
+          "id": "legwear",
+          "label": "Legwear",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "socks", "label": "Socks", "promptValue": "socks" },
+            { "id": "ankle_socks", "label": "Ankle Socks", "promptValue": "ankle socks" },
+            { "id": "knee_highs", "label": "Knee Highs", "promptValue": "knee high socks" },
+            { "id": "thigh_highs", "label": "Thigh Highs", "promptValue": "thigh high socks" },
+            { "id": "stockings", "label": "Stockings", "promptValue": "stockings" },
+            { "id": "pantyhose", "label": "Pantyhose", "promptValue": "pantyhose" },
+            { "id": "tights", "label": "Tights", "promptValue": "tights" },
+            { "id": "fishnets", "label": "Fishnets", "promptValue": "fishnet stockings" },
+            { "id": "garters", "label": "Garters", "promptValue": "garter belt" },
+            { "id": "leg_warmers", "label": "Leg Warmers", "promptValue": "leg warmers" }
+          ]
+        },
+        {
+          "id": "footwear",
+          "label": "Footwear",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "barefoot", "label": "Barefoot", "promptValue": "barefoot" },
+            { "id": "slippers", "label": "Slippers", "promptValue": "slippers" },
+            { "id": "flip_flops", "label": "Flip Flops", "promptValue": "flip flops" },
+            { "id": "sandals", "label": "Sandals", "promptValue": "sandals" },
+            { "id": "heels", "label": "Heels", "promptValue": "high heels" },
+            { "id": "stilettos", "label": "Stilettos", "promptValue": "stilettos" },
+            { "id": "platforms", "label": "Platforms", "promptValue": "platform heels" },
+            { "id": "wedges", "label": "Wedges", "promptValue": "wedge heels" },
+            { "id": "boots", "label": "Boots", "promptValue": "boots" },
+            { "id": "ankle_boots", "label": "Ankle Boots", "promptValue": "ankle boots" },
+            { "id": "knee_high_boots", "label": "Knee High Boots", "promptValue": "knee high boots" },
+            { "id": "thigh_high_boots", "label": "Thigh High Boots", "promptValue": "thigh high boots" },
+            { "id": "sneakers", "label": "Sneakers", "promptValue": "sneakers" },
+            { "id": "canvas_shoes", "label": "Canvas Shoes", "promptValue": "canvas shoes" },
+            { "id": "loafers", "label": "Loafers", "promptValue": "loafers" },
+            { "id": "oxfords", "label": "Oxfords", "promptValue": "oxford shoes" }
+          ]
+        },
+        {
+          "id": "accessories",
+          "label": "Accessories",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "necklace", "label": "Necklace", "promptValue": "necklace" },
+            { "id": "choker", "label": "Choker", "promptValue": "choker" },
+            { "id": "pendant", "label": "Pendant", "promptValue": "pendant" },
+            { "id": "earrings", "label": "Earrings", "promptValue": "earrings" },
+            { "id": "hoops", "label": "Hoops", "promptValue": "hoop earrings" },
+            { "id": "studs", "label": "Studs", "promptValue": "stud earrings" },
+            { "id": "bracelet", "label": "Bracelet", "promptValue": "bracelet" },
+            { "id": "bangles", "label": "Bangles", "promptValue": "bangles" },
+            { "id": "ring", "label": "Ring", "promptValue": "ring" },
+            { "id": "watch", "label": "Watch", "promptValue": "watch" },
+            { "id": "sunglasses", "label": "Sunglasses", "promptValue": "sunglasses" },
+            { "id": "glasses", "label": "Glasses", "promptValue": "glasses" },
+            { "id": "hat", "label": "Hat", "promptValue": "hat" },
+            { "id": "cap", "label": "Cap", "promptValue": "baseball cap" },
+            { "id": "beanie", "label": "Beanie", "promptValue": "beanie" },
+            { "id": "fedora", "label": "Fedora", "promptValue": "fedora" },
+            { "id": "belt", "label": "Belt", "promptValue": "belt" },
+            { "id": "hair_clip", "label": "Hair Clip", "promptValue": "hair clip" },
+            { "id": "hair_band", "label": "Hair Band", "promptValue": "hair band" },
+            { "id": "scrunchie", "label": "Scrunchie", "promptValue": "scrunchie" },
+            { "id": "gloves", "label": "Gloves", "promptValue": "gloves" },
+            { "id": "scarf", "label": "Scarf", "promptValue": "scarf" },
+            { "id": "tie", "label": "Tie", "promptValue": "tie" },
+            { "id": "bowtie", "label": "Bowtie", "promptValue": "bowtie" },
+            { "id": "body_chain", "label": "Body Chain", "promptValue": "body chain" },
+            { "id": "tattoo_visible", "label": "Visible Tattoo", "promptValue": "visible tattoo" },
+            { "id": "piercing", "label": "Piercing", "promptValue": "piercing" },
+            { "id": "nose_ring", "label": "Nose Ring", "promptValue": "nose ring" },
+            { "id": "belly_chain", "label": "Belly Chain", "promptValue": "belly chain" },
+            { "id": "anklet", "label": "Anklet", "promptValue": "anklet" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "icon": "location",
+      "fields": [
+        {
+          "id": "location",
+          "label": "Location",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "bedroom", "label": "Bedroom", "promptValue": "in a bedroom" },
+            { "id": "bathroom", "label": "Bathroom", "promptValue": "in a bathroom" },
+            { "id": "shower", "label": "Shower", "promptValue": "in the shower" },
+            { "id": "bathtub", "label": "Bathtub", "promptValue": "in a bathtub" },
+            { "id": "living_room", "label": "Living Room", "promptValue": "in a living room" },
+            { "id": "kitchen", "label": "Kitchen", "promptValue": "in a kitchen" },
+            { "id": "office", "label": "Office", "promptValue": "in an office" },
+            { "id": "classroom", "label": "Classroom", "promptValue": "in a classroom" },
+            { "id": "gym", "label": "Gym", "promptValue": "in a gym" },
+            { "id": "pool", "label": "Pool", "promptValue": "at a pool" },
+            { "id": "hot_tub", "label": "Hot Tub", "promptValue": "in a hot tub" },
+            { "id": "sauna", "label": "Sauna", "promptValue": "in a sauna" },
+            { "id": "beach", "label": "Beach", "promptValue": "at the beach" },
+            { "id": "ocean", "label": "Ocean", "promptValue": "at the ocean" },
+            { "id": "lake", "label": "Lake", "promptValue": "at a lake" },
+            { "id": "river", "label": "River", "promptValue": "by a river" },
+            { "id": "forest", "label": "Forest", "promptValue": "in a forest" },
+            { "id": "woods", "label": "Woods", "promptValue": "in the woods" },
+            { "id": "park", "label": "Park", "promptValue": "in a park" },
+            { "id": "garden", "label": "Garden", "promptValue": "in a garden" },
+            { "id": "balcony", "label": "Balcony", "promptValue": "on a balcony" },
+            { "id": "rooftop", "label": "Rooftop", "promptValue": "on a rooftop" },
+            { "id": "street", "label": "Street", "promptValue": "on the street" },
+            { "id": "alley", "label": "Alley", "promptValue": "in an alley" },
+            { "id": "parking_lot", "label": "Parking Lot", "promptValue": "in a parking lot" },
+            { "id": "car", "label": "Car", "promptValue": "in a car" },
+            { "id": "hotel_room", "label": "Hotel Room", "promptValue": "in a hotel room" },
+            { "id": "restaurant", "label": "Restaurant", "promptValue": "in a restaurant" },
+            { "id": "bar", "label": "Bar", "promptValue": "in a bar" },
+            { "id": "club", "label": "Club", "promptValue": "in a nightclub" },
+            { "id": "theater", "label": "Theater", "promptValue": "in a theater" },
+            { "id": "studio", "label": "Studio", "promptValue": "in a photo studio" },
+            { "id": "stage", "label": "Stage", "promptValue": "on a stage" },
+            { "id": "castle", "label": "Castle", "promptValue": "in a castle" },
+            { "id": "mansion", "label": "Mansion", "promptValue": "in a mansion" },
+            { "id": "cabin", "label": "Cabin", "promptValue": "in a cabin" },
+            { "id": "tent", "label": "Tent", "promptValue": "in a tent" },
+            { "id": "cave", "label": "Cave", "promptValue": "in a cave" },
+            { "id": "desert", "label": "Desert", "promptValue": "in the desert" },
+            { "id": "mountain", "label": "Mountain", "promptValue": "in the mountains" },
+            { "id": "snow", "label": "Snow", "promptValue": "in the snow" },
+            { "id": "space", "label": "Space", "promptValue": "in space" },
+            { "id": "underwater", "label": "Underwater", "promptValue": "underwater" },
+            { "id": "fantasy_realm", "label": "Fantasy Realm", "promptValue": "in a fantasy realm" }
+          ]
+        },
+        {
+          "id": "scene_type",
+          "label": "Scene Type",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "indoor", "label": "Indoor", "promptValue": "indoor" },
+            { "id": "outdoor", "label": "Outdoor", "promptValue": "outdoor" },
+            { "id": "urban", "label": "Urban", "promptValue": "urban setting" },
+            { "id": "rural", "label": "Rural", "promptValue": "rural setting" },
+            { "id": "nature", "label": "Nature", "promptValue": "natural setting" },
+            { "id": "fantasy", "label": "Fantasy", "promptValue": "fantasy setting" },
+            { "id": "sci_fi", "label": "Sci-Fi", "promptValue": "sci-fi setting" },
+            { "id": "surreal", "label": "Surreal", "promptValue": "surreal setting" },
+            { "id": "abstract", "label": "Abstract", "promptValue": "abstract background" }
+          ]
+        },
+        {
+          "id": "background",
+          "label": "Background",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "blurred", "label": "Blurred", "promptValue": "blurred background" },
+            { "id": "bokeh", "label": "Bokeh", "promptValue": "bokeh background" },
+            { "id": "detailed", "label": "Detailed", "promptValue": "detailed background" },
+            { "id": "minimal", "label": "Minimal", "promptValue": "minimal background" },
+            { "id": "plain", "label": "Plain", "promptValue": "plain background" },
+            { "id": "colorful", "label": "Colorful", "promptValue": "colorful background" },
+            { "id": "dark", "label": "Dark", "promptValue": "dark background" },
+            { "id": "bright", "label": "Bright", "promptValue": "bright background" },
+            { "id": "gradient", "label": "Gradient", "promptValue": "gradient background" },
+            { "id": "patterned", "label": "Patterned", "promptValue": "patterned background" }
+          ]
+        },
+        {
+          "id": "time_of_day",
+          "label": "Time of Day",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "morning", "label": "Morning", "promptValue": "morning" },
+            { "id": "sunrise", "label": "Sunrise", "promptValue": "sunrise" },
+            { "id": "afternoon", "label": "Afternoon", "promptValue": "afternoon" },
+            { "id": "golden_hour", "label": "Golden Hour", "promptValue": "golden hour" },
+            { "id": "sunset", "label": "Sunset", "promptValue": "sunset" },
+            { "id": "dusk", "label": "Dusk", "promptValue": "dusk" },
+            { "id": "night", "label": "Night", "promptValue": "night" },
+            { "id": "midnight", "label": "Midnight", "promptValue": "midnight" },
+            { "id": "blue_hour", "label": "Blue Hour", "promptValue": "blue hour" },
+            { "id": "dawn", "label": "Dawn", "promptValue": "dawn" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lighting",
+      "label": "Lighting",
+      "icon": "light",
+      "fields": [
+        {
+          "id": "lighting_style",
+          "label": "Style",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "natural", "label": "Natural", "promptValue": "natural lighting" },
+            { "id": "studio", "label": "Studio", "promptValue": "studio lighting" },
+            { "id": "cinematic", "label": "Cinematic", "promptValue": "cinematic lighting" },
+            { "id": "dramatic", "label": "Dramatic", "promptValue": "dramatic lighting" },
+            { "id": "soft", "label": "Soft", "promptValue": "soft lighting" },
+            { "id": "hard", "label": "Hard", "promptValue": "hard lighting" },
+            { "id": "neon", "label": "Neon", "promptValue": "neon lighting" },
+            { "id": "candlelight", "label": "Candlelight", "promptValue": "candlelight" },
+            { "id": "firelight", "label": "Firelight", "promptValue": "firelight" },
+            { "id": "moonlight", "label": "Moonlight", "promptValue": "moonlight" },
+            { "id": "sunlight", "label": "Sunlight", "promptValue": "sunlight" },
+            { "id": "window_light", "label": "Window Light", "promptValue": "window light" },
+            { "id": "backlit", "label": "Backlit", "promptValue": "backlit" },
+            { "id": "silhouette", "label": "Silhouette", "promptValue": "silhouette" },
+            { "id": "chiaroscuro", "label": "Chiaroscuro", "promptValue": "chiaroscuro" },
+            { "id": "rembrandt", "label": "Rembrandt", "promptValue": "rembrandt lighting" },
+            { "id": "butterfly", "label": "Butterfly", "promptValue": "butterfly lighting" },
+            { "id": "split", "label": "Split", "promptValue": "split lighting" },
+            { "id": "loop", "label": "Loop", "promptValue": "loop lighting" },
+            { "id": "broad", "label": "Broad", "promptValue": "broad lighting" },
+            { "id": "short", "label": "Short", "promptValue": "short lighting" },
+            { "id": "rgb", "label": "RGB", "promptValue": "rgb lighting" },
+            { "id": "bioluminescent", "label": "Bioluminescent", "promptValue": "bioluminescent lighting" }
+          ]
+        },
+        {
+          "id": "light_color",
+          "label": "Light Color",
+          "type": "color-swatch",
+          "multiSelect": true,
+          "required": false,
+          "colors": [
+            { "id": "white", "label": "White", "value": "#FFFFFF", "promptValue": "white light" },
+            { "id": "warm", "label": "Warm", "value": "#FFD700", "promptValue": "warm light" },
+            { "id": "cool", "label": "Cool", "value": "#ADD8E6", "promptValue": "cool light" },
+            { "id": "golden", "label": "Golden", "value": "#FFD700", "promptValue": "golden light" },
+            { "id": "pink", "label": "Pink", "value": "#FFB6C1", "promptValue": "pink light" },
+            { "id": "purple", "label": "Purple", "value": "#9370DB", "promptValue": "purple light" },
+            { "id": "blue", "label": "Blue", "value": "#4A90C2", "promptValue": "blue light" },
+            { "id": "cyan", "label": "Cyan", "value": "#00FFFF", "promptValue": "cyan light" },
+            { "id": "green", "label": "Green", "value": "#90EE90", "promptValue": "green light" },
+            { "id": "yellow", "label": "Yellow", "value": "#FFFF00", "promptValue": "yellow light" },
+            { "id": "orange", "label": "Orange", "value": "#FFA500", "promptValue": "orange light" },
+            { "id": "red", "label": "Red", "value": "#FF0000", "promptValue": "red light" },
+            { "id": "magenta", "label": "Magenta", "value": "#FF00FF", "promptValue": "magenta light" },
+            { "id": "mixed", "label": "Mixed", "value": "#FF6B6B", "promptValue": "mixed colored lighting" }
+          ]
+        },
+        {
+          "id": "lighting_effects",
+          "label": "Effects",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "soft_shadows", "label": "Soft Shadows", "promptValue": "soft shadows" },
+            { "id": "hard_shadows", "label": "Hard Shadows", "promptValue": "hard shadows" },
+            { "id": "rim_light", "label": "Rim Light", "promptValue": "rim lighting" },
+            { "id": "edge_light", "label": "Edge Light", "promptValue": "edge lighting" },
+            { "id": "catchlights", "label": "Catchlights", "promptValue": "catchlights in eyes" },
+            { "id": "lens_flare", "label": "Lens Flare", "promptValue": "lens flare" },
+            { "id": "light_leaks", "label": "Light Leaks", "promptValue": "light leaks" },
+            { "id": "god_rays", "label": "God Rays", "promptValue": "god rays" },
+            { "id": "volumetric", "label": "Volumetric", "promptValue": "volumetric lighting" },
+            { "id": "dappled", "label": "Dappled", "promptValue": "dappled light" },
+            { "id": "dramatic_shadows", "label": "Dramatic Shadows", "promptValue": "dramatic shadows" },
+            { "id": "glow", "label": "Glow", "promptValue": "glowing effect" },
+            { "id": "bloom", "label": "Bloom", "promptValue": "bloom effect" },
+            { "id": "sparkles", "label": "Sparkles", "promptValue": "sparkles" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "camera",
+      "label": "Camera",
+      "icon": "camera",
+      "fields": [
+        {
+          "id": "framing",
+          "label": "Framing",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "extreme_closeup", "label": "Extreme Close-up", "promptValue": "extreme close-up" },
+            { "id": "closeup", "label": "Close-up", "promptValue": "close-up" },
+            { "id": "face", "label": "Face Shot", "promptValue": "face shot" },
+            { "id": "portrait", "label": "Portrait", "promptValue": "portrait" },
+            { "id": "headshot", "label": "Headshot", "promptValue": "headshot" },
+            { "id": "bust", "label": "Bust", "promptValue": "bust shot" },
+            { "id": "half_body", "label": "Half Body", "promptValue": "half body shot" },
+            { "id": "three_quarter", "label": "Three Quarter", "promptValue": "three quarter shot" },
+            { "id": "full_body", "label": "Full Body", "promptValue": "full body shot" },
+            { "id": "wide", "label": "Wide Shot", "promptValue": "wide shot" },
+            { "id": "medium", "label": "Medium Shot", "promptValue": "medium shot" },
+            { "id": "over_shoulder", "label": "Over Shoulder", "promptValue": "over the shoulder shot" },
+            { "id": "from_behind", "label": "From Behind", "promptValue": "shot from behind" },
+            { "id": "from_above", "label": "From Above", "promptValue": "shot from above" },
+            { "id": "from_below", "label": "From Below", "promptValue": "shot from below" },
+            { "id": "dutch_angle", "label": "Dutch Angle", "promptValue": "dutch angle" },
+            { "id": "pov", "label": "POV", "promptValue": "pov" },
+            { "id": "selfie", "label": "Selfie", "promptValue": "selfie" },
+            { "id": "mirror_selfie", "label": "Mirror Selfie", "promptValue": "mirror selfie" }
+          ]
+        },
+        {
+          "id": "lens",
+          "label": "Lens",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "14mm", "label": "14mm Ultra Wide", "promptValue": "14mm lens" },
+            { "id": "24mm", "label": "24mm Wide", "promptValue": "24mm lens" },
+            { "id": "35mm", "label": "35mm", "promptValue": "35mm lens" },
+            { "id": "50mm", "label": "50mm Standard", "promptValue": "50mm lens" },
+            { "id": "85mm", "label": "85mm Portrait", "promptValue": "85mm lens" },
+            { "id": "105mm", "label": "105mm Portrait", "promptValue": "105mm lens" },
+            { "id": "135mm", "label": "135mm Telephoto", "promptValue": "135mm lens" },
+            { "id": "200mm", "label": "200mm Telephoto", "promptValue": "200mm lens" },
+            { "id": "macro", "label": "Macro", "promptValue": "macro lens" },
+            { "id": "fisheye", "label": "Fisheye", "promptValue": "fisheye lens" },
+            { "id": "tilt_shift", "label": "Tilt-Shift", "promptValue": "tilt-shift lens" },
+            { "id": "anamorphic", "label": "Anamorphic", "promptValue": "anamorphic lens" }
+          ]
+        },
+        {
+          "id": "camera_angle",
+          "label": "Camera Angle",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "eye_level", "label": "Eye Level", "promptValue": "eye level shot" },
+            { "id": "low_angle", "label": "Low Angle", "promptValue": "low angle shot" },
+            { "id": "high_angle", "label": "High Angle", "promptValue": "high angle shot" },
+            { "id": "birds_eye", "label": "Bird's Eye", "promptValue": "bird's eye view" },
+            { "id": "worms_eye", "label": "Worm's Eye", "promptValue": "worm's eye view" },
+            { "id": "overhead", "label": "Overhead", "promptValue": "overhead shot" },
+            { "id": "side_view", "label": "Side View", "promptValue": "side view" },
+            { "id": "profile", "label": "Profile", "promptValue": "profile view" },
+            { "id": "three_quarter_view", "label": "3/4 View", "promptValue": "three quarter view" }
+          ]
+        },
+        {
+          "id": "depth_of_field",
+          "label": "Depth of Field",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "shallow", "label": "Shallow", "promptValue": "shallow depth of field" },
+            { "id": "medium", "label": "Medium", "promptValue": "medium depth of field" },
+            { "id": "deep", "label": "Deep", "promptValue": "deep depth of field" },
+            { "id": "everything_focus", "label": "Everything in Focus", "promptValue": "everything in focus" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "posing",
+      "label": "Posing & Expression",
+      "icon": "pose",
+      "fields": [
+        {
+          "id": "pose",
+          "label": "Pose",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "standing", "label": "Standing", "promptValue": "standing" },
+            { "id": "sitting", "label": "Sitting", "promptValue": "sitting" },
+            { "id": "kneeling", "label": "Kneeling", "promptValue": "kneeling" },
+            { "id": "lying", "label": "Lying", "promptValue": "lying down" },
+            { "id": "lying_back", "label": "Lying Back", "promptValue": "lying on back" },
+            { "id": "lying_stomach", "label": "Lying on Stomach", "promptValue": "lying on stomach" },
+            { "id": "prone", "label": "Prone Bone", "promptValue": "prone bone position" },
+            { "id": "crouching", "label": "Crouching", "promptValue": "crouching" },
+            { "id": "squatting", "label": "Squatting", "promptValue": "squatting" },
+            { "id": "leaning", "label": "Leaning", "promptValue": "leaning" },
+            { "id": "against_wall", "label": "Against Wall", "promptValue": "leaning against wall" },
+            { "id": "arching", "label": "Arching", "promptValue": "arching back" },
+            { "id": "stretching", "label": "Stretching", "promptValue": "stretching" },
+            { "id": "reaching", "label": "Reaching", "promptValue": "reaching up" },
+            { "id": "walking", "label": "Walking", "promptValue": "walking" },
+            { "id": "running", "label": "Running", "promptValue": "running" },
+            { "id": "jumping", "label": "Jumping", "promptValue": "jumping" },
+            { "id": "dancing", "label": "Dancing", "promptValue": "dancing" },
+            { "id": "yoga", "label": "Yoga Pose", "promptValue": "yoga pose" },
+            { "id": "lotus", "label": "Lotus Position", "promptValue": "lotus position" },
+            { "id": "legs_up", "label": "Legs Up", "promptValue": "legs up" },
+            { "id": "legs_spread", "label": "Legs Spread", "promptValue": "legs spread" },
+            { "id": "crossed_legs", "label": "Crossed Legs", "promptValue": "crossed legs" },
+            { "id": "one_leg_up", "label": "One Leg Up", "promptValue": "one leg up" },
+            { "id": "hands_on_hips", "label": "Hands on Hips", "promptValue": "hands on hips" },
+            { "id": "hands_behind_head", "label": "Hands Behind Head", "promptValue": "hands behind head" },
+            { "id": "hands_behind_back", "label": "Hands Behind Back", "promptValue": "hands behind back" },
+            { "id": "arms_crossed", "label": "Arms Crossed", "promptValue": "arms crossed" },
+            { "id": "arms_raised", "label": "Arms Raised", "promptValue": "arms raised" },
+            { "id": "hands_on_knees", "label": "Hands on Knees", "promptValue": "hands on knees" },
+            { "id": "all_fours", "label": "All Fours", "promptValue": "on all fours" },
+            { "id": "doggy_style", "label": "Doggy Style", "promptValue": "doggy style position" },
+            { "id": "missionary", "label": "Missionary", "promptValue": "missionary position" },
+            { "id": "cowgirl", "label": "Cowgirl", "promptValue": "cowgirl position" },
+            { "id": "reverse_cowgirl", "label": "Reverse Cowgirl", "promptValue": "reverse cowgirl position" },
+            { "id": "spooning", "label": "Spooning", "promptValue": "spooning position" },
+            { "id": "lotus_position", "label": "Lotus Position", "promptValue": "lotus intimate position" }
+          ]
+        },
+        {
+          "id": "expression",
+          "label": "Expression",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "neutral", "label": "Neutral", "promptValue": "neutral expression" },
+            { "id": "smiling", "label": "Smiling", "promptValue": "smiling" },
+            { "id": "grinning", "label": "Grinning", "promptValue": "grinning" },
+            { "id": "laughing", "label": "Laughing", "promptValue": "laughing" },
+            { "id": "playful", "label": "Playful", "promptValue": "playful expression" },
+            { "id": "flirty", "label": "Flirty", "promptValue": "flirty expression" },
+            { "id": "seductive", "label": "Seductive", "promptValue": "seductive expression" },
+            { "id": "sultry", "label": "Sultry", "promptValue": "sultry expression" },
+            { "id": "sensual", "label": "Sensual", "promptValue": "sensual expression" },
+            { "id": "passionate", "label": "Passionate", "promptValue": "passionate expression" },
+            { "id": "intense", "label": "Intense", "promptValue": "intense expression" },
+            { "id": "serious", "label": "Serious", "promptValue": "serious expression" },
+            { "id": "confident", "label": "Confident", "promptValue": "confident expression" },
+            { "id": "shy", "label": "Shy", "promptValue": "shy expression" },
+            { "id": "innocent", "label": "Innocent", "promptValue": "innocent expression" },
+            { "id": "surprised", "label": "Surprised", "promptValue": "surprised expression" },
+            { "id": "shocked", "label": "Shocked", "promptValue": "shocked expression" },
+            { "id": "excited", "label": "Excited", "promptValue": "excited expression" },
+            { "id": "blissful", "label": "Blissful", "promptValue": "blissful expression" },
+            { "id": "ecstatic", "label": "Ecstatic", "promptValue": "ecstatic expression" },
+            { "id": "pleasure", "label": "Pleasure", "promptValue": "expression of pleasure" },
+            { "id": "moaning", "label": "Moaning", "promptValue": "moaning" },
+            { "id": "biting_lip", "label": "Biting Lip", "promptValue": "biting lip" },
+            { "id": "tongue_out", "label": "Tongue Out", "promptValue": "tongue out" },
+            { "id": "lips_parted", "label": "Lips Parted", "promptValue": "lips parted" }
+          ]
+        },
+        {
+          "id": "eye_contact",
+          "label": "Eye Contact",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "direct", "label": "Direct", "promptValue": "looking at viewer" },
+            { "id": "looking_away", "label": "Looking Away", "promptValue": "looking away" },
+            { "id": "looking_up", "label": "Looking Up", "promptValue": "looking up" },
+            { "id": "looking_down", "label": "Looking Down", "promptValue": "looking down" },
+            { "id": "eyes_closed", "label": "Eyes Closed", "promptValue": "eyes closed" },
+            { "id": "half_lidded", "label": "Half-Lidded", "promptValue": "half-lidded eyes" },
+            { "id": "side_eye", "label": "Side Eye", "promptValue": "side eye glance" },
+            { "id": "over_shoulder", "label": "Over Shoulder", "promptValue": "looking over shoulder" }
+          ]
+        },
+        {
+          "id": "mood",
+          "label": "Mood",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "romantic", "label": "Romantic", "promptValue": "romantic mood" },
+            { "id": "sensual", "label": "Sensual", "promptValue": "sensual mood" },
+            { "id": "erotic", "label": "Erotic", "promptValue": "erotic mood" },
+            { "id": "playful", "label": "Playful", "promptValue": "playful mood" },
+            { "id": "cheerful", "label": "Cheerful", "promptValue": "cheerful mood" },
+            { "id": "relaxed", "label": "Relaxed", "promptValue": "relaxed mood" },
+            { "id": "calm", "label": "Calm", "promptValue": "calm mood" },
+            { "id": "peaceful", "label": "Peaceful", "promptValue": "peaceful mood" },
+            { "id": "dreamy", "label": "Dreamy", "promptValue": "dreamy mood" },
+            { "id": "mysterious", "label": "Mysterious", "promptValue": "mysterious mood" },
+            { "id": "confident", "label": "Confident", "promptValue": "confident mood" },
+            { "id": "empowered", "label": "Empowered", "promptValue": "empowered mood" },
+            { "id": "vulnerable", "label": "Vulnerable", "promptValue": "vulnerable mood" },
+            { "id": "melancholic", "label": "Melancholic", "promptValue": "melancholic mood" },
+            { "id": "dramatic", "label": "Dramatic", "promptValue": "dramatic mood" },
+            { "id": "intense", "label": "Intense", "promptValue": "intense mood" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "actions",
+      "label": "Actions",
+      "icon": "action",
+      "fields": [
+        {
+          "id": "solo_action",
+          "label": "Solo Action",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "fingering", "label": "Fingering", "promptValue": "masturbating, fingering herself" },
+            { "id": "vibrator", "label": "Vibrator", "promptValue": "using a vibrator on her pussy" },
+            { "id": "dildo", "label": "Dildo", "promptValue": "fucking herself with a dildo" },
+            { "id": "spreading", "label": "Spreading", "promptValue": "spreading her pussy lips open" },
+            { "id": "rubbing_clit", "label": "Rubbing Clit", "promptValue": "rubbing her clit" },
+            { "id": "squirting", "label": "Squirting", "promptValue": "squirting orgasm ejaculating" },
+            { "id": "fondling", "label": "Fondling", "promptValue": "fondling squeezing her own breasts" },
+            { "id": "anal_solo", "label": "Anal Solo", "promptValue": "anal fingering touching her ass" }
+          ]
+        },
+        {
+          "id": "sexual_position",
+          "label": "Sexual Position",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "spreading", "label": "Spreading", "promptValue": "spreading her legs wide open to camera" },
+            { "id": "presenting", "label": "Presenting", "promptValue": "bent over presenting her ass and pussy" },
+            { "id": "pov_kneel", "label": "POV Kneel", "promptValue": "POV on her knees looking up at viewer" },
+            { "id": "doggy", "label": "Doggy", "promptValue": "on all fours doggy style position" },
+            { "id": "missionary", "label": "Missionary", "promptValue": "missionary position lying on her back" },
+            { "id": "cowgirl", "label": "Cowgirl", "promptValue": "riding cowgirl position on top" },
+            { "id": "reverse_cowgirl", "label": "Reverse Cowgirl", "promptValue": "reverse cowgirl position facing away" },
+            { "id": "prone_bone", "label": "Prone Bone", "promptValue": "prone bone face down position" }
+          ]
+        },
+        {
+          "id": "oral_action",
+          "label": "Oral Action",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "blowjob", "label": "Blowjob", "promptValue": "giving a blowjob sucking cock" },
+            { "id": "deepthroat", "label": "Deepthroat", "promptValue": "deepthroat gagging on cock" },
+            { "id": "licking", "label": "Licking", "promptValue": "licking cock shaft with tongue" },
+            { "id": "cim", "label": "CIM", "promptValue": "cum in mouth swallowing" },
+            { "id": "face_fucked", "label": "Face-Fucked", "promptValue": "getting face fucked throat fucked" }
+          ]
+        },
+        {
+          "id": "cum_action",
+          "label": "Cum Action",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "facial", "label": "Facial", "promptValue": "cum facial all over face" },
+            { "id": "on_breasts", "label": "On Breasts", "promptValue": "cum on her breasts chest" },
+            { "id": "on_ass", "label": "On Ass", "promptValue": "cum on her ass buttocks" },
+            { "id": "on_stomach", "label": "On Stomach", "promptValue": "cum on her stomach belly" },
+            { "id": "creampie", "label": "Creampie", "promptValue": "creampie dripping from pussy" },
+            { "id": "covered", "label": "Covered", "promptValue": "dripping with cum all over body" },
+            { "id": "multi_loads", "label": "Multi Loads", "promptValue": "multiple cumshots loads all over her" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "label": "Quality & Style",
+      "icon": "quality",
+      "fields": [
+        {
+          "id": "quality_tags",
+          "label": "Quality Tags",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "photorealistic", "label": "Photorealistic", "promptValue": "photorealistic" },
+            { "id": "hyperrealistic", "label": "Hyperrealistic", "promptValue": "hyperrealistic" },
+            { "id": "ultra_detailed", "label": "Ultra Detailed", "promptValue": "ultra detailed" },
+            { "id": "8k", "label": "8K", "promptValue": "8K UHD" },
+            { "id": "raw_photo", "label": "RAW Photo", "promptValue": "RAW photo" },
+            { "id": "sharp_focus", "label": "Sharp Focus", "promptValue": "sharp focus" },
+            { "id": "professional", "label": "Professional", "promptValue": "professional photography" },
+            { "id": "masterpiece", "label": "Masterpiece", "promptValue": "masterpiece" }
+          ]
+        },
+        {
+          "id": "style_tags",
+          "label": "Style Tags",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "realistic", "label": "Realistic Photo", "promptValue": "" },
+            { "id": "film_grain", "label": "Film Grain", "promptValue": "film grain analog photography" },
+            { "id": "editorial", "label": "Editorial", "promptValue": "fashion magazine editorial photography" },
+            { "id": "glamour", "label": "Glamour", "promptValue": "glamour photography" },
+            { "id": "boudoir", "label": "Boudoir", "promptValue": "boudoir intimate photography" },
+            { "id": "explicit_adult", "label": "Explicit Adult", "promptValue": "explicit adult content photography" },
+            { "id": "fine_art", "label": "Fine Art", "promptValue": "fine art photography" },
+            { "id": "pinup", "label": "Pin-Up", "promptValue": "pinup cheesecake photography" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multi_dummy",
+      "label": "Multi Dummy",
+      "icon": "group",
+      "fields": [
+        {
+          "id": "interaction_type",
+          "label": "Interaction Type",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "solo", "label": "Solo", "promptValue": "" },
+            { "id": "sitting_together", "label": "Sitting Together", "promptValue": "sitting together" },
+            { "id": "standing_together", "label": "Standing Together", "promptValue": "standing together" },
+            { "id": "embracing", "label": "Embracing", "promptValue": "embracing each other" },
+            { "id": "hugging", "label": "Hugging", "promptValue": "hugging" },
+            { "id": "kissing", "label": "Kissing", "promptValue": "kissing" },
+            { "id": "back_to_back", "label": "Back to Back", "promptValue": "back to back" },
+            { "id": "facing_each_other", "label": "Facing Each Other", "promptValue": "facing each other" },
+            { "id": "holding_hands", "label": "Holding Hands", "promptValue": "holding hands" },
+            { "id": "cuddling", "label": "Cuddling", "promptValue": "cuddling" },
+            { "id": "intimate", "label": "Intimate", "promptValue": "intimate pose" },
+            { "id": "collab_pose", "label": "Collab Pose", "promptValue": "collaborative pose" },
+            { "id": "group_photo", "label": "Group Photo", "promptValue": "group photo pose" },
+            { "id": "dancing_together", "label": "Dancing Together", "promptValue": "dancing together" },
+            { "id": "walking_together", "label": "Walking Together", "promptValue": "walking together" }
+          ]
+        },
+        {
+          "id": "focus",
+          "label": "Focus",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "equal", "label": "Equal Focus", "promptValue": "equal focus on all subjects" },
+            { "id": "focus_dummy_1", "label": "Focus on Dummy 1", "promptValue": "focus on first person" },
+            { "id": "focus_dummy_2", "label": "Focus on Dummy 2", "promptValue": "focus on second person" },
+            { "id": "focus_dummy_3", "label": "Focus on Dummy 3", "promptValue": "focus on third person" },
+            { "id": "foreground", "label": "Foreground Focus", "promptValue": "foreground subject in focus" }
+          ]
+        },
+        {
+          "id": "relationship_dynamic",
+          "label": "Relationship Dynamic",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "friends", "label": "Friends", "promptValue": "friends" },
+            { "id": "best_friends", "label": "Best Friends", "promptValue": "best friends" },
+            { "id": "couple", "label": "Couple", "promptValue": "romantic couple" },
+            { "id": "lovers", "label": "Lovers", "promptValue": "lovers" },
+            { "id": "rivals", "label": "Rivals", "promptValue": "rivals" },
+            { "id": "strangers", "label": "Strangers", "promptValue": "strangers" },
+            { "id": "acquaintances", "label": "Acquaintances", "promptValue": "acquaintances" },
+            { "id": "colleagues", "label": "Colleagues", "promptValue": "colleagues" },
+            { "id": "sisters", "label": "Sisters", "promptValue": "sisters" },
+            { "id": "twins", "label": "Twins", "promptValue": "twins" },
+            { "id": "dominant_submissive", "label": "Dominant/Submissive", "promptValue": "dominant and submissive dynamic" }
+          ]
+        },
+        {
+          "id": "proximity",
+          "label": "Proximity",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "touching", "label": "Touching", "promptValue": "touching" },
+            { "id": "close", "label": "Close", "promptValue": "close together" },
+            { "id": "near", "label": "Near", "promptValue": "near each other" },
+            { "id": "medium", "label": "Medium Distance", "promptValue": "medium distance apart" },
+            { "id": "distant", "label": "Distant", "promptValue": "distant from each other" },
+            { "id": "across_room", "label": "Across Room", "promptValue": "across the room from each other" }
+          ]
+        },
+        {
+          "id": "number_of_people",
+          "label": "Number of People",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "1girl", "label": "1 Girl", "promptValue": "1girl" },
+            { "id": "2girls", "label": "2 Girls", "promptValue": "2girls" },
+            { "id": "3girls", "label": "3 Girls", "promptValue": "3girls" },
+            { "id": "group", "label": "Group", "promptValue": "group of girls" }
+          ]
+        }
+      ]
+    }
+  ]
+}

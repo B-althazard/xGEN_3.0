@@ -1,0 +1,163 @@
+{
+  "version": "2.0.0",
+  "targetModel": "chroma1-hd",
+  "promptStyle": "hybrid-compact",
+  "defaultRealismMode": "auto",
+  "defaultNegativeMode": "none",
+  "domains": {
+    "age": "identity.age",
+    "ethnicity": "identity.ethnicity",
+    "body_type": "body.silhouette",
+    "height": "body.height",
+    "skin_tone": "body.skin.tone",
+    "skin_detail": "body.skin.detail",
+    "cup_size": "body.bust.size",
+    "bust_shape": "body.bust.shape",
+    "nipples": "body.bust.nipples",
+    "bust_state": "body.bust.state",
+    "waist": "body.lower.waist",
+    "hips": "body.lower.hips",
+    "ass": "body.lower.ass",
+    "legs": "body.lower.legs",
+    "pussy_style": "body.genital.pussy.style",
+    "pussy_state": "body.genital.pussy.state",
+    "futa_enabled": "body.genital.futa.enabled",
+    "futa_size": "body.genital.futa.size",
+    "futa_shape": "body.genital.futa.shape",
+    "futa_cut": "body.genital.futa.cut",
+    "futa_state": "body.genital.futa.state",
+    "futa_cum": "body.genital.futa.cum",
+    "futa_balls": "body.genital.futa.balls",
+    "futa_pussy": "body.genital.futa.pussy",
+    "face_shape": "face.shape",
+    "eyes_shape": "face.eyes.shape",
+    "eye_color": "face.eyes.color",
+    "eyebrows": "face.eyebrows",
+    "nose_shape": "face.nose.shape",
+    "nose_bridge": "face.nose.bridge",
+    "nose_nostrils": "face.nose.nostrils",
+    "nose_tip": "face.nose.tip",
+    "lips_shape": "face.lips.shape",
+    "hair_color": "hair.color",
+    "hair_length": "hair.length",
+    "hair_style": "hair.style",
+    "foundation": "makeup.foundation",
+    "eye_makeup": "makeup.eyes.style",
+    "eyeshadow_color": "makeup.eyes.color",
+    "lashes": "makeup.eyes.lashes",
+    "lip_makeup": "makeup.lips.finish",
+    "lip_color": "makeup.lips.color",
+    "blush_effects": "makeup.effects",
+    "complete_outfit": "clothing.complete",
+    "upper_type": "clothing.upper.type",
+    "upper_style": "clothing.upper.style",
+    "upper_color": "clothing.upper.color",
+    "lower_type": "clothing.lower.type",
+    "lower_style": "clothing.lower.style",
+    "lower_color": "clothing.lower.color",
+    "legwear": "clothing.legwear",
+    "footwear": "clothing.footwear",
+    "accessories": "clothing.accessories",
+    "location": "scene.location",
+    "scene_type": "scene.type",
+    "background": "scene.background",
+    "time_of_day": "scene.time",
+    "lighting_style": "lighting.primary",
+    "light_color": "lighting.color",
+    "lighting_effects": "lighting.effects",
+    "framing": "camera.framing",
+    "lens": "camera.lens",
+    "camera_angle": "camera.angle",
+    "depth_of_field": "camera.depth",
+    "pose": "pose.body",
+    "expression": "pose.expression",
+    "eye_contact": "pose.eye_contact",
+    "mood": "pose.mood",
+    "solo_action": "pose.solo_action",
+    "sexual_position": "pose.sexual_position",
+    "oral_action": "pose.oral_action",
+    "cum_action": "pose.cum_action",
+    "interaction_type": "multi.interaction",
+    "focus": "multi.focus",
+    "relationship_dynamic": "multi.relationship",
+    "proximity": "multi.proximity",
+    "number_of_people": "multi.count"
+  },
+  "ordering": {
+    "blockOrder": ["style", "identity", "body", "face", "hair", "makeup", "clothing", "scene", "lighting", "camera", "pose", "multi"],
+    "domainOrder": {
+      "identity": ["identity.ethnicity", "identity.age"],
+      "body": ["body.silhouette", "body.height", "body.skin.tone", "body.skin.detail", "body.bust.size", "body.bust.shape", "body.bust.nipples", "body.bust.state", "body.lower.waist", "body.lower.hips", "body.lower.ass", "body.lower.legs", "body.genital.pussy.style", "body.genital.pussy.state", "body.genital.futa.enabled", "body.genital.futa.size", "body.genital.futa.shape", "body.genital.futa.cut", "body.genital.futa.state", "body.genital.futa.cum", "body.genital.futa.balls", "body.genital.futa.pussy"],
+      "face": ["face.shape", "face.eyes.shape", "face.eyes.color", "face.eyebrows", "face.nose.shape", "face.nose.bridge", "face.nose.nostrils", "face.nose.tip", "face.lips.shape"],
+      "hair": ["hair.color", "hair.length", "hair.style"],
+      "makeup": ["makeup.foundation", "makeup.eyes.style", "makeup.eyes.color", "makeup.eyes.lashes", "makeup.lips.finish", "makeup.lips.color", "makeup.effects"],
+      "clothing": ["clothing.complete", "clothing.upper.color", "clothing.upper.style", "clothing.upper.type", "clothing.lower.color", "clothing.lower.style", "clothing.lower.type", "clothing.legwear", "clothing.footwear", "clothing.accessories"],
+      "scene": ["scene.location", "scene.type", "scene.background", "scene.time"],
+      "lighting": ["lighting.primary", "lighting.color", "lighting.effects"],
+      "camera": ["camera.framing", "camera.lens", "camera.angle", "camera.depth"],
+      "pose": ["pose.body", "pose.expression", "pose.eye_contact", "pose.mood", "pose.solo_action", "pose.sexual_position", "pose.oral_action", "pose.cum_action"],
+      "multi": ["multi.interaction", "multi.focus", "multi.relationship", "multi.proximity", "multi.count"]
+    }
+  },
+  "conflicts": {
+    "rules": [
+      { "id": "no_makeup", "whenAll": [{ "fieldId": "foundation", "equals": "none" }], "dropPrefixes": ["makeup.eyes.", "makeup.lips.", "makeup.effects"], "exceptDomains": ["makeup.foundation"] },
+      { "id": "bare_lips", "whenAll": [{ "fieldId": "lip_makeup", "equals": "none" }], "dropDomains": ["makeup.lips.color"] },
+      { "id": "complete_outfit", "whenExists": ["complete_outfit"], "dropPrefixes": ["clothing.upper.", "clothing.lower."] },
+      { "id": "nude_outfit", "whenAll": [{ "fieldId": "complete_outfit", "equals": "nude" }], "dropDomains": ["clothing.legwear", "clothing.footwear", "clothing.accessories"] },
+      { "id": "futa_disabled", "whenAll": [{ "fieldId": "futa_enabled", "notEquals": "on" }], "dropPrefixes": ["body.genital.futa."] }
+    ]
+  },
+  "dominance": {
+    "ladders": {
+      "body.bust.size": ["flat", "small", "medium", "large", "very_large", "huge"],
+      "body.lower.hips": ["narrow", "average", "wide", "very_wide", "childbearing"],
+      "hair.length": ["bald", "buzz", "pixie", "short", "bob", "lob", "shoulder", "mid_back", "long", "very_long", "waist", "hip"],
+      "body.genital.pussy.state": ["closed", "wet", "spread_open", "gaping"],
+      "body.genital.futa.state": ["flaccid", "semi_erect", "fully_erect", "throbbing"]
+    },
+    "resolution": "keep-highest"
+  },
+  "redundancy": {
+    "pairs": [
+      { "winner": "wet skin", "loser": "dewy skin" },
+      { "winner": "smokey eyes", "loser": "smokey eyeshadow" },
+      { "winner": "graphic eyeliner", "loser": "eyeliner" },
+      { "winner": "glowing skin", "loser": "highlighter" }
+    ]
+  },
+  "mergeRules": {
+    "identity": "{ethnicity} {age}",
+    "skin": "{tone}, {detail}",
+    "eyes": "{shape}, {color}",
+    "hair": "{color}, {length}, {style}",
+    "upper": "{color} {style} {type}",
+    "lower": "{color} {style} {type}"
+  },
+  "emphasisRules": {
+    "levels": {
+      "high": {
+        "rewriteMap": {
+          "freckles": "prominent freckles",
+          "beauty moles": "distinct beauty moles",
+          "wet skin": "glistening wet skin",
+          "blue eyes": "striking blue eyes",
+          "green eyes": "striking green eyes",
+          "full lips": "lush full lips"
+        }
+      }
+    }
+  },
+  "formatting": {
+    "separator": ", ",
+    "usePeriods": false
+  },
+  "lengthBudget": {
+    "targetWordsMin": 30,
+    "targetWordsMax": 80,
+    "softMaxWords": 110,
+    "hardMaxWords": 140,
+    "pruneOrder": ["clothing.footwear", "clothing.legwear", "makeup.effects", "clothing.upper.style", "clothing.lower.style", "hair.style", "camera.depth", "lighting.effects"],
+    "neverPrune": ["identity.ethnicity", "identity.age", "body.silhouette", "face.shape", "clothing.complete", "lighting.primary", "camera.framing", "pose.body"]
+  }
+}
