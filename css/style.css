@@ -391,7 +391,7 @@ img { display: block; max-width: 100%; }
 .preset-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
 
 .preset-card__media {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
   background: var(--bg-raised);
@@ -1019,6 +1019,10 @@ img { display: block; max-width: 100%; }
   display: block;
 }
 
+.desktop-sidebar {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .grid-3 { grid-template-columns: repeat(4, 1fr); }
   .option-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1055,6 +1059,7 @@ img { display: block; max-width: 100%; }
     align-items: start;
   }
   .desktop-sidebar {
+    display: block;
     position: sticky;
     top: calc(var(--topbar-h) + var(--sp-4));
   }

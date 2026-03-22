@@ -5,6 +5,9 @@
    ────────────────────────────────────────────── */
 
 const icons = {
+  /* ── Brand ── */
+  brand: `<svg viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="16" font-family="Inter,sans-serif" font-weight="700" font-size="18" fill="currentColor">x</text><text x="10" y="16" font-family="Inter,sans-serif" font-weight="700" font-size="18" fill="var(--accent)">.GEN</text></svg>`,
+
   /* ── UI Navigation ── */
   home: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
 

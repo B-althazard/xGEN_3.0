@@ -9,8 +9,8 @@ export function renderTopBar() {
 
   topBar.className = 'top-bar';
   topBar.innerHTML = `
-    <button class="top-bar__brand icon-btn" data-go-home aria-label="Home">
-      <span class="top-bar__brand-x">x</span><span class="top-bar__brand-gen">.GEN</span>
+    <button class="top-bar__brand icon-btn" data-go-home aria-label="Home" style="width:auto;">
+      ${icon('brand')}
     </button>
     <div class="top-bar__title">${titles[state.app.currentPage] || 'x.GEN'}</div>
     <div class="top-bar__actions">
