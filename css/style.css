@@ -194,6 +194,7 @@ img { display: block; max-width: 100%; }
 }
 .icon-btn:hover { background: var(--bg-raised); color: var(--text-primary); }
 .icon-btn svg { width: 18px; height: 18px; }
+.top-bar__brand svg { width: auto; height: 24px; }
 
 /* ════════════════════════════════════════════════
    BOTTOM NAV

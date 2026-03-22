@@ -5,6 +5,9 @@ import { icon } from '../icons.js';
 const HERO_KEY = 'xgen.heroDismissed';
 let activeTab = 'dummies';
 
+export function getHomeTab() { return activeTab; }
+export function setHomeTab(tab) { activeTab = tab; }
+
 export function renderHome(container) {
   const state = getState();
   const heroDismissed = localStorage.getItem(HERO_KEY) === 'true';
@@ -35,30 +38,19 @@ export function renderHome(container) {
         </section>
       `}
 
-      <div class="section" style="margin-top:var(--sp-6);">
-        <div class="tab-bar">
-          <button class="pill ${activeTab === 'dummies' ? 'is-active' : ''}" data-tab="dummies">Dummies</button>
-          <button class="pill ${activeTab === 'dolls' ? 'is-active' : ''}" data-tab="dolls">Dolls ${state.savedPresets?.length ? `(${state.savedPresets.length})` : ''}</button>
-        </div>
-      </div>
-
       ${activeTab === 'dummies' ? `
-        <div class="section">
+        <div class="section" style="margin-top:${heroDismissed ? '0' : 'var(--sp-6)'};">
           <div class="page-subtitle" style="margin-bottom:var(--sp-4);">Default archetypes — tap to load, save to customize</div>
           <div class="grid-3">${defaultCards}</div>
         </div>
       ` : `
-        <div class="section">
+        <div class="section" style="margin-top:${heroDismissed ? '0' : 'var(--sp-6)'};">
           <div class="page-subtitle" style="margin-bottom:var(--sp-4);">Your saved consistent characters</div>
           <div class="grid-3">${savedCards}</div>
         </div>
       `}
     </div>
   `;
-
-  container.querySelectorAll('[data-tab]').forEach((btn) => {
-    btn.onclick = () => { activeTab = btn.dataset.tab; renderHome(container); };
-  });
 
   const dismissBtn = container.querySelector('[data-dismiss-hero]');
   if (dismissBtn) dismissBtn.onclick = () => {

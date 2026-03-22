@@ -1,5 +1,6 @@
 import { getState, resetActiveDummy, updateField, loadDummyFields } from '../store.js';
 import { showModal } from '../components/modal.js';
+import { getHomeTab, setHomeTab } from '../pages/home.js';
 
 function randomChoice(list) {
   return list[Math.floor(Math.random() * list.length)];
@@ -51,7 +52,10 @@ function openPresetBrowser() {
 }
 
 export function getFabActions() {
+  const currentTab = getHomeTab();
   return [
+    { id: 'view-dummies', label: currentTab === 'dummies' ? '● Dummies' : 'Dummies', action: () => { setHomeTab('dummies'); window.location.hash = '#home'; } },
+    { id: 'view-dolls', label: currentTab === 'dolls' ? '● Dolls' : 'Dolls', action: () => { setHomeTab('dolls'); window.location.hash = '#home'; } },
     { id: 'randomize', label: 'Randomize', action: () => randomizeCurrentDummy() },
     { id: 'presets', label: 'Load Preset', action: () => openPresetBrowser() },
     { id: 'reset', label: 'Reset All', action: () => resetActiveDummy() },
