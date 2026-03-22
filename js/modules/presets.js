@@ -29,18 +29,19 @@ function openSavedPresetMenu(preset) {
   };
 }
 
-export function renderPresetCard(preset, actions = []) {
+export function renderPresetCard(preset) {
   const locked = preset.lockedFields?.length
     ? '<span style="position:absolute;top:8px;right:8px;font-size:9px;font-weight:700;color:var(--accent);background:var(--accent-muted);padding:2px 8px;border-radius:var(--r-pill);">Locked</span>'
     : '';
   return `
-    <article class="preset-card">
+    <article class="preset-card" data-preset-id="${preset.id}">
       ${locked}
       <div class="preset-card__media">${initials(preset.name)}</div>
       <div class="preset-card__body">
-        <div class="preset-card__name">${preset.name}</div>
-        <div class="preset-card__desc">${preset.description || preset.type || 'Preset'}</div>
-        <div class="preset-card__actions">${actions.join('')}</div>
+        <div>
+          <div class="preset-card__name">${preset.name}</div>
+          <div class="preset-card__desc">${preset.description || preset.type || 'Preset'}</div>
+        </div>
       </div>
     </article>
   `;
@@ -75,6 +76,16 @@ function openSaveAsModal(preset) {
 }
 
 export function bindPresetSection(scope) {
+  scope.querySelectorAll('.preset-card[data-preset-id]').forEach((card) => {
+    card.onclick = () => {
+      const state = getState();
+      const id = card.dataset.presetId;
+      const preset = [...state.defaultDummies, ...(state.savedPresets || [])].find((item) => item.id === id);
+      if (!preset) return;
+      loadDummyFields(preset);
+      window.location.hash = '#creation-kit';
+    };
+  });
   scope.querySelectorAll('[data-load-preset]').forEach((button) => {
     button.onclick = () => {
       const state = getState();

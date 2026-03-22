@@ -9,16 +9,10 @@ export function renderHome(container) {
   const state = getState();
   const heroDismissed = localStorage.getItem(HERO_KEY) === 'true';
 
-  const defaultCards = state.defaultDummies.map((preset) => renderPresetCard(preset, [
-    `<button class="btn btn--sm" data-load-preset="${preset.id}">Use</button>`,
-    `<button class="btn btn--sm btn--ghost" data-save-default-preset="${preset.id}">Save As</button>`,
-  ])).join('');
+  const defaultCards = state.defaultDummies.map((preset) => renderPresetCard(preset)).join('');
 
   const savedCards = (state.savedPresets || []).length
-    ? state.savedPresets.map((preset) => renderPresetCard(preset, [
-        `<button class="btn btn--sm" data-load-preset="${preset.id}">Use</button>`,
-        `<button class="btn btn--sm btn--ghost" data-open-preset-menu="${preset.id}">More</button>`,
-      ])).join('')
+    ? state.savedPresets.map((preset) => renderPresetCard(preset)).join('')
     : `<div class="empty">
         <h3>No Dolls yet</h3>
         <p>Save a configured dummy from Creation Kit or xGEN.</p>

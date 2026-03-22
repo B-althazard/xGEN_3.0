@@ -375,7 +375,7 @@ img { display: block; max-width: 100%; }
    ════════════════════════════════════════════════ */
 
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: var(--sp-3); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); }
 
 /* ════════════════════════════════════════════════
@@ -402,6 +402,10 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.02em;
 }
 .preset-card__body {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
   padding: var(--sp-3) var(--sp-4);
 }
 .preset-card__name {
@@ -411,7 +415,7 @@ img { display: block; max-width: 100%; }
 .preset-card__desc {
   font-size: 11px;
   color: var(--text-secondary);
-  margin-top: 2px;
+  margin-top: var(--sp-1);
 }
 .preset-card__actions {
   display: flex;
@@ -1027,7 +1031,6 @@ img { display: block; max-width: 100%; }
 }
 
 @media (min-width: 768px) {
-  .grid-3 { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
   .option-grid { grid-template-columns: repeat(3, 1fr); }
   .metrics { grid-template-columns: repeat(3, 1fr); }
   .action-grid { grid-template-columns: repeat(3, 1fr); }
