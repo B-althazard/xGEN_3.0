@@ -756,10 +756,19 @@ img { display: block; max-width: 100%; }
    FAB
    ════════════════════════════════════════════════ */
 
+#fab-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 31;
+}
+
 .fab-shell {
   position: fixed;
   right: var(--sp-4);
   bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom) + var(--sp-3));
+  pointer-events: auto;
   z-index: 31;
 }
 .fab-main {
