@@ -1,4 +1,4 @@
-const CACHE_NAME = 'xgen-v2-cache';
+const CACHE_NAME = 'xgen-v3-cache';
 const PRECACHE = [
   './',
   './index.html',
