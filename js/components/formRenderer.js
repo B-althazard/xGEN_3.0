@@ -129,13 +129,7 @@ export function renderForm(container) {
           else updateFieldSilent(field.id, next);
         }
 
-        fieldNode.querySelectorAll('[data-option-id]').forEach((btn) => {
-          const btnId = btn.dataset.optionId;
-          const isMulti = field.type === 'multi-select' || field.multiSelect;
-          const updatedValue = categoryGroup.id === 'multi-dummy' ? state.multiDummyInteraction[field.id] : state.dummies[state.activeDummyIndex].fields[field.id];
-          const selected = isMulti ? ensureArray(updatedValue).includes(btnId) : updatedValue === btnId;
-          btn.classList.toggle('is-selected', selected);
-        });
+        renderForm(container);
 
         const wordEl = document.querySelector('.word-bar__fill');
         const wordText = document.querySelector('.word-stats');
