@@ -77,7 +77,7 @@ export function renderCreationKit(container) {
   maybeWarnPromptLength(state.promptResult?.diagnostics?.wordCount || 0);
 
   container.innerHTML = `
-    <div class="page">
+    <div class="page" data-swipe-surface>
       <!-- Category Tabs -->
       <div class="cat-bar">
         <div class="cat-bar__tabs">
@@ -182,7 +182,7 @@ export function renderCreationKit(container) {
   };
 
   // Bind swipe
-  bindSwipe(container.querySelector('#creation-kit-form'), categories, index);
+  bindSwipe(container, categories, index);
 
   // Scroll active category into view
   const activeTab = container.querySelector('.cat-bar__item.is-active');
