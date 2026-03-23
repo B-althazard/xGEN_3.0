@@ -1,9 +1,11 @@
 import { renderAccordion, bindAccordions } from './accordion.js';
 import { renderSwatch } from './colorSwatch.js';
 import { renderImageCard } from './imageCard.js';
-import { getState, updateField, updateMultiDummyField, toggleLockField, persist } from '../store.js';
+import { getState, updateFieldSilent, updateMultiDummyFieldSilent, toggleLockField, persist, recomputePrompt } from '../store.js';
 import { showModal } from './modal.js';
 import { getCreationKitCategories, normalizeCategoryId } from '../constants/categories.js';
+
+const openAccordions = new Set();
 
 function ensureArray(value) {
   if (Array.isArray(value)) return value;
@@ -91,12 +93,13 @@ export function renderForm(container) {
         title: field.label,
         body: renderField(field, categoryGroup.id === 'multi-dummy' ? state.multiDummyInteraction[field.id] : dummy.fields[field.id]),
         locked: dummy.lockedFields.includes(field.id),
-        open: false,
+        open: openAccordions.has(field.id),
       })).join('')}
     </div>
   `;
 
   bindAccordions(container, {
+    openAccordions,
     onToggleLock: (event) => {
       event.stopPropagation();
       const header = event.target.closest('.accordion');
@@ -118,13 +121,43 @@ export function renderForm(container) {
         if (field.type === 'multi-select' || field.multiSelect) {
           const values = ensureArray(currentValue);
           const next = values.includes(optionId) ? values.filter((value) => value !== optionId) : [...values, optionId];
-          if (categoryGroup.id === 'multi-dummy') updateMultiDummyField(field.id, next);
-          else updateField(field.id, next);
+          if (categoryGroup.id === 'multi-dummy') updateMultiDummyFieldSilent(field.id, next);
+          else updateFieldSilent(field.id, next);
         } else {
           const next = currentValue === optionId ? null : optionId;
-          if (categoryGroup.id === 'multi-dummy') updateMultiDummyField(field.id, next);
-          else updateField(field.id, next);
+          if (categoryGroup.id === 'multi-dummy') updateMultiDummyFieldSilent(field.id, next);
+          else updateFieldSilent(field.id, next);
         }
+
+        fieldNode.querySelectorAll('[data-option-id]').forEach((btn) => {
+          const btnId = btn.dataset.optionId;
+          const isMulti = field.type === 'multi-select' || field.multiSelect;
+          const updatedValue = categoryGroup.id === 'multi-dummy' ? state.multiDummyInteraction[field.id] : state.dummies[state.activeDummyIndex].fields[field.id];
+          const selected = isMulti ? ensureArray(updatedValue).includes(btnId) : updatedValue === btnId;
+          btn.classList.toggle('is-selected', selected);
+        });
+
+        const wordEl = document.querySelector('.word-bar__fill');
+        const wordText = document.querySelector('.word-stats');
+        if (wordEl && state.promptResult?.diagnostics) {
+          const words = state.promptResult.diagnostics.wordCount || 0;
+          const pct = Math.min(100, Math.round((words / 256) * 100));
+          const color = words <= 160 ? 'var(--state-success)' : words <= 256 ? 'var(--state-warning)' : 'var(--state-error)';
+          wordEl.style.width = pct + '%';
+          wordEl.style.background = color;
+          const activeCount = Object.values(state.dummies[state.activeDummyIndex].fields).filter((v) => v != null && v !== '' && !(Array.isArray(v) && v.length === 0)).length;
+          const totalFields = state.schema.categories.reduce((sum, cat) => sum + cat.fields.length, 0);
+          const strength = Math.round((activeCount / Math.max(totalFields, 1)) * 100);
+          if (wordText) wordText.innerHTML = `<span><strong>${words}</strong> words</span><span>${activeCount}/${totalFields} fields · ${strength}%</span>`;
+        }
+
+        document.querySelectorAll('.prompt-text').forEach((el) => {
+          if (el.classList.contains('prompt-text--negative')) {
+            el.textContent = state.promptResult?.negativePrompt || '(empty)';
+          } else {
+            el.textContent = state.promptResult?.positivePrompt || '';
+          }
+        });
       };
 
       bindLongPress(button, () => {

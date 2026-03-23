@@ -97,7 +97,7 @@ export function persist() {
   }, 500);
 }
 
-function recomputePrompt() {
+export function recomputePrompt() {
   if (!state.schema || !state.rules) return;
   state.promptResult = buildPrompt({
     dummies: state.dummies,
@@ -193,6 +193,22 @@ export function updateMultiDummyField(fieldId, value) {
   snapshotUndo();
   state.multiDummyInteraction[fieldId] = value;
   notify();
+}
+
+export function updateFieldSilent(fieldId, value, dummyIndex = state.activeDummyIndex) {
+  snapshotUndo();
+  const dummy = state.dummies[dummyIndex];
+  dummy.fields[fieldId] = value;
+  enforceFieldRules(dummy.fields, fieldId);
+  recomputePrompt();
+  persist();
+}
+
+export function updateMultiDummyFieldSilent(fieldId, value) {
+  snapshotUndo();
+  state.multiDummyInteraction[fieldId] = value;
+  recomputePrompt();
+  persist();
 }
 
 function enforceFieldRules(fields, fieldId) {

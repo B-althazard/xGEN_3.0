@@ -1,10 +1,18 @@
-import { getState, saveCurrentPreset, setJobState, setActiveImageIndex, resetActiveDummy, updateSetting } from '../store.js';
+import { getState, saveCurrentPreset, setJobState, setActiveImageIndex, resetActiveDummy, persist, recomputePrompt } from '../store.js';
 import { triggerGeneration } from '../bridgeManager.js';
 import { randomizeCurrentDummy } from '../modules/terminal.js';
 import { icon } from '../icons.js';
 
 let positiveOpen = true;
 let negativeOpen = false;
+
+function showPill(message) {
+  const pill = document.createElement('div');
+  pill.className = 'pill-toast';
+  pill.textContent = message;
+  document.body.appendChild(pill);
+  setTimeout(() => pill.remove(), 1600);
+}
 
 export function renderXgen(container) {
   const state = getState();
@@ -22,11 +30,12 @@ export function renderXgen(container) {
           <button class="dummy-tab ${state.settings.promptOrder === 'style-first' ? 'is-active' : ''}" data-prompt-order="style-first">Style First</button>
         </div>
       </div>
-      <div style="min-width:80px;">
+      <div>
         <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-tertiary);margin-bottom:var(--sp-1);">Aesthetic</div>
-        <div style="display:flex;align-items:center;gap:var(--sp-2);">
-          <input type="range" min="6" max="10" step="1" value="${state.settings.aesthetic}" data-aesthetic-slider style="width:60px;accent-color:var(--accent);">
-          <span style="font-size:12px;font-weight:600;color:var(--text-accent);" data-aesthetic-value>${state.settings.aesthetic}</span>
+        <div style="display:flex;align-items:center;gap:var(--sp-1);">
+          <button class="btn btn--sm btn--icon" data-aesthetic-dec>−</button>
+          <span style="font-size:14px;font-weight:700;color:var(--text-accent);min-width:20px;text-align:center;" data-aesthetic-value>${state.settings.aesthetic}</span>
+          <button class="btn btn--sm btn--icon" data-aesthetic-inc>+</button>
         </div>
       </div>
     </div>
@@ -218,7 +227,10 @@ export function renderXgen(container) {
   `;
 
   // Bind actions
-  container.querySelector('[data-copy-prompt]').onclick = async () => navigator.clipboard.writeText(state.promptResult?.positivePrompt || '');
+  container.querySelector('[data-copy-prompt]').onclick = async () => {
+    await navigator.clipboard.writeText(state.promptResult?.positivePrompt || '');
+    showPill('Prompt copied');
+  };
   container.querySelector('[data-generate]').onclick = () => triggerGeneration();
   container.querySelector('[data-back-edit]').onclick = () => { window.location.hash = '#creation-kit'; };
   container.querySelector('[data-save-doll]').onclick = async () => {
@@ -240,14 +252,30 @@ export function renderXgen(container) {
 
   container.querySelectorAll('[data-prompt-order]').forEach((button) => {
     button.onclick = () => {
-      updateSetting('promptOrder', button.dataset.promptOrder);
+      state.settings.promptOrder = button.dataset.promptOrder;
+      recomputePrompt();
+      persist();
+      container.querySelectorAll('[data-prompt-order]').forEach((btn) => {
+        btn.classList.toggle('is-active', btn === button);
+      });
     };
   });
 
-  container.querySelectorAll('[data-aesthetic-slider]').forEach((slider) => {
-    slider.oninput = () => {
-      const val = Number(slider.value);
-      updateSetting('aesthetic', val);
+  container.querySelectorAll('[data-aesthetic-dec]').forEach((btn) => {
+    btn.onclick = () => {
+      const val = Math.max(6, state.settings.aesthetic - 1);
+      state.settings.aesthetic = val;
+      recomputePrompt();
+      persist();
+      container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
+    };
+  });
+  container.querySelectorAll('[data-aesthetic-inc]').forEach((btn) => {
+    btn.onclick = () => {
+      const val = Math.min(10, state.settings.aesthetic + 1);
+      state.settings.aesthetic = val;
+      recomputePrompt();
+      persist();
       container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
     };
   });

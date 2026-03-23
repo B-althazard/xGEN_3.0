@@ -18,14 +18,20 @@ export function renderAccordion({ title, body, locked, open = false }) {
 }
 
 export function bindAccordions(scope, callbacks = {}) {
+  const openAccordions = callbacks.openAccordions || null;
   scope.querySelectorAll('[data-accordion]').forEach((node) => {
     const body = node.querySelector('.accordion__body');
     const trigger = node.querySelector('[data-accordion-trigger]');
+    const fieldId = node.querySelector('[data-field-id]')?.dataset.fieldId;
 
     trigger.onclick = (event) => {
       if (event.target.closest('[data-lock-field]')) return;
       body.hidden = !body.hidden;
       node.classList.toggle('is-open');
+      if (openAccordions && fieldId) {
+        if (body.hidden) openAccordions.delete(fieldId);
+        else openAccordions.add(fieldId);
+      }
     };
 
     const lockButton = node.querySelector('[data-lock-field]');
