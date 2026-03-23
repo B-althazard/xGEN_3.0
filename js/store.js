@@ -331,8 +331,12 @@ export function toggleLockField(fieldId) {
 
 export function setCharacterType(type) {
   state.characterType = type;
-  if (type === 'futa' && !state.dummies[state.activeDummyIndex].fields.futa_enabled) {
-    state.dummies[state.activeDummyIndex].fields.futa_enabled = 'on';
+  if (type === 'futa') {
+    if (!state.dummies[state.activeDummyIndex].fields.futa_enabled) {
+      state.dummies[state.activeDummyIndex].fields.futa_enabled = 'on';
+    }
+  } else {
+    state.dummies[state.activeDummyIndex].fields.futa_enabled = 'off';
   }
   notify();
 }

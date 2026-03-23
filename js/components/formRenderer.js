@@ -81,8 +81,8 @@ export function renderForm(container) {
   const fields = categoryGroup.schemaIds.flatMap((schemaId) => {
     const category = schemaCategories.get(schemaId);
     if (!category) return [];
-    if (schemaId === 'futa' && !(dummy.fields.futa_enabled === 'on' || state.characterType === 'futa')) {
-      return category.fields.filter((field) => field.id === 'futa_enabled');
+    if (schemaId === 'futa' && state.characterType !== 'futa') {
+      return [];
     }
     return category.fields;
   });

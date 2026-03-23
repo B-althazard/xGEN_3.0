@@ -9,6 +9,7 @@ export function randomizeCurrentDummy() {
   const state = getState();
   const dummy = state.dummies[state.activeDummyIndex];
   state.schema.categories.forEach((category) => {
+    if (category.id === 'futa' && state.characterType !== 'futa') return;
     category.fields.forEach((field) => {
       if (dummy.lockedFields.includes(field.id)) return;
       const items = field.options || field.colors || [];
@@ -29,6 +30,7 @@ export function randomizeCurrentDummySilent() {
   const state = getState();
   const dummy = state.dummies[state.activeDummyIndex];
   state.schema.categories.forEach((category) => {
+    if (category.id === 'futa' && state.characterType !== 'futa') return;
     category.fields.forEach((field) => {
       if (dummy.lockedFields.includes(field.id)) return;
       const items = field.options || field.colors || [];
