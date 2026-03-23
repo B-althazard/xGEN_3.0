@@ -88,7 +88,7 @@ export function renderForm(container) {
   });
 
   container.innerHTML = `
-    <div data-swipe-surface>
+    <div>
       ${fields.map((field) => renderAccordion({
         title: field.label,
         body: renderField(field, categoryGroup.id === 'multi-dummy' ? state.multiDummyInteraction[field.id] : dummy.fields[field.id]),

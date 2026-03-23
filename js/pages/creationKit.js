@@ -42,18 +42,54 @@ function bindLongPress(button, callback) {
   button.addEventListener('contextmenu', (event) => { event.preventDefault(); callback(); });
 }
 
-function bindSwipe(container, categories, currentIndex) {
+function bindGlobalSwipe() {
+  if (bindGlobalSwipe._bound) return;
+  bindGlobalSwipe._bound = true;
+  const app = document.getElementById('app');
   let startX = 0;
-  const surface = container.querySelector('[data-swipe-surface]');
-  if (!surface) return;
-  surface.addEventListener('pointerdown', (event) => { startX = event.clientX; });
-  surface.addEventListener('pointerup', (event) => {
-    const deltaX = event.clientX - startX;
-    if (Math.abs(deltaX) < 50) return;
-    const nextIndex = deltaX < 0 ? currentIndex + 1 : currentIndex - 1;
-    const normalized = (nextIndex + categories.length) % categories.length;
-    setCurrentCategory(categories[normalized].id);
-  });
+  let startY = 0;
+  let tracking = false;
+
+  app.addEventListener('pointerdown', (e) => {
+    startX = e.clientX;
+    startY = e.clientY;
+    tracking = true;
+  }, { capture: true });
+
+  app.addEventListener('pointermove', () => {}, { capture: true });
+
+  app.addEventListener('pointerup', (e) => {
+    if (!tracking) return;
+    tracking = false;
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    e.preventDefault();
+    const state = getState();
+    const categories = getCreationKitCategories(state);
+    const currentIdx = categories.findIndex((c) => c.id === normalizeCategoryId(state.app.currentCategory, state));
+    if (currentIdx < 0) return;
+    const dir = deltaX < 0 ? 1 : -1;
+    const nextIdx = (currentIdx + dir + categories.length) % categories.length;
+
+    const form = app.querySelector('#creation-kit-form');
+    if (form) {
+      const outClass = dir > 0 ? 'slide-out-left' : 'slide-out-right';
+      form.classList.add(outClass);
+      form.addEventListener('animationend', () => {
+        form.classList.remove(outClass);
+        setCurrentCategory(categories[nextIdx].id);
+        const newForm = app.querySelector('#creation-kit-form');
+        if (newForm) {
+          const inClass = dir > 0 ? 'slide-in-left' : 'slide-in-right';
+          newForm.classList.add(inClass);
+          newForm.addEventListener('animationend', () => { newForm.classList.remove(inClass); }, { once: true });
+        }
+      }, { once: true });
+    } else {
+      setCurrentCategory(categories[nextIdx].id);
+    }
+  }, { capture: true });
 }
 
 function maybeWarnPromptLength(wordCount) {
@@ -77,7 +113,7 @@ export function renderCreationKit(container) {
   maybeWarnPromptLength(state.promptResult?.diagnostics?.wordCount || 0);
 
   container.innerHTML = `
-    <div class="page" data-swipe-surface>
+    <div class="page">
       <!-- Category Tabs -->
       <div class="cat-bar">
         <div class="cat-bar__tabs">
@@ -182,7 +218,7 @@ export function renderCreationKit(container) {
   };
 
   // Bind swipe
-  bindSwipe(container, categories, index);
+  bindGlobalSwipe();
 
   // Scroll active category into view
   const activeTab = container.querySelector('.cat-bar__item.is-active');
