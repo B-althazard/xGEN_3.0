@@ -1,6 +1,6 @@
-import { getState, saveCurrentPreset, setJobState, setActiveImageIndex, resetActiveDummy, persist, recomputePrompt } from '../store.js';
+import { getState, saveCurrentPreset, setJobState, setActiveImageIndex, resetActiveDummySilent, setSettingSilent, persist, recomputePrompt } from '../store.js';
 import { triggerGeneration } from '../bridgeManager.js';
-import { randomizeCurrentDummy } from '../modules/terminal.js';
+import { randomizeCurrentDummySilent } from '../modules/terminal.js';
 import { icon } from '../icons.js';
 
 let positiveOpen = true;
@@ -244,13 +244,28 @@ export function renderXgen(container) {
       const name = prompt('Name this Doll:', 'Saved Doll');
       if (!name) return;
       await saveCurrentPreset({ type: 'doll', name });
+      showPill('Doll saved');
     };
   });
   container.querySelectorAll('[data-empty-form]').forEach((btn) => {
-    btn.onclick = () => resetActiveDummy();
+    btn.onclick = () => {
+      resetActiveDummySilent();
+      renderXgen(container);
+      showPill('Reset');
+    };
   });
   container.querySelectorAll('[data-randomize]').forEach((btn) => {
-    btn.onclick = () => randomizeCurrentDummy();
+    btn.onclick = () => {
+      randomizeCurrentDummySilent();
+      renderXgen(container);
+      const prompt = getState().promptResult?.positivePrompt || '';
+      if (prompt) {
+        navigator.clipboard.writeText(prompt);
+        showPill('Randomized & copied');
+      } else {
+        showPill('Randomized');
+      }
+    };
   });
 
   container.querySelectorAll('[data-toggle-positive]').forEach((btn) => {
@@ -279,12 +294,9 @@ export function renderXgen(container) {
 
   container.querySelectorAll('[data-prompt-order]').forEach((button) => {
     button.onclick = () => {
-      const s = getState();
-      s.settings.promptOrder = button.dataset.promptOrder;
-      recomputePrompt();
-      persist();
+      setSettingSilent('promptOrder', button.dataset.promptOrder);
       container.querySelectorAll('[data-prompt-order]').forEach((btn) => {
-        btn.classList.toggle('is-active', btn.dataset.promptOrder === s.settings.promptOrder);
+        btn.classList.toggle('is-active', btn.dataset.promptOrder === button.dataset.promptOrder);
       });
       updatePromptText();
     };
@@ -294,9 +306,7 @@ export function renderXgen(container) {
     btn.onclick = () => {
       const s = getState();
       const val = Math.max(6, s.settings.aesthetic - 1);
-      s.settings.aesthetic = val;
-      recomputePrompt();
-      persist();
+      setSettingSilent('aesthetic', val);
       container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
       updatePromptText();
     };
@@ -305,9 +315,7 @@ export function renderXgen(container) {
     btn.onclick = () => {
       const s = getState();
       const val = Math.min(10, s.settings.aesthetic + 1);
-      s.settings.aesthetic = val;
-      recomputePrompt();
-      persist();
+      setSettingSilent('aesthetic', val);
       container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
       updatePromptText();
     };

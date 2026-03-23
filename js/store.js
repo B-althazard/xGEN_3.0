@@ -181,6 +181,12 @@ export function updateSetting(key, value) {
   notify();
 }
 
+export function setSettingSilent(key, value) {
+  state.settings[key] = value;
+  recomputePrompt();
+  persist();
+}
+
 export function updateField(fieldId, value, dummyIndex = state.activeDummyIndex) {
   snapshotUndo();
   const dummy = state.dummies[dummyIndex];
@@ -341,6 +347,13 @@ export function resetActiveDummy() {
   snapshotUndo();
   state.dummies[state.activeDummyIndex].fields = {};
   notify();
+}
+
+export function resetActiveDummySilent() {
+  snapshotUndo();
+  state.dummies[state.activeDummyIndex].fields = {};
+  recomputePrompt();
+  persist();
 }
 
 export function loadDummyFields(payload) {

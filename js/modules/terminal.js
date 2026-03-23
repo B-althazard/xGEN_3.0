@@ -1,4 +1,4 @@
-import { getState, resetActiveDummy, updateField, loadDummyFields } from '../store.js';
+import { getState, resetActiveDummy, updateField, updateFieldSilent, recomputePrompt, persist, loadDummyFields } from '../store.js';
 import { showModal } from '../components/modal.js';
 
 function randomChoice(list) {
@@ -20,6 +20,26 @@ export function randomizeCurrentDummy() {
       } else {
         const next = Math.random() < 0.2 ? null : randomChoice(items).id;
         updateField(field.id, next);
+      }
+    });
+  });
+}
+
+export function randomizeCurrentDummySilent() {
+  const state = getState();
+  const dummy = state.dummies[state.activeDummyIndex];
+  state.schema.categories.forEach((category) => {
+    category.fields.forEach((field) => {
+      if (dummy.lockedFields.includes(field.id)) return;
+      const items = field.options || field.colors || [];
+      if (!items.length) return;
+      if (field.type === 'multi-select' || field.multiSelect) {
+        const count = Math.floor(Math.random() * Math.min(3, items.length + 1));
+        const selected = [...items].sort(() => Math.random() - 0.5).slice(0, count).map((item) => item.id);
+        updateFieldSilent(field.id, selected);
+      } else {
+        const next = Math.random() < 0.2 ? null : randomChoice(items).id;
+        updateFieldSilent(field.id, next);
       }
     });
   });
