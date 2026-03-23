@@ -227,56 +227,89 @@ export function renderXgen(container) {
   `;
 
   // Bind actions
-  container.querySelector('[data-copy-prompt]').onclick = async () => {
-    await navigator.clipboard.writeText(state.promptResult?.positivePrompt || '');
-    showPill('Prompt copied');
-  };
-  container.querySelector('[data-generate]').onclick = () => triggerGeneration();
-  container.querySelector('[data-back-edit]').onclick = () => { window.location.hash = '#creation-kit'; };
-  container.querySelector('[data-save-doll]').onclick = async () => {
-    const name = prompt('Name this Doll:', 'Saved Doll');
-    if (!name) return;
-    await saveCurrentPreset({ type: 'doll', name });
-  };
-  container.querySelector('[data-empty-form]').onclick = () => resetActiveDummy();
-  container.querySelector('[data-randomize]').onclick = () => randomizeCurrentDummy();
+  container.querySelectorAll('[data-copy-prompt]').forEach((btn) => {
+    btn.onclick = async () => {
+      await navigator.clipboard.writeText(getState().promptResult?.positivePrompt || '');
+      showPill('Prompt copied');
+    };
+  });
+  container.querySelectorAll('[data-generate]').forEach((btn) => {
+    btn.onclick = () => triggerGeneration();
+  });
+  container.querySelectorAll('[data-back-edit]').forEach((btn) => {
+    btn.onclick = () => { window.location.hash = '#creation-kit'; };
+  });
+  container.querySelectorAll('[data-save-doll]').forEach((btn) => {
+    btn.onclick = async () => {
+      const name = prompt('Name this Doll:', 'Saved Doll');
+      if (!name) return;
+      await saveCurrentPreset({ type: 'doll', name });
+    };
+  });
+  container.querySelectorAll('[data-empty-form]').forEach((btn) => {
+    btn.onclick = () => resetActiveDummy();
+  });
+  container.querySelectorAll('[data-randomize]').forEach((btn) => {
+    btn.onclick = () => randomizeCurrentDummy();
+  });
 
-  container.querySelector('[data-toggle-positive]').onclick = () => {
-    positiveOpen = !positiveOpen;
-    renderXgen(container);
-  };
-  container.querySelector('[data-toggle-negative]').onclick = () => {
-    negativeOpen = !negativeOpen;
-    renderXgen(container);
+  container.querySelectorAll('[data-toggle-positive]').forEach((btn) => {
+    btn.onclick = () => {
+      positiveOpen = !positiveOpen;
+      renderXgen(container);
+    };
+  });
+  container.querySelectorAll('[data-toggle-negative]').forEach((btn) => {
+    btn.onclick = () => {
+      negativeOpen = !negativeOpen;
+      renderXgen(container);
+    };
+  });
+
+  const updatePromptText = () => {
+    const s = getState();
+    container.querySelectorAll('.prompt-text').forEach((el) => {
+      if (el.classList.contains('prompt-text--negative')) {
+        el.textContent = s.promptResult?.negativePrompt || '(empty)';
+      } else {
+        el.textContent = s.promptResult?.positivePrompt || '';
+      }
+    });
   };
 
   container.querySelectorAll('[data-prompt-order]').forEach((button) => {
     button.onclick = () => {
-      state.settings.promptOrder = button.dataset.promptOrder;
+      const s = getState();
+      s.settings.promptOrder = button.dataset.promptOrder;
       recomputePrompt();
       persist();
       container.querySelectorAll('[data-prompt-order]').forEach((btn) => {
-        btn.classList.toggle('is-active', btn === button);
+        btn.classList.toggle('is-active', btn.dataset.promptOrder === s.settings.promptOrder);
       });
+      updatePromptText();
     };
   });
 
   container.querySelectorAll('[data-aesthetic-dec]').forEach((btn) => {
     btn.onclick = () => {
-      const val = Math.max(6, state.settings.aesthetic - 1);
-      state.settings.aesthetic = val;
+      const s = getState();
+      const val = Math.max(6, s.settings.aesthetic - 1);
+      s.settings.aesthetic = val;
       recomputePrompt();
       persist();
       container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
+      updatePromptText();
     };
   });
   container.querySelectorAll('[data-aesthetic-inc]').forEach((btn) => {
     btn.onclick = () => {
-      const val = Math.min(10, state.settings.aesthetic + 1);
-      state.settings.aesthetic = val;
+      const s = getState();
+      const val = Math.min(10, s.settings.aesthetic + 1);
+      s.settings.aesthetic = val;
       recomputePrompt();
       persist();
       container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
+      updatePromptText();
     };
   });
 
