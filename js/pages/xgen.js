@@ -1,10 +1,11 @@
-import { getState, saveCurrentPreset, setJobState, setActiveImageIndex, resetActiveDummySilent, setSettingSilent, persist, recomputePrompt } from '../store.js';
-import { triggerGeneration } from '../bridgeManager.js';
+import { getState, saveCurrentPreset, setJobState, setActiveImageIndex, resetActiveDummySilent, setSettingSilent, persist, recomputePrompt, addPromptToList, removePromptFromList, clearPromptList, updateBatchSetting, clearBatchHistory, setBatchRunning } from '../store.js';
+import { triggerGeneration, startBatchJob, stopBatchJob } from '../bridgeManager.js';
 import { randomizeCurrentDummySilent } from '../modules/terminal.js';
 import { icon } from '../icons.js';
 
 let positiveOpen = true;
 let negativeOpen = false;
+let xbOpen = true;
 
 function showPill(message) {
   const pill = document.createElement('div');
@@ -12,6 +13,96 @@ function showPill(message) {
   pill.textContent = message;
   document.body.appendChild(pill);
   setTimeout(() => pill.remove(), 1600);
+}
+
+function buildXBatcherHtml(state) {
+  const batch = state.batch;
+  const isRunning = batch.running;
+  const promptCount = batch.promptList.length;
+  const historyCount = batch.history.length;
+
+  const promptListHtml = promptCount > 0
+    ? batch.promptList.map((p, i) => `
+      <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid var(--border-subtle);font-size:12px;">
+        <span style="color:var(--text-tertiary);min-width:18px;">${i + 1}.</span>
+        <span style="flex:1;color:var(--text-secondary);word-break:break-all;">${p.text.length > 80 ? p.text.substring(0, 80) + '...' : p.text}</span>
+        <button class="btn btn--sm btn--icon" data-remove-prompt="${p.id}" title="Remove">${icon('x')}</button>
+      </div>`).join('')
+    : '<div style="color:var(--text-tertiary);font-size:12px;font-style:italic;padding:4px 0;">No prompts in list</div>';
+
+  const historyHtml = historyCount > 0
+    ? batch.history.slice(0, 30).map((h) => {
+      const time = new Date(h.timestamp).toLocaleTimeString();
+      const statusColor = h.status === 'success' ? 'var(--accent)' : '#f38ba8';
+      const statusIcon = h.status === 'success' ? '&#10003;' : '&#10007;';
+      const promptShort = h.prompt.length > 50 ? h.prompt.substring(0, 50) + '...' : h.prompt;
+      return `<div style="display:flex;gap:6px;padding:3px 0;border-bottom:1px solid var(--border-subtle);font-size:11px;">
+        <span style="color:${statusColor};font-weight:700;">${statusIcon}</span>
+        <span style="color:var(--text-tertiary);min-width:55px;">${time}</span>
+        <span style="flex:1;color:var(--text-secondary);word-break:break-all;">${promptShort}</span>
+      </div>`;
+    }).join('')
+    : '<div style="color:var(--text-tertiary);font-size:11px;font-style:italic;">No history</div>';
+
+  return `
+    <div style="margin-top:var(--sp-4);border-top:1px solid var(--border-subtle);padding-top:var(--sp-4);">
+      <button class="accordion__trigger" data-toggle-xb style="padding:0 0 var(--sp-3) 0;">
+        <span class="prompt-panel__label" style="color:var(--accent);">xBatcher</span>
+        <span class="accordion__trigger-icon">${icon('chevDown')}</span>
+      </button>
+      ${xbOpen ? `
+        <div style="margin-top:var(--sp-2);">
+          <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-tertiary);margin-bottom:var(--sp-2);">Add Prompt</div>
+          <div style="display:flex;gap:var(--sp-2);margin-bottom:var(--sp-2);">
+            <textarea data-batch-prompt-input rows="2" placeholder="Enter a prompt to batch..." style="flex:1;box-sizing:border-box;background:var(--bg-input);color:var(--text-primary);border:1px solid var(--border-subtle);border-radius:var(--r-md);padding:6px 10px;font-size:12px;font-family:inherit;resize:vertical;"></textarea>
+          </div>
+          <div style="display:flex;gap:var(--sp-2);margin-bottom:var(--sp-3);">
+            <button class="btn btn--sm" data-add-batch-prompt>${icon('plus')} Add to List</button>
+            ${promptCount > 0 ? `<button class="btn btn--sm" data-clear-batch-prompts>${icon('trash')} Clear</button>` : ''}
+          </div>
+
+          <div style="max-height:120px;overflow-y:auto;margin-bottom:var(--sp-3);">
+            ${promptListHtml}
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--sp-2);margin-bottom:var(--sp-3);">
+            <div>
+              <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:2px;">Repeat</div>
+              <input type="number" data-batch-repeat min="1" value="${batch.repeatCount}" style="width:100%;box-sizing:border-box;background:var(--bg-input);color:var(--text-primary);border:1px solid var(--border-subtle);border-radius:var(--r-md);padding:4px 8px;font-size:12px;">
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:2px;">Mode</div>
+              <select data-batch-mode style="width:100%;box-sizing:border-box;background:var(--bg-input);color:var(--text-primary);border:1px solid var(--border-subtle);border-radius:var(--r-md);padding:4px 8px;font-size:12px;">
+                <option value="iteration" ${batch.mode === 'iteration' ? 'selected' : ''}>Iter</option>
+                <option value="unique" ${batch.mode === 'unique' ? 'selected' : ''}>New Chat</option>
+              </select>
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:2px;">Delay</div>
+              <input type="number" data-batch-delay min="1" value="${batch.delay}" style="width:100%;box-sizing:border-box;background:var(--bg-input);color:var(--text-primary);border:1px solid var(--border-subtle);border-radius:var(--r-md);padding:4px 8px;font-size:12px;">
+            </div>
+          </div>
+
+          <div style="display:flex;gap:var(--sp-2);">
+            ${isRunning
+              ? `<button class="btn btn--danger" data-stop-batch style="flex:1;">${icon('x')} Stop Batch</button>`
+              : `<button class="btn btn--generate" data-start-batch style="flex:1;" ${promptCount === 0 ? 'disabled' : ''}>${icon('bolt')} Start Batch</button>`
+            }
+          </div>
+
+          <div style="margin-top:var(--sp-4);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-2);">
+              <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-tertiary);">History (${historyCount})</div>
+              ${historyCount > 0 ? `<button class="btn btn--sm btn--icon" data-clear-batch-history title="Clear history">${icon('trash')}</button>` : ''}
+            </div>
+            <div style="max-height:150px;overflow-y:auto;">
+              ${historyHtml}
+            </div>
+          </div>
+        </div>
+      ` : ''}
+    </div>
+  `;
 }
 
 export function renderXgen(container) {
@@ -153,6 +244,9 @@ export function renderXgen(container) {
             ? `<div class="status status--error" style="margin-top:var(--sp-2);">${state.xgen.errorMessage}</div>`
             : ''
           }
+
+          <!-- xBatcher -->
+          ${buildXBatcherHtml(state)}
         </aside>
 
         <!-- Mobile: sidebar content visible below viewer on small screens -->
@@ -221,6 +315,9 @@ export function renderXgen(container) {
             ? `<div class="status status--error" style="margin-top:var(--sp-2);">${state.xgen.errorMessage}</div>`
             : ''
           }
+
+          <!-- xBatcher (mobile) -->
+          ${buildXBatcherHtml(state)}
         </div>
       </div>
     </div>
@@ -344,4 +441,80 @@ export function renderXgen(container) {
     const img = container.querySelector('.viewer__image');
     if (img?.requestFullscreen) img.requestFullscreen();
   };
+
+  // ── xBatcher bindings ──────────────────────────────────────────────────
+
+  container.querySelectorAll('[data-toggle-xb]').forEach((btn) => {
+    btn.onclick = () => {
+      xbOpen = !xbOpen;
+      renderXgen(container);
+    };
+  });
+
+  container.querySelectorAll('[data-add-batch-prompt]').forEach((btn) => {
+    btn.onclick = () => {
+      const input = container.querySelector('[data-batch-prompt-input]');
+      const text = input?.value?.trim();
+      if (!text) return;
+      addPromptToList(text);
+      input.value = '';
+      renderXgen(container);
+      showPill('Prompt added');
+    };
+  });
+
+  container.querySelectorAll('[data-clear-batch-prompts]').forEach((btn) => {
+    btn.onclick = () => {
+      clearPromptList();
+      renderXgen(container);
+    };
+  });
+
+  container.querySelectorAll('[data-remove-prompt]').forEach((btn) => {
+    btn.onclick = () => {
+      removePromptFromList(btn.dataset.removePrompt);
+      renderXgen(container);
+    };
+  });
+
+  container.querySelectorAll('[data-batch-repeat]').forEach((input) => {
+    input.onchange = () => {
+      const val = Math.max(1, parseInt(input.value, 10) || 1);
+      updateBatchSetting('repeatCount', val);
+    };
+  });
+
+  container.querySelectorAll('[data-batch-mode]').forEach((select) => {
+    select.onchange = () => {
+      updateBatchSetting('mode', select.value);
+    };
+  });
+
+  container.querySelectorAll('[data-batch-delay]').forEach((input) => {
+    input.onchange = () => {
+      const val = Math.max(1, parseInt(input.value, 10) || 1);
+      updateBatchSetting('delay', val);
+    };
+  });
+
+  container.querySelectorAll('[data-start-batch]').forEach((btn) => {
+    btn.onclick = () => {
+      startBatchJob();
+    };
+  });
+
+  container.querySelectorAll('[data-stop-batch]').forEach((btn) => {
+    btn.onclick = () => {
+      stopBatchJob();
+      renderXgen(container);
+      showPill('Batch stopped');
+    };
+  });
+
+  container.querySelectorAll('[data-clear-batch-history]').forEach((btn) => {
+    btn.onclick = () => {
+      clearBatchHistory();
+      renderXgen(container);
+    };
+  });
 }

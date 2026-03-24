@@ -1,0 +1,4511 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "Firefox",
+      "version": "149.0"
+    },
+    "browser": {
+      "name": "Firefox",
+      "version": "149.0"
+    },
+    "pages": [
+      {
+        "id": "page_4",
+        "pageTimings": {
+          "onContentLoad": -1,
+          "onLoad": -1
+        },
+        "startedDateTime": "2026-03-24T13:46:17.571+01:00",
+        "title": "https://venice.ai/chat?refreshId=ofPSc7m"
+      }
+    ],
+    "entries": [
+      {
+        "startedDateTime": "2026-03-24T13:46:17.571+01:00",
+        "request": {
+          "bodySize": 36,
+          "method": "POST",
+          "url": "https://clerk.venice.ai/v1/client/sessions/sess_3B7QnFdZPChDX9pSzANYn9x1Upi/touch?__clerk_api_version=2025-11-10&_clerk_js_version=5.125.7",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "clerk.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Content-Length",
+              "value": "36"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "_gcl_au=1.1.399658908.1773837783; spdl_pid=MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR; __client=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ; __client_uat=1773837793; __client_uat_aKq7rGhf=1773837793; __stripe_mid=cde8a3fc-51d4-42e8-b414-b461122ad895316418; _cfuvid=QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000; _cfuvid=UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4; __cf_bm=rgecL_rU0ffHLmx4zwC6ZJi0VbV2j_r1HvYIh2FVHXM-1774355597-1.0.1.1-AilXaPz3w6tF18m_eKaw6Ve0Tn2upO7DooDgXqylL4DGg0u3zomIgwyWEp_YeWlZcQzHWsIY8bRCdYzEWOLASodggdtgQPoVioBPnS02XkQ; ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog=%7B%22%24device_id%22%3A%22019d00f8-9060-7b77-a987-73242f3cd052%22%2C%22distinct_id%22%3A%22c0ef4c84-f6f2-4042-abb1-958f1b6ca15d%22%2C%22%24sesid%22%3A%5B1774356359433%2C%22019d1fe0-1077-7129-85f2-5850df4c3155%22%2C1774356271222%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fvenice.ai%2F%22%7D%7D; __stripe_sid=c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "_gcl_au",
+              "value": "1.1.399658908.1773837783"
+            },
+            {
+              "name": "spdl_pid",
+              "value": "MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR"
+            },
+            {
+              "name": "__client",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ"
+            },
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            },
+            {
+              "name": "__stripe_mid",
+              "value": "cde8a3fc-51d4-42e8-b414-b461122ad895316418"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4"
+            },
+            {
+              "name": "__cf_bm",
+              "value": "rgecL_rU0ffHLmx4zwC6ZJi0VbV2j_r1HvYIh2FVHXM-1774355597-1.0.1.1-AilXaPz3w6tF18m_eKaw6Ve0Tn2upO7DooDgXqylL4DGg0u3zomIgwyWEp_YeWlZcQzHWsIY8bRCdYzEWOLASodggdtgQPoVioBPnS02XkQ"
+            },
+            {
+              "name": "ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog",
+              "value": "{\"$device_id\":\"019d00f8-9060-7b77-a987-73242f3cd052\",\"distinct_id\":\"c0ef4c84-f6f2-4042-abb1-958f1b6ca15d\",\"$sesid\":[1774356359433,\"019d1fe0-1077-7129-85f2-5850df4c3155\",1774356271222],\"$epp\":true,\"$initial_person_info\":{\"r\":\"$direct\",\"u\":\"https://venice.ai/\"}}"
+            },
+            {
+              "name": "__stripe_sid",
+              "value": "c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "__clerk_api_version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "_clerk_js_version",
+              "value": "5.125.7"
+            }
+          ],
+          "headersSize": 2177,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "params": [
+              {
+                "name": "active_organization_id",
+                "value": ""
+              },
+              {
+                "name": "intent",
+                "value": "focus"
+              }
+            ],
+            "text": "active_organization_id=&intent=focus"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:46:17 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15c71c09d7dde3-AMS"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "name": "expires",
+              "value": "0"
+            },
+            {
+              "name": "set-cookie",
+              "value": "__client_uat=1773837793; Path=/; Domain=venice.ai; Max-Age=315360000; Secure; SameSite=Lax"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "set-cookie",
+              "value": "__client_uat_aKq7rGhf=1773837793; Path=/; Domain=venice.ai; Max-Age=315360000; Secure; SameSite=Lax"
+            },
+            {
+              "name": "clerk-api-version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "x-cfworker",
+              "value": "1"
+            },
+            {
+              "name": "x-clerk-client-id",
+              "value": "client_3B7Qm9WnS1mlPnRjAIXcdWFM0IF"
+            },
+            {
+              "name": "x-clerk-instance-id",
+              "value": "ins_2dubRvCKqi5XrOUxIgUN4fomDFR"
+            },
+            {
+              "name": "x-clerk-trace-id",
+              "value": "6b1cae747876c59e983fac3243f94fcd"
+            },
+            {
+              "name": "x-country",
+              "value": "NL"
+            },
+            {
+              "name": "x-robots-tag",
+              "value": "noindex, nofollow"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=aJRsGUtpnKbCx3oxAbK1GiA4c5jv%2B1pAyp77pE1os5%2BGllRB29yNy5b85L8fBiXWrS4FmgsItuoN9%2FvMGoiqUqQbQMQ3YUF4FQqZ71vZRA55xN4JwLfzNQD4eJyR4iO65Q%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "nel",
+              "value": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "Authorization, X-Country"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000;"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json",
+            "size": 3142,
+            "text": "{\"response\":{\"object\":\"session\",\"id\":\"sess_3B7QnFdZPChDX9pSzANYn9x1Upi\",\"status\":\"active\",\"expire_at\":2089197793369,\"abandon_at\":2719917793369,\"last_active_at\":1774356377080,\"last_active_organization_id\":null,\"actor\":null,\"user\":{\"id\":\"user_3AK9O3NvHL3lnwcKHbO03rQXBlt\",\"object\":\"user\",\"username\":null,\"first_name\":\"Balthazard\",\"last_name\":null,\"locale\":null,\"image_url\":\"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzNBTEJKaEpTMXFQMTJEbVlqczdLaUhEVFF4dCJ9\",\"has_image\":true,\"primary_email_address_id\":\"idn_3AK9LDaFfLavA63z5RNIef1H2JX\",\"primary_phone_number_id\":null,\"primary_web3_wallet_id\":null,\"password_enabled\":true,\"two_factor_enabled\":false,\"totp_enabled\":false,\"backup_code_enabled\":false,\"email_addresses\":[{\"id\":\"idn_3AK9LDaFfLavA63z5RNIef1H2JX\",\"object\":\"email_address\",\"email_address\":\"hb.mcmxc@gmail.com\",\"reserved\":false,\"verification\":{\"object\":\"verification_otp\",\"status\":\"verified\",\"strategy\":\"email_code\",\"attempts\":1,\"expire_at\":1772330937023},\"linked_to\":[],\"matches_sso_connection\":false,\"created_at\":1772330336406,\"updated_at\":1772330359935}],\"phone_numbers\":[],\"web3_wallets\":[],\"passkeys\":[],\"external_accounts\":[],\"saml_accounts\":[],\"enterprise_accounts\":[],\"password_last_updated_at\":1772330359930,\"public_metadata\":{},\"unsafe_metadata\":{},\"external_id\":null,\"last_sign_in_at\":1773837793369,\"banned\":false,\"locked\":false,\"lockout_expires_in_seconds\":null,\"verification_attempts_remaining\":10,\"created_at\":1772330359930,\"updated_at\":1773837793406,\"delete_self_enabled\":true,\"bypass_client_trust\":false,\"create_organization_enabled\":false,\"last_active_at\":1774329637069,\"mfa_enabled_at\":null,\"mfa_disabled_at\":null,\"legal_accepted_at\":null,\"profile_image_url\":\"https://images.clerk.dev/uploaded/img_3ALBJhJS1qP12DmYjs7KiHDTQxt\",\"organization_memberships\":[]},\"public_user_data\":{\"first_name\":\"Balthazard\",\"last_name\":null,\"image_url\":\"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzNBTEJKaEpTMXFQMTJEbVlqczdLaUhEVFF4dCJ9\",\"has_image\":true,\"identifier\":\"hb.mcmxc@gmail.com\",\"username\":null,\"profile_image_url\":\"https://images.clerk.dev/uploaded/img_3ALBJhJS1qP12DmYjs7KiHDTQxt\"},\"factor_verification_age\":[8643,-1],\"created_at\":1773837793369,\"updated_at\":1774356377080,\"last_active_token\":{\"object\":\"token\",\"jwt\":\"eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yZHViUnZDS3FpNVhyT1V4SWdVTjRmb21ERlIiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL3ZlbmljZS5haSIsImV4cCI6MTc3NDM1NjQzNywiZnZhIjpbODY0MywtMV0sImlhdCI6MTc3NDM1NjM3NywiaXNzIjoiaHR0cHM6Ly9jbGVyay52ZW5pY2UuYWkiLCJuYmYiOjE3NzQzNTYzNjcsInNpZCI6InNlc3NfM0I3UW5GZFpQQ2hEWDlwU3pBTlluOXgxVXBpIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJ2IjoyfQ.mwnZz2ZrNBqhb9hPeNRZ5GmlQbYl5bYDj36fmu-1wdWyaonRtr_D2bm7QZtgM_5v5KIy4n6moBXCxDKz5M7QP99gfiXAAQMVWVOhgo7heRdRKm_i9z7aQUx4bwUwOzdWEwITlXBn4-gGZqlZg4bXrHhK7g3YorsKqGx_k_C7AsP6n5PDfAA6PMO-DFh-HYAso6RyRCEki4vM9EjjdGSxdPDelnAPOpYl-gG9aVDcY4rIYBPO8IkVIRolvZNGSLqVDqirQkaApqG-78Yz67DZ-suylW88JhO3E-ugExQMae04KIbYUlMU40jROhGdGLu2PZO9R6wiiUfXQz8snh-xqw\"}},\"client\":null}"
+          },
+          "redirectURL": "",
+          "headersSize": 1268,
+          "bodySize": 2867
+        },
+        "cache": {},
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 228,
+          "receive": 0
+        },
+        "time": 228,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.34.146",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:46:22.487+01:00",
+        "request": {
+          "bodySize": 1997,
+          "method": "POST",
+          "url": "https://ph.venice.ai/i/v0/e/?ip=0&_=1774356382480&ver=1.345.3&compression=gzip-js",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "ph.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "content-type",
+              "value": "text/plain"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Content-Length",
+              "value": "1997"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [
+            {
+              "name": "ip",
+              "value": "0"
+            },
+            {
+              "name": "_",
+              "value": "1774356382480"
+            },
+            {
+              "name": "ver",
+              "value": "1.345.3"
+            },
+            {
+              "name": "compression",
+              "value": "gzip-js"
+            }
+          ],
+          "headersSize": 496,
+          "postData": {
+            "mimeType": "text/plain",
+            "params": [],
+            "text": "\u001f\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003­XmoÛF\u0012þ+\u0006á\u000fw×&ER$U\u001c\u000e6½+¶9'MÐ\u0016\u0001±Z.¥I.³\\Jü÷{/dS¶¯m\u0010$öîÎû33ùýÓ¶*s\u0016ë%K-£ fQÎ#Æe\u001e³Y\u0018¸ô½Ï\u0003çÂ\u001bYY<??_KnK^ã¬6ºÆ*Ù8/Î¹ÆÎGUezÛà\u0016¿§\u001bi\u001a¥+{.\u001d-\rî¤Áïß+#s}KÜ(!S»«%.¾ÍÕÄþÜªRÞéN_·$ëê4ª\u000eïRçflîâX´Æ@Ñ´5\u0005¨ÖÖÖÍâê\nºCÂ%WWbÍ-¯uCÖÜ_ÐYÍíºâ%»gø6m¡qÊW½ý?ê;U\u0014ü*¼tÏþ6\u0018{öÓû3Ï½t¿9ÃÁ<øæìþ1\u0017$îßÏþ-Å¾¹¿ÞÙ`úUw{à½·psp\\ðjÕB>¤Ëýòîd¼KkðT·Ý\u0013ºo²J×R­ÖPÛ¹óýéVeví,f^\u0010àp£ä¶ÖÆî\u001f»wx><÷b/Äq¡²K\u0012_\u000ec|é\u0007á¥O\u0017ªv6í\u0010Vd¥×Ü¸¶jyà'^4\u000f,£(ðÃ¹\u001f%Át\u0019 p\u000fL×\u0005\u0012\u0013wî²h\u0019\u0001I\u001c±È\u0005³Ü\u0017\u001bÎÀ*SU\u0018d\tWæ\u0003Ïó\u0019\u0003g/\u001eKÂ8÷sÁ½0ëõSVñBÝq\u000bÝÓ^\u001dgæÎæÌõÙ,xïÍ\u0016A¸ðK×\u000f#\n¡«\\­Z#³´\rYÜQéÖ¦%ïÅ.ý!'\u000f·F\nm2U­ðS©­L{\u000e*5\u0000\u000fòÆò²î\u001cáÇ~\u0014Å¾\u0017ÇH¶/\u000b\t{r^4òÂ©¤Ýjsóï\nÍ³oym¡GÏ¨ûñ­4¹6%¯Dw:<'\u0001\u0010ï,¬iÁ\u0004!K7Êã=ßýQÊBoa[)­Q\u0002Oª¶(¾~½jÃëÑ\u0018ðÇa\u0003­\u000byÍ-äÑÃ\u000b\u0007TÙßµ¦óèH\u0012Õ¨ÊF^p\ro­\u001eTN\u0011·ÎHxÓ\u0000Bi£20ëU=GeÉZÄÔêÖ4éàã\tç\u00076¼ôÝ¤­x\"o¬;<J>É1<KE¡ÄÍ3¢¹°j#Ó\u001cæ\u0005_Aèï\u000e¯tµ+uÛ08M²\u0002á²LÞ¢¦\u0002\u0019¨6\u0017N[¯\fÏ$+uÆ\u000bf\u001dÌØÀ\b\u0004e\u001bJFQ<èdki¤UbÑ\u0017­dT¸»ú­\u0004BÊÚªÐâ!X\u0016¯{Ày+ä \b&¤BB*|\u0011\u0005OIÝ´°}Ç,7+(\u0000¾s/Î\u0012\u0011ò\\2Ñ6V,È±|\\L»\u0003ËúW¨837+mv¬iW+ä\u0011x4½Z\u001b8_³Æ¶ÒlË\u001b»6º]­{JhHknèÿ?õ«ªÉ·\u0007áhd5\u0019p$UU\fÇÈ4\u000e¿Qµ¢'\u001d\u0001½Gàý\u0001\u0005l\u000bô3¼ç³(îü¹7IUèa-[k;».t J\u0014ò¡\u0005QÝWÙÉ0X\rn(ê\u001cð%bîË0§\u0012×¨UÕÖ+{±`Æ#È1ð\u0004S¶\u000b\t®]ª\u000bæF¾[»h®¤\u001a=s­I³¢(ïaÖHn\u0004ù¶w]#\u000bÈÐ®ìee2çmaÙ\u000eïÝ±G(\bð\u0000°',\u001f\u0003<Ô\u0000\nBÁqkþ\\\fàÇ\u0011^B¯Ñ×\u000eÀ\b©h\u0013zÓñì\u0011F-»ð«\u0002ª ¹\u0016ó\tÉ<øÿê¹ä]8\u0016¨¤Î1R¼,ÑÃF\u0017¤Ïä÷$Í^Á\u001c]\u001a\u00072m_\u001ejuP\u0019&Ù.\u0016Ï¯\u001fdG%eÚ\u0015ÏW±L;þ æTÁõ¤%9Txè®i7<~÷Âb6©ÁõmâdÉ{ÂÓ%ðñÛ§Kâ¤&¦JN\u0003éTávÝd-}\n¡¨¼HÒS\u0015÷±g'+ð´E/+Ê'4±%}@\u0001­\u0006\u000eÊÕª8øD\u0019)&*ûÂù¨*^¤ÿÝÊÊO?¼IãWb&+ÿ¤B{,\u0001w\u001b}\u0006C` 8f\u000fºÆs\b9n$§ëqoù«Áü¸Ýn\b\u000fÚÏÓ¡<îH§L¬V@6>;>]\"\u0000\u0013Øa±ÀÌI$¢yòÈýÝ'jZ÷ã\u0006\r÷ôñ~tgäç\u0016ÖôC\u0017¦:\f~\u0019gÞ'\u0018ºrÅA\u000e5\u000fe ³,\tq _ÏARÃAä²L\u001e'A?ô\u0002ú<SQ¼ïW\u0002\u001f_¿J_]ÿüñÝëkjÚøÆ~¯º½5øv\u0003úÿ5þ5ÙMÉe\u000b5nQ¿©\u00194)Í4\u0013¬5±jv@\u0011­\u0010Á§)hëF@\u001a`\u0011\u0016\r\u0004)w~ÿ¹5Ò(ij×Áí°PI3NýrbkñO01²YÿýCçoß\b}\u000e[\u001cü^ç2$çÎ1¡÷1Å6à`\u001c+G\f£\u001bé|½èh¨£gø\tû\u001ezÎA\u0012\bç\u001e6\u0015/#ü\u0004\u0010Y}ýÄÂ©×\"\r~]%\u001fÜu¼YñÍVùßþõ­\u0007vÇ£_>ç»ÿÈ·\u001f~úùî×ë×ßïçoÄ +\bÔ­Zì\u0018:\u0007\u0013÷á>ËeXc`YàÍ\u0012\u0016\u0000C\u0018n\u0006pø^\u0018\u0012Ñ¶ÛÝ<Kãe¾\u0017É(îÖ\u001d£ $Ù!\u0007¦b=õæTäß>µ³þ#ú©ÖñÉ\r×ý\u0002)g\u0001ö\u0005­TúýÃ\u0011îÑ\u0014À\u0002ißJÌ·w`BÛ\u000eÚ\u0000õ])¯Õ¨ÃhD½¾<RG!g2è¢rµ\nMû\u0002z¦ø²h +~EmÛ/\u0003H\u0004Õø´«ñ´M#Iá\u000eMP8I\u0000­q\u000fè»Þüë§ÿ\u0001uë\r£à\u0014\u0000\u0000"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:46:21 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "content-length",
+              "value": "15"
+            },
+            {
+              "name": "permissions-policy",
+              "value": "geolocation=(), camera=()"
+            },
+            {
+              "name": "vary",
+              "value": "origin, access-control-request-method, access-control-request-headers"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "x-envoy-upstream-service-time",
+              "value": "22"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains; preload"
+            },
+            {
+              "name": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "content-security-policy",
+              "value": "default-src https:"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15c73aca65d5a5-AMS"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 15,
+            "text": "{\"status\":\"Ok\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 659,
+          "bodySize": 674
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 120,
+          "receive": 1
+        },
+        "time": 121,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.28.226",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:46:27.486+01:00",
+        "request": {
+          "bodySize": 1970,
+          "method": "POST",
+          "url": "https://ph.venice.ai/i/v0/e/?ip=0&_=1774356387482&ver=1.345.3&compression=gzip-js",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "ph.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "content-type",
+              "value": "text/plain"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Content-Length",
+              "value": "1970"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [
+            {
+              "name": "ip",
+              "value": "0"
+            },
+            {
+              "name": "_",
+              "value": "1774356387482"
+            },
+            {
+              "name": "ver",
+              "value": "1.345.3"
+            },
+            {
+              "name": "compression",
+              "value": "gzip-js"
+            }
+          ],
+          "headersSize": 496,
+          "postData": {
+            "mimeType": "text/plain",
+            "params": [],
+            "text": "\u001f\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003­X}oÛÆ\u0019ÿ*\u0006á?6Àg\")R*aiÓ­@ÚzN -\u0002âtw\u0014o¦xÊñ(Y\u000eòÝ÷{øbI6egk\rÃî÷×{ß?{M£¥7÷ü`&\\\u0005Lp\u0019°$\u0016\u000béI?Pxá\u000bÎ#ïÂS\u001bU9\u0017»\u0015_ãlmÍZY§UíÍ?{ç\u0006ÿ¼\u000fºf[ã\u0016ß³²µ6\u0015Î\u0003\u0016\u0016wÊâû÷ÚªÜÜÑ¡T\u001b-TævkïT}ë\f?wz¥îME§¯\u001bâuõJÙRWwÉóZA26õq,\u001ak!hÖØ\u0012Xsëz~u\u0005ÙÁáë+QpGè©I\u000b:[sWT|Eì\u001eà,ßf\r$Îø²ÓÿGs¯Ë_ÅþÙ_zeÏ~zw\u0016øþ7g8FßÝÑ\u001f»\u0007ÑìÒÿëÙ?¸5W\u0013?ðñ\u001bõª_µ·\u0007VÙ[\u000b7\u0007Ç%¯\rø»ªØ/o\u000fQ»l\rú®\u0005¡ûZX¥ª¬PzY@ì`âO÷§[-]áÍ'A\u0014áp£Õvm¬Û\u0003ûIpxÞ\u0007i\u0010ã¸Ô\u000bpÙª\u0005±ÁC\u001f_Q|\u0019Ò® ËÚ\bÓÛOþ¶ÿÙÜ5Ûb3\u001dÜ\u0007I\u0012ñ4L£ËhJ\u0002ö¡ð\u0010¾§læO},ñY°$D<\u0014Ò' %uít%z^ÂWy$ÒåÓ|Â\"?0¾X\u0004l\u0016§y°\n\u001eÄ²O;ÍK}Ï\u001ddÏ:q¼?2?dè]0Gñ<.ý0þ0©r½l¬Y­jÒ¸Å2ËV\bü õéÜßZ%ºZâÓÊ8u\u0014(U\u0004\u0017\u0005\u0002\u001eèµã«uk0\r$\r4E²U|Q*èó²V\u0017^¥ÜÖØÛk¾+\rßòµ\u001c\u001d¡öãµ²¹±+^ö´\u0007'\u0006`ïÍm@\u0004.Ë6Úâ\u0003ÝýQÆËÒl¡ÛJ9«\u0005@ª¦,¿|¹\u0000jÃëA\u0019ÐÇa\r©KuÃ\u001dø\u0011à\u0007NzÕ¬¾klkÑ\u001f$º\u0006R%\u0007Z0\roéEÎà·VIXÓ\"²ZK\u0010ëD=Ge\r|êLcë¬7Ç1d¯Âù\u000e_\u000b7ª+@ÔPë6\u001e\u0006!¥(\u0015(µ¸}5\u0017NoT£p\u0012Ñ¼äK0ýÝã©v+ÓÔ\fFS¬»\u001cSw¨©\fT\u000b¯Y/-­ä%³ÈZIÖ\u0013\u0002BíØ Öä\u000f\u0002S¬PV9-Æ\tmxÙ(F»­ßZÀ¥¬©J#n\u0019å\u0000ÝQD7Bõ,\ta+8d\"\u0014I\u0014\t\tÑ@÷\u001dsÜ.!\u0000èNTÎDÌsÅDS;³z¢\u0011X\u000eåãbÜ\u001cà¼Z?²\n\u0015g´+§ÆîXÝ,È#Ð¨;±60¾aµk¤6lËË[WXÓ,\u000eÓÂ\u001bÊâ[úßÑ§~UÕù¶µ \f¬&\u0005¸êá\u0018Æa\u0017\u0010ª\u0004Ò\"\u0010<\u001c\u001föQÀ¶~\u0006x\u001eT&ikÏ½JºB\u000fSlÑ8×ê-ÌjA\u0007zB^3´ Ê³\u0007\u0017ðJt3 ¢Îq\t[²$å¡s*qµ^VÍº5eÇ\u0016äÐx\u0004©28Â-`B\n×6ÕBs#[Â¬­7\u0007SÓ\u001a=³0$YY®\u001eÂ¬VÜ\n²mgºZàa,³m3Ùó*çMéØ\u000eðåîØ\"ä\u0004X\u0000±'\u001c\u001f\u001cÜ×\u0000rBÉqkÿ\u000f`Ç!¼)Ð×\u000e\u0011\\Ñ&Ì¦¥ÙE\u0018µì\u0006ÌW\\\u0010\u0005Íµ,½HæÞþW/%ïÜsJê\u001c\u0003Æ×%3z\u0018òÐò\u0010õü\u001eÅÙ\u000b£ëSã@¦íÒc©\u000e*Ã(¹ÓÅb\u0014üåú1vTRÆMñr\u0019ºÈ¸á\u000fjÎI\u0011ðö\rå,\bÍ5n§p_YÌF%x¶¾b,yO£ðt\t|\nû|I\u001cäTÉñ@:U8ÇM7ZKÐÿ«¼HÒS\u0015÷©eG+ð¸F_WO\u0004R_Æ\u0016ô\u001c\u0003F´Zd:0Ëòà2`Tö¹÷\u0003aU¼Ìþ½UU½¥¯\u000eÙVþQö±¸Ûì\u0013\b²\u0019\u0006Siö¨k¼\u0014!Çätr=í-v0?m7§\u001bÂ£öó¼+;Ò)\u0015«%\"\u001bÏNÄL.LS\u0000S°Cc¡(Y¨fH¦³'æo¨Ùº\u001b7h¸§ÇûÑU\u001ahÓ\r]Q8Ãà'9\u000b&|¡+\u000fY\u001a%èPÓXEJÊx\"Ä|\u001d\u0005E\r\u0007\u0019©<La\u001cD!õy\u0014§²|×­\u0004>¼~½ºùùÃÛ×7Ô´ñÆ~§[][CtÛ\u0001ý\u001aÿjyIµh Æ\u001dê75:£fÂ\u0010©zW\t\u0014Ñ\n\u001e|\u001eÆ¸v\u0004¤a\u001anQØ@pç\u000fÏ­þFAià>ª]\u0007·ýB%böó­ÅßAÄªºøAþÍä×oE>-\u000eF~\fæ\u000b\u000fÉ\u0004\u0010¡k\u0019\u0001\u0007\u0003d¿[¡pÄ,ºQÞp©3·Ø\u0016Ì½u!²è×åì½_¬fo|³\u0015vúæ·|«¦ÛñäOùî_êúýO?ßÿzóúûý4\f´éI½£ÁÄßª3Ì¿Û%a©Ñ=ÌX\u001aÃ5q\u001aû\u0012®\n8&¤m»Iy\u0011'a¨$m\u000f\u0003#²Ý!\"Ç,?\u0006sÊ\u000fÇ°ÏmF|ñ\u0004lÃt\f1ºozX\u001a \u0001\u001cBoN\u000bn\u001bp\u0014(Ñ $l\u0014¦Í{\u0010¡Ý\u0003ícºGPÆ×zaPb]\\\u001e£\u0011Á\u0012²è\\S¬ìgo\u000193ôù\u001a²â+*Í~4'\u0016Tq³¶âÒn\u0003$ÛhÀ³\u0019BkØÊ~|ùø_¯ªÚ²n\u0014\u0000\u0000"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:46:27 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "content-length",
+              "value": "15"
+            },
+            {
+              "name": "permissions-policy",
+              "value": "geolocation=(), camera=()"
+            },
+            {
+              "name": "vary",
+              "value": "origin, access-control-request-method, access-control-request-headers"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "x-envoy-upstream-service-time",
+              "value": "25"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains; preload"
+            },
+            {
+              "name": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "content-security-policy",
+              "value": "default-src https:"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15c75a0e51d5a5-AMS"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 15,
+            "text": "{\"status\":\"Ok\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 659,
+          "bodySize": 674
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 129,
+          "receive": 0
+        },
+        "time": 129,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.28.226",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:46:38.260+01:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://veniceai-status.com/api/v2/summary.json",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "veniceai-status.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 467
+        },
+        "response": {
+          "status": 304,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:46:36 GMT"
+            },
+            {
+              "name": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "name": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "name": "x-statuspage-version",
+              "value": "9c8b0f184087fb51a87f8f1b58728669df3aff7b"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=259200"
+            },
+            {
+              "name": "x-statuspage-skip-logging",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "cache-control",
+              "value": "max-age=3, public, stale-while-revalidate=10, stale-if-error=3600"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "ETag"
+            },
+            {
+              "name": "x-pollinator-metadata-service",
+              "value": "status-page-web-pages"
+            },
+            {
+              "name": "nel",
+              "value": "{\"failure_fraction\": 0.01, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+            },
+            {
+              "name": "x-runtime",
+              "value": "0.054061"
+            },
+            {
+              "name": "server",
+              "value": "AtlassianEdge"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "name": "atl-traceid",
+              "value": "4e9d9ec369104da7ba9391c9b54036da"
+            },
+            {
+              "name": "atl-request-id",
+              "value": "4e9d9ec3-6910-4da7-ba93-91c9b54036da"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "vary",
+              "value": "Accept,Accept-Encoding"
+            },
+            {
+              "name": "x-cache",
+              "value": "Hit from cloudfront"
+            },
+            {
+              "name": "via",
+              "value": "1.1 80779e7124f8d44ce2216c35ac5328a8.cloudfront.net (CloudFront)"
+            },
+            {
+              "name": "x-amz-cf-pop",
+              "value": "AMS1-P2"
+            },
+            {
+              "name": "x-amz-cf-id",
+              "value": "Jv8O_JRJF9cW87UXuSKvrL1mjr30Vlqr2GW9nqjI5nYLgvo4xmK2lw=="
+            },
+            {
+              "name": "age",
+              "value": "1"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 1228,
+            "text": "{\"page\":{\"id\":\"3q6x2mvssmj1\",\"name\":\"Venice\",\"url\":\"https://veniceai-status.com\",\"time_zone\":\"Etc/UTC\",\"updated_at\":\"2026-03-24T11:53:59.695Z\"},\"components\":[{\"id\":\"gvbkrk1r0n4l\",\"name\":\"Venice App\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:04.881Z\",\"updated_at\":\"2026-03-08T11:46:34.217Z\",\"position\":3,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"6knqw5vybqzk\",\"name\":\"Venice API\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:13.284Z\",\"updated_at\":\"2026-03-08T11:46:34.232Z\",\"position\":4,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"kdzsww6v497w\",\"name\":\"Venice API Docs\",\"status\":\"operational\",\"created_at\":\"2025-04-15T06:07:11.971Z\",\"updated_at\":\"2025-11-18T19:07:42.280Z\",\"position\":5,\"description\":\"API docs hosted at https://docs.venice.ai\",\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false}],\"incidents\":[],\"scheduled_maintenances\":[],\"status\":{\"indicator\":\"none\",\"description\":\"All Systems Operational\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": 1272,
+          "bodySize": 1702
+        },
+        "cache": {
+          "afterRequest": {
+            "expires": "4294967295",
+            "lastFetched": "1774356313",
+            "fetchCount": "1",
+            "_dataSize": "",
+            "_lastModified": "1774356398",
+            "_device": ""
+          }
+        },
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 0,
+          "receive": 0
+        },
+        "time": 0,
+        "_securityState": "secure",
+        "serverIPAddress": "108.156.60.20",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:47:38.277+01:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://veniceai-status.com/api/v2/summary.json",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "veniceai-status.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 467
+        },
+        "response": {
+          "status": 304,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:47:36 GMT"
+            },
+            {
+              "name": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "name": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "name": "x-statuspage-version",
+              "value": "9c8b0f184087fb51a87f8f1b58728669df3aff7b"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=259200"
+            },
+            {
+              "name": "x-statuspage-skip-logging",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "cache-control",
+              "value": "max-age=3, public, stale-while-revalidate=10, stale-if-error=3600"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "ETag"
+            },
+            {
+              "name": "x-pollinator-metadata-service",
+              "value": "status-page-web-pages"
+            },
+            {
+              "name": "nel",
+              "value": "{\"failure_fraction\": 0.01, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+            },
+            {
+              "name": "x-runtime",
+              "value": "0.063976"
+            },
+            {
+              "name": "server",
+              "value": "AtlassianEdge"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "name": "atl-traceid",
+              "value": "37cbb69770ec429fb63180dd0fbb86cc"
+            },
+            {
+              "name": "atl-request-id",
+              "value": "37cbb697-70ec-429f-b631-80dd0fbb86cc"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "vary",
+              "value": "Accept,Accept-Encoding"
+            },
+            {
+              "name": "x-cache",
+              "value": "Hit from cloudfront"
+            },
+            {
+              "name": "via",
+              "value": "1.1 80779e7124f8d44ce2216c35ac5328a8.cloudfront.net (CloudFront)"
+            },
+            {
+              "name": "x-amz-cf-pop",
+              "value": "AMS1-P2"
+            },
+            {
+              "name": "x-amz-cf-id",
+              "value": "wWzU9RBqMeYZoM_3mmt3oHZ4XLFU-NHsPkCUAfxah7C9orGChDFVyQ=="
+            },
+            {
+              "name": "age",
+              "value": "1"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 1228,
+            "text": "{\"page\":{\"id\":\"3q6x2mvssmj1\",\"name\":\"Venice\",\"url\":\"https://veniceai-status.com\",\"time_zone\":\"Etc/UTC\",\"updated_at\":\"2026-03-24T11:53:59.695Z\"},\"components\":[{\"id\":\"gvbkrk1r0n4l\",\"name\":\"Venice App\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:04.881Z\",\"updated_at\":\"2026-03-08T11:46:34.217Z\",\"position\":3,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"6knqw5vybqzk\",\"name\":\"Venice API\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:13.284Z\",\"updated_at\":\"2026-03-08T11:46:34.232Z\",\"position\":4,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"kdzsww6v497w\",\"name\":\"Venice API Docs\",\"status\":\"operational\",\"created_at\":\"2025-04-15T06:07:11.971Z\",\"updated_at\":\"2025-11-18T19:07:42.280Z\",\"position\":5,\"description\":\"API docs hosted at https://docs.venice.ai\",\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false}],\"incidents\":[],\"scheduled_maintenances\":[],\"status\":{\"indicator\":\"none\",\"description\":\"All Systems Operational\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": 1272,
+          "bodySize": 1702
+        },
+        "cache": {
+          "afterRequest": {
+            "expires": "4294967295",
+            "lastFetched": "1774356313",
+            "fetchCount": "1",
+            "_dataSize": "",
+            "_lastModified": "1774356458",
+            "_device": ""
+          }
+        },
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 9,
+          "receive": 0
+        },
+        "time": 9,
+        "_securityState": "secure",
+        "serverIPAddress": "108.156.60.20",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:48:38.272+01:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://veniceai-status.com/api/v2/summary.json",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "veniceai-status.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 467
+        },
+        "response": {
+          "status": 304,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:48:36 GMT"
+            },
+            {
+              "name": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "name": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "name": "x-statuspage-version",
+              "value": "9c8b0f184087fb51a87f8f1b58728669df3aff7b"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=259200"
+            },
+            {
+              "name": "x-statuspage-skip-logging",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "cache-control",
+              "value": "max-age=3, public, stale-while-revalidate=10, stale-if-error=3600"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "ETag"
+            },
+            {
+              "name": "x-pollinator-metadata-service",
+              "value": "status-page-web-pages"
+            },
+            {
+              "name": "nel",
+              "value": "{\"failure_fraction\": 0.01, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+            },
+            {
+              "name": "x-runtime",
+              "value": "0.059022"
+            },
+            {
+              "name": "server",
+              "value": "AtlassianEdge"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "name": "atl-traceid",
+              "value": "8e4e28836ae742f58a86823263a550f1"
+            },
+            {
+              "name": "atl-request-id",
+              "value": "8e4e2883-6ae7-42f5-8a86-823263a550f1"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "vary",
+              "value": "Accept,Accept-Encoding"
+            },
+            {
+              "name": "x-cache",
+              "value": "Hit from cloudfront"
+            },
+            {
+              "name": "via",
+              "value": "1.1 80779e7124f8d44ce2216c35ac5328a8.cloudfront.net (CloudFront)"
+            },
+            {
+              "name": "x-amz-cf-pop",
+              "value": "AMS1-P2"
+            },
+            {
+              "name": "x-amz-cf-id",
+              "value": "tCGAaXdxiTBKuTNhPG7a0LAMLDDvJM7Goowe_Cq4GFM3HuZK-3k2mQ=="
+            },
+            {
+              "name": "age",
+              "value": "1"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 1228,
+            "text": "{\"page\":{\"id\":\"3q6x2mvssmj1\",\"name\":\"Venice\",\"url\":\"https://veniceai-status.com\",\"time_zone\":\"Etc/UTC\",\"updated_at\":\"2026-03-24T11:53:59.695Z\"},\"components\":[{\"id\":\"gvbkrk1r0n4l\",\"name\":\"Venice App\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:04.881Z\",\"updated_at\":\"2026-03-08T11:46:34.217Z\",\"position\":3,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"6knqw5vybqzk\",\"name\":\"Venice API\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:13.284Z\",\"updated_at\":\"2026-03-08T11:46:34.232Z\",\"position\":4,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"kdzsww6v497w\",\"name\":\"Venice API Docs\",\"status\":\"operational\",\"created_at\":\"2025-04-15T06:07:11.971Z\",\"updated_at\":\"2025-11-18T19:07:42.280Z\",\"position\":5,\"description\":\"API docs hosted at https://docs.venice.ai\",\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false}],\"incidents\":[],\"scheduled_maintenances\":[],\"status\":{\"indicator\":\"none\",\"description\":\"All Systems Operational\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": 1272,
+          "bodySize": 1702
+        },
+        "cache": {
+          "afterRequest": {
+            "expires": "4294967295",
+            "lastFetched": "1774356313",
+            "fetchCount": "1",
+            "_dataSize": "",
+            "_lastModified": "1774356518",
+            "_device": ""
+          }
+        },
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 6,
+          "receive": 0
+        },
+        "time": 6,
+        "_securityState": "secure",
+        "serverIPAddress": "108.156.60.20",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:48:40.806+01:00",
+        "request": {
+          "bodySize": 16,
+          "method": "POST",
+          "url": "https://clerk.venice.ai/v1/client/sessions/sess_3B7QnFdZPChDX9pSzANYn9x1Upi/tokens?__clerk_api_version=2025-11-10&_clerk_js_version=5.125.7",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "clerk.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Content-Length",
+              "value": "16"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "_gcl_au=1.1.399658908.1773837783; spdl_pid=MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR; __client=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ; __client_uat=1773837793; __client_uat_aKq7rGhf=1773837793; __stripe_mid=cde8a3fc-51d4-42e8-b414-b461122ad895316418; _cfuvid=QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000; _cfuvid=UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4; __cf_bm=rgecL_rU0ffHLmx4zwC6ZJi0VbV2j_r1HvYIh2FVHXM-1774355597-1.0.1.1-AilXaPz3w6tF18m_eKaw6Ve0Tn2upO7DooDgXqylL4DGg0u3zomIgwyWEp_YeWlZcQzHWsIY8bRCdYzEWOLASodggdtgQPoVioBPnS02XkQ; ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog=%7B%22%24device_id%22%3A%22019d00f8-9060-7b77-a987-73242f3cd052%22%2C%22distinct_id%22%3A%22c0ef4c84-f6f2-4042-abb1-958f1b6ca15d%22%2C%22%24sesid%22%3A%5B1774356384465%2C%22019d1fe0-1077-7129-85f2-5850df4c3155%22%2C1774356271222%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fvenice.ai%2F%22%7D%7D; __stripe_sid=c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "_gcl_au",
+              "value": "1.1.399658908.1773837783"
+            },
+            {
+              "name": "spdl_pid",
+              "value": "MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR"
+            },
+            {
+              "name": "__client",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ"
+            },
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            },
+            {
+              "name": "__stripe_mid",
+              "value": "cde8a3fc-51d4-42e8-b414-b461122ad895316418"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4"
+            },
+            {
+              "name": "__cf_bm",
+              "value": "rgecL_rU0ffHLmx4zwC6ZJi0VbV2j_r1HvYIh2FVHXM-1774355597-1.0.1.1-AilXaPz3w6tF18m_eKaw6Ve0Tn2upO7DooDgXqylL4DGg0u3zomIgwyWEp_YeWlZcQzHWsIY8bRCdYzEWOLASodggdtgQPoVioBPnS02XkQ"
+            },
+            {
+              "name": "ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog",
+              "value": "{\"$device_id\":\"019d00f8-9060-7b77-a987-73242f3cd052\",\"distinct_id\":\"c0ef4c84-f6f2-4042-abb1-958f1b6ca15d\",\"$sesid\":[1774356384465,\"019d1fe0-1077-7129-85f2-5850df4c3155\",1774356271222],\"$epp\":true,\"$initial_person_info\":{\"r\":\"$direct\",\"u\":\"https://venice.ai/\"}}"
+            },
+            {
+              "name": "__stripe_sid",
+              "value": "c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "__clerk_api_version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "_clerk_js_version",
+              "value": "5.125.7"
+            }
+          ],
+          "headersSize": 2178,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "params": [
+              {
+                "name": "organization_id",
+                "value": ""
+              }
+            ],
+            "text": "organization_id="
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:48:40 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15ca9b6b6ddde3-AMS"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "name": "expires",
+              "value": "0"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "clerk-api-version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "x-cfworker",
+              "value": "1"
+            },
+            {
+              "name": "x-clerk-instance-id",
+              "value": "ins_2dubRvCKqi5XrOUxIgUN4fomDFR"
+            },
+            {
+              "name": "x-clerk-trace-id",
+              "value": "65de001cce2e52a1d599b647c131764f"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "65de001cce2e52a1d599b647c131764f"
+            },
+            {
+              "name": "x-country",
+              "value": "NL"
+            },
+            {
+              "name": "x-robots-tag",
+              "value": "noindex, nofollow"
+            },
+            {
+              "name": "set-cookie",
+              "value": "__cf_bm=OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4; path=/; expires=Tue, 24-Mar-26 13:18:40 GMT; domain=.clerk.venice.ai; HttpOnly; Secure; SameSite=None"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=UoNiGEuTS3pTn6qJvpw8QQL0n7wLxFGTAcygX3GifdZj6g%2F6Xqwp6yLDXFyPZ6a5fMDwLSDQkPD4N4UOag13T%2BB5uZ2bGIQmfuXGqUre6ThfPn6GpJ48slUgjNkNay3ZCA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "nel",
+              "value": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "Authorization, X-Country"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000;"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "__cf_bm",
+              "value": "OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json",
+            "size": 799,
+            "text": "{\"object\":\"token\",\"jwt\":\"eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yZHViUnZDS3FpNVhyT1V4SWdVTjRmb21ERlIiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL3ZlbmljZS5haSIsImV4cCI6MTc3NDM1NjU4MCwiZnZhIjpbODY0NSwtMV0sImlhdCI6MTc3NDM1NjUyMCwiaXNzIjoiaHR0cHM6Ly9jbGVyay52ZW5pY2UuYWkiLCJuYmYiOjE3NzQzNTY1MTAsInNpZCI6InNlc3NfM0I3UW5GZFpQQ2hEWDlwU3pBTlluOXgxVXBpIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJ2IjoyfQ.vWza41OnXTfZczQjxW0AkD8C9-aZR0JrM8_Z5Ev-wXNikstqRvG7y05peAiVxMCd-wxPkW8NNQEUidQHwCg9rsEyRzS6nfU73L6uzp1iP6TKXzvJiqBacw0WQGpXYfI62Z2CeMOBSBfIzE3NBRlbBpNgP1xx75WFD9uGwWmbbIv3bExITd9-S4IfwyqsCS_YJXaXpYpdE0oGzwE0O8G3M32CY9AbuCTBlgp4_fC_5-1iMzdxxU5xFyck5_oF4xC9P0aUif4kXWC1HeRF9vliUoJAxTfKw5svkDwFz7ZLOFMVoiGeQqBNckAA4Xhh7iAd0NO1z63ih_C9apNu_uDQFw\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 1359,
+          "bodySize": 1980
+        },
+        "cache": {},
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 502,
+          "receive": 0
+        },
+        "time": 502,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.34.146",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:49:26.558+01:00",
+        "request": {
+          "bodySize": 16,
+          "method": "POST",
+          "url": "https://clerk.venice.ai/v1/client/sessions/sess_3B7QnFdZPChDX9pSzANYn9x1Upi/tokens?__clerk_api_version=2025-11-10&_clerk_js_version=5.125.7",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "clerk.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Content-Length",
+              "value": "16"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "_gcl_au=1.1.399658908.1773837783; spdl_pid=MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR; __client=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ; __client_uat=1773837793; __client_uat_aKq7rGhf=1773837793; __stripe_mid=cde8a3fc-51d4-42e8-b414-b461122ad895316418; _cfuvid=QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000; _cfuvid=UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4; __cf_bm=OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4; ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog=%7B%22%24device_id%22%3A%22019d00f8-9060-7b77-a987-73242f3cd052%22%2C%22distinct_id%22%3A%22c0ef4c84-f6f2-4042-abb1-958f1b6ca15d%22%2C%22%24sesid%22%3A%5B1774356384465%2C%22019d1fe0-1077-7129-85f2-5850df4c3155%22%2C1774356271222%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fvenice.ai%2F%22%7D%7D; __stripe_sid=c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "_gcl_au",
+              "value": "1.1.399658908.1773837783"
+            },
+            {
+              "name": "spdl_pid",
+              "value": "MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR"
+            },
+            {
+              "name": "__client",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ"
+            },
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            },
+            {
+              "name": "__stripe_mid",
+              "value": "cde8a3fc-51d4-42e8-b414-b461122ad895316418"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4"
+            },
+            {
+              "name": "__cf_bm",
+              "value": "OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4"
+            },
+            {
+              "name": "ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog",
+              "value": "{\"$device_id\":\"019d00f8-9060-7b77-a987-73242f3cd052\",\"distinct_id\":\"c0ef4c84-f6f2-4042-abb1-958f1b6ca15d\",\"$sesid\":[1774356384465,\"019d1fe0-1077-7129-85f2-5850df4c3155\",1774356271222],\"$epp\":true,\"$initial_person_info\":{\"r\":\"$direct\",\"u\":\"https://venice.ai/\"}}"
+            },
+            {
+              "name": "__stripe_sid",
+              "value": "c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "__clerk_api_version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "_clerk_js_version",
+              "value": "5.125.7"
+            }
+          ],
+          "headersSize": 2178,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "params": [
+              {
+                "name": "organization_id",
+                "value": ""
+              }
+            ],
+            "text": "organization_id="
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:49:26 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15cbb96ae0dde3-AMS"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "name": "expires",
+              "value": "0"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "clerk-api-version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "x-cfworker",
+              "value": "1"
+            },
+            {
+              "name": "x-clerk-instance-id",
+              "value": "ins_2dubRvCKqi5XrOUxIgUN4fomDFR"
+            },
+            {
+              "name": "x-clerk-trace-id",
+              "value": "bc136e64bd8b7ff49fb64bfb2409396d"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "bc136e64bd8b7ff49fb64bfb2409396d"
+            },
+            {
+              "name": "x-country",
+              "value": "NL"
+            },
+            {
+              "name": "x-robots-tag",
+              "value": "noindex, nofollow"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=C7B720GwSBfbPAzisRuUkPW9VY6lL74emaY8MH3HOItGB9%2BJU2EaBzG9osuC11yBYgprDSSHqHOsdXG4dP3aVVFwPIZS41akp2Eg2uzYbU7MOTFM5c9VUK9Q5XTpg7tQNQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "nel",
+              "value": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "Authorization, X-Country"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000;"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 799,
+            "text": "{\"object\":\"token\",\"jwt\":\"eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yZHViUnZDS3FpNVhyT1V4SWdVTjRmb21ERlIiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL3ZlbmljZS5haSIsImV4cCI6MTc3NDM1NjYyNiwiZnZhIjpbODY0NiwtMV0sImlhdCI6MTc3NDM1NjU2NiwiaXNzIjoiaHR0cHM6Ly9jbGVyay52ZW5pY2UuYWkiLCJuYmYiOjE3NzQzNTY1NTYsInNpZCI6InNlc3NfM0I3UW5GZFpQQ2hEWDlwU3pBTlluOXgxVXBpIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJ2IjoyfQ.fPMLptGEgTO8D9v6vqm1QZoVq8QIKUsvoNfGOvDWvmJq8RCG6kQyMx8k14CiRODTCVe8dxzqeaWzugDW6IR6X3Xg5_2ohsGv9Q5CSghzhC5BbQS2WsMv9QwlLPocSavZLyhLnVhk0VyID6hUPLBKfddAjQzfrrLgAup7jnAwo-CaubkAN7J1spucD6LSfrhVssA5X2edBpTP1jLi4PTFBXRmrEj_HtpCuRu5rjisD9lpS5BJDcXRnxh8yxT1G8G74Xi3tVyummzmRKUFppbNeO7qyMzs7Ij4WrJgMSZsAJsTZFuJE57rkztsfBy1m5tSGUMIQ2eYOF4Vx5Lk4fnHfQ\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 1062,
+          "bodySize": 1684
+        },
+        "cache": {},
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 1,
+          "wait": 570,
+          "receive": 0
+        },
+        "time": 571,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.34.146",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:49:38.299+01:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://veniceai-status.com/api/v2/summary.json",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "veniceai-status.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 467
+        },
+        "response": {
+          "status": 304,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:49:36 GMT"
+            },
+            {
+              "name": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "name": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "name": "x-statuspage-version",
+              "value": "9c8b0f184087fb51a87f8f1b58728669df3aff7b"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=259200"
+            },
+            {
+              "name": "x-statuspage-skip-logging",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "cache-control",
+              "value": "max-age=3, public, stale-while-revalidate=10, stale-if-error=3600"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "ETag"
+            },
+            {
+              "name": "x-pollinator-metadata-service",
+              "value": "status-page-web-pages"
+            },
+            {
+              "name": "nel",
+              "value": "{\"failure_fraction\": 0.01, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+            },
+            {
+              "name": "x-runtime",
+              "value": "0.064430"
+            },
+            {
+              "name": "server",
+              "value": "AtlassianEdge"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "name": "atl-traceid",
+              "value": "54534acd570a47fca36227557187f28c"
+            },
+            {
+              "name": "atl-request-id",
+              "value": "54534acd-570a-47fc-a362-27557187f28c"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "vary",
+              "value": "Accept,Accept-Encoding"
+            },
+            {
+              "name": "x-cache",
+              "value": "Hit from cloudfront"
+            },
+            {
+              "name": "via",
+              "value": "1.1 80779e7124f8d44ce2216c35ac5328a8.cloudfront.net (CloudFront)"
+            },
+            {
+              "name": "x-amz-cf-pop",
+              "value": "AMS1-P2"
+            },
+            {
+              "name": "x-amz-cf-id",
+              "value": "MzAJsLe3T406iOqdsucFYUwvybFbbOO0GC5ECLDtU-QQwtLVtiwbng=="
+            },
+            {
+              "name": "age",
+              "value": "1"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 1228,
+            "text": "{\"page\":{\"id\":\"3q6x2mvssmj1\",\"name\":\"Venice\",\"url\":\"https://veniceai-status.com\",\"time_zone\":\"Etc/UTC\",\"updated_at\":\"2026-03-24T11:53:59.695Z\"},\"components\":[{\"id\":\"gvbkrk1r0n4l\",\"name\":\"Venice App\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:04.881Z\",\"updated_at\":\"2026-03-08T11:46:34.217Z\",\"position\":3,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"6knqw5vybqzk\",\"name\":\"Venice API\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:13.284Z\",\"updated_at\":\"2026-03-08T11:46:34.232Z\",\"position\":4,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"kdzsww6v497w\",\"name\":\"Venice API Docs\",\"status\":\"operational\",\"created_at\":\"2025-04-15T06:07:11.971Z\",\"updated_at\":\"2025-11-18T19:07:42.280Z\",\"position\":5,\"description\":\"API docs hosted at https://docs.venice.ai\",\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false}],\"incidents\":[],\"scheduled_maintenances\":[],\"status\":{\"indicator\":\"none\",\"description\":\"All Systems Operational\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": 1272,
+          "bodySize": 1702
+        },
+        "cache": {
+          "afterRequest": {
+            "expires": "4294967295",
+            "lastFetched": "1774356313",
+            "fetchCount": "1",
+            "_dataSize": "",
+            "_lastModified": "1774356578",
+            "_device": ""
+          }
+        },
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 12,
+          "receive": 0
+        },
+        "time": 12,
+        "_securityState": "secure",
+        "serverIPAddress": "108.156.60.20",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:49:42.779+01:00",
+        "request": {
+          "bodySize": 1968,
+          "method": "POST",
+          "url": "https://ph.venice.ai/i/v0/e/?ip=0&_=1774356582774&ver=1.345.3&compression=gzip-js",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "ph.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "content-type",
+              "value": "text/plain"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Content-Length",
+              "value": "1968"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            }
+          ],
+          "cookies": [],
+          "queryString": [
+            {
+              "name": "ip",
+              "value": "0"
+            },
+            {
+              "name": "_",
+              "value": "1774356582774"
+            },
+            {
+              "name": "ver",
+              "value": "1.345.3"
+            },
+            {
+              "name": "compression",
+              "value": "gzip-js"
+            }
+          ],
+          "headersSize": 496,
+          "postData": {
+            "mimeType": "text/plain",
+            "params": [],
+            "text": "\u001f\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003­XmoÛF\u0012þ+\u0006á\u000fw×&ER¤T\u001c\u000e6½+¶>'MÐ\u0016\u0001±Ú]\u000b\\f¹,\u0007ùï÷\f)YMÙ¹¶AØ»ó>ÏÌpö÷Ï^×iéÍ=?É W\u0011\u00131,É\t[\u0004\u0013É\u0016~:ó§ÂW<UÞ§Vªv ??/\u0014w\u0015opÖXÓ(ë´j½ùgïÜà?ï®¥Y·¸ÅïÙJÙV\u001açOG\u000b;eñû÷ÚªÜÜÑ¡T+-Tæ6ÂÅwª½uÄ;]©{SÓéët]½R¶Ôõá]fò¼U°M}\u001cÎZ\u0018u¶\u0004Wá\\ÓÎ¯®`;4\\r}%\nî½0-yópAg\rwEÍ+R÷@gù:ë`qÆÿ?{]ü*¾ôÏþ¶uöì§wgésiôÍÙ\u001dýcWó ]ú?û·\u0012·æjâ\u0007>þ\u0006g[×¯úÛ¨ì£ã×Ë\u000eú¡]Õì·,»»¬L}×Ð}+¬RuV(½,`v0ñ§ûÓµ®ðæ p¸ÒjÝ\u0018ëöÄ~\u0012\u001coÉ4q\\ê\u0005´¬ÕÔàÃ\u001c_Q|\u0019Ò®aËz¶¹kÖOáb3mÔô!µ\u0010$Q\u0018OãdvÄé\u001e\n\u000fÀôý<e¡ÏE0>K\u0013hBúñ\u0004¢¤n®ÅN¯òH¤\u0011Ë§ùE~4a|±\bØ,Nó`1\u0015<å`vú;Ø\ræx\u00132e~È&Ñ»`2ây\u0018]úaü\u001bq\bSçzÙY%³VµäqÏe:U\u0000~úô¼½µJ\u0018+u½ÄOq*\u001b$P©\b.\n\u0000\u001eì­ãUÓ\u0007\"LÃ$IÃ E\u001cTÍ\u0017¥?9/[uáÕÊ­½½æÒpù-o\u001cì\u0018\u0004õ?^+\u001b[ñZô§[rR\u0000õÞÜÙ\u000eB²l¥\u001d$>ÈÝ\u001fe¼,Í\u001a¾UÊY-@RweùåË\u0005TÔ+ÞÞì|\u001c¶°ºT7ÜA\u001f\u0011^xÐ¤«®ú®³}DDè\u0016LµÜÉBhxçÌÖä\fyëD4- µZBØ`ê9:ìSg:ÛfÛp\u001cSn]8?ðákéF}\u0005º\u0013ªéñ°3òYRqRÛ\u0017TsáôJe9\u001a'\tÍK¾Òß=^zS®e\bb%ÒåºCO\u00052Ðm.¼®YZ.\u0015«ä%³¨VI¶\u0015\u0004Ö±\u0015\u0015A«)\u001fD¦X¡¬rZ\u000bZñ²S\u001awß¿µ@JYWFÜ2$Ëz\bwBmU\u0012ÃVhÈD((\n\u00132¢ï\u001bæ¸]Â\u0000È\u0006©a¬ä®u¦zâ\u0011TîÚÇÅx8 ¹j\u001eE3\u0013 Y\u001a»am·\\¢ £\u001dÌZ!øµ®Ú°5/o]aM·,\u0006Nl(knéÿA>Í«ºÍ×}\u0004\u0011hT59p¤U×\fÇ¨4¸@P½$èøp\u0002¶\u0006ú\u0019èy R¤}<÷.é\u001a3L±Eç\\ï·0Õ\u000etFÞ2 ª³\u0014ðZL3¦ÎqX²$å¡sjq­^Ö]ÓrP\u000bq\u0018<\\Ù%`Ê\u0016\b!Áµ/u¡0Ü(\bkÍ]( ©ÁÌ,\fYVÕ\u0003ÌZÅ­ Ø\u000e¡kU\t\u001dÆ2Û\u000f½.©rÞm@_n#BI@\u0004=áø.ÁÛ\u001e@I(9níË\u0001â¸0\u0005æÚ\u0001\u0018¡\u0015cÂ¬z\u0003ÂhdwP^q]Â\u0014\f×²ô>¢·ñ¿z©xç\u0003*irì8¾®1ÃPÖ¬/Ô÷(ÏÞÀ\u001cS\u0006\u0007*mß\u001e[uÐ\u0019FÅn\u0016£ä/÷Q¶£2\u001e»Ìn\u0007þ ç4Á\u000fT(g9Lx\u001c®ñ0<¥ûÊf6jÁ³ýmãdË{ÂÓ-ð)íó-qÔ?Ó%Çtªqn´>Ð?Ô^O\u0014é©û4²£\u001dxÜ£¯kÊ'´mc\u000bú\u001c\u0003\u0006Z-*\u001dËeyð²ã\u0018éìsï\u0007âªyýw­ê0{ÿ&K_\u001dª\u0019íü£\u0006í±\u0004Ü­Bö\t\u0002Ù\f\u000bÅ©2{45^BÈñ 9]\\OgË_\ræ§ãæô@x4~OåñD:åb½\u0004²ñÙ\tÌ\fåÂ4\u0001À\u000e¢\u0002f¡%\"Î¿ÿDÍaÝ å>Þî¬úÔÁaéÂ\u0019\u0016?ÉY0á3,]yÈÒ(ÁÆ*RRÆ\u0013!\u000eì\u001b$(\u001a8ÈÌÈåí&\u0018q\u00104çÑÊòÝð$ðáõ«ìÕÍÏ\u001fÞ¾¾¡¡oìwºOÙµ5$·_Ðÿ¯õ¯·T\u000efÜ¡Ó0h3Ú\ti'(\fj7µ@\u0013­Áç9hëW@Z¦\u0016\u0017\b2îüásk{J« 4H\u001fõ®ÛíJ&9aöóWBUmñüÉ¯ß\u0004s\u000e¯8Xù±zâ¹\u0000ÅøØ\u001dÁá1à`Ü¾­\u0010\u001c±®÷å#RêÌ-^\u000bæ^S,úu9{ï\u0017ÕìÍ¯ÖÂNßüö¯oÕ4r\u001büò)ßüG]¿ÿéçû_o^¿ß\u0011¾<ivtØø{wvûïáëÏð¨Õ=ÌX\u001a#5q\u001aû\u0012©\n8&¦uÿò\"O Ã QIÚ?>ì\u0014\u0001Êv\u0003DE~æT\u001ei{A\u001aÉÅ\u0013þ±\u0017¦cÑ÷¦G\u0003\u0014\u0003ôæôÀ1¼\u0006\u001c¡\u0010-\u001a\"PÂ¶y\u000f!ôö@ï1ÃGPÆ\u001b½³açDS\\\u001e£`\t[t®\t+ûÝ[ÀÎ\fs¾­ø\u0015f¿\nê¸Yßqém\u0003${4ÁàÙ\fÐÚ½Ê~|ùø?\"Mºn\u0014\u0000\u0000"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:49:42 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "content-length",
+              "value": "15"
+            },
+            {
+              "name": "vary",
+              "value": "origin, access-control-request-method, access-control-request-headers"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "x-envoy-upstream-service-time",
+              "value": "23"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains; preload"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "permissions-policy",
+              "value": "geolocation=(), camera=()"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "content-security-policy",
+              "value": "default-src https:"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin"
+            },
+            {
+              "name": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15cc1ef99ff5ba-AMS"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 15,
+            "text": "{\"status\":\"Ok\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 659,
+          "bodySize": 674
+        },
+        "cache": {},
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 8,
+          "ssl": 13,
+          "send": 0,
+          "wait": 305,
+          "receive": 0
+        },
+        "time": 326,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.28.226",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:50:12.424+01:00",
+        "request": {
+          "bodySize": 16,
+          "method": "POST",
+          "url": "https://clerk.venice.ai/v1/client/sessions/sess_3B7QnFdZPChDX9pSzANYn9x1Upi/tokens?__clerk_api_version=2025-11-10&_clerk_js_version=5.125.7",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "clerk.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Content-Length",
+              "value": "16"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "_gcl_au=1.1.399658908.1773837783; spdl_pid=MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR; __client=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ; __client_uat=1773837793; __client_uat_aKq7rGhf=1773837793; __stripe_mid=cde8a3fc-51d4-42e8-b414-b461122ad895316418; _cfuvid=QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000; _cfuvid=UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4; __cf_bm=OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4; ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog=%7B%22%24device_id%22%3A%22019d00f8-9060-7b77-a987-73242f3cd052%22%2C%22distinct_id%22%3A%22c0ef4c84-f6f2-4042-abb1-958f1b6ca15d%22%2C%22%24sesid%22%3A%5B1774356579757%2C%22019d1fe0-1077-7129-85f2-5850df4c3155%22%2C1774356271222%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fvenice.ai%2F%22%7D%7D; __stripe_sid=c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "_gcl_au",
+              "value": "1.1.399658908.1773837783"
+            },
+            {
+              "name": "spdl_pid",
+              "value": "MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR"
+            },
+            {
+              "name": "__client",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ"
+            },
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            },
+            {
+              "name": "__stripe_mid",
+              "value": "cde8a3fc-51d4-42e8-b414-b461122ad895316418"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4"
+            },
+            {
+              "name": "__cf_bm",
+              "value": "OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4"
+            },
+            {
+              "name": "ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog",
+              "value": "{\"$device_id\":\"019d00f8-9060-7b77-a987-73242f3cd052\",\"distinct_id\":\"c0ef4c84-f6f2-4042-abb1-958f1b6ca15d\",\"$sesid\":[1774356579757,\"019d1fe0-1077-7129-85f2-5850df4c3155\",1774356271222],\"$epp\":true,\"$initial_person_info\":{\"r\":\"$direct\",\"u\":\"https://venice.ai/\"}}"
+            },
+            {
+              "name": "__stripe_sid",
+              "value": "c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "__clerk_api_version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "_clerk_js_version",
+              "value": "5.125.7"
+            }
+          ],
+          "headersSize": 2178,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "params": [
+              {
+                "name": "organization_id",
+                "value": ""
+              }
+            ],
+            "text": "organization_id="
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:50:12 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15ccd82948dde3-AMS"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "name": "expires",
+              "value": "0"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "clerk-api-version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "x-cfworker",
+              "value": "1"
+            },
+            {
+              "name": "x-clerk-instance-id",
+              "value": "ins_2dubRvCKqi5XrOUxIgUN4fomDFR"
+            },
+            {
+              "name": "x-clerk-trace-id",
+              "value": "6b84fa3fc9e1177e9641e3bedcdb1136"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "6b84fa3fc9e1177e9641e3bedcdb1136"
+            },
+            {
+              "name": "x-country",
+              "value": "NL"
+            },
+            {
+              "name": "x-robots-tag",
+              "value": "noindex, nofollow"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=KFkxGpwI0XhD%2BPWERBlkk6CTq5bHJn7MEM0Oakg2BgHDr661nH64KsSowOLx2kar5pHfpwoTs4cHZW0UDAYWoYnX2cK%2B1iIj0QLb3qXUe3wk8uJ5fh1DkoKH4FRxiCSORw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "nel",
+              "value": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "Authorization, X-Country"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000;"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 799,
+            "text": "{\"object\":\"token\",\"jwt\":\"eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yZHViUnZDS3FpNVhyT1V4SWdVTjRmb21ERlIiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL3ZlbmljZS5haSIsImV4cCI6MTc3NDM1NjY3MSwiZnZhIjpbODY0NiwtMV0sImlhdCI6MTc3NDM1NjYxMSwiaXNzIjoiaHR0cHM6Ly9jbGVyay52ZW5pY2UuYWkiLCJuYmYiOjE3NzQzNTY2MDEsInNpZCI6InNlc3NfM0I3UW5GZFpQQ2hEWDlwU3pBTlluOXgxVXBpIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJ2IjoyfQ.FxvMeRBp8JjV6RnzKGOitAup6TiVuuyIR7bCzGyuKvysSdLj-2JrPPiUyvmIdO8jCYclF-7KlEkxeh3S0T5G2ddjkrpYk_OgksVv2y3MSLmQ0mtf7uyX_mXEQE8X-R0CG_hNcC1VvJYzmHZ047SphcILDelwx25ii2PWGeG5LVzuJDPSlpIjo4xnQvm9aeRnWYy0dzh-oBvaXd86U_GcQbsOoxDY-QhsNbFNrFsffc8U77Ef1HPtEYfSOUe4wE0t_Fv2KKLxNm1KxOeL1OxGtT8_z8wB07RmrodulE-hEisEuIh9BmLp9jxh6SUYzE-e6YEMoXUvDdOJdkxcx83mwA\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 1064,
+          "bodySize": 1687
+        },
+        "cache": {},
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 197,
+          "receive": 0
+        },
+        "time": 197,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.34.146",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:50:35.416+01:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://outerface.venice.ai/api/user/session",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "outerface.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "x-venice-distinct-id",
+              "value": "c0ef4c84-f6f2-4042-abb1-958f1b6ca15d"
+            },
+            {
+              "name": "x-venice-locale",
+              "value": "en"
+            },
+            {
+              "name": "x-venice-request-timestamp-ms",
+              "value": "1774356635406"
+            },
+            {
+              "name": "x-venice-version",
+              "value": "interface@20260324.041013+db0e9ee"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "authorization",
+              "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yZHViUnZDS3FpNVhyT1V4SWdVTjRmb21ERlIiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL3ZlbmljZS5haSIsImV4cCI6MTc3NDM1NjY3MSwiZnZhIjpbODY0NiwtMV0sImlhdCI6MTc3NDM1NjYxMSwiaXNzIjoiaHR0cHM6Ly9jbGVyay52ZW5pY2UuYWkiLCJuYmYiOjE3NzQzNTY2MDEsInNpZCI6InNlc3NfM0I3UW5GZFpQQ2hEWDlwU3pBTlluOXgxVXBpIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJ2IjoyfQ.FxvMeRBp8JjV6RnzKGOitAup6TiVuuyIR7bCzGyuKvysSdLj-2JrPPiUyvmIdO8jCYclF-7KlEkxeh3S0T5G2ddjkrpYk_OgksVv2y3MSLmQ0mtf7uyX_mXEQE8X-R0CG_hNcC1VvJYzmHZ047SphcILDelwx25ii2PWGeG5LVzuJDPSlpIjo4xnQvm9aeRnWYy0dzh-oBvaXd86U_GcQbsOoxDY-QhsNbFNrFsffc8U77Ef1HPtEYfSOUe4wE0t_Fv2KKLxNm1KxOeL1OxGtT8_z8wB07RmrodulE-hEisEuIh9BmLp9jxh6SUYzE-e6YEMoXUvDdOJdkxcx83mwA"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "_gcl_au=1.1.399658908.1773837783; spdl_pid=MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR; __client_uat=1773837793; __client_uat_aKq7rGhf=1773837793; __stripe_mid=cde8a3fc-51d4-42e8-b414-b461122ad895316418; _cfuvid=UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4; ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog=%7B%22%24device_id%22%3A%22019d00f8-9060-7b77-a987-73242f3cd052%22%2C%22distinct_id%22%3A%22c0ef4c84-f6f2-4042-abb1-958f1b6ca15d%22%2C%22%24sesid%22%3A%5B1774356579757%2C%22019d1fe0-1077-7129-85f2-5850df4c3155%22%2C1774356271222%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fvenice.ai%2F%22%7D%7D; __stripe_sid=c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"1754-IifNDpUg3576F2sidW+5bGNs3mg\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "_gcl_au",
+              "value": "1.1.399658908.1773837783"
+            },
+            {
+              "name": "spdl_pid",
+              "value": "MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR"
+            },
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            },
+            {
+              "name": "__stripe_mid",
+              "value": "cde8a3fc-51d4-42e8-b414-b461122ad895316418"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4"
+            },
+            {
+              "name": "ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog",
+              "value": "{\"$device_id\":\"019d00f8-9060-7b77-a987-73242f3cd052\",\"distinct_id\":\"c0ef4c84-f6f2-4042-abb1-958f1b6ca15d\",\"$sesid\":[1774356579757,\"019d1fe0-1077-7129-85f2-5850df4c3155\",1774356271222],\"$epp\":true,\"$initial_person_info\":{\"r\":\"$direct\",\"u\":\"https://venice.ai/\"}}"
+            },
+            {
+              "name": "__stripe_sid",
+              "value": "c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            }
+          ],
+          "queryString": [],
+          "headersSize": 2248
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:50:35 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "content-security-policy",
+              "value": "connect-src 'self' https://venice.ai;default-src 'self';style-src 'self' https:;base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "authorization,content-type,x-venice-distinct-id,x-venice-is-blurred,x-venice-is-content-violation,x-venice-is-adult-model-content-violation,x-venice-version,x-venice-mobile-version,x-venice-mobile-wallet-connect-session-token,x-venice-middleface-version,x-venice-request-id,x-venice-request-timestamp-ms,x-ratelimit-type,x-ratelimit-remaining,x-ratelimit-resets,x-auth-refreshed,x-retry-count,x-pagination-limit,x-pagination-page,x-pagination-total,x-pagination-total-pages,x-venice-model-id,x-venice-model-name,x-venice-model-router,x-venice-timestamp,x-venice-model-deprecation-warning,x-venice-model-deprecation-date,x-venice-locale,x-venice-external-request-id,x-venice-pwa,x-venice-audio-format,x-venice-inference-time,x-venice-tee,x-venice-tee-provider,x-venice-tee-hardware,x-venice-tee-model-pub-key,x-venice-tee-client-pub-key,x-venice-tee-signing-algo"
+            },
+            {
+              "name": "cross-origin-opener-policy",
+              "value": "same-origin"
+            },
+            {
+              "name": "cross-origin-resource-policy",
+              "value": "same-origin"
+            },
+            {
+              "name": "origin-agent-cluster",
+              "value": "?1"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "no-referrer"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains; preload"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-dns-prefetch-control",
+              "value": "off"
+            },
+            {
+              "name": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "name": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "name": "x-ratelimit-type",
+              "value": "image"
+            },
+            {
+              "name": "x-ratelimit-resets",
+              "value": "1774431901015"
+            },
+            {
+              "name": "x-ratelimit-remaining",
+              "value": "987"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"1754-t7ScNJJLcJFlWoJaMvx5tQ09ryM\""
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "permissions-policy",
+              "value": "geolocation=(), camera=()"
+            },
+            {
+              "name": "speculation-rules",
+              "value": "\"/cdn-cgi/speculation\""
+            },
+            {
+              "name": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15cd67fe8f299d-AMS"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 5972,
+            "text": "{\"token\":\"eyJhbGciOiJFUzI1NiJ9.eyJhdXRoU3lzdGVtVXNlcklkIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJhdmF0YXJVcGxvYWRlZCI6dHJ1ZSwiYmFubmVkIjpmYWxzZSwiYmV0YVRlc3RlciI6ZmFsc2UsImNhblBvc3QiOnRydWUsImNsZXJrQXZhdGFyVXJsIjoiaHR0cHM6Ly9pbWcuY2xlcmsuY29tL2V5SjBlWEJsSWpvaWNISnZlSGtpTENKemNtTWlPaUpvZEhSd2N6b3ZMMmx0WVdkbGN5NWpiR1Z5YXk1a1pYWXZkWEJzYjJGa1pXUXZhVzFuWHpOQlRFSkthRXBUTVhGUU1USkViVmxxY3pkTGFVaEVWRkY0ZENKOSIsImNsZXJrVXNlcklkIjpudWxsLCJjcmVhdGVkQXQiOjE3NzIzMzAzNjAyNzQsImVtYWlsIjoiaGIubWNteGNAZ21haWwuY29tIiwiZmF2b3JpdGVNb2RlbHMiOlt7ImZyaWVuZGx5TmFtZSI6IkdMTSA1IiwibW9kZWxJZCI6InphaS1vcmctZ2xtLTUifSx7ImZyaWVuZGx5TmFtZSI6IlotSW1hZ2UgVHVyYm8iLCJtb2RlbElkIjoiei1pbWFnZS10dXJibyJ9LHsiZnJpZW5kbHlOYW1lIjoiSGlEcmVhbSIsIm1vZGVsSWQiOiJoaWRyZWFtIn0seyJmcmllbmRseU5hbWUiOiJRd2VuIEltYWdlIiwibW9kZWxJZCI6InF3ZW4taW1hZ2UifSx7ImZyaWVuZGx5TmFtZSI6IlZlbmljZSBTRDM1IiwibW9kZWxJZCI6InN0YWJsZS1kaWZmdXNpb24tMy41LXJldjIifSx7ImZyaWVuZGx5TmFtZSI6IlF3ZW4zIFZMIDIzNUIiLCJtb2RlbElkIjoicXdlbjMtdmwtMjM1Yi1hMjJiIn0seyJmcmllbmRseU5hbWUiOiJRd2VuIDMgQ29kZXIgNDgwQiBUdXJibyIsIm1vZGVsSWQiOiJxd2VuMy1jb2Rlci00ODBiLWEzNWItaW5zdHJ1Y3QtdHVyYm8ifSx7ImZyaWVuZGx5TmFtZSI6IlF3ZW4gMy41IDM1QiBBM0IiLCJtb2RlbElkIjoicXdlbjMtNS0zNWItYTNiIn0seyJmcmllbmRseU5hbWUiOiJRd2VuIDMuNSA5QiIsIm1vZGVsSWQiOiJxd2VuMy01LTliIn0seyJmcmllbmRseU5hbWUiOiJDaHJvbWEiLCJtb2RlbElkIjoiY2hyb21hIn1dLCJmbGFncyI6eyJzb2NpYWxGZWVkRW5hYmxlZCI6dHJ1ZSwiY2hhcmFjdGVyU3VtbWFyeUVuYWJsZWQiOnRydWUsInBlcm1pdFJlbWl4QW5kUmVnZW5lcmF0ZUltYWdlIjp0cnVlLCJ0ZW1wb3JhcnlDaGF0c0VuYWJsZWQiOnRydWUsInBlcm1pdFZlbmljZVZpZGVvU3R1ZGlvIjp0cnVlLCJwZXJtaXRWaWRlb0dlbmVyYXRpb24iOnRydWUsInBlcm1pdFZpZGVvR2lmRXhwb3J0IjpmYWxzZSwicGVybWl0VmlkZW9NdWx0aVByb21wdCI6ZmFsc2UsInBlcm1pdFZpZGVvVHJhbnNjcmlwdCI6dHJ1ZSwicGVybWl0VmlkZW9WYXJpYW50cyI6dHJ1ZSwicGVybWl0VmlkZW9BcGkiOnRydWUsImNoYXJnZUZvckxsbUF1Z21lbnRhdGlvbiI6dHJ1ZSwic2ltcGxlTW9kZWxTZWxlY3RvckVuYWJsZWQiOnRydWUsInBlcm1pdEF1dG9Ub3BVcCI6dHJ1ZSwidjNDaGF0RW5hYmxlZCI6dHJ1ZSwiYXBpS2V5QWRtaW5FbmFibGVkIjp0cnVlLCJhcGlQbGF5Z3JvdW5kRW5hYmxlZCI6dHJ1ZSwicmVmZXJyYWxDcmVkaXRzRW5hYmxlZCI6dHJ1ZSwicmVmZXJyYWxEcmF3ZXJFbmFibGVkIjp0cnVlLCJwZXJtaXRDaGFyYWN0ZXJTdG9yeVByb21wdHMiOnRydWUsImNoYXJhY3RlckFkbWluRW5hYmxlZCI6dHJ1ZSwiY2hhcmFjdGVyU2VsZmllTW9kZUVuYWJsZWQiOnRydWUsImVkaXRNZXNzYWdlRW5hYmxlZCI6dHJ1ZSwiaW1hZ2VWYXJpYW50c0VuYWJsZWQiOnRydWUsIm1hdHVyZUZpbHRlclRvZ2dsZUVuYWJsZWQiOnRydWUsInBlcm1pdENoYXRCYWNrdXBzIjp0cnVlLCJwZXJtaXRDaGF0RWxvbmdhdGVkQ29udGV4dCI6dHJ1ZSwicGVybWl0Q2hhdE11bHRpTW9kYWwiOnRydWUsInBlcm1pdEltYWdlRWRpdCI6dHJ1ZSwicGVybWl0SW1hZ2VOZWdhdGl2ZVByb21wdCI6dHJ1ZSwicGVybWl0SW1hZ2VVcHNjYWxlIjp0cnVlLCJwZXJtaXRJbWFnZVdhdGVybWFya1JlbW92YWwiOnRydWUsInBlcm1pdEltYWdlVXBzY2FsZVVwbG9hZCI6dHJ1ZSwicGVybWl0SW1hZ2VJbnBhaW50aW5nIjp0cnVlLCJwZXJtaXRPbkRlbWFuZFRyYW5zbGF0aW9uIjp0cnVlLCJzYWZlVmVuaWNlVG9nZ2xlRW5hYmxlZCI6dHJ1ZSwidHRzRW5hYmxlZCI6dHJ1ZSwiY2hhcmFjdGVyTW9kZXJhdGlvbkVuYWJsZWQiOmZhbHNlLCJwb3N0TW9kZXJhdGlvbkVuYWJsZWQiOmZhbHNlLCJwb3N0U3VwZXJBZG1pbkVuYWJsZWQiOmZhbHNlLCJwZXJtaXRTZXR0aW5nc1BhZ2UiOnRydWUsInBlcm1pdEdvb2dsZURyaXZlQWNjZXNzIjpmYWxzZSwiY2hhcmFjdGVyTWVtb3J5RW5hYmxlZCI6ZmFsc2UsImNoYXJhY3RlclN0YWJpbGl0eUVuYWJsZWQiOnRydWUsIm1lbW9yaWFFbmFibGVkIjp0cnVlLCJpbXBvcnRNZW1vcnlFbmFibGVkIjp0cnVlLCJsaWJyYXJ5VGh1bWJuYWlsR2VuZXJhdGlvbkVuYWJsZWQiOnRydWUsImJldGFPbmx5TW9kZWxzRW5hYmxlZCI6ZmFsc2UsInNob3dCZXRhVGVzdGVyQmFkZ2UiOmZhbHNlLCJpbnBhaW50TW9kZWxTZWxlY3Rpb25FbmFibGVkIjp0cnVlLCJhc3JFbmFibGVkIjp0cnVlLCJwZXJtaXRGYXZvcml0ZU1vZGVscyI6dHJ1ZSwicGVybWl0UHJlZmVycmVkTW9kZWxzIjp0cnVlLCJwZXJtaXRQaW5uZWRNZXNzYWdlcyI6ZmFsc2UsIm1vdmllTWFrZXJFbmFibGVkIjpmYWxzZSwicmVuZGxleU1vdmllRWRpdG9yRW5hYmxlZCI6ZmFsc2UsImV4cG9ydERhdGFFbmFibGVkIjpmYWxzZSwibXVyYW5vRW5hYmxlZCI6ZmFsc2UsInBlcm1pdEltYWdlU3R1ZGlvIjp0cnVlLCJjb25jbGF2ZUVuYWJsZWQiOmZhbHNlLCJzdGFmZk9ubHlNb2RlbHNFbmFibGVkIjpmYWxzZSwic3R1ZGlvQXVkaW9FbmFibGVkIjpmYWxzZSwib3V0ZXJtaW5kSW5mZXJlbmNlRW5hYmxlZCI6ZmFsc2UsIm1pbmRNYWtlckVuYWJsZWQiOmZhbHNlLCJsaWJyYXJ5RGVsZXRlQWxsRW5hYmxlZCI6ZmFsc2UsIm1pbmRzQXBpRW5hYmxlZCI6ZmFsc2UsInBlcm1pdENsb25pbmdBbnlNaW5kIjpmYWxzZSwicmVzcG9uc2VzQXBpRW5hYmxlZCI6dHJ1ZSwicmV0YWluZXJDb3Vwb25FbmFibGVkIjpmYWxzZSwiaW1wb3J0RXhwb3J0Q2hhcmFjdGVyRW5hYmxlZCI6ZmFsc2UsImluc2lnaHRFeHRyYWN0aW9uRW5hYmxlZCI6ZmFsc2UsInBlcm1pdEltbWVkaWF0ZVN1YnNjcmlwdGlvblVwZ3JhZGUiOnRydWUsIm9ycGhhbmVkTWVzc2FnZXNNZW51RW5hYmxlZCI6dHJ1ZSwic2hvd1ZlbmljZVN0YWZmQmFkZ2UiOmZhbHNlLCJleHBvcnRDb252ZXJzYXRpb25Bc0pzb25FbmFibGVkIjpmYWxzZSwicGVybWl0TXVsdGlFZGl0Ijp0cnVlLCJwZXJtaXRBdWRpb0FwaSI6dHJ1ZSwicGVybWl0TXVzaWNHZW5lcmF0aW9uIjp0cnVlLCJtb2RlbFNlbGVjdG9yVjNFbmFibGVkIjp0cnVlLCJtb2RlbFN3aXRjaGVyVjVFbmFibGVkIjp0cnVlLCJpbWFnZVVwc2NhbGVPbmxpbmUiOnRydWUsImRlYnVnRW5hYmxlZCI6ZmFsc2UsIm11bHRpTW9kYWxDaGFyYWN0ZXJzRW5hYmxlZCI6ZmFsc2UsImZpcmVjcmF3bEFub25EZWZhdWx0RW5hYmxlZCI6ZmFsc2UsInNlYXJjaFByb3ZpZGVyVG9nZ2xlRW5hYmxlZCI6dHJ1ZSwicGVybWl0SW1hZ2VNdWx0aVZhcmlhbnRzIjp0cnVlLCJwbHVzTWF4VGllcnNFbmFibGVkIjpmYWxzZX0sIm1hdHVyZUZpbHRlciI6ZmFsc2UsInBhcnRuZXJQcm9ncmFtTWVtYmVyc2hpcHMiOltdLCJwcmltYXJ5V2FsbGV0Ijp7fSwicmF0ZUxpbWl0cyI6eyJjaGF0Ijp7InJlbWFpbmluZyI6bnVsbCwicmVzZXRBdCI6bnVsbH0sImltYWdlIjp7InJlbWFpbmluZyI6OTg4LCJyZXNldEF0IjoxNzc0NDMxOTAxMDE1fX0sInJlZmVycmFsQ29kZSI6Ii1TUklZcCIsInJlZmVycmFsQ3JlZGl0cyI6eyJpbnZpdGVlQ3JlZGl0c1VzZCI6MCwiaW52aXRlckNyZWRpdHNVc2QiOjAsInBhaWRSZWZlcnJhbENvdW50IjowLCJ0b3RhbEVhcm5lZFVzZCI6MH0sInNvY2lhbEZlZWRGaWx0ZXIiOnRydWUsInN0cmlrZUNvdW50IjowLCJzdWJzY3JpYmVkQXQiOjE3NzIzMzA2NDMwMDAsInN1YnNjcmlwdGlvbkV4cGlyZXNBdCI6MTc3NTAwOTA0MzAwMCwic3Vic2NyaXB0aW9uUmVuZXdlZEF0IjoxNzcyMzMwNjQzMDAwLCJ1c2VTb2NpYWxJbWFnZSI6dHJ1ZSwidXNlckNvdW50cnkiOiJOTCIsInVzZXJJZCI6ImMwZWY0Yzg0LWY2ZjItNDA0Mi1hYmIxLTk1OGYxYjZjYTE1ZCIsInVzZXJOYW1lIjoiQmFsdGhhemFyZCIsInVzZXJSZWdpb24iOm51bGwsInVzZXJUeXBlIjoiUFJPIiwidXNlclVwZ3JhZGVTb3VyY2UiOiJTVFJJUEUiLCJ1c2VyV2FsbGV0cyI6W10sInZlbmljZUNyZWRpdHMiOjkxMiwidmVuaWNlTW9kZSI6IkFEVkFOQ0VEIiwidmVuaWNlU3RhZmYiOmZhbHNlLCJ2ZW5pY2VVc2VyQWRtaW4iOmZhbHNlLCJwb2ludHMiOiIwIiwiaXNzIjoidXJuOnZlbmljZTppc3N1ZXIiLCJhdWQiOiJ1cm46dXNlcl9zZXNzaW9uOmF1ZGllbmNlIiwiaWF0IjoxNzc0MzU2NjM0LCJleHAiOjE3NzQzNTc1MzR9.ara__zbwrYHxQhpuoBs52Qrai1IviRSDoM4wAUYiuGT2ZjHBXIT5c-kF53O8BW8IEi6gZiUcIQtIZQHJ4F8lqQ\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 2160,
+          "bodySize": 4918
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 18,
+          "ssl": 14,
+          "send": 0,
+          "wait": 162,
+          "receive": 0
+        },
+        "time": 194,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.28.226",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:50:38.303+01:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://veniceai-status.com/api/v2/summary.json",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "veniceai-status.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 467
+        },
+        "response": {
+          "status": 304,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:50:36 GMT"
+            },
+            {
+              "name": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "name": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "name": "x-statuspage-version",
+              "value": "9c8b0f184087fb51a87f8f1b58728669df3aff7b"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=259200"
+            },
+            {
+              "name": "x-statuspage-skip-logging",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "cache-control",
+              "value": "max-age=3, public, stale-while-revalidate=10, stale-if-error=3600"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "ETag"
+            },
+            {
+              "name": "x-pollinator-metadata-service",
+              "value": "status-page-web-pages"
+            },
+            {
+              "name": "nel",
+              "value": "{\"failure_fraction\": 0.01, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+            },
+            {
+              "name": "x-runtime",
+              "value": "0.064430"
+            },
+            {
+              "name": "server",
+              "value": "AtlassianEdge"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "name": "atl-traceid",
+              "value": "764e2ab3cabe41168c461d16efc34a20"
+            },
+            {
+              "name": "atl-request-id",
+              "value": "764e2ab3-cabe-4116-8c46-1d16efc34a20"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "vary",
+              "value": "Accept,Accept-Encoding"
+            },
+            {
+              "name": "x-cache",
+              "value": "Hit from cloudfront"
+            },
+            {
+              "name": "via",
+              "value": "1.1 80779e7124f8d44ce2216c35ac5328a8.cloudfront.net (CloudFront)"
+            },
+            {
+              "name": "x-amz-cf-pop",
+              "value": "AMS1-P2"
+            },
+            {
+              "name": "x-amz-cf-id",
+              "value": "9mf4BVWqV90vI0qbPAD9eJcd272Z84WQjlXzO0LLip8j_3cVVmykgw=="
+            },
+            {
+              "name": "age",
+              "value": "1"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 1228,
+            "text": "{\"page\":{\"id\":\"3q6x2mvssmj1\",\"name\":\"Venice\",\"url\":\"https://veniceai-status.com\",\"time_zone\":\"Etc/UTC\",\"updated_at\":\"2026-03-24T11:53:59.695Z\"},\"components\":[{\"id\":\"gvbkrk1r0n4l\",\"name\":\"Venice App\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:04.881Z\",\"updated_at\":\"2026-03-08T11:46:34.217Z\",\"position\":3,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"6knqw5vybqzk\",\"name\":\"Venice API\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:13.284Z\",\"updated_at\":\"2026-03-08T11:46:34.232Z\",\"position\":4,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"kdzsww6v497w\",\"name\":\"Venice API Docs\",\"status\":\"operational\",\"created_at\":\"2025-04-15T06:07:11.971Z\",\"updated_at\":\"2025-11-18T19:07:42.280Z\",\"position\":5,\"description\":\"API docs hosted at https://docs.venice.ai\",\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false}],\"incidents\":[],\"scheduled_maintenances\":[],\"status\":{\"indicator\":\"none\",\"description\":\"All Systems Operational\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": 1272,
+          "bodySize": 1702
+        },
+        "cache": {
+          "afterRequest": {
+            "expires": "4294967295",
+            "lastFetched": "1774356313",
+            "fetchCount": "1",
+            "_dataSize": "",
+            "_lastModified": "1774356638",
+            "_device": ""
+          }
+        },
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 2,
+          "receive": 0
+        },
+        "time": 2,
+        "_securityState": "secure",
+        "serverIPAddress": "108.156.60.20",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:50:58.099+01:00",
+        "request": {
+          "bodySize": 16,
+          "method": "POST",
+          "url": "https://clerk.venice.ai/v1/client/sessions/sess_3B7QnFdZPChDX9pSzANYn9x1Upi/tokens?__clerk_api_version=2025-11-10&_clerk_js_version=5.125.7",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "clerk.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Content-Length",
+              "value": "16"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "_gcl_au=1.1.399658908.1773837783; spdl_pid=MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR; __client=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ; __client_uat=1773837793; __client_uat_aKq7rGhf=1773837793; __stripe_mid=cde8a3fc-51d4-42e8-b414-b461122ad895316418; _cfuvid=QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000; _cfuvid=UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4; __cf_bm=OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4; ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog=%7B%22%24device_id%22%3A%22019d00f8-9060-7b77-a987-73242f3cd052%22%2C%22distinct_id%22%3A%22c0ef4c84-f6f2-4042-abb1-958f1b6ca15d%22%2C%22%24sesid%22%3A%5B1774356579757%2C%22019d1fe0-1077-7129-85f2-5850df4c3155%22%2C1774356271222%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fvenice.ai%2F%22%7D%7D; __stripe_sid=c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "_gcl_au",
+              "value": "1.1.399658908.1773837783"
+            },
+            {
+              "name": "spdl_pid",
+              "value": "MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR"
+            },
+            {
+              "name": "__client",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ"
+            },
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            },
+            {
+              "name": "__stripe_mid",
+              "value": "cde8a3fc-51d4-42e8-b414-b461122ad895316418"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4"
+            },
+            {
+              "name": "__cf_bm",
+              "value": "OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4"
+            },
+            {
+              "name": "ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog",
+              "value": "{\"$device_id\":\"019d00f8-9060-7b77-a987-73242f3cd052\",\"distinct_id\":\"c0ef4c84-f6f2-4042-abb1-958f1b6ca15d\",\"$sesid\":[1774356579757,\"019d1fe0-1077-7129-85f2-5850df4c3155\",1774356271222],\"$epp\":true,\"$initial_person_info\":{\"r\":\"$direct\",\"u\":\"https://venice.ai/\"}}"
+            },
+            {
+              "name": "__stripe_sid",
+              "value": "c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "__clerk_api_version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "_clerk_js_version",
+              "value": "5.125.7"
+            }
+          ],
+          "headersSize": 2178,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "params": [
+              {
+                "name": "organization_id",
+                "value": ""
+              }
+            ],
+            "text": "organization_id="
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:50:59 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15cdf5aa2ddde3-AMS"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "name": "expires",
+              "value": "0"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "clerk-api-version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "x-cfworker",
+              "value": "1"
+            },
+            {
+              "name": "x-clerk-instance-id",
+              "value": "ins_2dubRvCKqi5XrOUxIgUN4fomDFR"
+            },
+            {
+              "name": "x-clerk-trace-id",
+              "value": "28937893611df60218cfc7b6cd20a71d"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "28937893611df60218cfc7b6cd20a71d"
+            },
+            {
+              "name": "x-country",
+              "value": "NL"
+            },
+            {
+              "name": "x-robots-tag",
+              "value": "noindex, nofollow"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=3GCPIVODQJRw11H%2FuQbxxNiWU54kxG%2FiD0zPfioD3mo%2FOebyYxkUEdpuW9eL%2Fe9a7plpNlQRR3TR%2Fmp%2BVOrCrTC6EunTVs9GLOyyfP8ti3%2BJMGYodHP3BM8WgNhHl4OHYw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "nel",
+              "value": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "Authorization, X-Country"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000;"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 799,
+            "text": "{\"object\":\"token\",\"jwt\":\"eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yZHViUnZDS3FpNVhyT1V4SWdVTjRmb21ERlIiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL3ZlbmljZS5haSIsImV4cCI6MTc3NDM1NjcxOCwiZnZhIjpbODY0NywtMV0sImlhdCI6MTc3NDM1NjY1OCwiaXNzIjoiaHR0cHM6Ly9jbGVyay52ZW5pY2UuYWkiLCJuYmYiOjE3NzQzNTY2NDgsInNpZCI6InNlc3NfM0I3UW5GZFpQQ2hEWDlwU3pBTlluOXgxVXBpIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJ2IjoyfQ.DBzKbngmjkMabQ_mmkI2qsgrYIcRWnvw6XGvOicDI5FGxT-LKY7iLNi1UxSaj0y5yvv_HVCD0-wk7inc16w6jKnkjVLsRCdokmAzSvaJcCkT2bIi22d9qtyVkHRFE42K4m3wcscgImCDz_AHxaFXapUSgNJrHeQd-I0zSblOtYn5QLUZ38NRBjJezgvWpaIie6edwtQ-LcTZJFg8eToO5HPilzwGY2Wy1Fo3NO4JFJOIBAWOU7C6xAyTZFQE8JZapoV7V1GeyrUFn8wtDgke7KDp9xWcfiBiSDH5skjYoqhAF21jIIXtOqtzsBI5BGpEj4AVZKRfSKcTJFNtBgzb5g\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 1074,
+          "bodySize": 1695
+        },
+        "cache": {},
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 1491,
+          "receive": 0
+        },
+        "time": 1491,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.34.146",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:51:38.499+01:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://veniceai-status.com/api/v2/summary.json",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "veniceai-status.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 467
+        },
+        "response": {
+          "status": 304,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:51:36 GMT"
+            },
+            {
+              "name": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "name": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "name": "x-statuspage-version",
+              "value": "9c8b0f184087fb51a87f8f1b58728669df3aff7b"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=259200"
+            },
+            {
+              "name": "x-statuspage-skip-logging",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "cache-control",
+              "value": "max-age=3, public, stale-while-revalidate=10, stale-if-error=3600"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "ETag"
+            },
+            {
+              "name": "x-pollinator-metadata-service",
+              "value": "status-page-web-pages"
+            },
+            {
+              "name": "nel",
+              "value": "{\"failure_fraction\": 0.01, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+            },
+            {
+              "name": "x-runtime",
+              "value": "0.066070"
+            },
+            {
+              "name": "server",
+              "value": "AtlassianEdge"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "name": "atl-traceid",
+              "value": "c20bf75cff5e42819f5b5cfe17350639"
+            },
+            {
+              "name": "atl-request-id",
+              "value": "c20bf75c-ff5e-4281-9f5b-5cfe17350639"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "vary",
+              "value": "Accept,Accept-Encoding"
+            },
+            {
+              "name": "x-cache",
+              "value": "Hit from cloudfront"
+            },
+            {
+              "name": "via",
+              "value": "1.1 80779e7124f8d44ce2216c35ac5328a8.cloudfront.net (CloudFront)"
+            },
+            {
+              "name": "x-amz-cf-pop",
+              "value": "AMS1-P2"
+            },
+            {
+              "name": "x-amz-cf-id",
+              "value": "_-R6Kb3k4ap3WqpqlfMZcWSlW1k4uFnGetOcs4C-s7IGDzY6r8_Wlw=="
+            },
+            {
+              "name": "age",
+              "value": "1"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 1228,
+            "text": "{\"page\":{\"id\":\"3q6x2mvssmj1\",\"name\":\"Venice\",\"url\":\"https://veniceai-status.com\",\"time_zone\":\"Etc/UTC\",\"updated_at\":\"2026-03-24T11:53:59.695Z\"},\"components\":[{\"id\":\"gvbkrk1r0n4l\",\"name\":\"Venice App\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:04.881Z\",\"updated_at\":\"2026-03-08T11:46:34.217Z\",\"position\":3,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"6knqw5vybqzk\",\"name\":\"Venice API\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:13.284Z\",\"updated_at\":\"2026-03-08T11:46:34.232Z\",\"position\":4,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"kdzsww6v497w\",\"name\":\"Venice API Docs\",\"status\":\"operational\",\"created_at\":\"2025-04-15T06:07:11.971Z\",\"updated_at\":\"2025-11-18T19:07:42.280Z\",\"position\":5,\"description\":\"API docs hosted at https://docs.venice.ai\",\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false}],\"incidents\":[],\"scheduled_maintenances\":[],\"status\":{\"indicator\":\"none\",\"description\":\"All Systems Operational\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": 1272,
+          "bodySize": 1702
+        },
+        "cache": {
+          "afterRequest": {
+            "expires": "4294967295",
+            "lastFetched": "1774356313",
+            "fetchCount": "1",
+            "_dataSize": "",
+            "_lastModified": "1774356638",
+            "_device": ""
+          }
+        },
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 9,
+          "receive": 1
+        },
+        "time": 10,
+        "_securityState": "secure",
+        "serverIPAddress": "108.156.60.20",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:51:44.970+01:00",
+        "request": {
+          "bodySize": 16,
+          "method": "POST",
+          "url": "https://clerk.venice.ai/v1/client/sessions/sess_3B7QnFdZPChDX9pSzANYn9x1Upi/tokens?__clerk_api_version=2025-11-10&_clerk_js_version=5.125.7",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "clerk.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Content-Length",
+              "value": "16"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "_gcl_au=1.1.399658908.1773837783; spdl_pid=MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR; __client=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ; __client_uat=1773837793; __client_uat_aKq7rGhf=1773837793; __stripe_mid=cde8a3fc-51d4-42e8-b414-b461122ad895316418; _cfuvid=QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000; _cfuvid=UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4; __cf_bm=OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4; ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog=%7B%22%24device_id%22%3A%22019d00f8-9060-7b77-a987-73242f3cd052%22%2C%22distinct_id%22%3A%22c0ef4c84-f6f2-4042-abb1-958f1b6ca15d%22%2C%22%24sesid%22%3A%5B1774356579757%2C%22019d1fe0-1077-7129-85f2-5850df4c3155%22%2C1774356271222%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fvenice.ai%2F%22%7D%7D; __stripe_sid=c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "_gcl_au",
+              "value": "1.1.399658908.1773837783"
+            },
+            {
+              "name": "spdl_pid",
+              "value": "MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR"
+            },
+            {
+              "name": "__client",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ"
+            },
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            },
+            {
+              "name": "__stripe_mid",
+              "value": "cde8a3fc-51d4-42e8-b414-b461122ad895316418"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4"
+            },
+            {
+              "name": "__cf_bm",
+              "value": "OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4"
+            },
+            {
+              "name": "ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog",
+              "value": "{\"$device_id\":\"019d00f8-9060-7b77-a987-73242f3cd052\",\"distinct_id\":\"c0ef4c84-f6f2-4042-abb1-958f1b6ca15d\",\"$sesid\":[1774356579757,\"019d1fe0-1077-7129-85f2-5850df4c3155\",1774356271222],\"$epp\":true,\"$initial_person_info\":{\"r\":\"$direct\",\"u\":\"https://venice.ai/\"}}"
+            },
+            {
+              "name": "__stripe_sid",
+              "value": "c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "__clerk_api_version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "_clerk_js_version",
+              "value": "5.125.7"
+            }
+          ],
+          "headersSize": 2178,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "params": [
+              {
+                "name": "organization_id",
+                "value": ""
+              }
+            ],
+            "text": "organization_id="
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:51:44 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15cf1a9bc1dde3-AMS"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "name": "expires",
+              "value": "0"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "clerk-api-version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "x-cfworker",
+              "value": "1"
+            },
+            {
+              "name": "x-clerk-instance-id",
+              "value": "ins_2dubRvCKqi5XrOUxIgUN4fomDFR"
+            },
+            {
+              "name": "x-clerk-trace-id",
+              "value": "059cc6b7ceda9d5ac21957b2eec8fb6f"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "059cc6b7ceda9d5ac21957b2eec8fb6f"
+            },
+            {
+              "name": "x-country",
+              "value": "NL"
+            },
+            {
+              "name": "x-robots-tag",
+              "value": "noindex, nofollow"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=K%2BYHrdKBm2bh%2B%2BN0wgk%2FRLo%2Fk80%2BMVD2GXaUw5Ud7Sxu7YDeli4SnfgkKe5ApwIBG8KbykU6kxpNyoOlMdVXtvFfNXDUh1%2BXVqIpEToiAZVpLgRrAT0%2Bw1dPmBWVNEuYLw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "nel",
+              "value": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "Authorization, X-Country"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000;"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 799,
+            "text": "{\"object\":\"token\",\"jwt\":\"eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yZHViUnZDS3FpNVhyT1V4SWdVTjRmb21ERlIiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL3ZlbmljZS5haSIsImV4cCI6MTc3NDM1Njc2NCwiZnZhIjpbODY0NywtMV0sImlhdCI6MTc3NDM1NjcwNCwiaXNzIjoiaHR0cHM6Ly9jbGVyay52ZW5pY2UuYWkiLCJuYmYiOjE3NzQzNTY2OTQsInNpZCI6InNlc3NfM0I3UW5GZFpQQ2hEWDlwU3pBTlluOXgxVXBpIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJ2IjoyfQ.JtdcLAgGHjJc9Hv3TSAWmXvCOydoEqBdnVHaLrkMxcn-N6GTBeLSaorWB6mvJPC_XzCR_s7TtwwqbbOBd0UaWHgmew3jNlXvcXfsSEcyCpKKgosMzOyznatbf-42WnnQZm0GUwUGFk0CA2EWp9U4ei9McO65B2JvB024HaSv-XJp7qhW1Xx6pFDnKhMmcJj_rTM27CRc7iwjpvVOw5eB8E6Qtw4X6A2kt5qV1QQGS98S2Na8k7vldoNlFGngAXmQz0O9x4K32h-s3DgEGeJSgubjxZafunUwSxk8Ti710EdjbbTRmInCp7xYQvPeiL9Q9qTsDgs-yBPNHhLduhKpcA\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 1076,
+          "bodySize": 1700
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 421,
+          "receive": 0
+        },
+        "time": 421,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.34.146",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:52:30.623+01:00",
+        "request": {
+          "bodySize": 16,
+          "method": "POST",
+          "url": "https://clerk.venice.ai/v1/client/sessions/sess_3B7QnFdZPChDX9pSzANYn9x1Upi/tokens?__clerk_api_version=2025-11-10&_clerk_js_version=5.125.7",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "clerk.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "Content-Length",
+              "value": "16"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "_gcl_au=1.1.399658908.1773837783; spdl_pid=MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR; __client=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ; __client_uat=1773837793; __client_uat_aKq7rGhf=1773837793; __stripe_mid=cde8a3fc-51d4-42e8-b414-b461122ad895316418; _cfuvid=QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000; _cfuvid=UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4; __cf_bm=OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4; ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog=%7B%22%24device_id%22%3A%22019d00f8-9060-7b77-a987-73242f3cd052%22%2C%22distinct_id%22%3A%22c0ef4c84-f6f2-4042-abb1-958f1b6ca15d%22%2C%22%24sesid%22%3A%5B1774356579757%2C%22019d1fe0-1077-7129-85f2-5850df4c3155%22%2C1774356271222%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fvenice.ai%2F%22%7D%7D; __stripe_sid=c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [
+            {
+              "name": "_gcl_au",
+              "value": "1.1.399658908.1773837783"
+            },
+            {
+              "name": "spdl_pid",
+              "value": "MXrzJ4ywqjOIbdBfULb0pqNGykx9hOBR"
+            },
+            {
+              "name": "__client",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zQjdRbTlXblMxbWxQblJqQUlYY2RXRk0wSUYiLCJyb3RhdGluZ190b2tlbiI6IjM1MG95eWNiZTFwNTAybnFmcnljZDAxNndjaXVsdDMwNnQ4OHpyMzUifQ.HmsNSEvr4bJ-ApyfRxuQHriELkZ-TXHvqgt95RLlpqGl4d0oand7srGkbJFAsBH7QwoKK-_EAqBFcHXbhPdYvpbc7-z4hYDL9a9TAuAsU1ga4Gq7i9GOrQjjyfLE4anYOO-EvQyF7GvonKgAaCTui-nhZDjx9v8ssERheq1xeiKb9T2nWAv3cCzV52hMIOc0R-eEcRhH7TkV27gy6waHoJuFiTCPg1q-kMRrYPwu5nwIOFt7B-s_rbcE55zZVx00AJvoNxe1F8pQZzpniZIhKjlLpl7RdwK0N3DoaJXoYW4t64pI_YxO9sHYW1I1hlmBtgQz_5d67nb4BEerl6H6KQ"
+            },
+            {
+              "name": "__client_uat",
+              "value": "1773837793"
+            },
+            {
+              "name": "__client_uat_aKq7rGhf",
+              "value": "1773837793"
+            },
+            {
+              "name": "__stripe_mid",
+              "value": "cde8a3fc-51d4-42e8-b414-b461122ad895316418"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "QUfBdce0nnnwP2Te.sITaw.6nJp2ZNOaUY8.WtukNaI-1774250684833-0.0.1.1-604800000"
+            },
+            {
+              "name": "_cfuvid",
+              "value": "UBlx55G6PpqOxAbT5PMrlb7RLdbCWljkp00M658LbNM-1774356334.5384543-1.0.1.1-c_zpKCJNMHBbcc3wYbi58ahkAzqeeu7rLL5_dyeL7f4"
+            },
+            {
+              "name": "__cf_bm",
+              "value": "OfgqtYhNfoxRw2Hun.OOTEXQMnNKYgZN7ucALBCXtsc-1774356520-1.0.1.1-dQw_pxYBXUespK3kugCCuG8jDjQORxZhTOpXN1kP20BR4k.kKoBG77qtaI8GNYkhgjuehq9nUaeDidriVexfKLH7mYO2LJ7VJn2GOiV0wG4"
+            },
+            {
+              "name": "ph_phc_4Yg9V0hm9Lgavwcr6LZACe64tya7UqfyHePVNOzYREF_posthog",
+              "value": "{\"$device_id\":\"019d00f8-9060-7b77-a987-73242f3cd052\",\"distinct_id\":\"c0ef4c84-f6f2-4042-abb1-958f1b6ca15d\",\"$sesid\":[1774356579757,\"019d1fe0-1077-7129-85f2-5850df4c3155\",1774356271222],\"$epp\":true,\"$initial_person_info\":{\"r\":\"$direct\",\"u\":\"https://venice.ai/\"}}"
+            },
+            {
+              "name": "__stripe_sid",
+              "value": "c1574bd0-9ac8-4786-a493-16d360c2a0e6f2db66"
+            }
+          ],
+          "queryString": [
+            {
+              "name": "__clerk_api_version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "_clerk_js_version",
+              "value": "5.125.7"
+            }
+          ],
+          "headersSize": 2178,
+          "postData": {
+            "mimeType": "application/x-www-form-urlencoded",
+            "params": [
+              {
+                "name": "organization_id",
+                "value": ""
+              }
+            ],
+            "text": "organization_id="
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:52:30 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15d037fb20dde3-AMS"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "name": "expires",
+              "value": "0"
+            },
+            {
+              "name": "vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "clerk-api-version",
+              "value": "2025-11-10"
+            },
+            {
+              "name": "x-cfworker",
+              "value": "1"
+            },
+            {
+              "name": "x-clerk-instance-id",
+              "value": "ins_2dubRvCKqi5XrOUxIgUN4fomDFR"
+            },
+            {
+              "name": "x-clerk-trace-id",
+              "value": "bf77d150af199a865218c55c4d9e55d6"
+            },
+            {
+              "name": "x-cloud-trace-context",
+              "value": "bf77d150af199a865218c55c4d9e55d6"
+            },
+            {
+              "name": "x-country",
+              "value": "NL"
+            },
+            {
+              "name": "x-robots-tag",
+              "value": "noindex, nofollow"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=WXmis%2FPOuBC8H8d7QsW7xp5tt6pjHp0R9tXJG1Te9tr%2BZkA%2FwCbhQGrIazS7O2bdbxRhcgDvqdIQjaiBNzr6Od%2F6A1sL8D6Dd0y3DFYm4yPFcc%2BU08u4pEqg94RK98hT%2FQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "nel",
+              "value": "{\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "Authorization, X-Country"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=63072000;"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "content-encoding",
+              "value": "br"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 799,
+            "text": "{\"object\":\"token\",\"jwt\":\"eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yZHViUnZDS3FpNVhyT1V4SWdVTjRmb21ERlIiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL3ZlbmljZS5haSIsImV4cCI6MTc3NDM1NjgxMCwiZnZhIjpbODY0OCwtMV0sImlhdCI6MTc3NDM1Njc1MCwiaXNzIjoiaHR0cHM6Ly9jbGVyay52ZW5pY2UuYWkiLCJuYmYiOjE3NzQzNTY3NDAsInNpZCI6InNlc3NfM0I3UW5GZFpQQ2hEWDlwU3pBTlluOXgxVXBpIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zQUs5TzNOdkhMM2xud2NLSGJPMDNyUVhCbHQiLCJ2IjoyfQ.vWDQaWX1jkes3z2vJHTMI4gPvA2oYUOF--6QeY9GIRQ2oIPbYjADps6bfIL56FIdVE-ySUXaXqxVQGUSyiZOPtPysI5bVQsr7G6WOlKbqb-9I4jRjvXuwaRyoX1z-ZUOutnifUp_14Bj00zZftLQasGQFGnGUthYfnxG_N3-_JdDobSlXl26NPjIkRz4kYHzBwDm2AQH_ZGqQf_re3NiTSq798X4yWgooMx3lFiJfg-u-1cTrjOlkESBpQ2P0EAc8W4aNBIC_ZsaFSfCb0Nuf6GW8wWr_iFTtklYMNmscHhdYVuPFqljxBCFzm7lgqSI5rSV3PeQue-rXq-2W2CgKw\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 1072,
+          "bodySize": 1697
+        },
+        "cache": {},
+        "timings": {
+          "blocked": -1,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 659,
+          "receive": 0
+        },
+        "time": 659,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.34.146",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:52:38.302+01:00",
+        "request": {
+          "bodySize": 0,
+          "method": "GET",
+          "url": "https://veniceai-status.com/api/v2/summary.json",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "veniceai-status.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "If-None-Match",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ],
+          "cookies": [],
+          "queryString": [],
+          "headersSize": 467
+        },
+        "response": {
+          "status": 304,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:52:36 GMT"
+            },
+            {
+              "name": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "name": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "name": "x-statuspage-version",
+              "value": "9c8b0f184087fb51a87f8f1b58728669df3aff7b"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=259200"
+            },
+            {
+              "name": "x-statuspage-skip-logging",
+              "value": "true"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "cache-control",
+              "value": "max-age=3, public, stale-while-revalidate=10, stale-if-error=3600"
+            },
+            {
+              "name": "access-control-expose-headers",
+              "value": "ETag"
+            },
+            {
+              "name": "x-pollinator-metadata-service",
+              "value": "status-page-web-pages"
+            },
+            {
+              "name": "nel",
+              "value": "{\"failure_fraction\": 0.01, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+            },
+            {
+              "name": "x-runtime",
+              "value": "0.067227"
+            },
+            {
+              "name": "server",
+              "value": "AtlassianEdge"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "name": "atl-traceid",
+              "value": "f0c40bb1f5744a4ab84eaf2ccf767284"
+            },
+            {
+              "name": "atl-request-id",
+              "value": "f0c40bb1-f574-4a4a-b84e-af2ccf767284"
+            },
+            {
+              "name": "report-to",
+              "value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+            },
+            {
+              "name": "etag",
+              "value": "W/\"bec395c1b916d6c18a0694cfc55e2205\""
+            },
+            {
+              "name": "vary",
+              "value": "Accept,Accept-Encoding"
+            },
+            {
+              "name": "x-cache",
+              "value": "Hit from cloudfront"
+            },
+            {
+              "name": "via",
+              "value": "1.1 80779e7124f8d44ce2216c35ac5328a8.cloudfront.net (CloudFront)"
+            },
+            {
+              "name": "x-amz-cf-pop",
+              "value": "AMS1-P2"
+            },
+            {
+              "name": "x-amz-cf-id",
+              "value": "uxatpS3b293iIu6Jxi8ImGpC6GIKETJROCXkB9C7kZO90SXjlhaF7A=="
+            },
+            {
+              "name": "age",
+              "value": "1"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json; charset=utf-8",
+            "size": 1228,
+            "text": "{\"page\":{\"id\":\"3q6x2mvssmj1\",\"name\":\"Venice\",\"url\":\"https://veniceai-status.com\",\"time_zone\":\"Etc/UTC\",\"updated_at\":\"2026-03-24T11:53:59.695Z\"},\"components\":[{\"id\":\"gvbkrk1r0n4l\",\"name\":\"Venice App\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:04.881Z\",\"updated_at\":\"2026-03-08T11:46:34.217Z\",\"position\":3,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"6knqw5vybqzk\",\"name\":\"Venice API\",\"status\":\"operational\",\"created_at\":\"2025-04-15T04:03:13.284Z\",\"updated_at\":\"2026-03-08T11:46:34.232Z\",\"position\":4,\"description\":null,\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false},{\"id\":\"kdzsww6v497w\",\"name\":\"Venice API Docs\",\"status\":\"operational\",\"created_at\":\"2025-04-15T06:07:11.971Z\",\"updated_at\":\"2025-11-18T19:07:42.280Z\",\"position\":5,\"description\":\"API docs hosted at https://docs.venice.ai\",\"showcase\":true,\"start_date\":\"2025-04-15\",\"group_id\":null,\"page_id\":\"3q6x2mvssmj1\",\"group\":false,\"only_show_if_degraded\":false}],\"incidents\":[],\"scheduled_maintenances\":[],\"status\":{\"indicator\":\"none\",\"description\":\"All Systems Operational\"}}"
+          },
+          "redirectURL": "",
+          "headersSize": 1272,
+          "bodySize": 1702
+        },
+        "cache": {
+          "afterRequest": {
+            "expires": "4294967295",
+            "lastFetched": "1774356313",
+            "fetchCount": "1",
+            "_dataSize": "",
+            "_lastModified": "1774356638",
+            "_device": ""
+          }
+        },
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "ssl": 0,
+          "send": 0,
+          "wait": 20,
+          "receive": 0
+        },
+        "time": 20,
+        "_securityState": "secure",
+        "serverIPAddress": "108.156.60.20",
+        "connection": "443",
+        "pageref": "page_4"
+      },
+      {
+        "startedDateTime": "2026-03-24T13:52:48.131+01:00",
+        "request": {
+          "bodySize": 1971,
+          "method": "POST",
+          "url": "https://ph.venice.ai/i/v0/e/?ip=0&_=1774356768125&ver=1.345.3&compression=gzip-js",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "Host",
+              "value": "ph.venice.ai"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "content-type",
+              "value": "text/plain"
+            },
+            {
+              "name": "Referer",
+              "value": "https://venice.ai/"
+            },
+            {
+              "name": "Content-Length",
+              "value": "1971"
+            },
+            {
+              "name": "Origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Priority",
+              "value": "u=4"
+            }
+          ],
+          "cookies": [],
+          "queryString": [
+            {
+              "name": "ip",
+              "value": "0"
+            },
+            {
+              "name": "_",
+              "value": "1774356768125"
+            },
+            {
+              "name": "ver",
+              "value": "1.345.3"
+            },
+            {
+              "name": "compression",
+              "value": "gzip-js"
+            }
+          ],
+          "headersSize": 496,
+          "postData": {
+            "mimeType": "text/plain",
+            "params": [],
+            "text": "\u001f\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003­XmoÛF\u0012þ+\u0006á\u000fw×&ERT\u001c\u000e6½+¶>'MÐ\u0016\u0001±Ú]R\u000b\\f¹,\u0007ùï÷\fIYMÙ¹¶AØ»ó>ÏÌpö÷Ï^Ûjé-<?Ë S\tÏ%³IÌæq\u0010²LL©TQ\u0010\nî]xj­*\u0007òóóâ®ä5ÎjkjeV·øì\u001büç}Ð4\u0006·ø=]+ÛhSá<ðéhiq§,~ÿ^[;:j­JÝ¶V¸øN5·Îøs§Kuo*:}Ý®«WÊ\u0016º:¼KM5\n±©cÑZ\u000bCÓÖ\u0016àZ9W7«+Ø\u000e\r\\_\u0015wÄ¾2\ryópAg5w«¤îÎòMÚÂâç½ÿ?{]\u0014ü*¾ôÏþ68{öÓ»³À¿ô¿9ÃÁ4úæìþ±ëE\u0010Í/ý¿ý[[s5ñ\u0003\u001f³Áõ«îö *ûháæà¸àUÞB?´«ýòöewÖ©ï:\u0012ºoUªJWJç+\u001dLüéþt£¥[yI\u0010E8\\kµ©u{b?\t\u000eÏ\u0007ò`\u0016Ä8.ô\u0012Z6jIjðËa/Ã(¾\féBW°Î¥\u001dÂîît4\u0003gåí2Ù.}\u0010$Q\u0018Oi|\u0019\u0004dË\u0000\u0007`ú~6csê³d$Ïg\tKÂI4ÉB!ýx\u0002QR7NWbÐ%|Eb\u0016±lMXäG\u0013ÆË\u0000eÁr*x\u0010ËÞ>í4/ô=w°=íÍñ&þdÊüM¢wÁd\u0011Å0ºôÃø7â\u0010¦ÊtÞZ%ÓF5äqÇeZ\u0000~0óé\u000f\u0005y¸µJ\u0018+uã§Ò8ö\u0012¨T\u0004\u0017+\u0000\u001eìãeÝ\u0005\"I2\u000bÙ\fÅVñe¡àOÆF]xr\u001bco¯ù¶0\\~Ëk\u0007;zAÝ×ÊfÆ¼\u0012Ýé@N\n Þ[8ÛB\bR®µÄ\u0007¹û£\u0017ÙÀ·R9«\u0005Hª¶(¾|¹jÍ3Ã\u0006V\u0017ê;è#Â\u000b\u000ftÙßµ¶è(\u0012Ý©;Y\b\ro\u0019LN·ÎIDÓ\u0002Bi£%õ¦£³È\u00169u¦µM:ãrpáüÀ¯¥\u001bõ\u0015$êN¨ºÃÃÎÈg%JÅe*\n-n_PÍÓkfh$4+x\u000e¥¿{¼2Õ¶4mÃ\u00104Å\n¤Ë1u\nd Û\\xm[.\u0015+ä\u0005³¨FI6\b\u0002CãØ Ñ\u000f\"Sl¥¬rZ\u000bZó¢U\u001aw×¿µ@JY[\u0015FÜ2$Ëº\b·B\r*aD+4¤\"\u0014I\u0014\t\u0019ÑÂ÷-sÜæ0\u0000r§ÁLÎEÌ3ÅDÛ8S>ñ\b*wíãb<\u001cÐ\\Ö¢BÍ\tÐäÆnYÓæ9ê\b2Þ¬5oXãZ©\rÛðâÖ­¬ióUÏi\reqÍ-ýßË§yU5Ù¦ \u0002ª&\u0007´êá\u0018Æ\u0011\u0017\bªr\"é\u0018\u001e\u000f\u0007\u0014°\rÐÏ@Ï\u00031\u0018©\u0014Ï½KºÂ\fSlÙ:×ù-L¹¤\u0003]¢7\f#êì!\u0005¼'Óà\f¤¡©s\\\"\u0018ß<TqF-®ÑyÕÖ]({µ\u0010Á#È]â\t¦l\u0010\u0012\\»R\u0017\nÃb°vÙÜ\u0002jÌÌ!Ë¢|Y£¸\u0015\u0014Û>t* ÃXf»a²×%UÆÛÂ±-èíqD(\t\u0000°'\u001c}lt\t\u001ez\u0000%¡à¸µ.\u0007ã\u000e^Â¬0×\u000eÀ\b­\u0018\u0013fÝÉì\u0011F#»òë\u0002¦`¸\u0016÷\u0011Å<Äÿê¥â]x\u000e¨¤É±ãøºbÆ\fC\u001dZS\u001c²¾Pß£<{\u00033L}\u001a\u001c¨´}SzlÕAg\u0018\u0015wºY¿Ü?FÙZÊx(^î2»)2\u001eøsÒ\u0004?P¡g0áq¸ÆÃðî+Ù¨\u0005Ïö·Q-ï)\nO·À§´Ï·ÄQKþL\u001c\u0007Ò©Æ9\u001eºÑ^ú\u001cBÿP{=Q¤§:îÓÈvàq¾®)\u0000ÒÐÆô9\u0006\u0006\r´ZT:8ó¼8øDÙqtö÷\u0003qU¼Hÿ»QU¾Î^\u001dª\u0019íü£\u0006í±\u0004Ü­Cö\t\u0002Ù\u001c\u000bÅ©2{45^BÈñ 9]\\OgË_\ræ§ãæô@x4~OåñD:åb\u0003Ùøì\u0004fúra\u0000L`ÇBQ\u0001³PÍ\u0013LçOÂß}¢¦u¿nÐrO\u001fïGwV}jáM¿tEá\u001cä,ð9®,d³(ÁÆ*RRÆ\u0013!\u000eìë%(\u001a8ÈLÉåa\u0013\fÃ8BóhNEñ®\u0012øðúUúêæç\u000fo_ßÐÐÆ7ö;Ý¥ìÚ\u001aÛ-èÿ×ú×ÈÛTªe\u000b3îÐ¿i\u00184)í´\u0013¬\fj¶@\u0013­Áç9hëV@Z`\u0016\u0017\b2îüásk8¥UP\u001a¤z×Áíð JNý|âÕâ\u0010bU³úAþÃd×oE9W\u001c¬üXÌ\u00112\u0014Çü~0¦x\f8X ·\u0015#vÑµò¾|DJ¹ÅkÁÂ«W\"~ÍçïýU9óõFØéßþõ­FnË_>eÛÿ¨ë÷?ý|ÿëÍëï÷Û0\"Ò'Í\u0016\u001bçÎnÿ=|]ò\u0019\u001e\u0015°º\u00079ÅHM<}TA\u001c\u0013Ó¦{Iy'a¨dÖ=>ì\u0014\u0001Êv\u000bDE~æT\u001ei{A\u001aÉÅ\u0013þ±\u0017¦cÑ÷¦G\u0003\u0014\u0003ô\u0016ôÀÑ¿\u0006\u001c¡\u0010-\u001a\"P­Â¶y\u000f!ôö@ï1ýGPÊk½³açD½º<2G\u0003Á\u0012¶èL\u0013Vö»·)æ|\u0003[ñ+:Í~5'\u0015ÔqÓ®ãÒÛ\u0006\u0002I\u0006whÁó9 µ{\u000bý øòñ\u0004/½n\u0014\u0000\u0000"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "",
+          "httpVersion": "HTTP/2",
+          "headers": [
+            {
+              "name": "date",
+              "value": "Tue, 24 Mar 2026 12:52:47 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "content-length",
+              "value": "15"
+            },
+            {
+              "name": "permissions-policy",
+              "value": "geolocation=(), camera=()"
+            },
+            {
+              "name": "vary",
+              "value": "origin, access-control-request-method, access-control-request-headers"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "https://venice.ai"
+            },
+            {
+              "name": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "name": "x-envoy-upstream-service-time",
+              "value": "22"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains; preload"
+            },
+            {
+              "name": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "content-security-policy",
+              "value": "default-src https:"
+            },
+            {
+              "name": "referrer-policy",
+              "value": "strict-origin"
+            },
+            {
+              "name": "cf-ray",
+              "value": "9e15d0a58c91fb9d-AMS"
+            },
+            {
+              "name": "X-Firefox-Spdy",
+              "value": "h2"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "mimeType": "application/json",
+            "size": 15,
+            "text": "{\"status\":\"Ok\"}"
+          },
+          "redirectURL": "",
+          "headersSize": 659,
+          "bodySize": 674
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 8,
+          "ssl": 3,
+          "send": 0,
+          "wait": 140,
+          "receive": 0
+        },
+        "time": 151,
+        "_securityState": "secure",
+        "serverIPAddress": "104.18.28.226",
+        "connection": "443",
+        "pageref": "page_4"
+      }
+    ]
+  }
+}

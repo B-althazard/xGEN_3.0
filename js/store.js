@@ -9,6 +9,7 @@ export const STORAGE_KEYS = {
   ONBOARDING: 'xgen.onboarded',
   AGE_CONFIRMED: 'xgen.ageConfirmed',
   BRIDGE_SEEN: 'xgen.bridgeSeen',
+  BATCH: 'xgen.batch',
 };
 
 const listeners = new Set();
@@ -65,6 +66,15 @@ const state = {
   },
   savedPresets: [],
   promptResult: null,
+  batch: {
+    promptList: [],
+    repeatCount: 1,
+    mode: 'iteration',
+    delay: 3,
+    running: false,
+    currentIndex: 0,
+    history: [],
+  },
   _undoStack: [],
   _redoStack: [],
 };
@@ -136,6 +146,12 @@ export async function initializeStore() {
   state.savedPresets = presets;
   state.app.ageConfirmed = localStorage.getItem(STORAGE_KEYS.AGE_CONFIRMED) === 'true';
   state.app.onboardingComplete = localStorage.getItem(STORAGE_KEYS.ONBOARDING) === 'true';
+
+  // Load batch state
+  const savedBatch = loadLocalState(STORAGE_KEYS.BATCH);
+  if (savedBatch) {
+    state.batch = { ...state.batch, ...savedBatch, running: false };
+  }
 
   if (savedState) {
     state.dummies = savedState.dummies?.length ? savedState.dummies : [defaultDummy()];
@@ -459,5 +475,66 @@ export function markAgeConfirmed() {
 export function markOnboardingComplete() {
   state.app.onboardingComplete = true;
   localStorage.setItem(STORAGE_KEYS.ONBOARDING, 'true');
+  notify();
+}
+
+// ─── xBatcher ──────────────────────────────────────────────────────────────
+
+export function persistBatch() {
+  saveLocalState(STORAGE_KEYS.BATCH, {
+    promptList: state.batch.promptList,
+    repeatCount: state.batch.repeatCount,
+    mode: state.batch.mode,
+    delay: state.batch.delay,
+    history: state.batch.history.slice(0, 200),
+  });
+}
+
+export function updateBatchSetting(key, value) {
+  state.batch[key] = value;
+  persistBatch();
+  notify();
+}
+
+export function addPromptToList(text) {
+  state.batch.promptList.push({ id: crypto.randomUUID(), text, status: 'pending', timestamp: null, filename: null });
+  persistBatch();
+  notify();
+}
+
+export function removePromptFromList(id) {
+  state.batch.promptList = state.batch.promptList.filter(p => p.id !== id);
+  persistBatch();
+  notify();
+}
+
+export function clearPromptList() {
+  state.batch.promptList = [];
+  persistBatch();
+  notify();
+}
+
+export function addBatchHistoryEntry(entry) {
+  state.batch.history.unshift(entry);
+  if (state.batch.history.length > 200) state.batch.history.length = 200;
+  persistBatch();
+  notify();
+}
+
+export function clearBatchHistory() {
+  state.batch.history = [];
+  persistBatch();
+  notify();
+}
+
+export function setBatchRunning(running) {
+  state.batch.running = running;
+  notify();
+}
+
+export function updatePromptInList(id, updates) {
+  const prompt = state.batch.promptList.find(p => p.id === id);
+  if (prompt) Object.assign(prompt, updates);
+  persistBatch();
   notify();
 }
