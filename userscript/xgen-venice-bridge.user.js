@@ -1,8 +1,9 @@
 // ==UserScript==
 // @name         x.GEN → Venice Bridge
 // @namespace    https://b-althazard.github.io/
-// @version      2.0.1
+// @version      2.0.2
 // @description  Bridges x.GEN to Venice.ai for automated image generation
+// @match        https://b-althazard.github.io/xGEN_3.0/*
 // @match        https://b-althazard.github.io/xgen/*
 // @match        https://b-althazard.github.io/xGEN/*
 // @match        https://venice.ai/chat*
