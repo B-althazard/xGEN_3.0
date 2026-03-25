@@ -218,8 +218,9 @@ export function updateField(fieldId, value, dummyIndex = state.activeDummyIndex)
   snapshotUndo();
   const dummy = state.dummies[dummyIndex];
   dummy.fields[fieldId] = value;
-  enforceFieldRules(dummy.fields, fieldId);
+  const clears = enforceFieldRules(dummy.fields, fieldId);
   notify();
+  return clears;
 }
 
 export function updateMultiDummyField(fieldId, value) {
@@ -232,9 +233,10 @@ export function updateFieldSilent(fieldId, value, dummyIndex = state.activeDummy
   snapshotUndo();
   const dummy = state.dummies[dummyIndex];
   dummy.fields[fieldId] = value;
-  enforceFieldRules(dummy.fields, fieldId);
+  const clears = enforceFieldRules(dummy.fields, fieldId);
   recomputePrompt();
   persist();
+  return clears;
 }
 
 export function updateMultiDummyFieldSilent(fieldId, value) {
@@ -245,7 +247,18 @@ export function updateMultiDummyFieldSilent(fieldId, value) {
 }
 
 function enforceFieldRules(fields, fieldId) {
+  const clears = [];
+
+  // Foundation → clear all makeup
   if (fieldId === 'foundation' && fields.foundation === 'none') {
+    const removed = [];
+    if (fields.eye_makeup?.length) removed.push('eye makeup');
+    if (fields.eyeshadow_color?.length) removed.push('eyeshadow');
+    if (fields.lashes) removed.push('lashes');
+    if (fields.lip_makeup) removed.push('lip makeup');
+    if (fields.lip_color) removed.push('lip color');
+    if (fields.blush_effects?.length) removed.push('blush effects');
+    if (removed.length) clears.push({ fieldId: 'makeup', reason: `Foundation set to None — cleared ${removed.join(', ')}` });
     fields.eye_makeup = [];
     fields.eyeshadow_color = [];
     fields.lashes = null;
@@ -253,11 +266,22 @@ function enforceFieldRules(fields, fieldId) {
     fields.lip_color = null;
     fields.blush_effects = [];
   }
+
+  // Lip makeup → clear lip color
   if (fieldId === 'lip_makeup' && fields.lip_makeup === 'none') {
+    if (fields.lip_color) clears.push({ fieldId: 'lip_color', reason: 'Lip makeup set to None — cleared lip color' });
     fields.lip_color = null;
   }
+
+  // Complete outfit → clear individual clothing
   if (fieldId === 'complete_outfit') {
     if (fields.complete_outfit) {
+      const removed = [];
+      if (fields.upper_type) removed.push('upper');
+      if (fields.lower_type) removed.push('lower');
+      if (fields.legwear?.length) removed.push('legwear');
+      if (fields.footwear) removed.push('footwear');
+      if (removed.length) clears.push({ fieldId: 'clothing', reason: `Complete outfit set — cleared ${removed.join(', ')}` });
       fields.upper_type = null;
       fields.upper_style = [];
       fields.upper_color = null;
@@ -267,13 +291,78 @@ function enforceFieldRules(fields, fieldId) {
       fields.legwear = [];
       fields.footwear = null;
       if (fields.complete_outfit === 'nude') {
+        if (fields.accessories?.length) clears.push({ fieldId: 'accessories', reason: 'Nude outfit — cleared accessories' });
         fields.accessories = [];
       }
     }
   }
+
+  // Individual clothing → clear complete outfit
   if (['upper_type', 'upper_style', 'upper_color', 'lower_type', 'lower_style', 'lower_color', 'legwear', 'footwear'].includes(fieldId)) {
     if (fields[fieldId]) fields.complete_outfit = null;
   }
+
+  // Option-level conflicts
+  const optionConflicts = state.rules?.optionConflicts || [];
+  for (const conflict of optionConflicts) {
+    const { fieldId: condField, anyOf } = conflict.condition;
+    const fieldVal = fields[condField];
+
+    if (!fieldVal) continue;
+
+    const matches = Array.isArray(fieldVal)
+      ? fieldVal.some((v) => anyOf.includes(v))
+      : anyOf.includes(fieldVal);
+
+    if (!matches) continue;
+
+    for (const [targetField, targetOptions] of Object.entries(conflict.clear)) {
+      const current = fields[targetField];
+      if (!current) continue;
+
+      if (Array.isArray(current)) {
+        const removed = current.filter((v) => targetOptions.includes(v));
+        if (removed.length) {
+          clears.push({ fieldId: targetField, reason: `${conflict.reason}: cleared ${removed.join(', ')}` });
+          fields[targetField] = current.filter((v) => !targetOptions.includes(v));
+        }
+      } else if (targetOptions.includes(current)) {
+        clears.push({ fieldId: targetField, reason: `${conflict.reason}: cleared ${current}` });
+        fields[targetField] = null;
+      }
+    }
+  }
+
+  return clears;
+}
+
+export function getConflictingOptions(fields) {
+  const disabled = {};
+  const optionConflicts = state.rules?.optionConflicts || [];
+
+  for (const conflict of optionConflicts) {
+    const { fieldId: condField, anyOf } = conflict.condition;
+    const fieldVal = fields[condField];
+    if (!fieldVal) continue;
+
+    const matches = Array.isArray(fieldVal)
+      ? fieldVal.some((v) => anyOf.includes(v))
+      : anyOf.includes(fieldVal);
+
+    if (!matches) continue;
+
+    for (const [targetField, targetOptions] of Object.entries(conflict.clear)) {
+      if (!disabled[targetField]) disabled[targetField] = new Set();
+      targetOptions.forEach((opt) => disabled[targetField].add(opt));
+    }
+  }
+
+  // Convert Sets to arrays for easier use
+  const result = {};
+  for (const [fieldId, optSet] of Object.entries(disabled)) {
+    result[fieldId] = [...optSet];
+  }
+  return result;
 }
 
 export function setActiveDummy(index) {

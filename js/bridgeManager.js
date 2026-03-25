@@ -57,6 +57,7 @@ export function initializeBridgeManager() {
   window.addEventListener('xgen:image-received', async (event) => {
     clearLoader();
     const payload = event.detail;
+    const currentState = getState();
     const image = {
       nonce: payload.nonce,
       ts: payload.ts || Date.now(),
@@ -69,6 +70,7 @@ export function initializeBridgeManager() {
       mime: payload.mime || 'image/png',
       size: payload.size || 0,
       generationTime: payload.generationTime || 0,
+      fields: JSON.parse(JSON.stringify(currentState.dummies[currentState.activeDummyIndex]?.fields || {})),
     };
     await saveImage(image);
     await addGeneratedImage(image);

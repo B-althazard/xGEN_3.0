@@ -112,6 +112,44 @@
       { "id": "futa_disabled", "whenAll": [{ "fieldId": "futa_enabled", "notEquals": "on" }], "dropPrefixes": ["body.genital.futa."] }
     ]
   },
+  "optionConflicts": [
+    {
+      "id": "pussy_state_vs_lower",
+      "reason": "Exposed pussy states conflict with opaque lower clothing",
+      "condition": { "fieldId": "pussy_state", "anyOf": ["spread_open", "gaping", "fingered", "toy_inside", "creampie"] },
+      "clear": { "lower_type": ["pants", "jeans", "skinny_jeans", "baggy_jeans", "cargo_pants", "leggings", "yoga_pants", "sweatpants", "shorts", "denim_shorts"] }
+    },
+    {
+      "id": "pussy_closed_vs_open",
+      "reason": "Closed and open pussy states conflict",
+      "condition": { "fieldId": "pussy_state", "anyOf": ["closed"] },
+      "clear": { "pussy_state": ["wet", "spread_open", "gaping", "fingered", "toy_inside", "creampie"] }
+    },
+    {
+      "id": "bust_exposed_vs_covered",
+      "reason": "Exposed and covered bust states conflict",
+      "condition": { "fieldId": "bust_state", "anyOf": ["exposed"] },
+      "clear": { "bust_state": ["covered"], "upper_type": ["bra", "bralette", "crop_top", "tank_top", "tshirt", "blouse", "shirt", "sweater", "hoodie", "jacket", "blazer", "coat", "vest", "cardigan", "tube_top", "halter", "off_shoulder", "one_shoulder"] }
+    },
+    {
+      "id": "bust_covered_vs_exposed",
+      "reason": "Covered and exposed bust states conflict",
+      "condition": { "fieldId": "bust_state", "anyOf": ["covered"] },
+      "clear": { "bust_state": ["exposed", "nipple_clamps", "cum_on_breasts", "breast_bondage", "lactating"] }
+    },
+    {
+      "id": "bust_nipple_clamps_vs_clothing",
+      "reason": "Nipple clamps require exposed bust",
+      "condition": { "fieldId": "bust_state", "anyOf": ["nipple_clamps"] },
+      "clear": { "upper_type": ["bra", "bralette", "crop_top", "tank_top", "tshirt", "blouse", "shirt", "sweater", "hoodie", "jacket", "blazer", "coat", "vest", "cardigan", "tube_top", "halter", "off_shoulder", "one_shoulder"], "bust_state": ["covered"] }
+    },
+    {
+      "id": "nude_outfit_vs_lower",
+      "reason": "Nude outfit removes lower body clothing",
+      "condition": { "fieldId": "complete_outfit", "anyOf": ["nude"] },
+      "clear": { "lower_type": ["panties", "thong", "bikini_bottom", "shorts", "denim_shorts", "skirt", "mini_skirt", "pencil_skirt", "pleated_skirt", "jeans", "skinny_jeans", "baggy_jeans", "pants", "leggings", "yoga_pants", "sweatpants", "cargo_pants", "dress"] }
+    }
+  ],
   "dominance": {
     "ladders": {
       "body.bust.size": ["flat", "small", "medium", "large", "very_large", "huge"],

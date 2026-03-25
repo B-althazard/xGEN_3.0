@@ -1,11 +1,27 @@
 import { renderAccordion, bindAccordions } from './accordion.js';
 import { renderSwatch } from './colorSwatch.js';
 import { renderImageCard } from './imageCard.js';
-import { getState, updateFieldSilent, updateMultiDummyFieldSilent, toggleLockField, persist, recomputePrompt } from '../store.js';
+import { getState, updateFieldSilent, updateMultiDummyFieldSilent, toggleLockField, persist, recomputePrompt, getConflictingOptions } from '../store.js';
 import { showModal } from './modal.js';
 import { getCreationKitCategories, normalizeCategoryId } from '../constants/categories.js';
 
 const openAccordions = new Set();
+
+function showConflictToast(clears) {
+  const existing = document.querySelector('.conflict-toast');
+  if (existing) existing.remove();
+
+  const messages = clears.map((c) => c.reason).join(' | ');
+  const toast = document.createElement('div');
+  toast.className = 'conflict-toast';
+  toast.textContent = messages;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => toast.classList.add('conflict-toast--visible'));
+  setTimeout(() => {
+    toast.classList.remove('conflict-toast--visible');
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
 
 function ensureArray(value) {
   if (Array.isArray(value)) return value;
@@ -44,17 +60,19 @@ function detailModal(field, option) {
   });
 }
 
-function renderField(field, value) {
+function renderField(field, value, disabledOptions) {
   const selectedValues = ensureArray(value);
   const collection = field.options || field.colors || [];
   const isImageCard = field.type === 'shape-modal';
   const isSwatch = field.type === 'color-swatch';
+  const disabledSet = new Set(disabledOptions || []);
 
   const optionsHtml = collection.map((option) => {
     const selected = selectedValues.includes(option.id);
-    if (isSwatch) return renderSwatch(option, selected);
-    if (isImageCard) return renderImageCard(option, selected);
-    return `<button class="option-btn ${selected ? 'is-selected' : ''}" data-option-id="${option.id}">${option.label}</button>`;
+    const disabled = disabledSet.has(option.id);
+    if (isSwatch) return renderSwatch(option, selected, disabled);
+    if (isImageCard) return renderImageCard(option, selected, disabled);
+    return `<button class="option-btn ${selected ? 'is-selected' : ''} ${disabled ? 'is-disabled' : ''}" data-option-id="${option.id}" ${disabled ? 'disabled' : ''}>${option.label}</button>`;
   }).join('');
 
   return `<div class="${isSwatch ? 'swatch-grid' : 'option-grid'}" data-field-id="${field.id}" data-multi="${field.type === 'multi-select' || field.multiSelect ? 'true' : 'false'}">${optionsHtml}</div>`;
@@ -87,11 +105,13 @@ export function renderForm(container) {
     return category.fields;
   });
 
+  const conflicts = getConflictingOptions(dummy.fields);
+
   container.innerHTML = `
     <div>
       ${fields.map((field) => renderAccordion({
         title: field.label,
-        body: renderField(field, categoryGroup.id === 'multi-dummy' ? state.multiDummyInteraction[field.id] : dummy.fields[field.id]),
+        body: renderField(field, categoryGroup.id === 'multi-dummy' ? state.multiDummyInteraction[field.id] : dummy.fields[field.id], conflicts[field.id]),
         locked: dummy.lockedFields.includes(field.id),
         open: openAccordions.has(field.id),
       })).join('')}
@@ -114,19 +134,26 @@ export function renderForm(container) {
 
     fieldNode.querySelectorAll('[data-option-id]').forEach((button) => {
       const optionId = button.dataset.optionId;
+      if (button.classList.contains('is-disabled')) return;
+
       button.onclick = () => {
         const current = dummy.fields[field.id];
         const currentValue = categoryGroup.id === 'multi-dummy' ? state.multiDummyInteraction[field.id] : current;
 
+        let clears = [];
         if (field.type === 'multi-select' || field.multiSelect) {
           const values = ensureArray(currentValue);
           const next = values.includes(optionId) ? values.filter((value) => value !== optionId) : [...values, optionId];
           if (categoryGroup.id === 'multi-dummy') updateMultiDummyFieldSilent(field.id, next);
-          else updateFieldSilent(field.id, next);
+          else clears = updateFieldSilent(field.id, next);
         } else {
           const next = currentValue === optionId ? null : optionId;
           if (categoryGroup.id === 'multi-dummy') updateMultiDummyFieldSilent(field.id, next);
-          else updateFieldSilent(field.id, next);
+          else clears = updateFieldSilent(field.id, next);
+        }
+
+        if (clears.length) {
+          showConflictToast(clears);
         }
 
         renderForm(container);

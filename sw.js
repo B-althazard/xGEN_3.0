@@ -1,12 +1,49 @@
-const CACHE_NAME = 'xgen-v4-cache';
+const CACHE_NAME = 'xgen-v5-cache';
 const PRECACHE = [
   './',
   './index.html',
   './css/style.css',
+  './manifest.json',
+  // Core
   './js/app.js',
   './js/store.js',
   './js/storageManager.js',
   './js/bridgeManager.js',
+  './js/icons.js',
+  './js/constants/categories.js',
+  // Pages
+  './js/pages/home.js',
+  './js/pages/creationKit.js',
+  './js/pages/xgen.js',
+  // Components
+  './js/components/formRenderer.js',
+  './js/components/bridgeInstall.js',
+  './js/components/colorSwatch.js',
+  './js/components/accordion.js',
+  './js/components/wordCounter.js',
+  './js/components/topBar.js',
+  './js/components/ageGate.js',
+  './js/components/onboarding.js',
+  './js/components/modal.js',
+  './js/components/imageCard.js',
+  './js/components/characterTypeToggle.js',
+  './js/components/dummyTabs.js',
+  './js/components/fab.js',
+  // Modules
+  './js/modules/presets.js',
+  './js/modules/terminal.js',
+  './js/modules/prompter.js',
+  // Prompt Engine
+  './js/promptEngine/index.js',
+  './js/promptEngine/extract.js',
+  './js/promptEngine/normalize.js',
+  './js/promptEngine/resolve.js',
+  './js/promptEngine/blocks.js',
+  './js/promptEngine/format.js',
+  './js/promptEngine/negative.js',
+  './js/promptEngine/diagnostics.js',
+  './js/promptEngine/templates.js',
+  // Data
   './data/xgen_schema-identity.json',
   './data/xgen_schema-physique.json',
   './data/xgen_schema-bust.json',
@@ -25,7 +62,6 @@ const PRECACHE = [
   './data/xgen_schema-xXx.json',
   './data/xgen_dummies.json',
   './data/prompt_rules.json',
-  './manifest.json'
 ];
 
 self.addEventListener('install', (event) => {

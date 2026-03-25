@@ -1,4 +1,4 @@
-import { getState, setCharacterType, setActiveDummy, addDummy, removeDummy, duplicateDummy, renameDummy, setCurrentCategory } from '../store.js';
+import { getState, setCharacterType, setActiveDummy, addDummy, removeDummy, duplicateDummy, renameDummy, setCurrentCategory, setActiveImageIndex } from '../store.js';
 import { renderCharacterTypeToggle } from '../components/characterTypeToggle.js';
 import { renderWordCounter } from '../components/wordCounter.js';
 import { renderDummyTabs } from '../components/dummyTabs.js';
@@ -176,8 +176,8 @@ export function renderCreationKit(container) {
             <div style="margin-top:var(--sp-4);">
               <div class="section__label" style="margin-bottom:var(--sp-2);">Recent</div>
               <div class="history-strip">
-                ${state.xgen.generatedImages.slice(0, 8).map((item) =>
-                  `<button class="history-thumb"><img src="${item.dataUrl}" alt="Generated thumbnail"></button>`
+                ${state.xgen.generatedImages.slice(0, 8).map((item, index) =>
+                  `<button class="history-thumb" data-recent-index="${index}"><img src="${item.dataUrl}" alt="Generated thumbnail"></button>`
                 ).join('')}
               </div>
             </div>
@@ -209,6 +209,14 @@ export function renderCreationKit(container) {
 
   const add = container.querySelector('[data-add-dummy]');
   if (add) add.onclick = () => addDummy();
+
+  // Bind Recent strip clicks
+  container.querySelectorAll('[data-recent-index]').forEach((btn) => {
+    btn.onclick = () => {
+      setActiveImageIndex(Number(btn.dataset.recentIndex));
+      window.location.hash = '#xgen';
+    };
+  });
 
   // Bind prompter toggle
   const togglePrompter = container.querySelector('[data-toggle-prompter]');

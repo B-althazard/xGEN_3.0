@@ -4,6 +4,7 @@ import { renderFab } from './components/fab.js';
 import { renderHome } from './pages/home.js';
 import { renderCreationKit } from './pages/creationKit.js';
 import { renderXgen } from './pages/xgen.js';
+import { renderGallery } from './pages/gallery.js';
 import { initializeBridgeManager } from './bridgeManager.js';
 import { renderAgeGate } from './components/ageGate.js';
 import { renderOnboarding } from './components/onboarding.js';
@@ -13,6 +14,7 @@ const ROUTES = {
   '#home': 'home',
   '#creation-kit': 'creationKit',
   '#xgen': 'xgen',
+  '#gallery': 'gallery',
 };
 
 function renderBottomNav() {
@@ -22,6 +24,7 @@ function renderBottomNav() {
     ['home', icon('home'), 'Home', '#home'],
     ['creationKit', icon('create'), 'Create', '#creation-kit'],
     ['xgen', icon('bolt'), 'xGEN', '#xgen'],
+    ['gallery', icon('gallery'), 'Gallery', '#gallery'],
   ];
 
   nav.className = 'bottom-nav';
@@ -50,6 +53,7 @@ function render() {
   if (state.app.currentPage === 'home') renderHome(container);
   if (state.app.currentPage === 'creationKit') renderCreationKit(container);
   if (state.app.currentPage === 'xgen') renderXgen(container);
+  if (state.app.currentPage === 'gallery') renderGallery(container);
 }
 
 function handleRoute() {

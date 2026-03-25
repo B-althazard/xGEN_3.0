@@ -94,7 +94,7 @@ function mergeHair(values) {
   const colors = values.filter((item) => item.domain === 'hair.color').map((item) => item.finalPromptValue.replace(/ hair$/, ''));
   const length = values.find((item) => item.domain === 'hair.length')?.finalPromptValue || '';
   const styles = values.filter((item) => item.domain === 'hair.style').map((item) => item.finalPromptValue.replace(/ hair$/, ''));
-  const merged = [colors.join(' and '), length, ...styles].filter(Boolean).join(' ');
+  const merged = [colors.join(' and '), length, styles.join(' and ')].filter(Boolean).join(' ');
   return merged ? [merged + ' hair'] : [];
 }
 
