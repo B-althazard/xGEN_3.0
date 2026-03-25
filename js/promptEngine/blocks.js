@@ -9,6 +9,42 @@ function moveEmphasisEarlier(items) {
   return ordered;
 }
 
+// ─── FLUX Image Type Templates ─────────────────────────────────────────────
+
+const TEMPLATE_OPENERS = {
+  portrait: {
+    studio: 'professional studio photograph, photorealistic photography, RAW photo',
+    social: 'candid amateur photograph, posted on social media, photorealistic photography, RAW photo',
+    editorial: 'editorial fashion photograph, photorealistic photography, RAW photo',
+    auto: 'photorealistic photography, RAW photo',
+  },
+  landscape: {
+    studio: 'professional landscape photography, photorealistic photography, RAW photo',
+    social: 'travel photography, photorealistic photography, RAW photo',
+    editorial: 'fine art landscape photography, photorealistic photography, RAW photo',
+    auto: 'landscape photography, photorealistic photography, RAW photo',
+  },
+  product: {
+    studio: 'professional product photography, photorealistic photography, RAW photo',
+    social: 'lifestyle product photography, photorealistic photography, RAW photo',
+    editorial: 'editorial product photography, photorealistic photography, RAW photo',
+    auto: 'product photography, photorealistic photography, RAW photo',
+  },
+  architecture: {
+    studio: 'architectural photography, photorealistic photography, RAW photo',
+    social: 'street photography, photorealistic photography, RAW photo',
+    editorial: 'editorial architectural photography, photorealistic photography, RAW photo',
+    auto: 'architectural photography, photorealistic photography, RAW photo',
+  },
+};
+
+const TEMPLATE_BLOCK_ORDERS = {
+  portrait: ['style', 'identity', 'body', 'face', 'hair', 'makeup', 'clothing', 'pose', 'scene', 'lighting', 'camera', 'multi'],
+  landscape: ['style', 'scene', 'lighting', 'camera'],
+  product: ['style', 'scene', 'lighting', 'camera'],
+  architecture: ['style', 'scene', 'lighting', 'camera'],
+};
+
 function mergeIdentity(values) {
   const ethnicity = values.find((item) => item.domain === 'identity.ethnicity');
   const age = values.find((item) => item.domain === 'identity.age');
@@ -85,6 +121,73 @@ function mergeClothing(prefix, values) {
   return merged ? [merged] : [];
 }
 
+// ─── FLUX Enhancement Layers ───────────────────────────────────────────────
+
+const LIGHTING_ENRICH = {
+  soft: 'soft diffused lighting with gentle shadows',
+  dramatic: 'dramatic lighting with strong contrast and deep shadows',
+  natural: 'natural ambient lighting',
+  studio: 'professional studio lighting with balanced key and fill lights',
+  cinematic: 'cinematic lighting with moody tones and atmospheric depth',
+  hard: 'hard directional lighting with sharp defined shadows',
+  neon: 'vibrant neon lighting with colored glow',
+  candlelight: 'warm candlelight with flickering amber tones',
+  firelight: 'warm firelight with dancing orange and red tones',
+  moonlight: 'cool moonlight with silver-blue tones',
+  sunlight: 'bright natural sunlight',
+  window_light: 'soft window light with even diffused illumination',
+  backlit: 'backlit with rim light halo and silhouette edges',
+  silhouette: 'dramatic silhouette with strong backlight',
+  chiaroscuro: 'chiaroscuro lighting with deep shadows and bright highlights',
+  rembrandt: 'Rembrandt lighting with characteristic triangular shadow on cheek',
+  butterfly: 'butterfly lighting with soft shadow beneath nose',
+  split: 'split lighting illuminating half the face for high contrast',
+  loop: 'loop lighting with soft diagonal shadow from nose',
+  broad: 'broad lighting illuminating the face turned toward camera',
+  short: 'short lighting with shadow on the side toward camera',
+  rgb: 'RGB colored lighting with shifting hues',
+  bioluminescent: 'ethereal bioluminescent glow from organic sources',
+};
+
+function enrichLighting(values) {
+  if (!values.length) return [];
+  const enriched = values.map((item) => {
+    const key = item.optionId || item.finalPromptValue;
+    return LIGHTING_ENRICH[key] || item.finalPromptValue;
+  });
+  return [enriched.join(' and ')];
+}
+
+function mergeCamera(values) {
+  if (!values.length) return [];
+  const parts = [];
+  const lens = values.find((v) => v.domain === 'camera.lens');
+  const framing = values.find((v) => v.domain === 'camera.framing');
+  const angle = values.find((v) => v.domain === 'camera.angle');
+  const depth = values.find((v) => v.domain === 'camera.depth');
+
+  if (lens) parts.push(lens.finalPromptValue);
+  if (framing) parts.push(framing.finalPromptValue);
+  if (angle) parts.push(angle.finalPromptValue);
+  if (depth) parts.push(depth.finalPromptValue);
+  return parts.length ? [parts.join(', ')] : [];
+}
+
+function mergeScene(values) {
+  if (!values.length) return [];
+  const parts = [];
+  const location = values.find((v) => v.domain === 'scene.location');
+  const time = values.find((v) => v.domain === 'scene.time');
+  const background = values.find((v) => v.domain === 'scene.background');
+  const sceneType = values.find((v) => v.domain === 'scene.type');
+
+  if (location) parts.push(location.finalPromptValue);
+  if (time) parts.push(time.finalPromptValue);
+  if (sceneType) parts.push(sceneType.finalPromptValue);
+  if (background) parts.push(background.finalPromptValue);
+  return parts.length ? [parts.join(', ')] : [];
+}
+
 export function buildBlocks(tokens, rules, settings) {
   const kept = tokens.filter((token) => token.status !== 'dropped');
   const groupMap = {
@@ -116,13 +219,9 @@ export function buildBlocks(tokens, rules, settings) {
 
   const buildBlock = (id, items) => ({ id, items, text: items.map((item) => item.text).filter(Boolean).join(', ') });
 
-  const opener = {
-    studio: 'professional studio photograph, photorealistic photography, RAW photo',
-    social: 'candid amateur photograph, posted on social media, photorealistic photography, RAW photo',
-    editorial: 'editorial fashion photograph, photorealistic photography, RAW photo',
-    auto: 'photorealistic photography, RAW photo',
-  };
-  const styleText = opener[settings.realismMode] || opener.auto;
+  const imageType = settings.imageType || 'portrait';
+  const openers = TEMPLATE_OPENERS[imageType] || TEMPLATE_OPENERS.portrait;
+  const styleText = openers[settings.realismMode] || openers.auto;
 
   const identityItems = mergeIdentity(moveEmphasisEarlier(sortByDomainOrder(groupMap.identity, 'identity'))).map((text) => ({ domain: 'identity.ethnicity', text }));
   const bodyItems = mergeBody(sortByDomainOrder(groupMap.body, 'body')).map((text) => ({ domain: 'body.silhouette', text }));
@@ -138,9 +237,9 @@ export function buildBlocks(tokens, rules, settings) {
     ...mergeClothing('clothing.lower', sortByDomainOrder(groupMap.clothing, 'clothing')).map((text) => ({ domain: 'clothing.lower.type', text })),
     ...sortByDomainOrder(groupMap.clothing.filter((item) => ['clothing.legwear', 'clothing.footwear', 'clothing.accessories'].includes(item.domain)), 'clothing').map((item) => ({ domain: item.domain, text: item.finalPromptValue })),
   ];
-  const sceneItems = sortByDomainOrder(groupMap.scene, 'scene').map((item) => ({ domain: item.domain, text: item.finalPromptValue }));
-  const lightingItems = sortByDomainOrder(groupMap.lighting, 'lighting').map((item) => ({ domain: item.domain, text: item.finalPromptValue }));
-  const cameraItems = sortByDomainOrder(groupMap.camera, 'camera').map((item) => ({ domain: item.domain, text: item.finalPromptValue }));
+  const sceneItems = mergeScene(sortByDomainOrder(groupMap.scene, 'scene')).map((text) => ({ domain: 'scene.location', text }));
+  const lightingItems = enrichLighting(sortByDomainOrder(groupMap.lighting, 'lighting')).map((text) => ({ domain: 'lighting.primary', text }));
+  const cameraItems = mergeCamera(sortByDomainOrder(groupMap.camera, 'camera')).map((text) => ({ domain: 'camera.framing', text }));
   const poseItems = sortByDomainOrder(groupMap.pose, 'pose').map((item) => ({ domain: item.domain, text: item.finalPromptValue }));
   const multiItems = sortByDomainOrder(groupMap.multi, 'multi').map((item) => ({ domain: item.domain, text: item.finalPromptValue }));
 
@@ -160,6 +259,7 @@ export function buildBlocks(tokens, rules, settings) {
   };
 
   const orderKey = settings.promptOrder || 'subject-first';
-  const blockOrder = rules.ordering.blockOrders?.[orderKey] || rules.ordering.blockOrder || Object.keys(allBlocks);
+  const templateBlockOrder = TEMPLATE_BLOCK_ORDERS[settings.imageType || 'portrait'];
+  const blockOrder = templateBlockOrder || rules.ordering.blockOrders?.[orderKey] || rules.ordering.blockOrder || Object.keys(allBlocks);
   return blockOrder.map((id) => allBlocks[id]).filter(Boolean).filter((block) => block.text);
 }

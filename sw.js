@@ -1,4 +1,4 @@
-const CACHE_NAME = 'xgen-v3-cache';
+const CACHE_NAME = 'xgen-v4-cache';
 const PRECACHE = [
   './',
   './index.html',
@@ -7,7 +7,22 @@ const PRECACHE = [
   './js/store.js',
   './js/storageManager.js',
   './js/bridgeManager.js',
-  './data/xgen-master_schema_v2.0.json',
+  './data/xgen_schema-identity.json',
+  './data/xgen_schema-physique.json',
+  './data/xgen_schema-bust.json',
+  './data/xgen_schema-lower_body.json',
+  './data/xgen_schema-face.json',
+  './data/xgen_schema-hair.json',
+  './data/xgen_schema-makeup.json',
+  './data/xgen_schema-clothing.json',
+  './data/xgen_schema-location.json',
+  './data/xgen_schema-lighting.json',
+  './data/xgen_schema-camera.json',
+  './data/xgen_schema-posing.json',
+  './data/xgen_schema-actions.json',
+  './data/xgen_schema-quality.json',
+  './data/xgen_schema-multi_dummy.json',
+  './data/xgen_schema-xXx.json',
   './data/xgen_dummies.json',
   './data/prompt_rules.json',
   './manifest.json'

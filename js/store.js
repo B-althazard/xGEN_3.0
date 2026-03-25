@@ -129,8 +129,16 @@ function notify() {
 
 export async function initializeStore() {
   await initDB();
-  const [schema, rules, dummyData, images, presets, savedState] = await Promise.all([
-    loadJson('./data/xgen-master_schema_v2.0.json'),
+  const SCHEMA_FILES = [
+    'xgen_schema-identity.json', 'xgen_schema-physique.json', 'xgen_schema-bust.json',
+    'xgen_schema-lower_body.json', 'xgen_schema-face.json', 'xgen_schema-hair.json',
+    'xgen_schema-makeup.json', 'xgen_schema-clothing.json', 'xgen_schema-location.json',
+    'xgen_schema-lighting.json', 'xgen_schema-camera.json', 'xgen_schema-posing.json',
+    'xgen_schema-actions.json', 'xgen_schema-quality.json', 'xgen_schema-multi_dummy.json',
+    'xgen_schema-xXx.json',
+  ];
+  const [schemas, rules, dummyData, images, presets, savedState] = await Promise.all([
+    Promise.all(SCHEMA_FILES.map((f) => loadJson(`./data/${f}`))),
     loadJson('./data/prompt_rules.json'),
     loadJson('./data/xgen_dummies.json'),
     getAllImages(),
@@ -138,7 +146,10 @@ export async function initializeStore() {
     Promise.resolve(loadLocalState(STORAGE_KEYS.ACTIVE_STATE)),
   ]);
 
-  state.schema = schema;
+  state.schema = {
+    version: schemas[0]?.version || '2.0.0',
+    categories: schemas.flatMap((s) => s.categories || []),
+  };
   state.rules = rules;
   state.defaultDummies = dummyData.dummies || [];
   state.xgen.generatedImages = images;

@@ -5,7 +5,22 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const schema = JSON.parse(await fs.readFile(path.join(__dirname, '../data/xgen-master_schema_v2.0.json'), 'utf8'));
+const DATA_DIR = path.join(__dirname, '../data');
+const SCHEMA_FILES = [
+  'xgen_schema-identity.json', 'xgen_schema-physique.json', 'xgen_schema-bust.json',
+  'xgen_schema-lower_body.json', 'xgen_schema-face.json', 'xgen_schema-hair.json',
+  'xgen_schema-makeup.json', 'xgen_schema-clothing.json', 'xgen_schema-location.json',
+  'xgen_schema-lighting.json', 'xgen_schema-camera.json', 'xgen_schema-posing.json',
+  'xgen_schema-actions.json', 'xgen_schema-quality.json', 'xgen_schema-multi_dummy.json',
+  'xgen_schema-xXx.json',
+];
+const schemaParts = await Promise.all(
+  SCHEMA_FILES.map(async (f) => JSON.parse(await fs.readFile(path.join(DATA_DIR, f), 'utf8')))
+);
+const schema = {
+  version: schemaParts[0]?.version || '2.0.0',
+  categories: schemaParts.flatMap((s) => s.categories || []),
+};
 const rules = JSON.parse(await fs.readFile(path.join(__dirname, '../data/prompt_rules.json'), 'utf8'));
 const { buildPrompt } = await import('../js/promptEngine/index.js');
 

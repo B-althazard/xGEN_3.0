@@ -2,24 +2,59 @@ function countWords(text) {
   return text.trim() ? text.trim().split(/\s+/).filter(Boolean).length : 0;
 }
 
+function capitalizeFirst(text) {
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+}
+
 function joinNatural(blocks) {
-  const prefixes = {
-    scene: 'in ',
-    lighting: 'with ',
-    camera: 'shot with ',
+  if (!blocks.length) return '';
+
+  const connectors = {
+    body: ', ',
+    face: ', ',
+    hair: ', ',
+    makeup: ', ',
+    clothing: ', wearing ',
+    pose: ', ',
+    scene: ', ',
+    lighting: ', illuminated by ',
+    camera: ', captured with ',
+    multi: ', ',
   };
+
+  // First block starts the sentence (style opener or identity)
   const parts = [];
+  let isFirst = true;
+
   for (const block of blocks) {
     if (!block.text) continue;
-    const prefix = prefixes[block.id] || '';
-    parts.push(prefix + block.text);
+
+    if (isFirst) {
+      parts.push(block.text);
+      isFirst = false;
+      continue;
+    }
+
+    const connector = connectors[block.id] || ', ';
+    if (connector.startsWith(', ')) {
+      parts.push(connector.slice(2) + block.text);
+    } else {
+      parts.push(connector + block.text);
+    }
   }
+
+  // Join with natural flow — use commas within, "and" before last element
   if (parts.length <= 1) return parts.join('');
+  if (parts.length === 2) return parts.join(' and ');
+
   return parts.slice(0, -1).join(', ') + ', and ' + parts[parts.length - 1];
 }
 
 function rebuild(blocks, separator) {
-  return blocks.map((block) => ({ ...block, text: block.items.map((item) => item.text).filter(Boolean).join(separator) })).filter((block) => block.text);
+  return blocks.map((block) => ({
+    ...block,
+    text: block.items.map((item) => item.text).filter(Boolean).join(separator),
+  })).filter((block) => block.text);
 }
 
 export function formatPositivePrompt(blocks, rules, settings = {}) {
@@ -41,7 +76,7 @@ export function formatPositivePrompt(blocks, rules, settings = {}) {
         const index = block.items.findIndex((item) => item.domain === domain && !neverPrune.has(item.domain));
         if (index >= 0) {
           block.items.splice(index, 1);
-          prompt = rebuild(working, separator).map((entry) => entry.text).join(separator);
+          prompt = joinNatural(rebuild(working, separator));
           if (countWords(prompt) <= (rules.lengthBudget?.softMaxWords || 256)) break;
         }
       }
