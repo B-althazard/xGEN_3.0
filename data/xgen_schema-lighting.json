@@ -1,0 +1,89 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "lighting",
+      "label": "Lighting",
+      "icon": "light",
+      "fields": [
+        {
+          "id": "lighting_style",
+          "label": "Style",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "natural", "label": "Natural", "promptValue": "natural lighting" },
+            { "id": "studio", "label": "Studio", "promptValue": "studio lighting" },
+            { "id": "cinematic", "label": "Cinematic", "promptValue": "cinematic lighting" },
+            { "id": "dramatic", "label": "Dramatic", "promptValue": "dramatic lighting" },
+            { "id": "soft", "label": "Soft", "promptValue": "soft lighting" },
+            { "id": "hard", "label": "Hard", "promptValue": "hard lighting" },
+            { "id": "neon", "label": "Neon", "promptValue": "neon lighting" },
+            { "id": "candlelight", "label": "Candlelight", "promptValue": "candlelight" },
+            { "id": "firelight", "label": "Firelight", "promptValue": "firelight" },
+            { "id": "moonlight", "label": "Moonlight", "promptValue": "moonlight" },
+            { "id": "sunlight", "label": "Sunlight", "promptValue": "sunlight" },
+            { "id": "window_light", "label": "Window Light", "promptValue": "window light" },
+            { "id": "backlit", "label": "Backlit", "promptValue": "backlit" },
+            { "id": "silhouette", "label": "Silhouette", "promptValue": "silhouette" },
+            { "id": "chiaroscuro", "label": "Chiaroscuro", "promptValue": "chiaroscuro" },
+            { "id": "rembrandt", "label": "Rembrandt", "promptValue": "rembrandt lighting" },
+            { "id": "butterfly", "label": "Butterfly", "promptValue": "butterfly lighting" },
+            { "id": "split", "label": "Split", "promptValue": "split lighting" },
+            { "id": "loop", "label": "Loop", "promptValue": "loop lighting" },
+            { "id": "broad", "label": "Broad", "promptValue": "broad lighting" },
+            { "id": "short", "label": "Short", "promptValue": "short lighting" },
+            { "id": "rgb", "label": "RGB", "promptValue": "rgb lighting" },
+            { "id": "bioluminescent", "label": "Bioluminescent", "promptValue": "bioluminescent lighting" }
+          ]
+        },
+        {
+          "id": "light_color",
+          "label": "Light Color",
+          "type": "color-swatch",
+          "multiSelect": true,
+          "required": false,
+          "colors": [
+            { "id": "white", "label": "White", "value": "#FFFFFF", "promptValue": "white light" },
+            { "id": "warm", "label": "Warm", "value": "#FFD700", "promptValue": "warm light" },
+            { "id": "cool", "label": "Cool", "value": "#ADD8E6", "promptValue": "cool light" },
+            { "id": "golden", "label": "Golden", "value": "#FFD700", "promptValue": "golden light" },
+            { "id": "pink", "label": "Pink", "value": "#FFB6C1", "promptValue": "pink light" },
+            { "id": "purple", "label": "Purple", "value": "#9370DB", "promptValue": "purple light" },
+            { "id": "blue", "label": "Blue", "value": "#4A90C2", "promptValue": "blue light" },
+            { "id": "cyan", "label": "Cyan", "value": "#00FFFF", "promptValue": "cyan light" },
+            { "id": "green", "label": "Green", "value": "#90EE90", "promptValue": "green light" },
+            { "id": "yellow", "label": "Yellow", "value": "#FFFF00", "promptValue": "yellow light" },
+            { "id": "orange", "label": "Orange", "value": "#FFA500", "promptValue": "orange light" },
+            { "id": "red", "label": "Red", "value": "#FF0000", "promptValue": "red light" },
+            { "id": "magenta", "label": "Magenta", "value": "#FF00FF", "promptValue": "magenta light" },
+            { "id": "mixed", "label": "Mixed", "value": "#FF6B6B", "promptValue": "mixed colored lighting" }
+          ]
+        },
+        {
+          "id": "lighting_effects",
+          "label": "Effects",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "soft_shadows", "label": "Soft Shadows", "promptValue": "soft shadows" },
+            { "id": "hard_shadows", "label": "Hard Shadows", "promptValue": "hard shadows" },
+            { "id": "rim_light", "label": "Rim Light", "promptValue": "rim lighting" },
+            { "id": "edge_light", "label": "Edge Light", "promptValue": "edge lighting" },
+            { "id": "catchlights", "label": "Catchlights", "promptValue": "catchlights in eyes" },
+            { "id": "lens_flare", "label": "Lens Flare", "promptValue": "lens flare" },
+            { "id": "light_leaks", "label": "Light Leaks", "promptValue": "light leaks" },
+            { "id": "god_rays", "label": "God Rays", "promptValue": "god rays" },
+            { "id": "volumetric", "label": "Volumetric", "promptValue": "volumetric lighting" },
+            { "id": "dappled", "label": "Dappled", "promptValue": "dappled light" },
+            { "id": "dramatic_shadows", "label": "Dramatic Shadows", "promptValue": "dramatic shadows" },
+            { "id": "glow", "label": "Glow", "promptValue": "glowing effect" },
+            { "id": "bloom", "label": "Bloom", "promptValue": "bloom effect" },
+            { "id": "sparkles", "label": "Sparkles", "promptValue": "sparkles" }
+          ]
+        }
+      ]
+    }
+  ]
+}

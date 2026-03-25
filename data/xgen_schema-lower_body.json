@@ -1,0 +1,72 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "lower_body",
+      "label": "Lower Body",
+      "icon": "hips",
+      "fields": [
+        {
+          "id": "waist",
+          "label": "Waist",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "slim", "label": "Slim", "promptValue": "slim waist" },
+            { "id": "narrow", "label": "Narrow", "promptValue": "narrow waist" },
+            { "id": "average", "label": "Average", "promptValue": "average waist" },
+            { "id": "thick", "label": "Thick", "promptValue": "thick waist" },
+            { "id": "wide", "label": "Wide", "promptValue": "wide waist" }
+          ]
+        },
+        {
+          "id": "hips",
+          "label": "Hips",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "narrow", "label": "Narrow", "promptValue": "narrow hips" },
+            { "id": "average", "label": "Average", "promptValue": "average hips" },
+            { "id": "wide", "label": "Wide", "promptValue": "wide hips" },
+            { "id": "very_wide", "label": "Very Wide", "promptValue": "very wide hips" },
+            { "id": "childbearing", "label": "Childbearing", "promptValue": "childbearing hips" }
+          ]
+        },
+        {
+          "id": "ass",
+          "label": "Ass",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/ass_shapes.png",
+          "options": [
+            { "id": "flat", "label": "Flat", "promptValue": "flat ass" },
+            { "id": "small", "label": "Small", "promptValue": "small ass" },
+            { "id": "medium", "label": "Medium", "promptValue": "medium ass" },
+            { "id": "large", "label": "Large", "promptValue": "large ass" },
+            { "id": "huge", "label": "Huge", "promptValue": "huge ass" },
+            { "id": "bubble", "label": "Bubble", "promptValue": "bubble butt" },
+            { "id": "heart", "label": "Heart Shaped", "promptValue": "heart shaped ass" },
+            { "id": "round", "label": "Round", "promptValue": "round ass" },
+            { "id": "square", "label": "Square", "promptValue": "square ass" }
+          ]
+        },
+        {
+          "id": "legs",
+          "label": "Legs",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "slim", "label": "Slim", "promptValue": "slim legs" },
+            { "id": "toned", "label": "Toned", "promptValue": "toned legs" },
+            { "id": "athletic", "label": "Athletic", "promptValue": "athletic legs" },
+            { "id": "thick", "label": "Thick", "promptValue": "thick thighs" },
+            { "id": "chubby", "label": "Chubby", "promptValue": "chubby legs" },
+            { "id": "short", "label": "Short", "promptValue": "short legs" },
+            { "id": "long", "label": "Long", "promptValue": "long legs" }
+          ]
+        }
+      ]
+    }
+  ]
+}

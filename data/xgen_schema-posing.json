@@ -1,0 +1,131 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "posing",
+      "label": "Posing & Expression",
+      "icon": "pose",
+      "fields": [
+        {
+          "id": "pose",
+          "label": "Pose",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "standing", "label": "Standing", "promptValue": "standing" },
+            { "id": "sitting", "label": "Sitting", "promptValue": "sitting" },
+            { "id": "kneeling", "label": "Kneeling", "promptValue": "kneeling" },
+            { "id": "lying", "label": "Lying", "promptValue": "lying down" },
+            { "id": "lying_back", "label": "Lying Back", "promptValue": "lying on back" },
+            { "id": "lying_stomach", "label": "Lying on Stomach", "promptValue": "lying on stomach" },
+            { "id": "prone", "label": "Prone Bone", "promptValue": "prone bone position" },
+            { "id": "crouching", "label": "Crouching", "promptValue": "crouching" },
+            { "id": "squatting", "label": "Squatting", "promptValue": "squatting" },
+            { "id": "leaning", "label": "Leaning", "promptValue": "leaning" },
+            { "id": "against_wall", "label": "Against Wall", "promptValue": "leaning against wall" },
+            { "id": "arching", "label": "Arching", "promptValue": "arching back" },
+            { "id": "stretching", "label": "Stretching", "promptValue": "stretching" },
+            { "id": "reaching", "label": "Reaching", "promptValue": "reaching up" },
+            { "id": "walking", "label": "Walking", "promptValue": "walking" },
+            { "id": "running", "label": "Running", "promptValue": "running" },
+            { "id": "jumping", "label": "Jumping", "promptValue": "jumping" },
+            { "id": "dancing", "label": "Dancing", "promptValue": "dancing" },
+            { "id": "yoga", "label": "Yoga Pose", "promptValue": "yoga pose" },
+            { "id": "lotus", "label": "Lotus Position", "promptValue": "lotus position" },
+            { "id": "legs_up", "label": "Legs Up", "promptValue": "legs up" },
+            { "id": "legs_spread", "label": "Legs Spread", "promptValue": "legs spread" },
+            { "id": "crossed_legs", "label": "Crossed Legs", "promptValue": "crossed legs" },
+            { "id": "one_leg_up", "label": "One Leg Up", "promptValue": "one leg up" },
+            { "id": "hands_on_hips", "label": "Hands on Hips", "promptValue": "hands on hips" },
+            { "id": "hands_behind_head", "label": "Hands Behind Head", "promptValue": "hands behind head" },
+            { "id": "hands_behind_back", "label": "Hands Behind Back", "promptValue": "hands behind back" },
+            { "id": "arms_crossed", "label": "Arms Crossed", "promptValue": "arms crossed" },
+            { "id": "arms_raised", "label": "Arms Raised", "promptValue": "arms raised" },
+            { "id": "hands_on_knees", "label": "Hands on Knees", "promptValue": "hands on knees" },
+            { "id": "all_fours", "label": "All Fours", "promptValue": "on all fours" },
+            { "id": "doggy_style", "label": "Doggy Style", "promptValue": "doggy style position" },
+            { "id": "missionary", "label": "Missionary", "promptValue": "missionary position" },
+            { "id": "cowgirl", "label": "Cowgirl", "promptValue": "cowgirl position" },
+            { "id": "reverse_cowgirl", "label": "Reverse Cowgirl", "promptValue": "reverse cowgirl position" },
+            { "id": "spooning", "label": "Spooning", "promptValue": "spooning position" },
+            { "id": "lotus_position", "label": "Lotus Position", "promptValue": "lotus intimate position" }
+          ]
+        },
+        {
+          "id": "expression",
+          "label": "Expression",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "neutral", "label": "Neutral", "promptValue": "neutral expression" },
+            { "id": "smiling", "label": "Smiling", "promptValue": "smiling" },
+            { "id": "grinning", "label": "Grinning", "promptValue": "grinning" },
+            { "id": "laughing", "label": "Laughing", "promptValue": "laughing" },
+            { "id": "playful", "label": "Playful", "promptValue": "playful expression" },
+            { "id": "flirty", "label": "Flirty", "promptValue": "flirty expression" },
+            { "id": "seductive", "label": "Seductive", "promptValue": "seductive expression" },
+            { "id": "sultry", "label": "Sultry", "promptValue": "sultry expression" },
+            { "id": "sensual", "label": "Sensual", "promptValue": "sensual expression" },
+            { "id": "passionate", "label": "Passionate", "promptValue": "passionate expression" },
+            { "id": "intense", "label": "Intense", "promptValue": "intense expression" },
+            { "id": "serious", "label": "Serious", "promptValue": "serious expression" },
+            { "id": "confident", "label": "Confident", "promptValue": "confident expression" },
+            { "id": "shy", "label": "Shy", "promptValue": "shy expression" },
+            { "id": "innocent", "label": "Innocent", "promptValue": "innocent expression" },
+            { "id": "surprised", "label": "Surprised", "promptValue": "surprised expression" },
+            { "id": "shocked", "label": "Shocked", "promptValue": "shocked expression" },
+            { "id": "excited", "label": "Excited", "promptValue": "excited expression" },
+            { "id": "blissful", "label": "Blissful", "promptValue": "blissful expression" },
+            { "id": "ecstatic", "label": "Ecstatic", "promptValue": "ecstatic expression" },
+            { "id": "pleasure", "label": "Pleasure", "promptValue": "expression of pleasure" },
+            { "id": "moaning", "label": "Moaning", "promptValue": "moaning" },
+            { "id": "biting_lip", "label": "Biting Lip", "promptValue": "biting lip" },
+            { "id": "tongue_out", "label": "Tongue Out", "promptValue": "tongue out" },
+            { "id": "lips_parted", "label": "Lips Parted", "promptValue": "lips parted" }
+          ]
+        },
+        {
+          "id": "eye_contact",
+          "label": "Eye Contact",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "direct", "label": "Direct", "promptValue": "looking at viewer" },
+            { "id": "looking_away", "label": "Looking Away", "promptValue": "looking away" },
+            { "id": "looking_up", "label": "Looking Up", "promptValue": "looking up" },
+            { "id": "looking_down", "label": "Looking Down", "promptValue": "looking down" },
+            { "id": "eyes_closed", "label": "Eyes Closed", "promptValue": "eyes closed" },
+            { "id": "half_lidded", "label": "Half-Lidded", "promptValue": "half-lidded eyes" },
+            { "id": "side_eye", "label": "Side Eye", "promptValue": "side eye glance" },
+            { "id": "over_shoulder", "label": "Over Shoulder", "promptValue": "looking over shoulder" }
+          ]
+        },
+        {
+          "id": "mood",
+          "label": "Mood",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "romantic", "label": "Romantic", "promptValue": "romantic mood" },
+            { "id": "sensual", "label": "Sensual", "promptValue": "sensual mood" },
+            { "id": "erotic", "label": "Erotic", "promptValue": "erotic mood" },
+            { "id": "playful", "label": "Playful", "promptValue": "playful mood" },
+            { "id": "cheerful", "label": "Cheerful", "promptValue": "cheerful mood" },
+            { "id": "relaxed", "label": "Relaxed", "promptValue": "relaxed mood" },
+            { "id": "calm", "label": "Calm", "promptValue": "calm mood" },
+            { "id": "peaceful", "label": "Peaceful", "promptValue": "peaceful mood" },
+            { "id": "dreamy", "label": "Dreamy", "promptValue": "dreamy mood" },
+            { "id": "mysterious", "label": "Mysterious", "promptValue": "mysterious mood" },
+            { "id": "confident", "label": "Confident", "promptValue": "confident mood" },
+            { "id": "empowered", "label": "Empowered", "promptValue": "empowered mood" },
+            { "id": "vulnerable", "label": "Vulnerable", "promptValue": "vulnerable mood" },
+            { "id": "melancholic", "label": "Melancholic", "promptValue": "melancholic mood" },
+            { "id": "dramatic", "label": "Dramatic", "promptValue": "dramatic mood" },
+            { "id": "intense", "label": "Intense", "promptValue": "intense mood" }
+          ]
+        }
+      ]
+    }
+  ]
+}

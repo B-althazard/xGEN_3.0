@@ -1,0 +1,156 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "face",
+      "label": "Face",
+      "icon": "face_detail",
+      "fields": [
+        {
+          "id": "face_shape",
+          "label": "Face Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/face_shapes.png",
+          "options": [
+            { "id": "oval", "label": "Oval", "promptValue": "oval face" },
+            { "id": "round", "label": "Round", "promptValue": "round face" },
+            { "id": "heart", "label": "Heart", "promptValue": "heart shaped face" },
+            { "id": "square", "label": "Square", "promptValue": "square jaw" },
+            { "id": "diamond", "label": "Diamond", "promptValue": "diamond face" },
+            { "id": "oblong", "label": "Oblong", "promptValue": "oblong face" },
+            { "id": "triangle", "label": "Triangle", "promptValue": "triangle face" }
+          ]
+        },
+        {
+          "id": "eyes_shape",
+          "label": "Eyes Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/eye_shapes.png",
+          "options": [
+            { "id": "almond", "label": "Almond", "promptValue": "almond shaped eyes" },
+            { "id": "round", "label": "Round", "promptValue": "round eyes" },
+            { "id": "hooded", "label": "Hooded", "promptValue": "hooded eyes" },
+            { "id": "monolid", "label": "Monolid", "promptValue": "monolid eyes" },
+            { "id": "upturned", "label": "Upturned", "promptValue": "upturned eyes" },
+            { "id": "downturned", "label": "Downturned", "promptValue": "downturned eyes" },
+            { "id": "wide", "label": "Wide Set", "promptValue": "wide set eyes" },
+            { "id": "close", "label": "Close Set", "promptValue": "close set eyes" }
+          ]
+        },
+        {
+          "id": "eye_color",
+          "label": "Eye Color",
+          "type": "color-swatch",
+          "required": false,
+          "colors": [
+            { "id": "brown", "label": "Brown", "value": "#654321", "promptValue": "brown eyes" },
+            { "id": "dark_brown", "label": "Dark Brown", "value": "#3B2414", "promptValue": "dark brown eyes" },
+            { "id": "hazel", "label": "Hazel", "value": "#8E7618", "promptValue": "hazel eyes" },
+            { "id": "blue", "label": "Blue", "value": "#4A90C2", "promptValue": "blue eyes" },
+            { "id": "light_blue", "label": "Light Blue", "value": "#87CEEB", "promptValue": "light blue eyes" },
+            { "id": "green", "label": "Green", "value": "#50C878", "promptValue": "green eyes" },
+            { "id": "grey", "label": "Grey", "value": "#808080", "promptValue": "grey eyes" },
+            { "id": "amber", "label": "Amber", "value": "#FFBF00", "promptValue": "amber eyes" },
+            { "id": "violet", "label": "Violet", "value": "#8B5FBF", "promptValue": "violet eyes" },
+            { "id": "red", "label": "Red", "value": "#CC0000", "promptValue": "red eyes" },
+            { "id": "heterochromia", "label": "Heterochromia", "value": "#FF6B6B", "promptValue": "heterochromia" }
+          ]
+        },
+        {
+          "id": "eyebrows",
+          "label": "Eyebrows",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/eyebrow_shapes.png",
+          "options": [
+            { "id": "thin", "label": "Thin", "promptValue": "thin eyebrows" },
+            { "id": "arched", "label": "Arched", "promptValue": "arched eyebrows" },
+            { "id": "straight", "label": "Straight", "promptValue": "straight eyebrows" },
+            { "id": "bushy", "label": "Bushy", "promptValue": "bushy eyebrows" },
+            { "id": "feathered", "label": "Feathered", "promptValue": "feathered eyebrows" },
+            { "id": "sharp", "label": "Sharp", "promptValue": "sharp eyebrows" }
+          ]
+        },
+        {
+          "id": "nose_shape",
+          "label": "Nose Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/nose_shapes.png",
+          "options": [
+            { "id": "straight", "label": "Straight", "promptValue": "straight Greek nose" },
+            { "id": "aquiline", "label": "Aquiline", "promptValue": "aquiline Roman nose, slight convex bridge" },
+            { "id": "button", "label": "Button", "promptValue": "button nose, small rounded" },
+            { "id": "upturned_snub", "label": "Upturned / Snub", "promptValue": "upturned snub nose" },
+            { "id": "celestial", "label": "Celestial", "promptValue": "celestial nose, soft upturned concave bridge" },
+            { "id": "bulbous", "label": "Bulbous", "promptValue": "bulbous rounded tip nose" },
+            { "id": "flat_wide", "label": "Flat / Wide", "promptValue": "flat wide nose, low bridge" },
+            { "id": "hooked_hawk", "label": "Hooked / Hawk", "promptValue": "hooked hawk nose, downward curved tip" },
+            { "id": "nubian", "label": "Nubian", "promptValue": "Nubian nose, elongated bridge, wide base" },
+            { "id": "pointed", "label": "Pointed", "promptValue": "pointed refined narrow nose" }
+          ]
+        },
+        {
+          "id": "nose_bridge",
+          "label": "Nose Bridge",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "high_bridge", "label": "High Bridge", "promptValue": "high nose bridge" },
+            { "id": "low_bridge", "label": "Low Bridge", "promptValue": "low flat nose bridge" },
+            { "id": "medium_bridge", "label": "Medium Bridge", "promptValue": "medium nose bridge" },
+            { "id": "slim_bridge", "label": "Slim Bridge", "promptValue": "slim narrow nose bridge" },
+            { "id": "wide_bridge", "label": "Wide Bridge", "promptValue": "wide nose bridge" },
+            { "id": "bumped", "label": "Bumped", "promptValue": "nose bridge with slight bump" }
+          ]
+        },
+        {
+          "id": "nose_nostrils",
+          "label": "Nose Nostrils",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "narrow", "label": "Narrow", "promptValue": "narrow nostrils" },
+            { "id": "average", "label": "Average", "promptValue": "average nostrils" },
+            { "id": "wide", "label": "Wide", "promptValue": "wide nostrils" },
+            { "id": "flared", "label": "Flared", "promptValue": "flared nostrils" },
+            { "id": "pierced", "label": "Pierced", "promptValue": "nostril piercing" }
+          ]
+        },
+        {
+          "id": "nose_tip",
+          "label": "Nose Tip",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "pointed", "label": "Pointed", "promptValue": "pointed nose tip" },
+            { "id": "round", "label": "Round", "promptValue": "round soft nose tip" },
+            { "id": "upturned", "label": "Upturned", "promptValue": "upturned nose tip" },
+            { "id": "downturned", "label": "Downturned", "promptValue": "downturned nose tip" },
+            { "id": "refined", "label": "Refined", "promptValue": "refined delicate nose tip" }
+          ]
+        },
+        {
+          "id": "lips_shape",
+          "label": "Lips Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/lip_shapes.png",
+          "options": [
+            { "id": "thin", "label": "Thin", "promptValue": "thin lips" },
+            { "id": "full", "label": "Full", "promptValue": "full lips" },
+            { "id": "bow", "label": "Bow-shaped", "promptValue": "bow shaped lips" },
+            { "id": "wide", "label": "Wide", "promptValue": "wide lips" },
+            { "id": "heart", "label": "Heart", "promptValue": "heart shaped lips" },
+            { "id": "plump", "label": "Plump", "promptValue": "plump lips" },
+            { "id": "downturned", "label": "Downturned", "promptValue": "downturned lips" },
+            { "id": "cupids_bow", "label": "Cupid's Bow", "promptValue": "cupid's bow lips" }
+          ]
+        }
+      ]
+    }
+  ]
+}

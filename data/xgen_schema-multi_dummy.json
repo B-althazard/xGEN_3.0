@@ -1,0 +1,94 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "multi_dummy",
+      "label": "Multi Dummy",
+      "icon": "group",
+      "fields": [
+        {
+          "id": "interaction_type",
+          "label": "Interaction Type",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "solo", "label": "Solo", "promptValue": "" },
+            { "id": "sitting_together", "label": "Sitting Together", "promptValue": "sitting together" },
+            { "id": "standing_together", "label": "Standing Together", "promptValue": "standing together" },
+            { "id": "embracing", "label": "Embracing", "promptValue": "embracing each other" },
+            { "id": "hugging", "label": "Hugging", "promptValue": "hugging" },
+            { "id": "kissing", "label": "Kissing", "promptValue": "kissing" },
+            { "id": "back_to_back", "label": "Back to Back", "promptValue": "back to back" },
+            { "id": "facing_each_other", "label": "Facing Each Other", "promptValue": "facing each other" },
+            { "id": "holding_hands", "label": "Holding Hands", "promptValue": "holding hands" },
+            { "id": "cuddling", "label": "Cuddling", "promptValue": "cuddling" },
+            { "id": "intimate", "label": "Intimate", "promptValue": "intimate pose" },
+            { "id": "collab_pose", "label": "Collab Pose", "promptValue": "collaborative pose" },
+            { "id": "group_photo", "label": "Group Photo", "promptValue": "group photo pose" },
+            { "id": "dancing_together", "label": "Dancing Together", "promptValue": "dancing together" },
+            { "id": "walking_together", "label": "Walking Together", "promptValue": "walking together" }
+          ]
+        },
+        {
+          "id": "focus",
+          "label": "Focus",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "equal", "label": "Equal Focus", "promptValue": "equal focus on all subjects" },
+            { "id": "focus_dummy_1", "label": "Focus on Dummy 1", "promptValue": "focus on first person" },
+            { "id": "focus_dummy_2", "label": "Focus on Dummy 2", "promptValue": "focus on second person" },
+            { "id": "focus_dummy_3", "label": "Focus on Dummy 3", "promptValue": "focus on third person" },
+            { "id": "foreground", "label": "Foreground Focus", "promptValue": "foreground subject in focus" }
+          ]
+        },
+        {
+          "id": "relationship_dynamic",
+          "label": "Relationship Dynamic",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "friends", "label": "Friends", "promptValue": "friends" },
+            { "id": "best_friends", "label": "Best Friends", "promptValue": "best friends" },
+            { "id": "couple", "label": "Couple", "promptValue": "romantic couple" },
+            { "id": "lovers", "label": "Lovers", "promptValue": "lovers" },
+            { "id": "rivals", "label": "Rivals", "promptValue": "rivals" },
+            { "id": "strangers", "label": "Strangers", "promptValue": "strangers" },
+            { "id": "acquaintances", "label": "Acquaintances", "promptValue": "acquaintances" },
+            { "id": "colleagues", "label": "Colleagues", "promptValue": "colleagues" },
+            { "id": "sisters", "label": "Sisters", "promptValue": "sisters" },
+            { "id": "twins", "label": "Twins", "promptValue": "twins" },
+            { "id": "dominant_submissive", "label": "Dominant/Submissive", "promptValue": "dominant and submissive dynamic" }
+          ]
+        },
+        {
+          "id": "proximity",
+          "label": "Proximity",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "touching", "label": "Touching", "promptValue": "touching" },
+            { "id": "close", "label": "Close", "promptValue": "close together" },
+            { "id": "near", "label": "Near", "promptValue": "near each other" },
+            { "id": "medium", "label": "Medium Distance", "promptValue": "medium distance apart" },
+            { "id": "distant", "label": "Distant", "promptValue": "distant from each other" },
+            { "id": "across_room", "label": "Across Room", "promptValue": "across the room from each other" }
+          ]
+        },
+        {
+          "id": "number_of_people",
+          "label": "Number of People",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "1girl", "label": "1 Girl", "promptValue": "1girl" },
+            { "id": "2girls", "label": "2 Girls", "promptValue": "2girls" },
+            { "id": "3girls", "label": "3 Girls", "promptValue": "3girls" },
+            { "id": "group", "label": "Group", "promptValue": "group of girls" }
+          ]
+        }
+      ]
+    }
+  ]
+}

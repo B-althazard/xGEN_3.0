@@ -1,0 +1,137 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "makeup",
+      "label": "Makeup",
+      "icon": "makeup",
+      "fields": [
+        {
+          "id": "foundation",
+          "label": "Foundation",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "no makeup" },
+            { "id": "natural", "label": "Natural", "promptValue": "natural makeup" },
+            { "id": "matte", "label": "Matte", "promptValue": "matte foundation" },
+            { "id": "dewy", "label": "Dewy", "promptValue": "dewy skin" },
+            { "id": "full_coverage", "label": "Full Coverage", "promptValue": "full coverage foundation" },
+            { "id": "heavy", "label": "Heavy", "promptValue": "heavy makeup" }
+          ]
+        },
+        {
+          "id": "eye_makeup",
+          "label": "Eye Makeup",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "eyeshadow", "label": "Eyeshadow", "promptValue": "eyeshadow" },
+            { "id": "eyeliner", "label": "Eyeliner", "promptValue": "eyeliner" },
+            { "id": "cat_eye", "label": "Cat Eye", "promptValue": "cat eye makeup" },
+            { "id": "winged_liner", "label": "Winged Liner", "promptValue": "winged eyeliner" },
+            { "id": "smokey", "label": "Smokey", "promptValue": "smokey eyes" },
+            { "id": "cut_crease", "label": "Cut Crease", "promptValue": "cut crease" },
+            { "id": "glitter", "label": "Glitter", "promptValue": "glitter eyeshadow" },
+            { "id": "shimmer", "label": "Shimmer", "promptValue": "shimmer eyeshadow" },
+            { "id": "graphic_liner", "label": "Graphic Liner", "promptValue": "graphic eyeliner" },
+            { "id": "lower_lash", "label": "Lower Lash Focus", "promptValue": "lower lash makeup" }
+          ]
+        },
+        {
+          "id": "eyeshadow_color",
+          "label": "Eyeshadow Color",
+          "type": "color-swatch",
+          "multiSelect": true,
+          "required": false,
+          "colors": [
+            { "id": "neutral", "label": "Neutral", "value": "#D4C4B0", "promptValue": "neutral eyeshadow" },
+            { "id": "brown", "label": "Brown", "value": "#8B6F47", "promptValue": "brown eyeshadow" },
+            { "id": "gold", "label": "Gold", "value": "#FFD700", "promptValue": "gold eyeshadow" },
+            { "id": "bronze", "label": "Bronze", "value": "#CD7F32", "promptValue": "bronze eyeshadow" },
+            { "id": "pink", "label": "Pink", "value": "#FFB6C1", "promptValue": "pink eyeshadow" },
+            { "id": "purple", "label": "Purple", "value": "#9370DB", "promptValue": "purple eyeshadow" },
+            { "id": "blue", "label": "Blue", "value": "#4A90C2", "promptValue": "blue eyeshadow" },
+            { "id": "green", "label": "Green", "value": "#90EE90", "promptValue": "green eyeshadow" },
+            { "id": "smokey", "label": "Smokey", "value": "#2C2C2C", "promptValue": "smokey eyeshadow" },
+            { "id": "red", "label": "Red", "value": "#DC143C", "promptValue": "red eyeshadow" },
+            { "id": "orange", "label": "Orange", "value": "#FF8C00", "promptValue": "orange eyeshadow" },
+            { "id": "rainbow", "label": "Rainbow", "value": "#FF0000", "promptValue": "rainbow eyeshadow" }
+          ]
+        },
+        {
+          "id": "lashes",
+          "label": "Lashes",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "natural", "label": "Natural", "promptValue": "natural lashes" },
+            { "id": "mascara", "label": "Mascara", "promptValue": "mascara" },
+            { "id": "voluminous", "label": "Voluminous", "promptValue": "voluminous lashes" },
+            { "id": "full", "label": "Full", "promptValue": "full lashes" },
+            { "id": "dramatic", "label": "Dramatic", "promptValue": "dramatic lashes" },
+            { "id": "fake", "label": "False Lashes", "promptValue": "false eyelashes" },
+            { "id": "wispy", "label": "Wispy", "promptValue": "wispy lashes" }
+          ]
+        },
+        {
+          "id": "lip_makeup",
+          "label": "Lip Makeup",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "bare lips" },
+            { "id": "nude", "label": "Nude", "promptValue": "nude lipstick" },
+            { "id": "glossy", "label": "Glossy", "promptValue": "glossy lips" },
+            { "id": "matte", "label": "Matte", "promptValue": "matte lipstick" },
+            { "id": "satin", "label": "Satin", "promptValue": "satin finish lips" },
+            { "id": "metallic", "label": "Metallic", "promptValue": "metallic lipstick" },
+            { "id": "dark", "label": "Dark", "promptValue": "dark lipstick" },
+            { "id": "ombre", "label": "Ombre", "promptValue": "ombre lips" },
+            { "id": "stained", "label": "Stained", "promptValue": "lip stain" }
+          ]
+        },
+        {
+          "id": "lip_color",
+          "label": "Lip Color",
+          "type": "color-swatch",
+          "required": false,
+          "colors": [
+            { "id": "nude", "label": "Nude", "value": "#D4A574", "promptValue": "nude lips" },
+            { "id": "pink", "label": "Pink", "value": "#FF69B4", "promptValue": "pink lips" },
+            { "id": "coral", "label": "Coral", "value": "#FF7F50", "promptValue": "coral lips" },
+            { "id": "peach", "label": "Peach", "value": "#FFDAB9", "promptValue": "peach lips" },
+            { "id": "red", "label": "Red", "value": "#DC143C", "promptValue": "red lips" },
+            { "id": "cherry", "label": "Cherry", "value": "#990000", "promptValue": "cherry red lips" },
+            { "id": "berry", "label": "Berry", "value": "#8B008B", "promptValue": "berry lips" },
+            { "id": "plum", "label": "Plum", "value": "#8E4585", "promptValue": "plum lips" },
+            { "id": "burgundy", "label": "Burgundy", "value": "#800020", "promptValue": "burgundy lips" },
+            { "id": "brown", "label": "Brown", "value": "#8B4513", "promptValue": "brown lips" },
+            { "id": "orange", "label": "Orange", "value": "#FF8C00", "promptValue": "orange lips" },
+            { "id": "black", "label": "Black", "value": "#000000", "promptValue": "black lipstick" }
+          ]
+        },
+        {
+          "id": "blush_effects",
+          "label": "Blush & Effects",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "blush", "label": "Blush", "promptValue": "blush" },
+            { "id": "contour", "label": "Contour", "promptValue": "contoured" },
+            { "id": "highlighter", "label": "Highlighter", "promptValue": "highlighter" },
+            { "id": "glow", "label": "Glow", "promptValue": "glowing skin" },
+            { "id": "freckles_makeup", "label": "Fake Freckles", "promptValue": "fake freckles" },
+            { "id": "tears", "label": "Tears", "promptValue": "tears" },
+            { "id": "sweat", "label": "Sweat", "promptValue": "sweaty skin" },
+            { "id": "flushed", "label": "Flushed", "promptValue": "flushed cheeks" },
+            { "id": "sunburnt", "label": "Sunburnt", "promptValue": "sunburnt skin" },
+            { "id": "face_gems", "label": "Face Gems", "promptValue": "face gems" },
+            { "id": "face_paint", "label": "Face Paint", "promptValue": "face paint" }
+          ]
+        }
+      ]
+    }
+  ]
+}

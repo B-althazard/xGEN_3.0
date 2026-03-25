@@ -1,0 +1,77 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "actions",
+      "label": "Actions",
+      "icon": "action",
+      "fields": [
+        {
+          "id": "solo_action",
+          "label": "Solo Action",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "fingering", "label": "Fingering", "promptValue": "masturbating, fingering herself" },
+            { "id": "vibrator", "label": "Vibrator", "promptValue": "using a vibrator on her pussy" },
+            { "id": "dildo", "label": "Dildo", "promptValue": "fucking herself with a dildo" },
+            { "id": "spreading", "label": "Spreading", "promptValue": "spreading her pussy lips open" },
+            { "id": "rubbing_clit", "label": "Rubbing Clit", "promptValue": "rubbing her clit" },
+            { "id": "squirting", "label": "Squirting", "promptValue": "squirting orgasm ejaculating" },
+            { "id": "fondling", "label": "Fondling", "promptValue": "fondling squeezing her own breasts" },
+            { "id": "anal_solo", "label": "Anal Solo", "promptValue": "anal fingering touching her ass" }
+          ]
+        },
+        {
+          "id": "sexual_position",
+          "label": "Sexual Position",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "spreading", "label": "Spreading", "promptValue": "spreading her legs wide open to camera" },
+            { "id": "presenting", "label": "Presenting", "promptValue": "bent over presenting her ass and pussy" },
+            { "id": "pov_kneel", "label": "POV Kneel", "promptValue": "POV on her knees looking up at viewer" },
+            { "id": "doggy", "label": "Doggy", "promptValue": "on all fours doggy style position" },
+            { "id": "missionary", "label": "Missionary", "promptValue": "missionary position lying on her back" },
+            { "id": "cowgirl", "label": "Cowgirl", "promptValue": "riding cowgirl position on top" },
+            { "id": "reverse_cowgirl", "label": "Reverse Cowgirl", "promptValue": "reverse cowgirl position facing away" },
+            { "id": "prone_bone", "label": "Prone Bone", "promptValue": "prone bone face down position" }
+          ]
+        },
+        {
+          "id": "oral_action",
+          "label": "Oral Action",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "blowjob", "label": "Blowjob", "promptValue": "giving a blowjob sucking cock" },
+            { "id": "deepthroat", "label": "Deepthroat", "promptValue": "deepthroat gagging on cock" },
+            { "id": "licking", "label": "Licking", "promptValue": "licking cock shaft with tongue" },
+            { "id": "cim", "label": "CIM", "promptValue": "cum in mouth swallowing" },
+            { "id": "face_fucked", "label": "Face-Fucked", "promptValue": "getting face fucked throat fucked" }
+          ]
+        },
+        {
+          "id": "cum_action",
+          "label": "Cum Action",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "facial", "label": "Facial", "promptValue": "cum facial all over face" },
+            { "id": "on_breasts", "label": "On Breasts", "promptValue": "cum on her breasts chest" },
+            { "id": "on_ass", "label": "On Ass", "promptValue": "cum on her ass buttocks" },
+            { "id": "on_stomach", "label": "On Stomach", "promptValue": "cum on her stomach belly" },
+            { "id": "creampie", "label": "Creampie", "promptValue": "creampie dripping from pussy" },
+            { "id": "covered", "label": "Covered", "promptValue": "dripping with cum all over body" },
+            { "id": "multi_loads", "label": "Multi Loads", "promptValue": "multiple cumshots loads all over her" }
+          ]
+        }
+      ]
+    }
+  ]
+}

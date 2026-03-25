@@ -1,0 +1,146 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "nsfw_body",
+      "label": "NSFW — Body",
+      "icon": "body",
+      "fields": [
+        {
+          "id": "pussy_style",
+          "label": "Pussy Style",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "bare", "label": "Bare", "promptValue": "fully shaved bare pussy" },
+            { "id": "landing_strip", "label": "Landing Strip", "promptValue": "landing strip trimmed pussy" },
+            { "id": "trimmed", "label": "Trimmed", "promptValue": "neatly trimmed pussy" },
+            { "id": "natural_bush", "label": "Natural Bush", "promptValue": "natural hairy pussy" },
+            { "id": "pierced", "label": "Pierced", "promptValue": "pussy piercing jewelry" },
+            { "id": "small_tight", "label": "Small Tight", "promptValue": "small tight pussy" },
+            { "id": "large_lips", "label": "Large Lips", "promptValue": "large labia pussy" }
+          ]
+        },
+        {
+          "id": "pussy_state",
+          "label": "Pussy State",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "closed", "label": "Closed", "promptValue": "closed tight pussy" },
+            { "id": "wet", "label": "Wet", "promptValue": "wet dripping aroused pussy" },
+            { "id": "spread_open", "label": "Spread Open", "promptValue": "spread open pussy" },
+            { "id": "gaping", "label": "Gaping", "promptValue": "gaping wide open pussy" },
+            { "id": "creampie", "label": "Creampie", "promptValue": "creampie cum dripping from pussy" },
+            { "id": "fingered", "label": "Fingered", "promptValue": "fingers inside pussy" },
+            { "id": "toy_inside", "label": "Toy Inside", "promptValue": "toy dildo inserted in pussy" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "futa",
+      "label": "Futa — Cock & Balls",
+      "icon": "body",
+      "fields": [
+        {
+          "id": "futa_enabled",
+          "label": "Enable Futa",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "off", "label": "Off", "promptValue": "" },
+            { "id": "on", "label": "On", "promptValue": "futa" }
+          ]
+        },
+        {
+          "id": "futa_size",
+          "label": "Cock Size",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "small", "label": "Small", "promptValue": "small cock" },
+            { "id": "average", "label": "Average", "promptValue": "average cock" },
+            { "id": "large", "label": "Large", "promptValue": "large cock" },
+            { "id": "big_thick", "label": "Big Thick", "promptValue": "big thick cock" },
+            { "id": "huge", "label": "Huge", "promptValue": "huge thick cock" },
+            { "id": "enormous", "label": "Enormous", "promptValue": "enormous cock" },
+            { "id": "massive", "label": "Massive", "promptValue": "massive horse cock" },
+            { "id": "hyper", "label": "Hyper", "promptValue": "hyper enormous cock" }
+          ]
+        },
+        {
+          "id": "futa_shape",
+          "label": "Cock Shape",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "slim", "label": "Slim", "promptValue": "slim cock" },
+            { "id": "thick_veiny", "label": "Thick Veiny", "promptValue": "thick veiny cock" },
+            { "id": "curved", "label": "Curved", "promptValue": "curved cock" },
+            { "id": "girthy", "label": "Girthy", "promptValue": "girthy cock" }
+          ]
+        },
+        {
+          "id": "futa_cut",
+          "label": "Cock Cut",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "circumcised", "label": "Circumcised", "promptValue": "circumcised" },
+            { "id": "uncut", "label": "Uncut", "promptValue": "uncircumcised with foreskin" }
+          ]
+        },
+        {
+          "id": "futa_state",
+          "label": "Cock State",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "flaccid", "label": "Flaccid", "promptValue": "flaccid soft cock" },
+            { "id": "semi_erect", "label": "Semi-Erect", "promptValue": "semi-erect cock" },
+            { "id": "fully_erect", "label": "Fully Erect", "promptValue": "fully erect throbbing cock" },
+            { "id": "throbbing", "label": "Throbbing", "promptValue": "throbbing hard cock" }
+          ]
+        },
+        {
+          "id": "futa_cum",
+          "label": "Cock Cum",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "dry", "label": "Dry", "promptValue": "" },
+            { "id": "pre_cum", "label": "Pre-Cum", "promptValue": "pre-cum dripping from cock" },
+            { "id": "cumming", "label": "Cumming", "promptValue": "actively cumming ejaculating cock" },
+            { "id": "dripping", "label": "Dripping", "promptValue": "cum dripping off cock" },
+            { "id": "cum_covered", "label": "Cum-Covered", "promptValue": "cock covered in cum" }
+          ]
+        },
+        {
+          "id": "futa_balls",
+          "label": "Balls",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "none", "label": "None", "promptValue": "" },
+            { "id": "small", "label": "Small", "promptValue": "small balls" },
+            { "id": "medium", "label": "Medium", "promptValue": "medium balls" },
+            { "id": "large", "label": "Large", "promptValue": "large heavy balls" },
+            { "id": "huge", "label": "Huge", "promptValue": "huge heavy balls" }
+          ]
+        },
+        {
+          "id": "futa_pussy",
+          "label": "Also Has Pussy?",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "has_pussy", "label": "Yes — Has Pussy", "promptValue": "and also has a pussy below her cock" },
+            { "id": "no_pussy", "label": "No Pussy", "promptValue": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}

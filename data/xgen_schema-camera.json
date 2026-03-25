@@ -1,0 +1,89 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "camera",
+      "label": "Camera",
+      "icon": "camera",
+      "fields": [
+        {
+          "id": "framing",
+          "label": "Framing",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "extreme_closeup", "label": "Extreme Close-up", "promptValue": "extreme close-up" },
+            { "id": "closeup", "label": "Close-up", "promptValue": "close-up" },
+            { "id": "face", "label": "Face Shot", "promptValue": "face shot" },
+            { "id": "portrait", "label": "Portrait", "promptValue": "portrait" },
+            { "id": "headshot", "label": "Headshot", "promptValue": "headshot" },
+            { "id": "bust", "label": "Bust", "promptValue": "bust shot" },
+            { "id": "half_body", "label": "Half Body", "promptValue": "half body shot" },
+            { "id": "three_quarter", "label": "Three Quarter", "promptValue": "three quarter shot" },
+            { "id": "full_body", "label": "Full Body", "promptValue": "full body shot" },
+            { "id": "wide", "label": "Wide Shot", "promptValue": "wide shot" },
+            { "id": "medium", "label": "Medium Shot", "promptValue": "medium shot" },
+            { "id": "over_shoulder", "label": "Over Shoulder", "promptValue": "over the shoulder shot" },
+            { "id": "from_behind", "label": "From Behind", "promptValue": "shot from behind" },
+            { "id": "from_above", "label": "From Above", "promptValue": "shot from above" },
+            { "id": "from_below", "label": "From Below", "promptValue": "shot from below" },
+            { "id": "dutch_angle", "label": "Dutch Angle", "promptValue": "dutch angle" },
+            { "id": "pov", "label": "POV", "promptValue": "pov" },
+            { "id": "selfie", "label": "Selfie", "promptValue": "selfie" },
+            { "id": "mirror_selfie", "label": "Mirror Selfie", "promptValue": "mirror selfie" }
+          ]
+        },
+        {
+          "id": "lens",
+          "label": "Lens",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "14mm", "label": "14mm Ultra Wide", "promptValue": "14mm lens" },
+            { "id": "24mm", "label": "24mm Wide", "promptValue": "24mm lens" },
+            { "id": "35mm", "label": "35mm", "promptValue": "35mm lens" },
+            { "id": "50mm", "label": "50mm Standard", "promptValue": "50mm lens" },
+            { "id": "85mm", "label": "85mm Portrait", "promptValue": "85mm lens" },
+            { "id": "105mm", "label": "105mm Portrait", "promptValue": "105mm lens" },
+            { "id": "135mm", "label": "135mm Telephoto", "promptValue": "135mm lens" },
+            { "id": "200mm", "label": "200mm Telephoto", "promptValue": "200mm lens" },
+            { "id": "macro", "label": "Macro", "promptValue": "macro lens" },
+            { "id": "fisheye", "label": "Fisheye", "promptValue": "fisheye lens" },
+            { "id": "tilt_shift", "label": "Tilt-Shift", "promptValue": "tilt-shift lens" },
+            { "id": "anamorphic", "label": "Anamorphic", "promptValue": "anamorphic lens" }
+          ]
+        },
+        {
+          "id": "camera_angle",
+          "label": "Camera Angle",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "eye_level", "label": "Eye Level", "promptValue": "eye level shot" },
+            { "id": "low_angle", "label": "Low Angle", "promptValue": "low angle shot" },
+            { "id": "high_angle", "label": "High Angle", "promptValue": "high angle shot" },
+            { "id": "birds_eye", "label": "Bird's Eye", "promptValue": "bird's eye view" },
+            { "id": "worms_eye", "label": "Worm's Eye", "promptValue": "worm's eye view" },
+            { "id": "overhead", "label": "Overhead", "promptValue": "overhead shot" },
+            { "id": "side_view", "label": "Side View", "promptValue": "side view" },
+            { "id": "profile", "label": "Profile", "promptValue": "profile view" },
+            { "id": "three_quarter_view", "label": "3/4 View", "promptValue": "three quarter view" }
+          ]
+        },
+        {
+          "id": "depth_of_field",
+          "label": "Depth of Field",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "shallow", "label": "Shallow", "promptValue": "shallow depth of field" },
+            { "id": "medium", "label": "Medium", "promptValue": "medium depth of field" },
+            { "id": "deep", "label": "Deep", "promptValue": "deep depth of field" },
+            { "id": "everything_focus", "label": "Everything in Focus", "promptValue": "everything in focus" }
+          ]
+        }
+      ]
+    }
+  ]
+}

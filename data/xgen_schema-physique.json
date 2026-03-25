@@ -1,0 +1,81 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "physique",
+      "label": "Physique",
+      "icon": "body",
+      "fields": [
+        {
+          "id": "body_type",
+          "label": "Body Type",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/body_types.png",
+          "options": [
+            { "id": "skinny", "label": "Skinny", "promptValue": "skinny" },
+            { "id": "slim", "label": "Slim", "promptValue": "slim" },
+            { "id": "athletic", "label": "Athletic", "promptValue": "athletic build" },
+            { "id": "toned", "label": "Toned", "promptValue": "toned body" },
+            { "id": "average", "label": "Average", "promptValue": "average build" },
+            { "id": "curvy", "label": "Curvy", "promptValue": "curvy" },
+            { "id": "voluptuous", "label": "Voluptuous", "promptValue": "voluptuous" },
+            { "id": "bbw", "label": "BBW", "promptValue": "bbw" },
+            { "id": "petite", "label": "Petite", "promptValue": "petite" }
+          ]
+        },
+        {
+          "id": "height",
+          "label": "Height",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "very_short", "label": "Very Short (4'10\"-5'2\")", "promptValue": "very short" },
+            { "id": "short", "label": "Short (5'2\"-5'4\")", "promptValue": "short" },
+            { "id": "average", "label": "Average (5'4\"-5'7\")", "promptValue": "average height" },
+            { "id": "tall", "label": "Tall (5'7\"-5'10\")", "promptValue": "tall" },
+            { "id": "very_tall", "label": "Very Tall (5'10\"+)", "promptValue": "very tall" }
+          ]
+        },
+        {
+          "id": "skin_tone",
+          "label": "Skin Tone",
+          "type": "color-swatch",
+          "required": false,
+          "colors": [
+            { "id": "porcelain", "label": "Porcelain", "value": "#FFE5D4", "promptValue": "porcelain skin" },
+            { "id": "fair", "label": "Fair", "value": "#FFDBC7", "promptValue": "fair skin" },
+            { "id": "light", "label": "Light", "value": "#F5CBA7", "promptValue": "light skin" },
+            { "id": "medium", "label": "Medium", "value": "#D4A574", "promptValue": "medium skin" },
+            { "id": "tan", "label": "Tan", "value": "#B8956A", "promptValue": "tan skin" },
+            { "id": "olive", "label": "Olive", "value": "#A68B5E", "promptValue": "olive skin" },
+            { "id": "brown", "label": "Brown", "value": "#8B6F47", "promptValue": "brown skin" },
+            { "id": "dark", "label": "Dark", "value": "#5C4033", "promptValue": "dark skin" },
+            { "id": "deep", "label": "Deep", "value": "#3D2817", "promptValue": "deep dark skin" }
+          ]
+        },
+        {
+          "id": "skin_detail",
+          "label": "Skin Details",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "smooth", "label": "Smooth", "promptValue": "smooth flawless skin" },
+            { "id": "natural", "label": "Natural", "promptValue": "natural skin" },
+            { "id": "freckles", "label": "Freckles", "promptValue": "freckles" },
+            { "id": "moles", "label": "Beauty Moles", "promptValue": "beauty moles" },
+            { "id": "tan_lines", "label": "Tan Lines", "promptValue": "tan lines" },
+            { "id": "tattoos", "label": "Tattoos", "promptValue": "tattoos" },
+            { "id": "stretch_marks", "label": "Stretch Marks", "promptValue": "stretch marks" },
+            { "id": "veins", "label": "Visible Veins", "promptValue": "visible veins" },
+            { "id": "dimples", "label": "Dimples", "promptValue": "dimples" },
+            { "id": "scars", "label": "Scars", "promptValue": "scars" },
+            { "id": "birthmark", "label": "Birthmark", "promptValue": "birthmark" },
+            { "id": "piercings", "label": "Body Piercings", "promptValue": "body piercings" }
+          ]
+        }
+      ]
+    }
+  ]
+}

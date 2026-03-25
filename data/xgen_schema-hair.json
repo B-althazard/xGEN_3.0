@@ -1,0 +1,89 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "hair",
+      "label": "Hair",
+      "icon": "hair",
+      "fields": [
+        {
+          "id": "hair_color",
+          "label": "Hair Color",
+          "type": "color-swatch",
+          "multiSelect": true,
+          "required": false,
+          "colors": [
+            { "id": "black", "label": "Black", "value": "#000000", "promptValue": "black hair" },
+            { "id": "dark_brown", "label": "Dark Brown", "value": "#3B2414", "promptValue": "dark brown hair" },
+            { "id": "brown", "label": "Brown", "value": "#654321", "promptValue": "brown hair" },
+            { "id": "light_brown", "label": "Light Brown", "value": "#8B6F47", "promptValue": "light brown hair" },
+            { "id": "dirty_blonde", "label": "Dirty Blonde", "value": "#A68B5E", "promptValue": "dirty blonde hair" },
+            { "id": "blonde", "label": "Blonde", "value": "#D4AF37", "promptValue": "blonde hair" },
+            { "id": "platinum", "label": "Platinum", "value": "#E5E4E2", "promptValue": "platinum blonde hair" },
+            { "id": "red", "label": "Red", "value": "#8B0000", "promptValue": "red hair" },
+            { "id": "auburn", "label": "Auburn", "value": "#A52A2A", "promptValue": "auburn hair" },
+            { "id": "ginger", "label": "Ginger", "value": "#B7410E", "promptValue": "ginger hair" },
+            { "id": "grey", "label": "Grey", "value": "#808080", "promptValue": "grey hair" },
+            { "id": "white", "label": "White", "value": "#FFFFFF", "promptValue": "white hair" },
+            { "id": "silver", "label": "Silver", "value": "#C0C0C0", "promptValue": "silver hair" },
+            { "id": "pink", "label": "Pink", "value": "#FFC0CB", "promptValue": "pink hair" },
+            { "id": "blue", "label": "Blue", "value": "#0000FF", "promptValue": "blue hair" },
+            { "id": "green", "label": "Green", "value": "#008000", "promptValue": "green hair" },
+            { "id": "purple", "label": "Purple", "value": "#800080", "promptValue": "purple hair" },
+            { "id": "rainbow", "label": "Rainbow", "value": "#FF0000", "promptValue": "rainbow hair" },
+            { "id": "ombre", "label": "Ombre", "value": "#D4AF37", "promptValue": "ombre hair" },
+            { "id": "balayage", "label": "Balayage", "value": "#B8956A", "promptValue": "balayage hair" }
+          ]
+        },
+        {
+          "id": "hair_length",
+          "label": "Length",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "bald", "label": "Bald", "promptValue": "bald" },
+            { "id": "buzz", "label": "Buzz Cut", "promptValue": "buzz cut" },
+            { "id": "pixie", "label": "Pixie", "promptValue": "pixie cut" },
+            { "id": "short", "label": "Short", "promptValue": "short hair" },
+            { "id": "bob", "label": "Bob", "promptValue": "bob cut" },
+            { "id": "lob", "label": "Lob", "promptValue": "lob cut" },
+            { "id": "shoulder", "label": "Shoulder Length", "promptValue": "shoulder length hair" },
+            { "id": "mid_back", "label": "Mid Back", "promptValue": "mid back length hair" },
+            { "id": "long", "label": "Long", "promptValue": "long hair" },
+            { "id": "very_long", "label": "Very Long", "promptValue": "very long hair" },
+            { "id": "waist", "label": "Waist Length", "promptValue": "waist length hair" },
+            { "id": "hip", "label": "Hip Length", "promptValue": "hip length hair" }
+          ]
+        },
+        {
+          "id": "hair_style",
+          "label": "Style",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "straight", "label": "Straight", "promptValue": "straight hair" },
+            { "id": "wavy", "label": "Wavy", "promptValue": "wavy hair" },
+            { "id": "curly", "label": "Curly", "promptValue": "curly hair" },
+            { "id": "coily", "label": "Coily", "promptValue": "coily hair" },
+            { "id": "braids", "label": "Braids", "promptValue": "braids" },
+            { "id": "box_braids", "label": "Box Braids", "promptValue": "box braids" },
+            { "id": "cornrows", "label": "Cornrows", "promptValue": "cornrows" },
+            { "id": "dreadlocks", "label": "Dreadlocks", "promptValue": "dreadlocks" },
+            { "id": "bun", "label": "Bun", "promptValue": "hair in a bun" },
+            { "id": "ponytail", "label": "Ponytail", "promptValue": "ponytail" },
+            { "id": "pigtails", "label": "Pigtails", "promptValue": "pigtails" },
+            { "id": "twin_buns", "label": "Twin Buns", "promptValue": "twin buns" },
+            { "id": "bangs", "label": "Bangs", "promptValue": "bangs" },
+            { "id": "fringe", "label": "Fringe", "promptValue": "fringe" },
+            { "id": "side_swept", "label": "Side Swept", "promptValue": "side swept hair" },
+            { "id": "messy", "label": "Messy", "promptValue": "messy hair" },
+            { "id": "slicked_back", "label": "Slicked Back", "promptValue": "slicked back hair" },
+            { "id": "half_up", "label": "Half Up", "promptValue": "half up hairstyle" },
+            { "id": "loose", "label": "Loose", "promptValue": "loose hair" }
+          ]
+        }
+      ]
+    }
+  ]
+}

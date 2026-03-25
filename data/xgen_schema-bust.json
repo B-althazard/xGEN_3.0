@@ -1,0 +1,76 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "bust",
+      "label": "Bust",
+      "icon": "bust",
+      "fields": [
+        {
+          "id": "cup_size",
+          "label": "Cup Size",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/cup_sizes.png",
+          "options": [
+            { "id": "flat", "label": "Flat", "promptValue": "flat chest" },
+            { "id": "small", "label": "Small (A-B)", "promptValue": "small breasts" },
+            { "id": "medium", "label": "Medium (C-D)", "promptValue": "medium breasts" },
+            { "id": "large", "label": "Large (DD-E)", "promptValue": "large breasts" },
+            { "id": "very_large", "label": "Very Large (F-G)", "promptValue": "very large breasts" },
+            { "id": "huge", "label": "Huge (H+)", "promptValue": "huge breasts" }
+          ]
+        },
+        {
+          "id": "bust_shape",
+          "label": "Shape",
+          "type": "shape-modal",
+          "required": false,
+          "modalImage": "assets/modals/bust_shapes.png",
+          "options": [
+            { "id": "perky", "label": "Perky", "promptValue": "perky breasts" },
+            { "id": "round", "label": "Round", "promptValue": "round breasts" },
+            { "id": "natural", "label": "Natural", "promptValue": "natural breasts" },
+            { "id": "wide_set", "label": "Wide Set", "promptValue": "wide set breasts" },
+            { "id": "close_set", "label": "Close Set", "promptValue": "close set breasts" },
+            { "id": "saggy", "label": "Saggy", "promptValue": "saggy breasts" },
+            { "id": "firm", "label": "Firm", "promptValue": "firm breasts" }
+          ]
+        },
+        {
+          "id": "nipples",
+          "label": "Nipples",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "small", "label": "Small", "promptValue": "small nipples" },
+            { "id": "medium", "label": "Medium", "promptValue": "medium nipples" },
+            { "id": "large", "label": "Large", "promptValue": "large nipples" },
+            { "id": "puffy", "label": "Puffy", "promptValue": "puffy nipples" },
+            { "id": "inverted", "label": "Inverted", "promptValue": "inverted nipples" },
+            { "id": "hardened", "label": "Hardened", "promptValue": "hardened nipples" }
+          ]
+        },
+        {
+          "id": "bust_state",
+          "label": "Bust State",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "covered", "label": "Covered", "promptValue": "covered" },
+            { "id": "exposed", "label": "Exposed", "promptValue": "exposed" },
+            { "id": "wet", "label": "Wet", "promptValue": "wet skin" },
+            { "id": "oiled", "label": "Oiled", "promptValue": "oiled skin" },
+            { "id": "sweaty", "label": "Sweaty", "promptValue": "sweaty skin" },
+            { "id": "shiny", "label": "Shiny", "promptValue": "shiny skin" },
+            { "id": "nipple_clamps", "label": "Nipple Clamps", "promptValue": "nipple clamps on nipples" },
+            { "id": "breast_bondage", "label": "Breast Bondage", "promptValue": "breast bondage with rope" },
+            { "id": "cum_on_breasts", "label": "Cum On Breasts", "promptValue": "cum on breasts" },
+            { "id": "lactating", "label": "Lactating", "promptValue": "lactating breasts" }
+          ]
+        }
+      ]
+    }
+  ]
+}

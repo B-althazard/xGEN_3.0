@@ -1,0 +1,118 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "location",
+      "label": "Location",
+      "icon": "location",
+      "fields": [
+        {
+          "id": "location",
+          "label": "Location",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "bedroom", "label": "Bedroom", "promptValue": "in a bedroom" },
+            { "id": "bathroom", "label": "Bathroom", "promptValue": "in a bathroom" },
+            { "id": "shower", "label": "Shower", "promptValue": "in the shower" },
+            { "id": "bathtub", "label": "Bathtub", "promptValue": "in a bathtub" },
+            { "id": "living_room", "label": "Living Room", "promptValue": "in a living room" },
+            { "id": "kitchen", "label": "Kitchen", "promptValue": "in a kitchen" },
+            { "id": "office", "label": "Office", "promptValue": "in an office" },
+            { "id": "classroom", "label": "Classroom", "promptValue": "in a classroom" },
+            { "id": "gym", "label": "Gym", "promptValue": "in a gym" },
+            { "id": "pool", "label": "Pool", "promptValue": "at a pool" },
+            { "id": "hot_tub", "label": "Hot Tub", "promptValue": "in a hot tub" },
+            { "id": "sauna", "label": "Sauna", "promptValue": "in a sauna" },
+            { "id": "beach", "label": "Beach", "promptValue": "at the beach" },
+            { "id": "ocean", "label": "Ocean", "promptValue": "at the ocean" },
+            { "id": "lake", "label": "Lake", "promptValue": "at a lake" },
+            { "id": "river", "label": "River", "promptValue": "by a river" },
+            { "id": "forest", "label": "Forest", "promptValue": "in a forest" },
+            { "id": "woods", "label": "Woods", "promptValue": "in the woods" },
+            { "id": "park", "label": "Park", "promptValue": "in a park" },
+            { "id": "garden", "label": "Garden", "promptValue": "in a garden" },
+            { "id": "balcony", "label": "Balcony", "promptValue": "on a balcony" },
+            { "id": "rooftop", "label": "Rooftop", "promptValue": "on a rooftop" },
+            { "id": "street", "label": "Street", "promptValue": "on the street" },
+            { "id": "alley", "label": "Alley", "promptValue": "in an alley" },
+            { "id": "parking_lot", "label": "Parking Lot", "promptValue": "in a parking lot" },
+            { "id": "car", "label": "Car", "promptValue": "in a car" },
+            { "id": "hotel_room", "label": "Hotel Room", "promptValue": "in a hotel room" },
+            { "id": "restaurant", "label": "Restaurant", "promptValue": "in a restaurant" },
+            { "id": "bar", "label": "Bar", "promptValue": "in a bar" },
+            { "id": "club", "label": "Club", "promptValue": "in a nightclub" },
+            { "id": "theater", "label": "Theater", "promptValue": "in a theater" },
+            { "id": "studio", "label": "Studio", "promptValue": "in a photo studio" },
+            { "id": "stage", "label": "Stage", "promptValue": "on a stage" },
+            { "id": "castle", "label": "Castle", "promptValue": "in a castle" },
+            { "id": "mansion", "label": "Mansion", "promptValue": "in a mansion" },
+            { "id": "cabin", "label": "Cabin", "promptValue": "in a cabin" },
+            { "id": "tent", "label": "Tent", "promptValue": "in a tent" },
+            { "id": "cave", "label": "Cave", "promptValue": "in a cave" },
+            { "id": "desert", "label": "Desert", "promptValue": "in the desert" },
+            { "id": "mountain", "label": "Mountain", "promptValue": "in the mountains" },
+            { "id": "snow", "label": "Snow", "promptValue": "in the snow" },
+            { "id": "space", "label": "Space", "promptValue": "in space" },
+            { "id": "underwater", "label": "Underwater", "promptValue": "underwater" },
+            { "id": "fantasy_realm", "label": "Fantasy Realm", "promptValue": "in a fantasy realm" }
+          ]
+        },
+        {
+          "id": "scene_type",
+          "label": "Scene Type",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "indoor", "label": "Indoor", "promptValue": "indoor" },
+            { "id": "outdoor", "label": "Outdoor", "promptValue": "outdoor" },
+            { "id": "urban", "label": "Urban", "promptValue": "urban setting" },
+            { "id": "rural", "label": "Rural", "promptValue": "rural setting" },
+            { "id": "nature", "label": "Nature", "promptValue": "natural setting" },
+            { "id": "fantasy", "label": "Fantasy", "promptValue": "fantasy setting" },
+            { "id": "sci_fi", "label": "Sci-Fi", "promptValue": "sci-fi setting" },
+            { "id": "surreal", "label": "Surreal", "promptValue": "surreal setting" },
+            { "id": "abstract", "label": "Abstract", "promptValue": "abstract background" }
+          ]
+        },
+        {
+          "id": "background",
+          "label": "Background",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "blurred", "label": "Blurred", "promptValue": "blurred background" },
+            { "id": "bokeh", "label": "Bokeh", "promptValue": "bokeh background" },
+            { "id": "detailed", "label": "Detailed", "promptValue": "detailed background" },
+            { "id": "minimal", "label": "Minimal", "promptValue": "minimal background" },
+            { "id": "plain", "label": "Plain", "promptValue": "plain background" },
+            { "id": "colorful", "label": "Colorful", "promptValue": "colorful background" },
+            { "id": "dark", "label": "Dark", "promptValue": "dark background" },
+            { "id": "bright", "label": "Bright", "promptValue": "bright background" },
+            { "id": "gradient", "label": "Gradient", "promptValue": "gradient background" },
+            { "id": "patterned", "label": "Patterned", "promptValue": "patterned background" }
+          ]
+        },
+        {
+          "id": "time_of_day",
+          "label": "Time of Day",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "morning", "label": "Morning", "promptValue": "morning" },
+            { "id": "sunrise", "label": "Sunrise", "promptValue": "sunrise" },
+            { "id": "afternoon", "label": "Afternoon", "promptValue": "afternoon" },
+            { "id": "golden_hour", "label": "Golden Hour", "promptValue": "golden hour" },
+            { "id": "sunset", "label": "Sunset", "promptValue": "sunset" },
+            { "id": "dusk", "label": "Dusk", "promptValue": "dusk" },
+            { "id": "night", "label": "Night", "promptValue": "night" },
+            { "id": "midnight", "label": "Midnight", "promptValue": "midnight" },
+            { "id": "blue_hour", "label": "Blue Hour", "promptValue": "blue hour" },
+            { "id": "dawn", "label": "Dawn", "promptValue": "dawn" }
+          ]
+        }
+      ]
+    }
+  ]
+}

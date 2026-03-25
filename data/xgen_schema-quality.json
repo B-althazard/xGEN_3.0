@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "quality",
+      "label": "Quality & Style",
+      "icon": "quality",
+      "fields": [
+        {
+          "id": "quality_tags",
+          "label": "Quality Tags",
+          "type": "multi-select",
+          "required": false,
+          "options": [
+            { "id": "photorealistic", "label": "Photorealistic", "promptValue": "photorealistic" },
+            { "id": "hyperrealistic", "label": "Hyperrealistic", "promptValue": "hyperrealistic" },
+            { "id": "ultra_detailed", "label": "Ultra Detailed", "promptValue": "ultra detailed" },
+            { "id": "8k", "label": "8K", "promptValue": "8K UHD" },
+            { "id": "raw_photo", "label": "RAW Photo", "promptValue": "RAW photo" },
+            { "id": "sharp_focus", "label": "Sharp Focus", "promptValue": "sharp focus" },
+            { "id": "professional", "label": "Professional", "promptValue": "professional photography" },
+            { "id": "masterpiece", "label": "Masterpiece", "promptValue": "masterpiece" }
+          ]
+        },
+        {
+          "id": "style_tags",
+          "label": "Style Tags",
+          "type": "single-select",
+          "required": false,
+          "options": [
+            { "id": "realistic", "label": "Realistic Photo", "promptValue": "" },
+            { "id": "film_grain", "label": "Film Grain", "promptValue": "film grain analog photography" },
+            { "id": "editorial", "label": "Editorial", "promptValue": "fashion magazine editorial photography" },
+            { "id": "glamour", "label": "Glamour", "promptValue": "glamour photography" },
+            { "id": "boudoir", "label": "Boudoir", "promptValue": "boudoir intimate photography" },
+            { "id": "explicit_adult", "label": "Explicit Adult", "promptValue": "explicit adult content photography" },
+            { "id": "fine_art", "label": "Fine Art", "promptValue": "fine art photography" },
+            { "id": "pinup", "label": "Pin-Up", "promptValue": "pinup cheesecake photography" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-03-19",
+  "categories": [
+    {
+      "id": "identity",
+      "label": "Identity",
+      "icon": "face",
+      "fields": [
+        {
+          "id": "age",
+          "label": "Age",
+          "type": "single-select",
+          "required": true,
+          "options": [
+            { "id": "18plus", "label": "+18", "promptValue": "18+" },
+            { "id": "20s", "label": "20s", "promptValue": "woman in her 20s" },
+            { "id": "30s", "label": "30s", "promptValue": "woman in her 30s" },
+            { "id": "40s", "label": "40s", "promptValue": "woman in her 40s" },
+            { "id": "50s", "label": "50s", "promptValue": "woman in her 50s" },
+            { "id": "60plus", "label": "60+", "promptValue": "mature woman" }
+          ]
+        },
+        {
+          "id": "ethnicity",
+          "label": "Ethnicity",
+          "type": "shape-modal",
+          "required": true,
+          "modalImage": "assets/modals/ethnicity.png",
+          "options": [
+            { "id": "caucasian", "label": "Caucasian", "promptValue": "caucasian woman" },
+            { "id": "latina", "label": "Latina", "promptValue": "latina woman" },
+            { "id": "asian", "label": "Asian", "promptValue": "asian woman" },
+            { "id": "arab", "label": "Arab", "promptValue": "arab woman" },
+            { "id": "balkan", "label": "Balkan", "promptValue": "balkan woman" },
+            { "id": "nordic", "label": "Nordic", "promptValue": "nordic woman" }
+          ]
+        }
+      ]
+    }
+  ]
+}
