@@ -64,7 +64,7 @@ function mergeBody(values) {
   const skinDetails = values.filter((item) => item.domain === 'body.skin.detail');
   if (skinTone || skinDetails.length) {
     const parts = [];
-    if (skinTone) parts.push(`${skinTone.finalPromptValue} skin`);
+    if (skinTone) parts.push(`${skinTone.finalPromptValue.replace(/ skin$/, '')} skin`);
     if (skinDetails.length) parts.push(skinDetails.map((item) => item.finalPromptValue).join(' and '));
     groups.push(parts.join(' with '));
   }
@@ -74,8 +74,8 @@ function mergeBody(values) {
   const bustState = values.filter((item) => item.domain === 'body.bust.state');
   const bustNipples = values.filter((item) => item.domain === 'body.bust.nipples');
   const bustParts = [];
-  if (bustShape) bustParts.push(bustShape.finalPromptValue);
-  if (bustSize) bustParts.push(bustSize.finalPromptValue);
+  if (bustShape) bustParts.push(bustShape.finalPromptValue.replace(/ breasts$/, ''));
+  if (bustSize) bustParts.push(bustSize.finalPromptValue.replace(/ breasts$/, ''));
   bustParts.push('breasts');
   if (bustNipples.length) bustParts.push(bustNipples.map((item) => item.finalPromptValue).join(' and '));
   if (bustState.length) bustParts.push(bustState.map((item) => item.finalPromptValue).join(' and '));
@@ -259,7 +259,12 @@ export function buildBlocks(tokens, rules, settings) {
   };
 
   const orderKey = settings.promptOrder || 'subject-first';
-  const templateBlockOrder = TEMPLATE_BLOCK_ORDERS[settings.imageType || 'portrait'];
-  const blockOrder = templateBlockOrder || rules.ordering.blockOrders?.[orderKey] || rules.ordering.blockOrder || Object.keys(allBlocks);
+  let blockOrder;
+  if (imageType === 'portrait') {
+    // Portrait uses the promptOrder setting from rules
+    blockOrder = rules.ordering.blockOrders?.[orderKey] || rules.ordering.blockOrder || Object.keys(allBlocks);
+  } else {
+    blockOrder = TEMPLATE_BLOCK_ORDERS[imageType] || rules.ordering.blockOrders?.[orderKey] || rules.ordering.blockOrder || Object.keys(allBlocks);
+  }
   return blockOrder.map((id) => allBlocks[id]).filter(Boolean).filter((block) => block.text);
 }

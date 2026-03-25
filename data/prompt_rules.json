@@ -108,8 +108,7 @@
       { "id": "no_makeup", "whenAll": [{ "fieldId": "foundation", "equals": "none" }], "dropPrefixes": ["makeup.eyes.", "makeup.lips.", "makeup.effects"], "exceptDomains": ["makeup.foundation"] },
       { "id": "bare_lips", "whenAll": [{ "fieldId": "lip_makeup", "equals": "none" }], "dropDomains": ["makeup.lips.color"] },
       { "id": "complete_outfit", "whenExists": ["complete_outfit"], "dropPrefixes": ["clothing.upper.", "clothing.lower."] },
-      { "id": "nude_outfit", "whenAll": [{ "fieldId": "complete_outfit", "equals": "nude" }], "dropDomains": ["clothing.legwear", "clothing.footwear", "clothing.accessories"] },
-      { "id": "futa_disabled", "whenAll": [{ "fieldId": "futa_enabled", "notEquals": "on" }], "dropPrefixes": ["body.genital.futa."] }
+      { "id": "nude_outfit", "whenAll": [{ "fieldId": "complete_outfit", "equals": "nude" }], "dropDomains": ["clothing.legwear", "clothing.footwear", "clothing.accessories"] }
     ]
   },
   "optionConflicts": [
@@ -129,7 +128,7 @@
       "id": "bust_exposed_vs_covered",
       "reason": "Exposed and covered bust states conflict",
       "condition": { "fieldId": "bust_state", "anyOf": ["exposed"] },
-      "clear": { "bust_state": ["covered"], "upper_type": ["bra", "bralette", "crop_top", "tank_top", "tshirt", "blouse", "shirt", "sweater", "hoodie", "jacket", "blazer", "coat", "vest", "cardigan", "tube_top", "halter", "off_shoulder", "one_shoulder"] }
+      "clear": { "bust_state": ["covered"], "upper_type": ["bra", "bralette", "crop_top", "tank_top", "tshirt", "blouse", "shirt", "sweater", "hoodie", "jacket", "blazer", "coat", "vest", "cardigan", "tube_top", "one_shoulder"] }
     },
     {
       "id": "bust_covered_vs_exposed",

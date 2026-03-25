@@ -64,7 +64,7 @@ export function formatPositivePrompt(blocks, rules, settings = {}) {
   let prompt = joinNatural(rebuild(working, separator));
 
   const aesthetic = settings.aesthetic;
-  if (aesthetic != null && aesthetic >= 6 && aesthetic <= 10) {
+  if (aesthetic != null && typeof aesthetic === 'number' && aesthetic >= 0 && aesthetic <= 11) {
     prompt = `aesthetic ${aesthetic}, ${prompt}`;
   }
   const pruneOrder = rules.lengthBudget?.pruneOrder || [];

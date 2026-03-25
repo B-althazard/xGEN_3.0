@@ -45,16 +45,6 @@
       "icon": "body",
       "fields": [
         {
-          "id": "futa_enabled",
-          "label": "Enable Futa",
-          "type": "single-select",
-          "required": false,
-          "options": [
-            { "id": "off", "label": "Off", "promptValue": "" },
-            { "id": "on", "label": "On", "promptValue": "futa" }
-          ]
-        },
-        {
           "id": "futa_size",
           "label": "Cock Size",
           "type": "single-select",

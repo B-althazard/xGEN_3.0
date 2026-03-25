@@ -124,9 +124,12 @@ export function renderXgen(container) {
       <div>
         <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-tertiary);margin-bottom:var(--sp-1);">Aesthetic</div>
         <div style="display:flex;align-items:center;gap:var(--sp-1);">
-          <button class="btn btn--sm btn--icon" data-aesthetic-dec>−</button>
-          <span style="font-size:14px;font-weight:700;color:var(--text-accent);min-width:20px;text-align:center;" data-aesthetic-value>${state.settings.aesthetic}</span>
-          <button class="btn btn--sm btn--icon" data-aesthetic-inc>+</button>
+          <button class="btn btn--sm ${state.settings.aesthetic != null ? 'btn--primary' : ''}" data-aesthetic-toggle>${state.settings.aesthetic != null ? 'On' : 'Off'}</button>
+          ${state.settings.aesthetic != null ? `
+            <button class="btn btn--sm btn--icon" data-aesthetic-dec>−</button>
+            <span style="font-size:14px;font-weight:700;color:var(--text-accent);min-width:20px;text-align:center;" data-aesthetic-value>${state.settings.aesthetic}</span>
+            <button class="btn btn--sm btn--icon" data-aesthetic-inc>+</button>
+          ` : ''}
         </div>
       </div>
     </div>
@@ -399,10 +402,18 @@ export function renderXgen(container) {
     };
   });
 
+  container.querySelectorAll('[data-aesthetic-toggle]').forEach((btn) => {
+    btn.onclick = () => {
+      const s = getState();
+      const isOn = s.settings.aesthetic != null;
+      setSettingSilent('aesthetic', isOn ? null : 7);
+      renderXgen(container);
+    };
+  });
   container.querySelectorAll('[data-aesthetic-dec]').forEach((btn) => {
     btn.onclick = () => {
       const s = getState();
-      const val = Math.max(6, s.settings.aesthetic - 1);
+      const val = Math.max(0, (s.settings.aesthetic || 0) - 1);
       setSettingSilent('aesthetic', val);
       container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
       updatePromptText();
@@ -411,7 +422,7 @@ export function renderXgen(container) {
   container.querySelectorAll('[data-aesthetic-inc]').forEach((btn) => {
     btn.onclick = () => {
       const s = getState();
-      const val = Math.min(10, s.settings.aesthetic + 1);
+      const val = Math.min(11, (s.settings.aesthetic || 0) + 1);
       setSettingSilent('aesthetic', val);
       container.querySelectorAll('[data-aesthetic-value]').forEach((span) => { span.textContent = val; });
       updatePromptText();

@@ -46,7 +46,7 @@ const state = {
     selectedModel: 'chroma1-hd',
     addonStatus: { valid: 0, errors: [] },
     promptOrder: 'subject-first',
-    aesthetic: 7,
+    aesthetic: null,
   },
   xgen: {
     currentJobStatus: 'idle',
