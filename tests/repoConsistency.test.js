@@ -122,3 +122,21 @@ test('top bar renders a commit-count app version next to the brand', async () =>
   assert.match(source, /top-bar__version/);
   assert.match(versionSource, /v3\.0\.\d+/);
 });
+
+test('store seeds fresh dummy names from the dummy name pool', async () => {
+  const source = await readRepoFile('js/store.js');
+  assert.match(source, /nextDummyName\(/);
+  assert.equal(source.includes("replaceWithFreshDummy() {\n  snapshotUndo();\n  state.dummies = \[{ ...defaultDummy\(\), name: 'Dummy 1' }\];"), false);
+});
+
+test('preset cards can render saved preview images', async () => {
+  const source = await readRepoFile('js/modules/presets.js');
+  assert.match(source, /preset\.previewImageDataUrl/);
+  assert.match(source, /preset-card__preview/);
+});
+
+test('userscript reports visible-tab waiting when Venice is hidden', async () => {
+  const source = await readRepoFile('userscript/xgen-venice-bridge.user.js');
+  assert.match(source, /waiting for visible Venice tab/);
+  assert.match(source, /Keep Venice visible, split-screen, or not minimized/);
+});

@@ -735,6 +735,18 @@
     setStatus('received from x.GEN', truncate(prompt, 100));
     log('incoming_prompt', { nonce, length: prompt.length, preview: truncate(prompt, 100), force });
 
+    if (document.visibilityState !== 'visible') {
+      setActiveJob({
+        nonce,
+        prompt,
+        previousSrc: activeJob?.previousSrc || '',
+        status: 'awaiting-visibility'
+      });
+      setStatus('waiting for visible Venice tab', 'Keep Venice visible, split-screen, or not minimized');
+      log('venice_hidden_waiting', { nonce, visibilityState: document.visibilityState });
+      return;
+    }
+
     const ok = await fillVenicePrompt(prompt);
     if (!ok) return;
 
@@ -779,8 +791,12 @@
       return;
     }
 
-    if (activeJob && activeJob.nonce === nonce && ['submitted', 'waiting-image', 'image-found'].includes(activeJob.status)) {
+    if (activeJob && activeJob.nonce === nonce && ['awaiting-visibility', 'submitted', 'waiting-image', 'image-found'].includes(activeJob.status)) {
       if (shouldLog) log('recovery_resume_existing_job', { reason, nonce, status: activeJob.status });
+      if (activeJob.status === 'awaiting-visibility') {
+        await processIncomingPrompt(request.prompt, nonce, true);
+        return;
+      }
       await resumePendingImageTransfer(activeJob, request);
       return;
     }

@@ -34,10 +34,13 @@ export function renderPresetCard(preset) {
   const locked = preset.lockedFields?.length
     ? '<span style="position:absolute;top:8px;right:8px;font-size:9px;font-weight:700;color:var(--accent);background:var(--accent-muted);padding:2px 8px;border-radius:var(--r-pill);">Locked</span>'
     : '';
+  const media = preset.previewImageDataUrl
+    ? `<img class="preset-card__preview" src="${preset.previewImageDataUrl}" alt="${escapeHtml(preset.name)} preview">`
+    : escapeHtml(initials(preset.name));
   return `
     <article class="preset-card" data-preset-id="${preset.id}">
       ${locked}
-      <div class="preset-card__media">${escapeHtml(initials(preset.name))}</div>
+      <div class="preset-card__media">${media}</div>
       <div class="preset-card__body">
         <div>
           <div class="preset-card__name">${escapeHtml(preset.name)}</div>

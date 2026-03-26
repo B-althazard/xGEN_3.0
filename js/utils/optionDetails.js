@@ -15,11 +15,11 @@ function generalExplanation(field, option) {
   const fieldLabel = field.label.toLowerCase();
   const optionLabel = option.label.toLowerCase();
   return {
-    summary: `${option.label} tells the model to prioritize ${optionLabel} in the ${fieldLabel}.`,
+    summary: `${option.label} changes how the ${fieldLabel} reads in the final image.`,
     details: [
-      `In practice this pushes ${humanizePrompt(option.promptValue)} so the ${fieldLabel} reads more clearly in the final image.`,
-      `You should expect the result to lean toward ${articleFor(optionLabel)} ${optionLabel} interpretation instead of a neutral or mixed look.`,
-      `This option is most useful when you want the ${fieldLabel} to be one of the first traits a viewer notices.`
+      `In the finished image, the ${fieldLabel} should look more ${optionLabel} instead of staying visually neutral.`,
+      `This usually affects what a viewer notices first about that area, even if the pose and outfit stay the same.`,
+      `Pick this when you want the ${fieldLabel} to read clearly at a glance rather than being left to chance.`
     ]
   };
 }
@@ -51,9 +51,9 @@ function explainFraming(option) {
   return {
     summary: `${option.label} controls how much of the subject and scene fit inside the frame.`,
     details: [
-      `It tells the model to compose the image as ${articleFor(option.label.toLowerCase())} ${option.label.toLowerCase()} rather than leaving framing ambiguous.`,
-      'This mainly changes crop, subject size inside the frame, and how much attention goes to the body versus the environment.',
-      'Use it when you want the composition itself to feel intentional and predictable.'
+      `This makes the camera frame the subject as ${articleFor(option.label.toLowerCase())} ${option.label.toLowerCase()} instead of leaving the crop ambiguous.`,
+      'You will mainly see changes in how close the camera feels, how much of the body is visible, and how much background remains in view.',
+      'Use it when the composition itself should feel deliberate and readable.'
     ]
   };
 }
@@ -62,9 +62,9 @@ function explainCameraAngle(option) {
   return {
     summary: `${option.label} changes the viewer's camera position relative to the subject.`,
     details: [
-      `This pushes the image toward ${humanizePrompt(option.promptValue)}, which changes power, intimacy, and how the pose reads.`,
-      'A lower angle tends to feel more dominant and statuesque, while a higher angle tends to feel softer, more vulnerable, or more observational.',
-      'Use it when the emotional tone of the shot should change even if the outfit and subject stay the same.'
+      `In practice this changes how powerful, intimate, flattering, or voyeuristic the shot feels.`,
+      'A low angle usually makes the subject feel taller and more dominant, while a high angle often feels softer, smaller, or more observed.',
+      'Use it when you want the same subject to give off a different emotional impression without changing her styling.'
     ]
   };
 }
@@ -73,9 +73,9 @@ function explainDepthOfField(option) {
   return {
     summary: `${option.label} controls how much of the image feels sharp versus blurred.`,
     details: [
-      `It tells the model how aggressively to separate the subject from the background through focus.`,
-      'Shallower depth of field makes the subject pop and softens the background, while deeper focus keeps more of the scene readable.',
-      'Use it when you want to control whether the viewer notices the person first or the full setting around them.'
+      'This changes how strongly the subject separates from the background through focus and blur.',
+      'Shallow focus makes the subject pop while the background melts away, while deep focus keeps more of the room or landscape readable.',
+      'Use it when you want to decide whether the viewer should notice the person first or the full setting around her.'
     ]
   };
 }
@@ -84,9 +84,9 @@ function explainBodyOrFace(field, option) {
   return {
     summary: `${option.label} changes the perceived ${field.label.toLowerCase()} of the subject.`,
     details: [
-      `This nudges the generation toward ${humanizePrompt(option.promptValue)} so the body or facial structure reads more specifically.`,
-      'You should expect silhouette, proportion, or feature emphasis to shift even if the pose and outfit remain the same.',
-      `Use it when you want the ${field.label.toLowerCase()} to be clearly defined instead of left to the model's default taste.`
+      `In the image, this usually changes shape, contour, proportion, or how strongly that feature stands out.`,
+      'Even when the pose stays the same, the overall silhouette or facial read can become noticeably different.',
+      `Use it when you want the ${field.label.toLowerCase()} to look specific instead of generic.`
     ]
   };
 }
@@ -95,9 +95,9 @@ function explainStyling(field, option) {
   return {
     summary: `${option.label} changes the styling direction for ${field.label.toLowerCase()}.`,
     details: [
-      `It tells the model to style the subject with ${humanizePrompt(option.promptValue)} rather than a generic look.`,
-      'This mainly changes visual attitude, polish, and fashion language rather than anatomy or composition.',
-      `Use it when you want the ${field.label.toLowerCase()} to communicate a stronger aesthetic choice.`
+      `This changes the visible style language of the image rather than the subject's anatomy.`,
+      'You will usually notice it in polish, attitude, texture, silhouette, or how dressed-up the final image feels.',
+      `Use it when you want the ${field.label.toLowerCase()} to read as a deliberate style choice instead of background dressing.`
     ]
   };
 }
@@ -106,9 +106,9 @@ function explainEnvironment(field, option) {
   return {
     summary: `${option.label} changes the environmental mood around the subject.`,
     details: [
-      `It guides the image toward ${humanizePrompt(option.promptValue)} so the setting or atmosphere becomes more specific.`,
-      'This can change the background, mood, color balance, and how cinematic or grounded the scene feels.',
-      'Use it when the location or ambience should matter as much as the subject.'
+      'This changes what the space feels like around the subject, not just how she looks.',
+      'You will usually see it affect mood, background read, atmosphere, time-of-day feeling, or how cinematic the shot appears.',
+      'Use it when the environment should help tell the story of the image.'
     ]
   };
 }

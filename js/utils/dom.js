@@ -15,6 +15,7 @@ export function truncateText(value, max = 80) {
 
 export function bindLongPress(button, callback, delayMs = 450) {
   let timer = null;
+  let longPressTriggered = false;
   const clear = () => {
     if (timer) {
       clearTimeout(timer);
@@ -24,13 +25,24 @@ export function bindLongPress(button, callback, delayMs = 450) {
 
   button.addEventListener('pointerdown', () => {
     clear();
-    timer = setTimeout(() => callback(), delayMs);
+    longPressTriggered = false;
+    timer = setTimeout(() => {
+      longPressTriggered = true;
+      callback();
+    }, delayMs);
   });
   button.addEventListener('pointerup', clear);
   button.addEventListener('pointerleave', clear);
   button.addEventListener('pointercancel', clear);
+  button.addEventListener('click', (event) => {
+    if (!longPressTriggered) return;
+    event.preventDefault();
+    event.stopPropagation();
+    longPressTriggered = false;
+  }, true);
   button.addEventListener('contextmenu', (event) => {
     event.preventDefault();
+    longPressTriggered = true;
     callback();
   });
 }

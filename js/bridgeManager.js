@@ -117,7 +117,7 @@ export function initializeBridgeManager() {
     if (event.detail?.role === 'Venice.Ai' || event.detail?.connected) {
       refreshBridgeDetection();
     }
-    if (['received from x.GEN', 'filling Venice', 'waiting for submit enable', 'submitting', 'submitted', 'waiting for image', 'extracting image', 'resuming image transfer'].includes(status)) {
+    if (['received from x.GEN', 'waiting for visible Venice tab', 'filling Venice', 'waiting for submit enable', 'submitting', 'submitted', 'waiting for image', 'extracting image', 'resuming image transfer'].includes(status)) {
       bumpGenerationTimeout(120);
     }
     setJobState({ currentJobStatus: status });

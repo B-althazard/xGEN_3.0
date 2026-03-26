@@ -10,7 +10,7 @@ export function renderTopBar() {
 
   topBar.className = 'top-bar';
   topBar.innerHTML = `
-    <button class="top-bar__brand icon-btn" data-go-home aria-label="Home" style="width:auto;">
+    <button class="top-bar__brand" data-go-home aria-label="Home">
       ${icon('brand')}
       <span class="top-bar__version">${APP_VERSION}</span>
     </button>

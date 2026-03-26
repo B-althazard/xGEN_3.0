@@ -14,9 +14,9 @@ export const STORAGE_KEYS = {
 
 const listeners = new Set();
 
-const defaultDummy = () => ({
+const defaultDummy = (name = 'Dummy 1') => ({
   id: crypto.randomUUID(),
-  name: 'Dummy 1',
+  name,
   fields: {},
   lockedFields: [],
   referencePhotoId: null,
@@ -80,6 +80,10 @@ const state = {
 };
 
 let saveTimer = null;
+
+function nextDummyName(fallback = 'Dummy') {
+  return pickRandomDummyName(state.dummyNames, state.dummies.map((dummy) => dummy.name)) || fallback;
+}
 
 function snapshotUndo() {
   state._undoStack.push(JSON.stringify({
@@ -221,6 +225,9 @@ export async function initializeStore() {
   state.rules = rules;
   state.defaultDummies = dummyData.dummies || [];
   state.dummyNames = parseDummyNames(dummyNamesText);
+  if (!savedState && state.dummies.length === 1 && state.dummies[0].name === 'Dummy 1') {
+    state.dummies[0].name = nextDummyName('Dummy');
+  }
   state.xgen.generatedImages = images;
   syncActiveImageSelection(images[0]?.nonce || null, 0);
   state.savedPresets = presets;
@@ -445,8 +452,7 @@ export function setActiveDummy(index) {
 export function addDummy() {
   if (state.dummies.length >= 3) return;
   snapshotUndo();
-  const randomName = pickRandomDummyName(state.dummyNames, state.dummies.map((dummy) => dummy.name));
-  state.dummies.push({ ...defaultDummy(), name: randomName || `Dummy ${state.dummies.length + 1}` });
+  state.dummies.push(defaultDummy(nextDummyName(`Dummy ${state.dummies.length + 1}`)));
   state.activeDummyIndex = state.dummies.length - 1;
   notify();
 }
@@ -477,7 +483,7 @@ export function duplicateDummy(index = state.activeDummyIndex) {
 
 export function replaceWithFreshDummy() {
   snapshotUndo();
-  state.dummies = [{ ...defaultDummy(), name: 'Dummy 1' }];
+  state.dummies = [defaultDummy(nextDummyName('Dummy'))];
   state.activeDummyIndex = 0;
   state.multiDummyInteraction = {
     interaction_type: null,
@@ -575,6 +581,7 @@ export async function refreshPresets() {
 
 export async function saveCurrentPreset({ type, name }) {
   const active = state.dummies[state.activeDummyIndex];
+  const previewImage = state.xgen.generatedImages[state.xgen.activeImageIndex] || null;
   await savePreset({
     id: crypto.randomUUID(),
     type,
@@ -583,6 +590,8 @@ export async function saveCurrentPreset({ type, name }) {
     fields: structuredClone(active.fields),
     lockedFields: structuredClone(active.lockedFields),
     referencePhotoId: active.referencePhotoId,
+    previewImageDataUrl: previewImage?.dataUrl || null,
+    previewImageNonce: previewImage?.nonce || null,
     emphasis: structuredClone(state.emphasis),
     createdAt: Date.now(),
     updatedAt: Date.now(),

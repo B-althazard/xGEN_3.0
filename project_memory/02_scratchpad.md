@@ -21,6 +21,7 @@ _If this file is missing, create it empty. That is not an error._
 - Implemented bridge heartbeat/recovery fixes, gallery grouping and delete flows, and xGEN metrics cleanup.
 - Wrote persistent action memory for the bridge/gallery stabilization pass.
 - Follow-up pass restores bridge detection from remote Venice activity, broadens selector matching, adds commit-count versioning, improves top-bar and nav polish, enforces single-open accordions, randomizes new dummy names, and generates natural-language option explanations for non-color options.
+- Second follow-up pass adds browser-throttling visibility messaging for Venice, saves active image previews onto Doll cards, randomizes the first fresh dummy name, improves top-bar/version alignment, increases active desktop nav breathing room, and tightens the human-facing wording of option explanations.
 
 ---
 
