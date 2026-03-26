@@ -1,4 +1,4 @@
-import { getState, saveCurrentPreset, setActiveImageIndex, resetActiveDummySilent, setSettingSilent, addPromptToList, removePromptFromList, clearPromptList, updateBatchSetting, clearBatchHistory } from '../store.js';
+import { getState, saveCurrentPreset, setActiveImageIndex, resetActiveDummySilent, setSettingSilent, addPromptToList, removePromptFromList, clearPromptList, updateBatchSetting, clearBatchHistory, removeGeneratedImage } from '../store.js';
 import { triggerGeneration, startBatchJob, stopBatchJob } from '../bridgeManager.js';
 import { randomizeCurrentDummySilent } from '../modules/terminal.js';
 import { icon } from '../icons.js';
@@ -71,9 +71,6 @@ function renderMetrics(state) {
       <div class="metric"><div class="metric__value">${metrics.wordCount || 0}</div><div class="metric__label">Words</div></div>
       <div class="metric"><div class="metric__value">${metrics.tokenCountEstimate || 0}</div><div class="metric__label">Tokens</div></div>
       <div class="metric"><div class="metric__value">${state.promptResult?.keptTokens?.length || 0}</div><div class="metric__label">Items</div></div>
-      <div class="metric"><div class="metric__value" style="font-size:14px;">${escapeHtml(state.settings.selectedModel)}</div><div class="metric__label">Model</div></div>
-      <div class="metric"><div class="metric__value">${escapeHtml(state.settings.defaultAspectRatio)}</div><div class="metric__label">Ratio</div></div>
-      <div class="metric"><div class="metric__value" style="font-size:14px;">${state.settings.selectedModel === 'chroma1-hd' ? 'Med' : '-'}</div><div class="metric__label">Cost</div></div>
     </div>
   `;
 }
@@ -210,6 +207,7 @@ export function renderXgen(container) {
           <div class="toolbar" style="margin-bottom:var(--sp-4);">
             <button class="btn btn--sm" data-download-image ${image ? '' : 'disabled'}>${icon('download')} Save</button>
             <button class="btn btn--sm" data-fullscreen-image ${image ? '' : 'disabled'}>${icon('fullscreen')} Fullscreen</button>
+            <button class="btn btn--sm" data-delete-image ${image ? '' : 'disabled'}>${icon('trash')} Delete</button>
             <button class="btn btn--sm" data-copy-prompt>${icon('copy')} Copy Prompt</button>
           </div>
 
@@ -346,6 +344,17 @@ export function renderXgen(container) {
     fs.onclick = () => {
       const viewerImage = container.querySelector('.viewer__image');
       if (viewerImage?.requestFullscreen) viewerImage.requestFullscreen();
+    };
+  }
+
+  const del = container.querySelector('[data-delete-image]');
+  if (del) {
+    del.onclick = async () => {
+      if (!image) return;
+      if (!window.confirm('Delete this image from history and gallery?')) return;
+      await removeGeneratedImage(image.nonce);
+      renderXgen(container);
+      showPill('Image deleted');
     };
   }
 

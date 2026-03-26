@@ -15,6 +15,9 @@ Comprehensive audit and cleanup of source, tests, configuration, and documentati
 | resolved | Redundancy | Extracted shared DOM helpers into `js/utils/dom.js` and removed duplicated long-press logic. | Keeps interaction behavior consistent and reduces duplication. |
 | resolved | xGEN page | Consolidated duplicated desktop/mobile sidebar rendering in `js/pages/xgen.js`. | Reduces markup drift and keeps edits traceable. |
 | resolved | Generation flow | Unified duplicated payload/timer dispatch logic in `js/bridgeManager.js`. | Simplifies orchestration and removes repeated timeout/countdown code. |
+| resolved | Bridge stability | Stopped userscript heartbeats from forcing xGEN rerenders and added nonce-based Venice recovery state. | Eliminates bridge-induced flicker and reduces dropped image transfers after tab switches. |
+| resolved | Gallery | Added single and batch delete flows plus grouped gallery sections in `js/pages/gallery.js`. | Makes image history manageable without relying on manual storage resets. |
+| resolved | Image metadata | Persisted generation-time grouping metadata with images and added legacy `Unknown` fallback order grouping. | Keeps future gallery grouping accurate while avoiding brittle prompt-text heuristics. |
 | resolved | Settings | Removed misleading negative-prompt and addon toggles from settings UI; wired `Reset All Local Data` to actual storage clearing. | Exposed controls now match implemented behavior. |
 | resolved | Assets/schema | Removed broken `modalImage` references pointing to missing assets in schema JSON files. | Prevents broken references and makes validation reliable. |
 | resolved | Service worker | Updated precache list for app-shell gaps, added icon/userscript coverage, and restricted runtime caching to successful same-origin responses. | Reduces offline drift and avoids caching failed responses. |
@@ -27,6 +30,7 @@ Comprehensive audit and cleanup of source, tests, configuration, and documentati
 |---|---|---|---|
 | deferred | xBatcher unique mode | Do not implement new-chat mode in this stabilization pass. | It requires new bridge behavior and would be feature work rather than cleanup. |
 | deferred | Negative prompt generation | Keep model profile on `none` and describe that in UI/docs. | Current prompt engine intentionally returns an empty negative prompt for the active model. |
+| deferred | Legacy gallery backfill | Do not infer missing prompt order from old prompt strings. | Heuristic parsing would be brittle and could misgroup existing images. |
 | deferred | Store/module architecture | Do not split the large store further in this pass. | It would create broad churn outside targeted stabilization changes. |
 
 ## Remaining risks
@@ -34,6 +38,7 @@ Comprehensive audit and cleanup of source, tests, configuration, and documentati
 - `js/store.js` still centralizes a large amount of state and behavior, so future feature work should continue extracting narrowly scoped helpers.
 - The userscript remains DOM-selector dependent on Venice markup; selector drift is still a runtime integration risk even with the URL fix.
 - Service-worker precache entries are still manually maintained, though they are now covered by tests.
+- Legacy images created before metadata capture may appear in `Unknown` gallery subgroups until regenerated or manually cleaned up.
 
 ## Validation result
 

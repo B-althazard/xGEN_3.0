@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         x.GEN → Venice Bridge
 // @namespace    https://b-althazard.github.io/
-// @version      2.0.2
+// @version      2.0.3
 // @description  Bridges x.GEN to Venice.ai for automated image generation
 // @match        https://b-althazard.github.io/xGEN_3.0/*
 // @match        https://b-althazard.github.io/xgen/*
@@ -33,6 +33,7 @@
     HEARTBEAT_XGEN: 'xgen_v1_heartbeat_xgen',
     HEARTBEAT_VENICE: 'xgen_v1_heartbeat_venice',
     LAST_TRANSFER_TS: 'xgen_v1_last_transfer_ts',
+    ACTIVE_JOB: 'xgen_v1_active_job',
   };
 
   const SELECTORS = {
@@ -84,7 +85,8 @@
     lastPrompt: '',
     panelOpen: false,
     logs: [],
-    lastProcessedNonceLocal: null
+    lastProcessedNonceLocal: null,
+    recoveryInFlight: false
   };
 
   function isXgen() {
@@ -93,10 +95,6 @@
 
   function isVenice() {
     return window.location.hostname.includes(VENICE_HOST);
-  }
-
-  function isVeniceActivePage() {
-    return isVenice() && document.visibilityState === 'visible';
   }
 
   function sleep(ms) {
@@ -150,6 +148,24 @@
 
   function ownHeartbeatKey() {
     return isXgen() ? KEYS.HEARTBEAT_XGEN : KEYS.HEARTBEAT_VENICE;
+  }
+
+  function getActiveJob() {
+    return GM_getValue(KEYS.ACTIVE_JOB, null);
+  }
+
+  function setActiveJob(job) {
+    GM_setValue(KEYS.ACTIVE_JOB, {
+      ...job,
+      updatedAt: Date.now()
+    });
+  }
+
+  function clearActiveJob(nonce = null) {
+    const currentJob = getActiveJob();
+    if (!currentJob) return;
+    if (nonce && currentJob.nonce !== nonce) return;
+    GM_setValue(KEYS.ACTIVE_JOB, null);
   }
 
   function dispatchPageEvent(name, detail = {}) {
@@ -392,9 +408,6 @@
   function startHeartbeat() {
     const write = () => {
       GM_setValue(ownHeartbeatKey(), Date.now());
-      if (isXgen()) {
-        dispatchPageEvent('xgen:bridge-ready', { source: 'userscript-heartbeat' });
-      }
       updatePill();
     };
     write();
@@ -474,6 +487,55 @@
     }
   }
 
+  function publishResult({ dataUrl, nonce, prompt, request }) {
+    const payload = {
+      dataUrl,
+      nonce,
+      ts: Date.now(),
+      prompt,
+      negativePrompt: request?.negativePrompt || '',
+      model: request?.settings?.model || null,
+      settings: request?.settings || null,
+      meta: request?.meta || null
+    };
+    GM_setValue(KEYS.RESULT, payload);
+    GM_setValue(KEYS.RESULT_NONCE, nonce || makeNonce());
+    GM_setValue(KEYS.LAST_TRANSFER_TS, Date.now());
+    clearActiveJob(nonce);
+    setStatus('image transferred');
+    log('venice_image_sent', { nonce, length: dataUrl.length });
+  }
+
+  async function resumePendingImageTransfer(job, request = null) {
+    const prompt = request?.prompt || job?.prompt || '';
+    const nonce = job?.nonce || request?.nonce || GM_getValue(KEYS.REQUEST_NONCE, null);
+    if (!prompt || !nonce) return;
+
+    setActiveJob({
+      ...(job || {}),
+      nonce,
+      prompt,
+      previousSrc: job?.previousSrc || '',
+      status: 'waiting-image'
+    });
+    setStatus('resuming image transfer', truncate(prompt, 100));
+    log('recovery_resume_waiting_image', { nonce });
+
+    const dataUrl = await waitForVeniceImageDataUrl(job?.previousSrc || '', nonce);
+    if (!dataUrl) return;
+
+    setActiveJob({
+      ...(job || {}),
+      nonce,
+      prompt,
+      previousSrc: job?.previousSrc || '',
+      status: 'image-found'
+    });
+    publishResult({ dataUrl, nonce, prompt, request: request || GM_getValue(KEYS.REQUEST, null) });
+    bridgeState.lastProcessedNonceLocal = nonce;
+    GM_setValue(KEYS.LAST_PROCESSED_NONCE, nonce);
+  }
+
   async function captureXgenPrompt(payload = null) {
     const prompt = payload?.prompt || (document.querySelector(SELECTORS.xgenPrompt)?.textContent || '').trim();
     if (!prompt) {
@@ -490,6 +552,7 @@
       prompt,
       negativePrompt: payload?.negativePrompt || '',
       settings: payload?.settings || null,
+      meta: payload?.meta || null,
       nonce,
       ts: Date.now()
     });
@@ -618,6 +681,7 @@
 
   async function processIncomingPrompt(prompt, nonce, force = false) {
     const request = GM_getValue(KEYS.REQUEST, null);
+    const activeJob = getActiveJob();
 
     if (!prompt || !prompt.trim()) {
       setStatus('error: received empty prompt');
@@ -633,6 +697,12 @@
       }
     }
 
+    if (activeJob && nonce && activeJob.nonce === nonce && ['submitted', 'waiting-image', 'image-found'].includes(activeJob.status)) {
+      log('resume_existing_job', { nonce, status: activeJob.status });
+      await resumePendingImageTransfer(activeJob, request);
+      return;
+    }
+
     bridgeState.lastPrompt = prompt;
     setStatus('received from x.GEN', truncate(prompt, 100));
     log('incoming_prompt', { nonce, length: prompt.length, preview: truncate(prompt, 100), force });
@@ -644,56 +714,54 @@
     const previousSrc = await clickVeniceSubmit();
     if (previousSrc === null) return;
 
-    const dataUrl = await waitForVeniceImageDataUrl(previousSrc, nonce);
-    if (!dataUrl) return;
+    setActiveJob({
+      nonce,
+      prompt,
+      previousSrc: previousSrc || '',
+      status: 'submitted'
+    });
 
-    if (nonce) {
-      bridgeState.lastProcessedNonceLocal = nonce;
-      GM_setValue(KEYS.LAST_PROCESSED_NONCE, nonce);
-       GM_setValue(KEYS.RESULT, {
-         dataUrl,
-         nonce,
-         ts: Date.now(),
-         prompt,
-         negativePrompt: request?.negativePrompt || '',
-         model: request?.settings?.model || null,
-         settings: request?.settings || null
-       });
-       GM_setValue(KEYS.RESULT_NONCE, nonce);
-     } else {
-       GM_setValue(KEYS.RESULT, { dataUrl, ts: Date.now(), prompt });
-       GM_setValue(KEYS.RESULT_NONCE, makeNonce());
-     }
-    GM_setValue(KEYS.LAST_TRANSFER_TS, Date.now());
-    setStatus('image transferred');
-    log('venice_image_sent', { nonce, length: dataUrl.length });
+    await resumePendingImageTransfer({ nonce, prompt, previousSrc, status: 'submitted' }, request);
   }
 
   async function tryRecoverPendingPrompt(reason) {
-    if (!isVeniceActivePage()) return;
+    if (bridgeState.recoveryInFlight) return;
+    bridgeState.recoveryInFlight = true;
 
+    try {
     const request = GM_getValue(KEYS.REQUEST, null);
     const nonce = GM_getValue(KEYS.REQUEST_NONCE, null);
     const ts = GM_getValue(KEYS.TIMESTAMP, 0);
     const lastProcessedGlobal = GM_getValue(KEYS.LAST_PROCESSED_NONCE, null);
+    const activeJob = getActiveJob();
+    const shouldLog = reason !== 'poll';
 
     if (!request || !request.prompt || !nonce || !ts) {
-      log('recovery_no_pending_prompt', { reason });
+      if (shouldLog) log('recovery_no_pending_prompt', { reason });
       return;
     }
 
     if (Date.now() - ts > CONFIG.pendingFreshMs) {
-      log('recovery_prompt_too_old', { reason, ageMs: Date.now() - ts });
+      if (shouldLog) log('recovery_prompt_too_old', { reason, ageMs: Date.now() - ts });
       return;
     }
 
     if (nonce === bridgeState.lastProcessedNonceLocal || nonce === lastProcessedGlobal) {
-      log('recovery_already_processed', { reason, nonce });
+      if (shouldLog) log('recovery_already_processed', { reason, nonce });
       return;
     }
 
-    log('recovery_attempt', { reason, nonce });
+    if (activeJob && activeJob.nonce === nonce && ['submitted', 'waiting-image', 'image-found'].includes(activeJob.status)) {
+      if (shouldLog) log('recovery_resume_existing_job', { reason, nonce, status: activeJob.status });
+      await resumePendingImageTransfer(activeJob, request);
+      return;
+    }
+
+    if (shouldLog) log('recovery_attempt', { reason, nonce });
     await processIncomingPrompt(request.prompt, nonce, false);
+    } finally {
+      bridgeState.recoveryInFlight = false;
+    }
   }
 
 
@@ -770,6 +838,12 @@
         log('recovery_error', { reason: 'focus', message: String(err) });
       });
     });
+
+    setInterval(() => {
+      tryRecoverPendingPrompt('poll').catch(err => {
+        log('recovery_error', { reason: 'poll', message: String(err) });
+      });
+    }, 5000);
 
     setTimeout(() => {
       tryRecoverPendingPrompt('init').catch(err => {

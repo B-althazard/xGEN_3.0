@@ -6,6 +6,21 @@ let timeoutId = null;
 let timerId = null;
 let batchMode = false;
 let batchResolve = null;
+let timeoutHandler = null;
+
+function captureGenerationMeta(state) {
+  return {
+    characterType: state.characterType,
+    promptOrder: state.settings.promptOrder,
+    aesthetic: state.settings.aesthetic,
+    selectedModel: state.settings.selectedModel,
+    aspectRatio: state.settings.defaultAspectRatio,
+    isMultiDummy: state.dummies.length > 1,
+    dummyCount: state.dummies.length,
+    activeDummyIndex: state.activeDummyIndex,
+    fieldsSnapshot: JSON.parse(JSON.stringify(state.dummies[state.activeDummyIndex]?.fields || {})),
+  };
+}
 
 function buildGenerationPayload(prompt, state) {
   return {
@@ -19,7 +34,17 @@ function buildGenerationPayload(prompt, state) {
       cfgScale: 7,
       steps: 20,
     },
+    meta: captureGenerationMeta(state),
   };
+}
+
+function scheduleTimeout(seconds = 120, onTimeout) {
+  timeoutHandler = onTimeout;
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    clearLoader();
+    timeoutHandler?.();
+  }, seconds * 1000);
 }
 
 function startLoaderCountdown(seconds = 120, onTimeout) {
@@ -31,10 +56,12 @@ function startLoaderCountdown(seconds = 120, onTimeout) {
     if (node) node.textContent = `${remaining}s`;
     if (remaining <= 0) clearInterval(timerId);
   }, 1000);
-  timeoutId = setTimeout(() => {
-    clearLoader();
-    onTimeout();
-  }, seconds * 1000);
+  scheduleTimeout(seconds, onTimeout);
+}
+
+function bumpGenerationTimeout(seconds = 120) {
+  if (!timeoutHandler) return;
+  scheduleTimeout(seconds, timeoutHandler);
 }
 
 function dispatchGeneration(payload, { onTimeout } = {}) {
@@ -69,6 +96,7 @@ function renderLoader(seconds = 120) {
 function clearLoader() {
   clearTimeout(timeoutId);
   clearInterval(timerId);
+  timeoutHandler = null;
   const overlay = document.getElementById('gen-loading-overlay');
   overlay.hidden = true;
   overlay.innerHTML = '';
@@ -76,7 +104,13 @@ function clearLoader() {
 
 export function initializeBridgeManager() {
   window.addEventListener('xgen:bridge-ready', () => setBridgeDetected(true));
-  window.addEventListener('xgen:status-update', (event) => setJobState({ currentJobStatus: event.detail?.status || 'idle' }));
+  window.addEventListener('xgen:status-update', (event) => {
+    const status = event.detail?.status || 'idle';
+    if (['received from x.GEN', 'filling Venice', 'waiting for submit enable', 'submitting', 'submitted', 'waiting for image', 'extracting image', 'resuming image transfer'].includes(status)) {
+      bumpGenerationTimeout(120);
+    }
+    setJobState({ currentJobStatus: status });
+  });
   window.addEventListener('xgen:generation-error', (event) => {
     clearLoader();
     const msg = event.detail?.message || 'Generation failed';
@@ -101,12 +135,13 @@ export function initializeBridgeManager() {
       prompt: payload.prompt,
       negativePrompt: payload.negativePrompt,
       model: payload.model,
+      meta: payload.meta || null,
       width: payload.width,
       height: payload.height,
       mime: payload.mime || 'image/png',
       size: payload.size || 0,
       generationTime: payload.generationTime || 0,
-      fields: JSON.parse(JSON.stringify(currentState.dummies[currentState.activeDummyIndex]?.fields || {})),
+      fields: JSON.parse(JSON.stringify(payload.meta?.fieldsSnapshot || currentState.dummies[currentState.activeDummyIndex]?.fields || {})),
     };
     await saveImage(image);
     await addGeneratedImage(image);

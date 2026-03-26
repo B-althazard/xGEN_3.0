@@ -1,4 +1,4 @@
-import { loadJson, loadLocalState, saveLocalState, initDB, getAllImages, pruneImages, getPresets, savePreset, deletePresetById, clearPersistedData } from './storageManager.js';
+import { loadJson, loadLocalState, saveLocalState, initDB, getAllImages, pruneImages, getPresets, savePreset, deletePresetById, clearPersistedData, deleteImageByNonce, deleteImagesByNonce } from './storageManager.js';
 import { buildPrompt } from './promptEngine/index.js';
 
 export const STORAGE_KEYS = {
@@ -52,6 +52,7 @@ const state = {
     currentJobNonce: null,
     generatedImages: [],
     activeImageIndex: -1,
+    activeImageNonce: null,
     errorMessage: null,
     generationStartTime: null,
   },
@@ -132,6 +133,31 @@ function normalizeSettingValue(key, value) {
   return normalizeSettings({ [key]: value })[key];
 }
 
+function clampIndex(index, length) {
+  if (!length) return -1;
+  return Math.max(0, Math.min(index, length - 1));
+}
+
+function syncActiveImageSelection(preferredNonce = state.xgen.activeImageNonce, preferredIndex = state.xgen.activeImageIndex) {
+  const images = state.xgen.generatedImages;
+  if (!images.length) {
+    state.xgen.activeImageIndex = -1;
+    state.xgen.activeImageNonce = null;
+    return;
+  }
+
+  const nonceIndex = preferredNonce ? images.findIndex((image) => image.nonce === preferredNonce) : -1;
+  const nextIndex = nonceIndex >= 0 ? nonceIndex : clampIndex(preferredIndex, images.length);
+  state.xgen.activeImageIndex = nextIndex;
+  state.xgen.activeImageNonce = images[nextIndex]?.nonce || null;
+}
+
+function fieldsEqual(left, right) {
+  if (left === right) return true;
+  if (!left || !right) return false;
+  return JSON.stringify(left) === JSON.stringify(right);
+}
+
 export function persist() {
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
@@ -192,7 +218,7 @@ export async function initializeStore() {
   state.rules = rules;
   state.defaultDummies = dummyData.dummies || [];
   state.xgen.generatedImages = images;
-  state.xgen.activeImageIndex = images.length ? 0 : -1;
+  syncActiveImageSelection(images[0]?.nonce || null, 0);
   state.savedPresets = presets;
   state.app.ageConfirmed = localStorage.getItem(STORAGE_KEYS.AGE_CONFIRMED) === 'true';
   state.app.onboardingComplete = localStorage.getItem(STORAGE_KEYS.ONBOARDING) === 'true';
@@ -227,16 +253,19 @@ export function getState() {
 }
 
 export function setPage(page) {
+  if (state.app.currentPage === page) return;
   state.app.currentPage = page;
   notify();
 }
 
 export function setCurrentCategory(categoryId) {
+  if (state.app.currentCategory === categoryId) return;
   state.app.currentCategory = categoryId;
   notify();
 }
 
 export function updateTheme(theme) {
+  if (state.settings.theme === theme) return;
   state.settings.theme = theme;
   document.documentElement.dataset.theme = theme;
   notify();
@@ -456,7 +485,13 @@ export function replaceWithFreshDummy() {
 }
 
 export function setActiveImageIndex(index) {
-  state.xgen.activeImageIndex = index;
+  syncActiveImageSelection(null, index);
+  notify();
+}
+
+export function setActiveImageNonce(nonce) {
+  if (nonce && nonce === state.xgen.activeImageNonce) return;
+  syncActiveImageSelection(nonce, state.xgen.activeImageIndex);
   notify();
 }
 
@@ -556,24 +591,49 @@ export async function deletePreset(id) {
 }
 
 export async function addGeneratedImage(image) {
+  state.xgen.generatedImages = state.xgen.generatedImages.filter((item) => item.nonce !== image.nonce);
   state.xgen.generatedImages.unshift(image);
   state.xgen.generatedImages = await pruneImages(state.xgen.generatedImages);
-  state.xgen.activeImageIndex = 0;
+  syncActiveImageSelection(image.nonce, 0);
   notify();
 }
 
 export function setBridgeDetected(value) {
+  if (state.app.bridgeDetected === value) return;
   state.app.bridgeDetected = value;
   notify();
 }
 
 export function setJobState(partial) {
+  const nextJobState = { ...state.xgen, ...partial };
+  if (fieldsEqual(state.xgen, nextJobState)) return;
   state.xgen = { ...state.xgen, ...partial };
   notify();
 }
 
 export function setOnlineStatus(value) {
+  if (state.app.isOnline === value) return;
   state.app.isOnline = value;
+  notify();
+}
+
+export async function removeGeneratedImage(nonce) {
+  if (!nonce) return;
+  await deleteImageByNonce(nonce);
+  const currentIndex = state.xgen.activeImageIndex;
+  state.xgen.generatedImages = state.xgen.generatedImages.filter((image) => image.nonce !== nonce);
+  syncActiveImageSelection(state.xgen.activeImageNonce, currentIndex);
+  notify();
+}
+
+export async function removeGeneratedImages(nonces) {
+  const toRemove = [...new Set((nonces || []).filter(Boolean))];
+  if (!toRemove.length) return;
+
+  await deleteImagesByNonce(toRemove);
+  const currentIndex = state.xgen.activeImageIndex;
+  state.xgen.generatedImages = state.xgen.generatedImages.filter((image) => !toRemove.includes(image.nonce));
+  syncActiveImageSelection(state.xgen.activeImageNonce, currentIndex);
   notify();
 }
 

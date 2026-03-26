@@ -28,6 +28,7 @@ const PRECACHE = [
   './js/pages/creationKit.js',
   './js/pages/xgen.js',
   './js/pages/gallery.js',
+  './js/pages/galleryGrouping.js',
   // Components
   './js/components/formRenderer.js',
   './js/components/bridgeInstall.js',

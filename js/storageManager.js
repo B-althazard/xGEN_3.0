@@ -73,6 +73,29 @@ export async function saveImage(image) {
   });
 }
 
+export async function deleteImageByNonce(nonce) {
+  const db = await initDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction('images', 'readwrite');
+    tx.objectStore('images').delete(nonce);
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
+export async function deleteImagesByNonce(nonces) {
+  const uniqueNonces = [...new Set((nonces || []).filter(Boolean))];
+  if (!uniqueNonces.length) return;
+  const db = await initDB();
+  await new Promise((resolve, reject) => {
+    const tx = db.transaction('images', 'readwrite');
+    const store = tx.objectStore('images');
+    for (const nonce of uniqueNonces) store.delete(nonce);
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
 export async function getAllImages() {
   const db = await initDB();
   return new Promise((resolve, reject) => {

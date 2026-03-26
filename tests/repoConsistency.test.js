@@ -40,6 +40,7 @@ test('service worker precache includes critical app shell assets', async () => {
 
   for (const requiredPath of [
     './js/pages/gallery.js',
+    './js/pages/galleryGrouping.js',
     './js/utils/dom.js',
     './userscript/xgen-venice-bridge.user.js',
     './assets/icons/apple-touch-icon.png',
@@ -77,4 +78,28 @@ test('xBatcher UI no longer exposes unsupported mode selector', async () => {
   const source = await readRepoFile('js/pages/xgen.js');
   assert.equal(source.includes('data-batch-mode'), false);
   assert.match(source, /New-chat mode remains deferred/);
+});
+
+test('userscript heartbeat does not dispatch bridge-ready every interval', async () => {
+  const source = await readRepoFile('userscript/xgen-venice-bridge.user.js');
+  const heartbeatStart = source.indexOf('function startHeartbeat()');
+  const heartbeatEnd = source.indexOf('function setNativeValue', heartbeatStart);
+  const heartbeatBlock = source.slice(heartbeatStart, heartbeatEnd);
+
+  assert.ok(heartbeatBlock.includes('GM_setValue(ownHeartbeatKey(), Date.now())'));
+  assert.equal(heartbeatBlock.includes("dispatchPageEvent('xgen:bridge-ready'"), false);
+});
+
+test('xGEN metrics omit model ratio and cost cards', async () => {
+  const source = await readRepoFile('js/pages/xgen.js');
+  const metricsStart = source.indexOf('function renderMetrics(state)');
+  const metricsEnd = source.indexOf('function renderActionGrid()', metricsStart);
+  const metricsBlock = source.slice(metricsStart, metricsEnd);
+
+  assert.match(metricsBlock, /Words/);
+  assert.match(metricsBlock, /Tokens/);
+  assert.match(metricsBlock, /Items/);
+  assert.equal(metricsBlock.includes('Model'), false);
+  assert.equal(metricsBlock.includes('Ratio'), false);
+  assert.equal(metricsBlock.includes('Cost'), false);
 });
