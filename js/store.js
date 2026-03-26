@@ -1,4 +1,4 @@
-import { loadJson, loadLocalState, saveLocalState, initDB, getAllImages, pruneImages, getPresets, savePreset, deletePresetById } from './storageManager.js';
+import { loadJson, loadLocalState, saveLocalState, initDB, getAllImages, pruneImages, getPresets, savePreset, deletePresetById, clearPersistedData } from './storageManager.js';
 import { buildPrompt } from './promptEngine/index.js';
 
 export const STORAGE_KEYS = {
@@ -8,7 +8,6 @@ export const STORAGE_KEYS = {
   XGEN_HISTORY: 'xgen.xgenHistory',
   ONBOARDING: 'xgen.onboarded',
   AGE_CONFIRMED: 'xgen.ageConfirmed',
-  BRIDGE_SEEN: 'xgen.bridgeSeen',
   BATCH: 'xgen.batch',
 };
 
@@ -69,10 +68,8 @@ const state = {
   batch: {
     promptList: [],
     repeatCount: 1,
-    mode: 'iteration',
     delay: 3,
     running: false,
-    currentIndex: 0,
     history: [],
   },
   _undoStack: [],
@@ -91,6 +88,48 @@ function snapshotUndo() {
   }));
   if (state._undoStack.length > 20) state._undoStack.shift();
   state._redoStack = [];
+}
+
+function normalizeSettings(settings = {}) {
+  return {
+    ...state.settings,
+    ...settings,
+    theme: settings.theme === 'light' ? 'light' : 'dark',
+    addonEnabled: settings.addonEnabled === true || settings.addonEnabled === 'true',
+    realismMode: ['auto', 'studio', 'social', 'editorial'].includes(settings.realismMode) ? settings.realismMode : (settings.realismMode ?? state.settings.realismMode),
+    negativeMode: 'none',
+    defaultAspectRatio: ['2:3', '1:1', '3:2'].includes(settings.defaultAspectRatio) ? settings.defaultAspectRatio : (settings.defaultAspectRatio ?? state.settings.defaultAspectRatio),
+    selectedModel: settings.selectedModel || state.settings.selectedModel,
+    promptOrder: ['subject-first', 'style-first'].includes(settings.promptOrder) ? settings.promptOrder : (settings.promptOrder ?? state.settings.promptOrder),
+    aesthetic: typeof settings.aesthetic === 'number' && settings.aesthetic >= 0 && settings.aesthetic <= 11
+      ? settings.aesthetic
+      : settings.aesthetic == null
+        ? null
+        : state.settings.aesthetic,
+  };
+}
+
+function normalizeBatch(batch = {}) {
+  return {
+    ...state.batch,
+    ...batch,
+    repeatCount: Math.max(1, Number.parseInt(batch.repeatCount ?? state.batch.repeatCount, 10) || 1),
+    delay: Math.max(1, Number.parseInt(batch.delay ?? state.batch.delay, 10) || 1),
+    running: false,
+    promptList: Array.isArray(batch.promptList) ? batch.promptList : state.batch.promptList,
+    history: Array.isArray(batch.history) ? batch.history : state.batch.history,
+  };
+}
+
+function normalizeSettingValue(key, value) {
+  if (key === 'addonEnabled') return value === true || value === 'true';
+  if (key === 'negativeMode') return 'none';
+  if (key === 'aesthetic') {
+    if (value == null) return null;
+    const next = Number.parseInt(value, 10);
+    return Number.isFinite(next) ? Math.max(0, Math.min(11, next)) : state.settings.aesthetic;
+  }
+  return normalizeSettings({ [key]: value })[key];
 }
 
 export function persist() {
@@ -161,13 +200,13 @@ export async function initializeStore() {
   // Load batch state
   const savedBatch = loadLocalState(STORAGE_KEYS.BATCH);
   if (savedBatch) {
-    state.batch = { ...state.batch, ...savedBatch, running: false };
+    state.batch = normalizeBatch(savedBatch);
   }
 
   if (savedState) {
     state.dummies = savedState.dummies?.length ? savedState.dummies : [defaultDummy()];
     state.multiDummyInteraction = { ...state.multiDummyInteraction, ...savedState.multiDummyInteraction };
-    state.settings = { ...state.settings, ...savedState.settings };
+    state.settings = normalizeSettings(savedState.settings);
     state.activeDummyIndex = savedState.activeDummyIndex || 0;
     state.characterType = savedState.characterType || 'female';
     state.emphasis = savedState.emphasis || {};
@@ -204,12 +243,12 @@ export function updateTheme(theme) {
 }
 
 export function updateSetting(key, value) {
-  state.settings[key] = value;
+  state.settings[key] = normalizeSettingValue(key, value);
   notify();
 }
 
 export function setSettingSilent(key, value) {
-  state.settings[key] = value;
+  state.settings[key] = normalizeSettingValue(key, value);
   recomputePrompt();
   persist();
 }
@@ -584,14 +623,17 @@ export function persistBatch() {
   saveLocalState(STORAGE_KEYS.BATCH, {
     promptList: state.batch.promptList,
     repeatCount: state.batch.repeatCount,
-    mode: state.batch.mode,
     delay: state.batch.delay,
     history: state.batch.history.slice(0, 200),
   });
 }
 
 export function updateBatchSetting(key, value) {
-  state.batch[key] = value;
+  if (key === 'repeatCount' || key === 'delay') {
+    state.batch[key] = Math.max(1, Number.parseInt(value, 10) || 1);
+  } else {
+    state.batch[key] = value;
+  }
   persistBatch();
   notify();
 }
@@ -632,9 +674,10 @@ export function setBatchRunning(running) {
   notify();
 }
 
-export function updatePromptInList(id, updates) {
-  const prompt = state.batch.promptList.find(p => p.id === id);
-  if (prompt) Object.assign(prompt, updates);
-  persistBatch();
-  notify();
+export async function resetLocalData() {
+  localStorage.removeItem(STORAGE_KEYS.ACTIVE_STATE);
+  localStorage.removeItem(STORAGE_KEYS.BATCH);
+  localStorage.removeItem(STORAGE_KEYS.AGE_CONFIRMED);
+  localStorage.removeItem(STORAGE_KEYS.ONBOARDING);
+  await clearPersistedData();
 }

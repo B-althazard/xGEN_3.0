@@ -1,5 +1,6 @@
 import { getState, setActiveImageIndex } from '../store.js';
 import { icon } from '../icons.js';
+import { escapeHtml, truncateText } from '../utils/dom.js';
 
 export function renderGallery(container) {
   const state = getState();
@@ -25,12 +26,12 @@ export function renderGallery(container) {
       <div class="gallery-grid">
         ${images.map((img, index) => {
           const time = new Date(img.ts).toLocaleString();
-          const prompt = (img.prompt || '').length > 80 ? img.prompt.substring(0, 80) + '...' : (img.prompt || '');
+          const prompt = escapeHtml(truncateText(img.prompt || '', 80));
           return `
             <button class="gallery-card" data-gallery-index="${index}">
               <img src="${img.dataUrl}" alt="Generated image" loading="lazy">
               <div class="gallery-card__info">
-                <div class="gallery-card__time">${time}</div>
+                <div class="gallery-card__time">${escapeHtml(time)}</div>
                 <div class="gallery-card__prompt">${prompt}</div>
               </div>
             </button>

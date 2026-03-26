@@ -12,7 +12,6 @@
           "label": "Face Shape",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/face_shapes.png",
           "options": [
             { "id": "oval", "label": "Oval", "promptValue": "oval face" },
             { "id": "round", "label": "Round", "promptValue": "round face" },
@@ -28,7 +27,6 @@
           "label": "Eyes Shape",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/eye_shapes.png",
           "options": [
             { "id": "almond", "label": "Almond", "promptValue": "almond shaped eyes" },
             { "id": "round", "label": "Round", "promptValue": "round eyes" },
@@ -64,7 +62,6 @@
           "label": "Eyebrows",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/eyebrow_shapes.png",
           "options": [
             { "id": "thin", "label": "Thin", "promptValue": "thin eyebrows" },
             { "id": "arched", "label": "Arched", "promptValue": "arched eyebrows" },
@@ -79,7 +76,6 @@
           "label": "Nose Shape",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/nose_shapes.png",
           "options": [
             { "id": "straight", "label": "Straight", "promptValue": "straight Greek nose" },
             { "id": "aquiline", "label": "Aquiline", "promptValue": "aquiline Roman nose, slight convex bridge" },
@@ -138,7 +134,6 @@
           "label": "Lips Shape",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/lip_shapes.png",
           "options": [
             { "id": "thin", "label": "Thin", "promptValue": "thin lips" },
             { "id": "full", "label": "Full", "promptValue": "full lips" },

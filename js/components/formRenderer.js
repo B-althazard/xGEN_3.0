@@ -1,9 +1,10 @@
 import { renderAccordion, bindAccordions } from './accordion.js';
 import { renderSwatch } from './colorSwatch.js';
 import { renderImageCard } from './imageCard.js';
-import { getState, updateFieldSilent, updateMultiDummyFieldSilent, toggleLockField, persist, recomputePrompt, getConflictingOptions } from '../store.js';
+import { getState, updateFieldSilent, updateMultiDummyFieldSilent, toggleLockField, setEmphasis, getConflictingOptions } from '../store.js';
 import { showModal } from './modal.js';
 import { getCreationKitCategories, normalizeCategoryId } from '../constants/categories.js';
+import { bindLongPress, escapeHtml } from '../utils/dom.js';
 
 const openAccordions = new Set();
 
@@ -29,7 +30,8 @@ function ensureArray(value) {
   return [value];
 }
 
-function detailModal(field, option) {
+function detailModal(option) {
+  if (!option) return;
   const state = getState();
   const promptValue = option.promptValue || '';
   const currentLevel = state.emphasis[promptValue] || 'medium';
@@ -39,8 +41,8 @@ function detailModal(field, option) {
   ).join('');
   const { modal } = showModal(`
     <div class="section__label">Option Detail</div>
-    <h2>${option.label}</h2>
-    <p>Prompt token: <code>${promptValue || '(empty)'}</code></p>
+    <h2>${escapeHtml(option.label)}</h2>
+    <p>Prompt token: <code>${escapeHtml(promptValue || '(empty)')}</code></p>
     <div class="toolbar" style="margin-top:var(--sp-4);">
       ${emphasisButtons}
     </div>
@@ -51,8 +53,7 @@ function detailModal(field, option) {
   modal.querySelectorAll('[data-emphasis]').forEach((button) => {
     button.onclick = () => {
       if (!promptValue) return;
-      state.emphasis[promptValue] = button.dataset.emphasis;
-      persist();
+      setEmphasis(promptValue, button.dataset.emphasis);
       modal.querySelectorAll('[data-emphasis]').forEach((btn) => {
         btn.classList.toggle('btn--primary', btn === button);
       });
@@ -76,16 +77,6 @@ function renderField(field, value, disabledOptions) {
   }).join('');
 
   return `<div class="${isSwatch ? 'swatch-grid' : 'option-grid'}" data-field-id="${field.id}" data-multi="${field.type === 'multi-select' || field.multiSelect ? 'true' : 'false'}">${optionsHtml}</div>`;
-}
-
-function bindLongPress(button, callback) {
-  let timer = null;
-  const clear = () => { if (timer) { clearTimeout(timer); timer = null; } };
-  button.addEventListener('pointerdown', () => { clear(); timer = setTimeout(() => callback(), 450); });
-  button.addEventListener('pointerup', clear);
-  button.addEventListener('pointerleave', clear);
-  button.addEventListener('pointercancel', clear);
-  button.addEventListener('contextmenu', (event) => { event.preventDefault(); callback(); });
 }
 
 export function renderForm(container) {
@@ -157,33 +148,11 @@ export function renderForm(container) {
         }
 
         renderForm(container);
-
-        const wordEl = document.querySelector('.word-bar__fill');
-        const wordText = document.querySelector('.word-stats');
-        if (wordEl && state.promptResult?.diagnostics) {
-          const words = state.promptResult.diagnostics.wordCount || 0;
-          const pct = Math.min(100, Math.round((words / 256) * 100));
-          const color = words <= 160 ? 'var(--state-success)' : words <= 256 ? 'var(--state-warning)' : 'var(--state-error)';
-          wordEl.style.width = pct + '%';
-          wordEl.style.background = color;
-          const activeCount = Object.values(state.dummies[state.activeDummyIndex].fields).filter((v) => v != null && v !== '' && !(Array.isArray(v) && v.length === 0)).length;
-          const totalFields = state.schema.categories.reduce((sum, cat) => sum + cat.fields.length, 0);
-          const strength = Math.round((activeCount / Math.max(totalFields, 1)) * 100);
-          if (wordText) wordText.innerHTML = `<span><strong>${words}</strong> words</span><span>${activeCount}/${totalFields} fields · ${strength}%</span>`;
-        }
-
-        document.querySelectorAll('.prompt-text').forEach((el) => {
-          if (el.classList.contains('prompt-text--negative')) {
-            el.textContent = state.promptResult?.negativePrompt || '(empty)';
-          } else {
-            el.textContent = state.promptResult?.positivePrompt || '';
-          }
-        });
       };
 
       bindLongPress(button, () => {
         const option = (field.options || field.colors || []).find((item) => item.id === optionId);
-        detailModal(field, option);
+        detailModal(option);
       });
     });
   });

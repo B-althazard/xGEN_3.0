@@ -3,10 +3,10 @@ import { renderCharacterTypeToggle } from '../components/characterTypeToggle.js'
 import { renderWordCounter } from '../components/wordCounter.js';
 import { renderDummyTabs } from '../components/dummyTabs.js';
 import { renderForm } from '../components/formRenderer.js';
-import { renderPrompter } from '../modules/prompter.js';
 import { showModal } from '../components/modal.js';
 import { getCreationKitCategories, normalizeCategoryId, getCategoryWindow } from '../constants/categories.js';
 import { icon } from '../icons.js';
+import { bindLongPress, escapeHtml } from '../utils/dom.js';
 
 let isPromptExpanded = false;
 let lastWarnBucket = 'safe';
@@ -16,7 +16,7 @@ function openDummyTabMenu(index) {
   const dummy = state.dummies[index];
   const { modal } = showModal(`
     <div class="section__label">Dummy Actions</div>
-    <h2>${dummy.name}</h2>
+    <h2>${escapeHtml(dummy.name)}</h2>
     <div class="btn-row btn-row--stack">
       <button class="btn" data-rename-dummy>Rename</button>
       <button class="btn" data-duplicate-dummy ${state.dummies.length >= 3 ? 'disabled' : ''}>Duplicate</button>
@@ -30,16 +30,6 @@ function openDummyTabMenu(index) {
   };
   modal.querySelector('[data-duplicate-dummy]').onclick = () => duplicateDummy(index);
   modal.querySelector('[data-remove-dummy]').onclick = () => removeDummy(index);
-}
-
-function bindLongPress(button, callback) {
-  let timer = null;
-  const clear = () => { if (timer) { clearTimeout(timer); timer = null; } };
-  button.addEventListener('pointerdown', () => { clear(); timer = setTimeout(callback, 450); });
-  button.addEventListener('pointerup', clear);
-  button.addEventListener('pointerleave', clear);
-  button.addEventListener('pointercancel', clear);
-  button.addEventListener('contextmenu', (event) => { event.preventDefault(); callback(); });
 }
 
 function bindGlobalSwipe() {
@@ -110,6 +100,10 @@ export function renderCreationKit(container) {
   const totalFields = state.schema.categories.filter((c) => c.id !== 'quality' && c.id !== 'multi_dummy').reduce((sum, c) => sum + c.fields.length, 0);
   const activeFields = Object.values(state.dummies[state.activeDummyIndex].fields || {}).filter((value) => Array.isArray(value) ? value.length : value != null && value !== '').length;
   const { categories, index, current } = getCategoryWindow(state.app.currentCategory, state);
+  const activeDummy = state.dummies[state.activeDummyIndex];
+  const escapedDummyName = escapeHtml(activeDummy.name);
+  const positivePrompt = escapeHtml(state.promptResult?.positivePrompt || '');
+  const negativePrompt = escapeHtml(state.promptResult?.negativePrompt || '(empty)');
   maybeWarnPromptLength(state.promptResult?.diagnostics?.wordCount || 0);
 
   container.innerHTML = `
@@ -148,9 +142,9 @@ export function renderCreationKit(container) {
           <div class="panel" style="margin-bottom:var(--sp-4);">
             <div class="section__label">Reference</div>
             <div style="display:flex;align-items:center;gap:var(--sp-3);margin-top:var(--sp-2);">
-              <div style="width:48px;height:48px;border-radius:var(--r-lg);background:var(--bg-raised);display:grid;place-items:center;font-size:14px;font-weight:700;color:var(--text-tertiary);">${state.dummies[state.activeDummyIndex].name.slice(0, 2).toUpperCase()}</div>
+              <div style="width:48px;height:48px;border-radius:var(--r-lg);background:var(--bg-raised);display:grid;place-items:center;font-size:14px;font-weight:700;color:var(--text-tertiary);">${escapeHtml(activeDummy.name.slice(0, 2).toUpperCase())}</div>
               <div>
-                <div style="font-weight:600;font-size:13px;">${state.dummies[state.activeDummyIndex].name}</div>
+                <div style="font-weight:600;font-size:13px;">${escapedDummyName}</div>
                 <div class="muted" style="font-size:11px;">${activeFields} fields active</div>
               </div>
             </div>
@@ -163,11 +157,11 @@ export function renderCreationKit(container) {
               <span class="accordion__trigger-icon">${icon('chevDown')}</span>
             </button>
             ${isPromptExpanded ? `
-              <div class="prompt-text" style="margin-bottom:var(--sp-3);">${state.promptResult?.positivePrompt || ''}</div>
+              <div class="prompt-text" style="margin-bottom:var(--sp-3);">${positivePrompt}</div>
               <div class="prompt-panel__label" style="margin-bottom:var(--sp-1);">Negative</div>
-              <div class="prompt-text prompt-text--negative">${state.promptResult?.negativePrompt || '(empty)'}</div>
+              <div class="prompt-text prompt-text--negative">${negativePrompt}</div>
             ` : `
-              <div class="prompt-text prompt-text--peek">${state.promptResult?.positivePrompt || ''}</div>
+              <div class="prompt-text prompt-text--peek">${positivePrompt}</div>
             `}
           </div>
 

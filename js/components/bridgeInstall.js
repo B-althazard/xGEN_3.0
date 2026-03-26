@@ -1,6 +1,5 @@
-import { getState, updateSetting } from '../store.js';
+import { getState, updateSetting, resetLocalData } from '../store.js';
 import { showModal } from './modal.js';
-import { icon } from '../icons.js';
 
 export function showBridgeInstall() {
   showModal(`
@@ -51,15 +50,7 @@ export function openSettings() {
         </div>
         <div class="settings-field">
           <label>Negative Prompt</label>
-          <select data-setting="negativeMode"><option value="none">None</option><option value="minimal">Minimal</option><option value="repair">Repair</option></select>
-        </div>
-      </div>
-
-      <div class="settings-group">
-        <div class="settings-group__title">Form Data</div>
-        <div class="settings-field">
-          <label>Addon File</label>
-          <select data-setting="addonEnabled"><option value="true">On</option><option value="false" selected>Off</option></select>
+          <div class="muted" style="font-size:12px;">Disabled for the current model profile.</div>
         </div>
       </div>
 
@@ -85,4 +76,8 @@ export function openSettings() {
     select.onchange = () => updateSetting(select.dataset.setting, select.value);
   });
   modal.querySelector('[data-open-bridge]').onclick = showBridgeInstall;
+  modal.querySelector('[data-reset-all]').onclick = async () => {
+    await resetLocalData();
+    window.location.reload();
+  };
 }

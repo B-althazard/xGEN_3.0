@@ -26,7 +26,6 @@
           "label": "Ethnicity",
           "type": "shape-modal",
           "required": true,
-          "modalImage": "assets/modals/ethnicity.png",
           "options": [
             { "id": "caucasian", "label": "Caucasian", "promptValue": "caucasian woman" },
             { "id": "latina", "label": "Latina", "promptValue": "latina woman" },

@@ -12,7 +12,6 @@
           "label": "Cup Size",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/cup_sizes.png",
           "options": [
             { "id": "flat", "label": "Flat", "promptValue": "flat chest" },
             { "id": "small", "label": "Small (A-B)", "promptValue": "small breasts" },
@@ -27,7 +26,6 @@
           "label": "Shape",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/bust_shapes.png",
           "options": [
             { "id": "perky", "label": "Perky", "promptValue": "perky breasts" },
             { "id": "round", "label": "Round", "promptValue": "round breasts" },

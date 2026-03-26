@@ -1,9 +1,20 @@
-const CACHE_NAME = 'xgen-v5-cache';
+const CACHE_NAME = 'xgen-v6-cache';
 const PRECACHE = [
   './',
   './index.html',
   './css/style.css',
   './manifest.json',
+  './userscript/xgen-venice-bridge.user.js',
+  './assets/icons/apple-touch-icon.png',
+  './assets/icons/icon-48.png',
+  './assets/icons/icon-72.png',
+  './assets/icons/icon-96.png',
+  './assets/icons/icon-128.png',
+  './assets/icons/icon-144.png',
+  './assets/icons/icon-192.png',
+  './assets/icons/icon-512.png',
+  './assets/icons/maskable-192.png',
+  './assets/icons/maskable-512.png',
   // Core
   './js/app.js',
   './js/store.js',
@@ -11,10 +22,12 @@ const PRECACHE = [
   './js/bridgeManager.js',
   './js/icons.js',
   './js/constants/categories.js',
+  './js/utils/dom.js',
   // Pages
   './js/pages/home.js',
   './js/pages/creationKit.js',
   './js/pages/xgen.js',
+  './js/pages/gallery.js',
   // Components
   './js/components/formRenderer.js',
   './js/components/bridgeInstall.js',
@@ -32,7 +45,6 @@ const PRECACHE = [
   // Modules
   './js/modules/presets.js',
   './js/modules/terminal.js',
-  './js/modules/prompter.js',
   // Prompt Engine
   './js/promptEngine/index.js',
   './js/promptEngine/extract.js',
@@ -80,8 +92,11 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   event.respondWith(
     caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+      const requestUrl = new URL(event.request.url);
+      if (response.ok && requestUrl.origin === self.location.origin) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+      }
       return response;
     }).catch(() => cached))
   );

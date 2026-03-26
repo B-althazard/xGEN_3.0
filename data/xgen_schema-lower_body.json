@@ -38,7 +38,6 @@
           "label": "Ass",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/ass_shapes.png",
           "options": [
             { "id": "flat", "label": "Flat", "promptValue": "flat ass" },
             { "id": "small", "label": "Small", "promptValue": "small ass" },

@@ -1,5 +1,6 @@
 import { getState, loadDummyFields, saveCurrentPreset, savePresetPayload, deletePreset, replaceWithFreshDummy } from '../store.js';
 import { showModal } from '../components/modal.js';
+import { escapeHtml } from '../utils/dom.js';
 
 function initials(name) {
   return name.split(' ').map((part) => part[0]).join('').slice(0, 2).toUpperCase();
@@ -8,7 +9,7 @@ function initials(name) {
 function openSavedPresetMenu(preset) {
   const { modal } = showModal(`
     <div class="section__label">Saved Preset</div>
-    <h2>${preset.name}</h2>
+    <h2>${escapeHtml(preset.name)}</h2>
     <div class="btn-row btn-row--stack">
       <button class="btn" data-menu-use>Use</button>
       <button class="btn" data-menu-edit>Edit</button>
@@ -36,11 +37,11 @@ export function renderPresetCard(preset) {
   return `
     <article class="preset-card" data-preset-id="${preset.id}">
       ${locked}
-      <div class="preset-card__media">${initials(preset.name)}</div>
+      <div class="preset-card__media">${escapeHtml(initials(preset.name))}</div>
       <div class="preset-card__body">
         <div>
-          <div class="preset-card__name">${preset.name}</div>
-          <div class="preset-card__desc">${preset.description || preset.type || 'Preset'}</div>
+          <div class="preset-card__name">${escapeHtml(preset.name)}</div>
+          <div class="preset-card__desc">${escapeHtml(preset.description || preset.type || 'Preset')}</div>
         </div>
       </div>
     </article>
@@ -50,7 +51,7 @@ export function renderPresetCard(preset) {
 function openSaveAsModal(preset) {
   const { modal } = showModal(`
     <div class="section__label">Save As</div>
-    <h2>${preset.name}</h2>
+    <h2>${escapeHtml(preset.name)}</h2>
     <p>Save this preset as a Doll or Mannequin.</p>
     <div class="btn-row btn-row--stack">
       <button class="btn" data-save-preset-type="doll">Save as Doll</button>

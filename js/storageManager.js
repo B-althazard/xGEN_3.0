@@ -48,14 +48,18 @@ export function initDB() {
   return dbPromise;
 }
 
-async function withStore(name, mode, handler) {
-  const db = await initDB();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(name, mode);
-    const store = tx.objectStore(name);
-    const result = handler(store, tx);
-    tx.oncomplete = () => resolve(result);
-    tx.onerror = () => reject(tx.error);
+export async function clearPersistedData() {
+  if (dbPromise) {
+    const db = await dbPromise.catch(() => null);
+    if (db) db.close();
+    dbPromise = null;
+  }
+
+  await new Promise((resolve, reject) => {
+    const request = indexedDB.deleteDatabase(DB_NAME);
+    request.onsuccess = () => resolve();
+    request.onerror = () => reject(request.error);
+    request.onblocked = () => reject(new Error('Database deletion blocked'));
   });
 }
 

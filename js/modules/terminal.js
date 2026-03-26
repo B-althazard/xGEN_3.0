@@ -1,5 +1,6 @@
-import { getState, resetActiveDummy, updateField, updateFieldSilent, recomputePrompt, persist, loadDummyFields } from '../store.js';
+import { getState, resetActiveDummy, updateField, updateFieldSilent, loadDummyFields } from '../store.js';
 import { showModal } from '../components/modal.js';
+import { escapeHtml } from '../utils/dom.js';
 
 function randomChoice(list) {
   return list[Math.floor(Math.random() * list.length)];
@@ -51,8 +52,8 @@ function openPresetBrowser() {
   const state = getState();
   const cards = [...state.defaultDummies, ...(state.savedPresets || [])].map((preset) => `
     <button class="select-card" data-browser-preset="${preset.id}">
-      <div class="select-card__media">${preset.name.slice(0, 2).toUpperCase()}</div>
-      <div class="select-card__footer">${preset.name}</div>
+      <div class="select-card__media">${escapeHtml(preset.name.slice(0, 2).toUpperCase())}</div>
+      <div class="select-card__footer">${escapeHtml(preset.name)}</div>
     </button>
   `).join('');
   const { modal } = showModal(`

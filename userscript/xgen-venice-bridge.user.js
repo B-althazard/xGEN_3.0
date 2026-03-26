@@ -16,7 +16,7 @@
 (function () {
   'use strict';
 
-  const XGEN_URL_RE = /^https:\/\/b-althazard\.github\.io\/xgen\//i;
+  const XGEN_URL_RE = /^https:\/\/b-althazard\.github\.io\/(?:xgen(?:_3\.0)?)\//i;
   const VENICE_HOST = 'venice.ai';
 
   const KEYS = {

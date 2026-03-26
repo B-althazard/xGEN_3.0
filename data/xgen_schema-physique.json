@@ -12,7 +12,6 @@
           "label": "Body Type",
           "type": "shape-modal",
           "required": false,
-          "modalImage": "assets/modals/body_types.png",
           "options": [
             { "id": "skinny", "label": "Skinny", "promptValue": "skinny" },
             { "id": "slim", "label": "Slim", "promptValue": "slim" },
