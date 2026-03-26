@@ -61,3 +61,5 @@ _Supporting files in this action's folder. Delete this section if none._
 
 ## Amendments
 _Append timestamped amendments below if this manifest is updated mid-task. Do not edit above sections after initial write._
+
+- 2026-03-26 18:40:00 UTC — Follow-up stabilization pass fixed false xGEN bridge-disconnected UI by using remote status plus heartbeat freshness, widened Venice selector matching, added commit-count top-bar versioning, moved/minified the bridge pill, switched Creation Kit accordions to single-open, added random dummy names from `data/dummyNames.md`, and generated natural-language long-press explanations for all non-color options.

@@ -9,6 +9,13 @@ export function loadJson(path) {
   });
 }
 
+export function loadText(path) {
+  return fetch(path).then((response) => {
+    if (!response.ok) throw new Error(`Failed to load ${path}`);
+    return response.text();
+  });
+}
+
 export function saveLocalState(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }

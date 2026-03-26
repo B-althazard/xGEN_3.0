@@ -158,11 +158,18 @@ img { display: block; max-width: 100%; }
 .top-bar__brand {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.01em;
   user-select: none;
+}
+.top-bar__version {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
 }
 .top-bar__brand-x { color: var(--text-primary); }
 .top-bar__brand-gen { color: var(--text-accent); }
@@ -278,6 +285,7 @@ img { display: block; max-width: 100%; }
   color: var(--text-accent);
   margin-bottom: var(--sp-1);
 }
+.section__label--center { text-align: center; }
 
 /* ── Panels / Cards (minimal, no border) ── */
 .panel {
@@ -1086,17 +1094,17 @@ img { display: block; max-width: 100%; }
 
   .bottom-nav {
     inset: auto auto 16px 16px;
-    width: 56px;
+    width: 72px;
     height: auto;
     flex-direction: column;
-    padding: var(--sp-3);
+    padding: var(--sp-4);
     border-radius: var(--r-xl);
     border: 1px solid var(--border-subtle);
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   }
   .bottom-nav__item {
     width: 100%;
-    padding: var(--sp-3);
+    padding: var(--sp-4) var(--sp-3);
     border-radius: var(--r-lg);
   }
 

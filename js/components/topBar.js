@@ -1,6 +1,7 @@
 import { getState, updateTheme } from '../store.js';
 import { openSettings } from './bridgeInstall.js';
 import { icon } from '../icons.js';
+import { APP_VERSION } from '../appConfig.js';
 
 export function renderTopBar() {
   const state = getState();
@@ -11,6 +12,7 @@ export function renderTopBar() {
   topBar.innerHTML = `
     <button class="top-bar__brand icon-btn" data-go-home aria-label="Home" style="width:auto;">
       ${icon('brand')}
+      <span class="top-bar__version">${APP_VERSION}</span>
     </button>
     <div class="top-bar__title">${titles[state.app.currentPage] || 'x.GEN'}</div>
     <div class="top-bar__actions">

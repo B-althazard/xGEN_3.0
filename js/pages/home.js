@@ -24,7 +24,7 @@ export function renderHome(container) {
       `}
 
       <div class="section" style="margin-top:${heroDismissed ? '0' : 'var(--sp-6)'};">
-        <div class="section__label" style="margin-bottom:var(--sp-3);">Defaults</div>
+        <div class="section__label section__label--center" style="margin-bottom:var(--sp-3);">Choose a Slut Dummy</div>
         <div class="grid-3">${defaultCards}</div>
       </div>
 

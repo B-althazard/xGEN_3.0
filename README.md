@@ -22,10 +22,11 @@ Structured prompt-builder PWA for composing image prompts, managing reusable cha
 ## Current constraints
 
 - Bridge generation depends on the userscript plus an open `venice.ai` tab.
-- Bridge heartbeat no longer drives app-wide rerenders; generation progress is tracked by nonce and can resume after tab changes, but Venice DOM changes can still break automation.
+- Bridge heartbeat no longer drives app-wide rerenders; remote Venice status and heartbeat freshness now keep xGEN bridge detection alive without constant refresh.
 - Negative prompts are intentionally disabled for the current model profile.
 - xBatcher runs queued prompts sequentially; new-chat mode is deferred until bridge automation can support it safely.
 - Gallery supports single and batch deletion, and groups new images by subject class plus prompt order. Legacy images without stored order metadata are shown under `Unknown`.
+- Creation Kit uses one-open-at-a-time accordions, random dummy names from `data/dummyNames.md`, and long-press option detail text for non-color options.
 - Root documentation is canonical. Ignored `docs/` and `reports/` directories may contain historical notes, but they are not maintained artifacts.
 
 ## Notes carried forward from ignored docs/reports

@@ -7,6 +7,13 @@ let timerId = null;
 let batchMode = false;
 let batchResolve = null;
 let timeoutHandler = null;
+let bridgeFreshnessTimer = null;
+
+function refreshBridgeDetection() {
+  setBridgeDetected(true);
+  clearTimeout(bridgeFreshnessTimer);
+  bridgeFreshnessTimer = setTimeout(() => setBridgeDetected(false), 5000);
+}
 
 function captureGenerationMeta(state) {
   return {
@@ -103,9 +110,13 @@ function clearLoader() {
 }
 
 export function initializeBridgeManager() {
-  window.addEventListener('xgen:bridge-ready', () => setBridgeDetected(true));
+  window.addEventListener('xgen:bridge-ready', refreshBridgeDetection);
+  window.addEventListener('xgen:bridge-heartbeat', refreshBridgeDetection);
   window.addEventListener('xgen:status-update', (event) => {
     const status = event.detail?.status || 'idle';
+    if (event.detail?.role === 'Venice.Ai' || event.detail?.connected) {
+      refreshBridgeDetection();
+    }
     if (['received from x.GEN', 'filling Venice', 'waiting for submit enable', 'submitting', 'submitted', 'waiting for image', 'extracting image', 'resuming image transfer'].includes(status)) {
       bumpGenerationTimeout(120);
     }

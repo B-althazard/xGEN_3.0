@@ -41,7 +41,11 @@ test('service worker precache includes critical app shell assets', async () => {
   for (const requiredPath of [
     './js/pages/gallery.js',
     './js/pages/galleryGrouping.js',
+    './js/appConfig.js',
     './js/utils/dom.js',
+    './js/utils/dummyNames.js',
+    './js/utils/optionDetails.js',
+    './data/dummyNames.md',
     './userscript/xgen-venice-bridge.user.js',
     './assets/icons/apple-touch-icon.png',
     './assets/icons/icon-192.png',
@@ -90,6 +94,14 @@ test('userscript heartbeat does not dispatch bridge-ready every interval', async
   assert.equal(heartbeatBlock.includes("dispatchPageEvent('xgen:bridge-ready'"), false);
 });
 
+test('bridge freshness is driven by heartbeat events without full ready spam', async () => {
+  const userscript = await readRepoFile('userscript/xgen-venice-bridge.user.js');
+  const bridgeManager = await readRepoFile('js/bridgeManager.js');
+
+  assert.match(userscript, /dispatchPageEvent\('xgen:bridge-heartbeat'/);
+  assert.match(bridgeManager, /window\.addEventListener\('xgen:bridge-heartbeat', refreshBridgeDetection\)/);
+});
+
 test('xGEN metrics omit model ratio and cost cards', async () => {
   const source = await readRepoFile('js/pages/xgen.js');
   const metricsStart = source.indexOf('function renderMetrics(state)');
@@ -102,4 +114,11 @@ test('xGEN metrics omit model ratio and cost cards', async () => {
   assert.equal(metricsBlock.includes('Model'), false);
   assert.equal(metricsBlock.includes('Ratio'), false);
   assert.equal(metricsBlock.includes('Cost'), false);
+});
+
+test('top bar renders a commit-count app version next to the brand', async () => {
+  const source = await readRepoFile('js/components/topBar.js');
+  const versionSource = await readRepoFile('js/appConfig.js');
+  assert.match(source, /top-bar__version/);
+  assert.match(versionSource, /v3\.0\.\d+/);
 });

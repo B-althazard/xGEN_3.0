@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         x.GEN → Venice Bridge
 // @namespace    https://b-althazard.github.io/
-// @version      2.0.3
+// @version      2.0.4
 // @description  Bridges x.GEN to Venice.ai for automated image generation
 // @match        https://b-althazard.github.io/xGEN_3.0/*
 // @match        https://b-althazard.github.io/xgen/*
@@ -40,25 +40,36 @@
     xgenGenerate: '#lab-generate-btn',
     xgenPrompt: '#prompter-positive',
 
-    veniceTextarea: 'textarea[name="prompt-textarea"]',
-    veniceSubmit: 'button[type="submit"][aria-label="Submit chat"]',
-    veniceUserMessage: '[data-testid="user-message"]',
-    veniceImage: '.image-message img'
+    veniceTextarea: [
+      'textarea[name="prompt-textarea"]',
+      'textarea[placeholder*="prompt" i]',
+      'textarea[placeholder*="message" i]',
+      'form textarea',
+      'textarea'
+    ],
+    veniceSubmit: [
+      'button[type="submit"][aria-label="Submit chat"]',
+      'button[type="submit"][aria-label*="send" i]',
+      'button[aria-label*="submit" i]',
+      'button[aria-label*="send" i]',
+      'form button[type="submit"]'
+    ],
+    veniceUserMessage: [
+      '[data-testid="user-message"]',
+      '[data-message-author-role="user"]',
+      '[data-role="user"]'
+    ],
+    veniceImage: [
+      '.image-message img',
+      'img[alt*="generated" i]',
+      'img[src^="blob:"]',
+      'main img'
+    ]
   };
 
   const VERIFIED_SELECTORS = {
-    desktop: {
-      veniceTextarea: 'textarea[name="prompt-textarea"]',
-      veniceSubmit: 'button[type="submit"][aria-label="Submit chat"]',
-      veniceUserMessage: '[data-testid="user-message"]',
-      veniceImage: '.image-message img'
-    },
-    mobile: {
-      veniceTextarea: 'textarea[name="prompt-textarea"]',
-      veniceSubmit: 'button[type="submit"][aria-label="Submit chat"]',
-      veniceUserMessage: '[data-testid="user-message"]',
-      veniceImage: '.image-message img'
-    }
+    desktop: SELECTORS,
+    mobile: SELECTORS
   };
 
   const CONFIG = {
@@ -101,10 +112,28 @@
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  function queryFirst(selectors, root = document) {
+    const list = Array.isArray(selectors) ? selectors : [selectors];
+    for (const selector of list) {
+      const found = root.querySelector(selector);
+      if (found) return found;
+    }
+    return null;
+  }
+
+  function queryAll(selectors, root = document) {
+    const list = Array.isArray(selectors) ? selectors : [selectors];
+    for (const selector of list) {
+      const found = Array.from(root.querySelectorAll(selector));
+      if (found.length) return found;
+    }
+    return [];
+  }
+
   async function waitForElement(selector, timeoutMs = 15000, intervalMs = 150) {
     const start = Date.now();
     while (Date.now() - start < timeoutMs) {
-      const el = document.querySelector(selector);
+      const el = queryFirst(selector);
       if (el) return el;
       await sleep(intervalMs);
     }
@@ -193,17 +222,16 @@
     style.textContent = `
       #${CONFIG.pillId} {
         position: fixed;
-        left: 50%;
-        top: 1vh;
-        transform: translateX(-50%);
+        right: 92px;
+        top: 6px;
         z-index: 2147483647;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        min-width: 106px;
-        height: 40px;
-        padding: 0 16px;
+        gap: 8px;
+        min-width: 50px;
+        height: 36px;
+        padding: 0 10px;
         border-radius: 999px;
         background: rgba(0,0,0,0.92);
         box-shadow: 0 8px 24px rgba(0,0,0,0.35);
@@ -226,16 +254,13 @@
       #${CONFIG.pillId} .rvpb-light.orange.active { background: #ff9f0a; box-shadow: 0 0 10px rgba(255,159,10,0.95); }
       #${CONFIG.pillId} .rvpb-light.green.active { background: #30d158; box-shadow: 0 0 10px rgba(48,209,88,0.95); }
       #${CONFIG.pillId} .rvpb-label {
-        color: rgba(255,255,255,0.92);
-        font: 600 12px/1.2 system-ui, sans-serif;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
+        display: none;
       }
+      body[data-rvpb-host="venice"] #${CONFIG.pillId} { right: 16px; top: 16px; }
       #${CONFIG.panelId} {
         position: fixed;
-        left: 50%;
-        top: calc(1vh + 52px);
-        transform: translateX(-50%);
+        right: 16px;
+        top: 60px;
         z-index: 2147483646;
         width: min(92vw, 560px);
         max-height: 48vh;
@@ -290,9 +315,11 @@
       <div class="rvpb-light red" data-light="red"></div>
       <div class="rvpb-light orange" data-light="orange"></div>
       <div class="rvpb-light green" data-light="green"></div>
-      <div class="rvpb-label">Bridge</div>
     `;
     pill.addEventListener('click', togglePanel);
+    if (document.body) {
+      document.body.setAttribute('data-rvpb-host', isXgen() ? 'xgen' : 'venice');
+    }
     document.documentElement.appendChild(pill);
     return pill;
   }
@@ -430,7 +457,7 @@
   }
 
   function getLatestVeniceImageSrc() {
-    const images = Array.from(document.querySelectorAll(SELECTORS.veniceImage));
+    const images = queryAll(SELECTORS.veniceImage);
     if (!images.length) return '';
     const last = images[images.length - 1];
     return last?.src || '';
@@ -439,7 +466,7 @@
   async function waitForNewVeniceImage(previousSrc) {
     const start = Date.now();
     while (Date.now() - start < CONFIG.imageWaitMs) {
-      const images = Array.from(document.querySelectorAll(SELECTORS.veniceImage));
+      const images = queryAll(SELECTORS.veniceImage);
       const last = images[images.length - 1];
       if (last && last.src && last.src !== previousSrc && last.complete) {
         return last;
@@ -614,6 +641,7 @@
     GM_addValueChangeListener(KEYS.HEARTBEAT_VENICE, (_k, _o, _n, remote) => {
       if (!remote) return;
       updatePill();
+      dispatchPageEvent('xgen:bridge-heartbeat', { source: 'venice-heartbeat' });
     });
 
     GM_addValueChangeListener(KEYS.LAST_TRANSFER_TS, (_k, _o, _n, remote) => {
@@ -661,7 +689,7 @@
     setStatus('waiting for submit enable');
     const start = Date.now();
     while (Date.now() - start < CONFIG.submitWaitMs) {
-      const submitBtn = document.querySelector(SELECTORS.veniceSubmit);
+      const submitBtn = queryFirst(SELECTORS.veniceSubmit);
       if (submitBtn && !submitBtn.disabled) {
         const previousSrc = getLatestVeniceImageSrc();
         setStatus('submitting');
@@ -765,17 +793,17 @@
   }
 
 
-  function verifyVeniceSelectors() {
+  async function verifyVeniceSelectors() {
     if (!isVenice()) return;
     const report = {
-      textarea: !!document.querySelector(SELECTORS.veniceTextarea),
-      submit: !!document.querySelector(SELECTORS.veniceSubmit),
-      userMessage: !!document.querySelector(SELECTORS.veniceUserMessage),
-      image: !!document.querySelector(SELECTORS.veniceImage)
+      textarea: !!(await waitForElement(SELECTORS.veniceTextarea, 4000, 250)),
+      submit: !!(await waitForElement(SELECTORS.veniceSubmit, 4000, 250)),
+      userMessage: !!queryFirst(SELECTORS.veniceUserMessage),
+      image: !!queryFirst(SELECTORS.veniceImage)
     };
     log('selector_verification', report);
-    const missing = Object.entries(report).filter(([, ok]) => !ok).map(([k]) => k);
-    if (missing.length) setStatus('selector check failed', missing.join(', '));
+    const missingRequired = ['textarea', 'submit'].filter((key) => !report[key]);
+    if (missingRequired.length) setStatus('selector check failed', missingRequired.join(', '));
   }
 
   function initVenice() {

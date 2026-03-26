@@ -21,8 +21,12 @@ const PRECACHE = [
   './js/storageManager.js',
   './js/bridgeManager.js',
   './js/icons.js',
+  './js/appConfig.js',
   './js/constants/categories.js',
   './js/utils/dom.js',
+  './js/utils/dummyNames.js',
+  './js/utils/optionDetails.js',
+  './data/dummyNames.md',
   // Pages
   './js/pages/home.js',
   './js/pages/creationKit.js',

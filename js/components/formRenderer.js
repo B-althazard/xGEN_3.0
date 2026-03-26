@@ -5,6 +5,7 @@ import { getState, updateFieldSilent, updateMultiDummyFieldSilent, toggleLockFie
 import { showModal } from './modal.js';
 import { getCreationKitCategories, normalizeCategoryId } from '../constants/categories.js';
 import { bindLongPress, escapeHtml } from '../utils/dom.js';
+import { getOptionDetail } from '../utils/optionDetails.js';
 
 const openAccordions = new Set();
 
@@ -30,19 +31,26 @@ function ensureArray(value) {
   return [value];
 }
 
-function detailModal(option) {
-  if (!option) return;
+function detailModal(field, option) {
+  if (!field || !option || field.colors) return;
   const state = getState();
   const promptValue = option.promptValue || '';
   const currentLevel = state.emphasis[promptValue] || 'medium';
   const levels = ['low', 'medium', 'high'];
+  const detail = getOptionDetail(field, option);
   const emphasisButtons = levels.map((level) =>
     `<button class="btn ${level === currentLevel ? 'btn--primary' : ''}" data-emphasis="${level}">${level.charAt(0).toUpperCase() + level.slice(1)}</button>`
   ).join('');
   const { modal } = showModal(`
     <div class="section__label">Option Detail</div>
     <h2>${escapeHtml(option.label)}</h2>
+    ${detail?.summary ? `<p>${escapeHtml(detail.summary)}</p>` : ''}
     <p>Prompt token: <code>${escapeHtml(promptValue || '(empty)')}</code></p>
+    ${detail?.details?.length ? `
+      <div class="panel panel--flat" style="margin-top:var(--sp-4);padding:0;">
+        ${detail.details.map((line) => `<p style="margin-bottom:var(--sp-2);color:var(--text-secondary);">${escapeHtml(line)}</p>`).join('')}
+      </div>
+    ` : ''}
     <div class="toolbar" style="margin-top:var(--sp-4);">
       ${emphasisButtons}
     </div>
@@ -111,11 +119,16 @@ export function renderForm(container) {
 
   bindAccordions(container, {
     openAccordions,
+    singleOpen: true,
+    enableHeaderLongPressLock: window.matchMedia('(max-width: 768px), (pointer: coarse)').matches,
     onToggleLock: (event) => {
       event.stopPropagation();
       const header = event.target.closest('.accordion');
       const heading = header.querySelector('[data-field-id]');
       if (heading) toggleLockField(heading.dataset.fieldId);
+    },
+    onHeaderLongPress: (fieldId) => {
+      toggleLockField(fieldId);
     },
   });
 
@@ -150,10 +163,12 @@ export function renderForm(container) {
         renderForm(container);
       };
 
-      bindLongPress(button, () => {
-        const option = (field.options || field.colors || []).find((item) => item.id === optionId);
-        detailModal(option);
-      });
+      if (!field.colors) {
+        bindLongPress(button, () => {
+          const option = (field.options || field.colors || []).find((item) => item.id === optionId);
+          detailModal(field, option);
+        });
+      }
     });
   });
 }

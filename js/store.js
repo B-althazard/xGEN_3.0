@@ -1,5 +1,6 @@
-import { loadJson, loadLocalState, saveLocalState, initDB, getAllImages, pruneImages, getPresets, savePreset, deletePresetById, clearPersistedData, deleteImageByNonce, deleteImagesByNonce } from './storageManager.js';
+import { loadJson, loadText, loadLocalState, saveLocalState, initDB, getAllImages, pruneImages, getPresets, savePreset, deletePresetById, clearPersistedData, deleteImageByNonce, deleteImagesByNonce } from './storageManager.js';
 import { buildPrompt } from './promptEngine/index.js';
+import { pickRandomDummyName, parseDummyNames } from './utils/dummyNames.js';
 
 export const STORAGE_KEYS = {
   DUMMIES: 'xgen.dummies',
@@ -65,6 +66,7 @@ const state = {
     ageConfirmed: false,
   },
   savedPresets: [],
+  dummyNames: [],
   promptResult: null,
   batch: {
     promptList: [],
@@ -202,13 +204,14 @@ export async function initializeStore() {
     'xgen_schema-actions.json', 'xgen_schema-quality.json', 'xgen_schema-multi_dummy.json',
     'xgen_schema-xXx.json',
   ];
-  const [schemas, rules, dummyData, images, presets, savedState] = await Promise.all([
+  const [schemas, rules, dummyData, images, presets, savedState, dummyNamesText] = await Promise.all([
     Promise.all(SCHEMA_FILES.map((f) => loadJson(`./data/${f}`))),
     loadJson('./data/prompt_rules.json'),
     loadJson('./data/xgen_dummies.json'),
     getAllImages(),
     getPresets(),
     Promise.resolve(loadLocalState(STORAGE_KEYS.ACTIVE_STATE)),
+    loadText('./data/dummyNames.md').catch(() => ''),
   ]);
 
   state.schema = {
@@ -217,6 +220,7 @@ export async function initializeStore() {
   };
   state.rules = rules;
   state.defaultDummies = dummyData.dummies || [];
+  state.dummyNames = parseDummyNames(dummyNamesText);
   state.xgen.generatedImages = images;
   syncActiveImageSelection(images[0]?.nonce || null, 0);
   state.savedPresets = presets;
@@ -441,7 +445,8 @@ export function setActiveDummy(index) {
 export function addDummy() {
   if (state.dummies.length >= 3) return;
   snapshotUndo();
-  state.dummies.push({ ...defaultDummy(), name: `Dummy ${state.dummies.length + 1}` });
+  const randomName = pickRandomDummyName(state.dummyNames, state.dummies.map((dummy) => dummy.name));
+  state.dummies.push({ ...defaultDummy(), name: randomName || `Dummy ${state.dummies.length + 1}` });
   state.activeDummyIndex = state.dummies.length - 1;
   notify();
 }

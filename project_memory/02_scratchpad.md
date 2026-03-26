@@ -7,7 +7,7 @@ _If this file is missing, create it empty. That is not an error._
 
 ## Session Info
 **Started:** 2026-03-26 11:15:20 UTC
-**Task:** Stabilize bridge behavior, add gallery delete/grouping, and keep `project_memory/` in sync.
+**Task:** Fix follow-up bridge detection/UI regressions, expand Creation Kit QoL behavior, and keep `project_memory/` in sync.
 **Agent context loaded:** `00_init.md`, `01_index.md`, `02_scratchpad.md`
 
 ---
@@ -20,6 +20,7 @@ _If this file is missing, create it empty. That is not an error._
 - Re-ran integrity checks: indexed files now match directory contents, refs remain clear, and manifest status coverage is intact.
 - Implemented bridge heartbeat/recovery fixes, gallery grouping and delete flows, and xGEN metrics cleanup.
 - Wrote persistent action memory for the bridge/gallery stabilization pass.
+- Follow-up pass restores bridge detection from remote Venice activity, broadens selector matching, adds commit-count versioning, improves top-bar and nav polish, enforces single-open accordions, randomizes new dummy names, and generates natural-language option explanations for non-color options.
 
 ---
 
